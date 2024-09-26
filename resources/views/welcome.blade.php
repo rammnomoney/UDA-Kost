@@ -17,8 +17,8 @@
 
     <!--Navigasi bar-->
 <header class="mb-10">
-  <nav class="navbar navbar-expand navbar-dark text-white bg-dark fixed top" aria-label="Navbar Kos">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-xl navbar-light bg-dark sticky-top" id="navbar">
+    <div class="container-fluid px-lg-5">
       {{-- <h4 class="float-md-start mb-0">Kos-an</h4>   --}}
       <img class="navbar-brand" src="/img/kosanku.png" alt="Kos-an"><a href="#"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbars1" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +31,6 @@
           <li><a href="#" class="nav-link px-4 link-light">Daftar Kos</a></li>
           <li><a href="#" class="nav-link px-4 link-light">FAQs</a></li>
           <li><a href="#" class="nav-link px-4 link-light">Kontak</a></li>
-          <li><a href="#" class="nav-link px-4 link-light">Tentang Kos-an</a></li>
-          
         </ul>
       </div>
       <form>
@@ -70,12 +68,12 @@
                         
                       </div>
     
-                    <h1 class="primary-header">
+                    <h1 class="primary-header text-light"><i>
                         Forward Innovation
-                    </h1>
+                    </i></h1>
     
                     <p class="support">
-                        Our mission is to drive sustainable growth by fostering a culture of innovation and excellence.<br> 
+                        <i>Our mission</i> is to drive sustainable growth by fostering a culture of innovation and excellence.<br> 
                         We are committed to delivering cutting-edge solutions that exceed our customers' expectations,<br>
                         leveraging the latest technologies and creative approaches.
                         <br>
@@ -91,29 +89,6 @@
       
           </section> 
       
-      {{-- <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-          <h1 class="display-4 fw-normal">Punny headline</h1>
-          <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-          <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-        </div>
-        
-        <div class="carousel-item active" data-bs-interval="8000">
-          <img src="/img/applewallpaper.jpg" class="d-block w-100" alt="#">
-          <div class="carousel-inner mb-4 pb-0">
-            
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-      </div>      
-  </div>
-    </div>  --}}
-
       <!-- Fitur -->
       <div class="container px-4 py-5" id="hanging-icons">
         <h2 class="pb-2 border-bottom">Hanging icons</h2>
@@ -125,9 +100,6 @@
             <div>
               <h2>Featured title</h2>
               <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-              <a href="#" class="btn btn-primary">
-                Primary button
-              </a>
             </div>
           </div>
           <div class="col d-flex align-items-start">
@@ -137,9 +109,6 @@
             <div>
               <h2>Featured title</h2>
               <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-              <a href="#" class="btn btn-primary">
-                Primary button
-              </a>
             </div>
           </div>
           <div class="col d-flex align-items-start">
@@ -149,14 +118,13 @@
             <div>
               <h2>Featured title</h2>
               <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-              <a href="#" class="btn btn-primary">
-                Primary button
-              </a>
             </div>
           </div>
         </div>
       </div>
+      
 
+      <hr class="my-5" />
 
       <!-- Daftar Tempat -->
       <section id="recent-blog-posts" class="recent-blog-posts section">
@@ -168,7 +136,7 @@
             <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="/img/applewallpaper.jpg" class="img-fluid" alt="">
+                <img src="/img/applewallpaper2.jpg" class="img-fluid" alt="">
                 <span class="post-date">December 12</span>
               </div>
 
@@ -188,7 +156,7 @@
 
                 <hr>
 
-                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <a href="#" class="readmore stretched-link"><span>Click!</span><i class="bi bi-arrow-right"></i></a>
 
               </div>
 
@@ -219,7 +187,7 @@
 
                 <hr>
 
-                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <a href="#" class="readmore stretched-link"><span>Click!</span><i class="bi bi-arrow-right"></i></a>
 
               </div>
 
@@ -230,7 +198,7 @@
             <div class="post-item position-relative h-100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="/img/dekstopwall02.jpeg" class="img-fluid" alt="">
+                <img src="/img/applewallpaper2.jpg" class="img-fluid" alt="">
                 <span class="post-date">September 05</span>
               </div>
 
@@ -250,7 +218,7 @@
 
                 <hr>
 
-                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <a href="#" class="readmore stretched-link"><span>Click!</span><i class="bi bi-arrow-right"></i></a>
 
               </div>
 
@@ -270,7 +238,7 @@
             <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="/img/applewallpaper.jpg" class="img-fluid" alt="">
+                <img src="/img/applewallpaper2.jpg" class="img-fluid" alt="">
                 <span class="post-date">December 12</span>
               </div>
 
@@ -290,7 +258,7 @@
 
                 <hr>
 
-                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <a href="#" class="readmore stretched-link"><span>Click!</span><i class="bi bi-arrow-right"></i></a>
 
               </div>
 
@@ -321,7 +289,7 @@
 
                 <hr>
 
-                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <a href="#" class="readmore stretched-link"><span>Click!</span><i class="bi bi-arrow-right"></i></a>
 
               </div>
 
@@ -332,7 +300,7 @@
             <div class="post-item position-relative h-100">
 
               <div class="post-img position-relative overflow-hidden">
-                <img src="/img/dekstopwall02.jpeg" class="img-fluid" alt="">
+                <img src="/img/applewallpaper2.jpg" class="img-fluid" alt="">
                 <span class="post-date">September 05</span>
               </div>
 
@@ -352,7 +320,7 @@
                 
                 <hr>
                 
-                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <a href="#" class="readmore stretched-link"><span>Click!</span><i class="bi bi-arrow-right"></i></a>
 
               </div>
 
@@ -364,11 +332,106 @@
       </div>
       
     </section>
+
 <br>
+<hr class="my-5" />
 
-      <hr class="featurette-divider mb-12">
-      <br>
+<section class="xl-4 md-6">
+<div class="container">
 
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <h3 class="mb-0">Featured post</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+  
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Design</strong>
+          <h3 class="mb-0">Post title</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<form class="card bg-dark">
+    <section class="mb-5 mt-5">
+      <h4 class="mb-5 text-light text-center"><strong>Facilis consequatur eligendi</strong></h4>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline" data-mdb-input-init>
+                  <input type="text" placeholder="First name" id="form3Example1" class="form-control" />
+                  <label class="form-label" for="form3Example1">First name<span class="text-red">*</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline" data-mdb-input-init >
+                  <input type="text" placeholder="Last name" id="form3Example2" class="form-control" />
+                  <label class="form-label" for="form3Example2">Last name<span class="text-red">*</span></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4" data-mdb-input-init>
+              <input type="email" placeholder="Email address" id="form3Example3" class="form-control" />
+              <label class="form-label" for="form3Example3">Email address<span class="text-red">*</span></label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4" data-mdb-input-init>
+              <input type="password" placeholder="Password" id="form3Example4" class="form-control" />
+              <label class="form-label" for="form3Example4">Password<span class="text-red">*</span></label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input
+                     class="form-check-input me-2"
+                     type="checkbox"
+                     value=""
+                     id="form2Example3"
+                     checked
+                     />
+              <label class="form-check-label text-light" for="form2Example3">
+                Notifikasi aku
+              </label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-secondary btn-block mb-4" data-mdb-ripple-init>
+              Submit!
+            </button>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <br>
 <!-- Profile Nama -->
       <div class="container marketing">
         <div class="row">
@@ -401,6 +464,7 @@
       <footer class="footer-10">
         <div class="container">
         <div class="row mb-5 pb-3 no-gutters">
+
         <div class="col-md-4 mb-md-0 mb-4 d-flex">
         <div class="con con-1 w-100 py-5">
         <div class="con-info w-100 text-center">
@@ -443,7 +507,7 @@
 
         <div class="row">
         <div class="col-md-7">
-        <div class="row">
+        <div class="row text-center">
         <div class="col-md-4 mb-md-0 mb-4">
         <h2 class="footer-heading">About</h2>
         <ul class="list-unstyled">
@@ -476,6 +540,9 @@
         
         <div class="row mt-5 pt-4 border-top">
         <div class="col-md-6 col-lg-8 mb-md-0 mb-4">
+          <p class="float-end">
+            <a href="#">Back to top</a>
+          </p>
         <p class="copyright mb-0">
         Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved.
         </p>
