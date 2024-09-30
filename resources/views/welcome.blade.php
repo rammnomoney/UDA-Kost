@@ -11,13 +11,16 @@
     <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/fronten.css">
 
+    <!-- Script -->
+    <script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </head>
 <body>
     
 
     <!--Navigasi bar-->
 <header class="mb-10">
-  <nav class="navbar navbar-expand-xl navbar-light bg-dark sticky-top" id="navbar">
+  <nav class="navbar navbar-expand-xl navbar-dark shadow-5-strong sticky-top" id="navbar">
     <div class="container-fluid px-lg-5">
       {{-- <h4 class="float-md-start mb-0">Kos-an</h4>   --}}
       <img class="navbar-brand" src="/img/kosanku.png" alt="Kos-an"><a href="#"></a>
@@ -33,9 +36,11 @@
           <li><a href="#" class="nav-link px-4 link-light">Kontak</a></li>
         </ul>
       </div>
-      <form>
-        <input class="form-control" type="text" placeholder="Search..." aria-label="Search">
-      </form>
+
+      <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-secondary" data-mdb-ripple-init>Search</button>
+      </div>
     </div>
   </nav> 
 </header>
@@ -56,6 +61,7 @@
 
 
       <!-- Carosel -->
+      <main>
       <section id="explanation" class="explanation section dark-background">
         <img src="/img/rent1.png" alt="">
       
@@ -90,7 +96,39 @@
           </section> 
       
       <!-- Fitur -->
-      <div class="container px-4 py-5" id="hanging-icons">
+<!-- Start Features -->
+<div class="features main-padding text-center">
+  <div class="container overflow-hidden">
+    <h2 class="">Fitur</h2>
+    <hr>
+    <div class="row d-flex justify-content-center">
+      <div class="feat">
+        <i class="fab fa-html5 fa-3x"></i>
+        <h3 class="color-black">Harga bersahabat</h3>
+        <p>Meteor is free HTML website template by Tooplate. Feel free to use this layout for your project.</p>
+      </div>
+      <div class="feat">
+        <i class="fab fa-css3 fa-3x"></i>
+        <h3 class="color-black">Mudah jangkauan</h3>
+        <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke typewriter.</p>
+      </div>
+      <div class="feat">
+        <i class="fab fa-js fa-3x"></i>
+        <h3 class="color-black">Fasilitas lengkap</h3>
+        <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke typewriter.</p>
+      </div>
+      <div class="feat">
+        <i class="fab fa-sass fa-3x"></i>
+        <h3 class="color-black">Pilihan yang tepat</h3>
+        <p>Meteor is free HTML website template by Tooplate. Feel free to use this layout for your project.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+
+      {{-- <div class="container px-4 py-5" id="hanging-icons">
         <h2 class="pb-2 border-bottom">Hanging icons</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div class="col d-flex align-items-start">
@@ -121,14 +159,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       
-
-      <hr class="my-5" />
+<br>
+      {{-- <hr class="my-5" /> --}}
 
       <!-- Daftar Tempat -->
       <section id="recent-blog-posts" class="recent-blog-posts section">
-      <div class="container">
+      <div class="container overflow-hidden">
 
         <div class="row gy-5">
 
@@ -150,7 +188,7 @@
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Greenland</span>
                   </div>
                 </div>
 
@@ -181,7 +219,7 @@
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Permata Puri</span>
                   </div>
                 </div>
 
@@ -212,7 +250,7 @@
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Ciptaland</span>
                   </div>
                 </div>
 
@@ -226,10 +264,8 @@
           </div><!-- End -->
 
         </div>
-
       </div>
-      <br>
-
+<br>
       <div class="container">
 
         <div class="row gy-5">
@@ -252,7 +288,7 @@
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Greenland</span>
                   </div>
                 </div>
 
@@ -283,7 +319,7 @@
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Permata Puri</span>
                   </div>
                 </div>
 
@@ -314,7 +350,7 @@
                   </div>
                   <span class="px-3 text-black-50">/</span>
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Ciptaland</span>
                   </div>
                 </div>
                 
@@ -328,13 +364,10 @@
           </div><!-- End -->
 
         </div>
-        
       </div>
-      
     </section>
 
-<br>
-<hr class="my-5" />
+<hr class="my-5">
 
 <section class="xl-4 md-6">
 <div class="container">
@@ -375,8 +408,8 @@
 </section>
 
 <form class="card bg-dark">
-    <section class="mb-5 mt-5">
-      <h4 class="mb-5 text-light text-center"><strong>Facilis consequatur eligendi</strong></h4>
+    <div class="container mb-5 mt-5">
+      <h4 class="mb-5 text-light text-center"><strong>DATA DIRI</strong></h4>
 
       <div class="row d-flex justify-content-center">
         <div class="col-md-6">
@@ -404,8 +437,8 @@
 
             <!-- Password input -->
             <div class="form-outline mb-4" data-mdb-input-init>
-              <input type="password" placeholder="Password" id="form3Example4" class="form-control" />
-              <label class="form-label" for="form3Example4">Password<span class="text-red">*</span></label>
+              <input type="number" placeholder="WhatsApp" id="form3Example4" class="form-control" />
+              <label class="form-label" for="form3Example4">WhatsApp<span class="text-red">*</span></label>
             </div>
 
             <!-- Checkbox -->
@@ -428,12 +461,12 @@
             </button>
           </div>
         </div>
-      </section>
+      </div>
     </form>
 
     <br>
 <!-- Profile Nama -->
-      <div class="container marketing">
+      <div class="cm container marketing">
         <div class="row">
           <div class="col-lg-4">
             <img src="/img/bruce-mars.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
@@ -458,106 +491,64 @@
           </div><!-- /.col-lg-4 -->
         </div>
       </div>
+
+    </main>
 <br>
 
       <!-- Footer -->
-      <footer class="footer-10">
-        <div class="container">
-        <div class="row mb-5 pb-3 no-gutters">
-
-        <div class="col-md-4 mb-md-0 mb-4 d-flex">
-        <div class="con con-1 w-100 py-5">
-        <div class="con-info w-100 text-center">
-        <div class="icon d-flex align-items-center justify-content-center">
-        <span class="ion-ios-call"></span>
-        </div>
-        <div class="text">
-        <span>(+00) 1234 5678</span>
-        </div>
-        </div>
-        </div>
-        </div>
-
-        <div class="col-md-4 mb-md-0 mb-4 d-flex">
-        <div class="con con-2 w-100 py-5">
-        <div class="con-info w-100 text-center">
-        <div class="icon d-flex align-items-center justify-content-center">
-        <span class="ion-ios-mail"></span>
-        </div>
-        <div class="text">
-        <span>info@email.com</span>
-        </div>
-        </div>
-        </div>
-        </div>
-
-        <div class="col-md-4 mb-md-0 mb-4 d-flex">
-        <div class="con con-3 w-100 py-5">
-        <div class="con-info w-100 text-center">
-        <div class="icon d-flex align-items-center justify-content-center">
-        <span class="ion-ios-pin"></span>
-        </div>
-        <div class="text">
-        <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-
+       <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
         <div class="row">
-        <div class="col-md-7">
-        <div class="row text-center">
-        <div class="col-md-4 mb-md-0 mb-4">
-        <h2 class="footer-heading">About</h2>
-        <ul class="list-unstyled">
-        <li><a href="#" class="d-block">Out story</a></li>
-        <li><a href="#" class="d-block">Awards</a></li>
-        <li><a href="#" class="d-block">Our Team</a></li>
-        <li><a href="#" class="d-block">Career</a></li>
-        </ul>
-        </div>
-        <div class="col-md-4 mb-md-0 mb-4">
-        <h2 class="footer-heading">Company</h2>
-        <ul class="list-unstyled">
-        <li><a href="#" class="d-block">Our services</a></li>
-        <li><a href="#" class="d-block">Clients</a></li>
-        <li><a href="#" class="d-block">Contact</a></li>
-        <li><a href="#" class="d-block">Press</a></li>
-        </ul>
-        </div>
-        <div class="col-md-4 mb-md-0 mb-4">
-        <h2 class="footer-heading">Resources</h2>
-        <ul class="list-unstyled">
-        <li><a href="#" class="d-block">Blog</a></li>
-        <li><a href="#" class="d-block">Newsletter</a></li>
-        <li><a href="#" class="d-block">Privacy Policy</a></li>
-        </ul>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        <div class="row mt-5 pt-4 border-top">
-        <div class="col-md-6 col-lg-8 mb-md-0 mb-4">
-          <p class="float-end">
-            <a href="#">Back to top</a>
-          </p>
-        <p class="copyright mb-0">
-        Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved.
-        </p>
-        </div>
-        <div class="col-md-6 col-lg-4 text-md-right">
-        <ul class="ftco-footer-social p-0">
-        <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><span class="ion-logo-twitter"></span></a></li>
-        <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><span class="ion-logo-facebook"></span></a></li>
-        <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram"><span class="ion-logo-instagram"></span></a></li>
-        </ul>
-        </div>
-        </div>
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          </div>
 
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
         </div>
-        </footer>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2025 All Rights Reserved by 
+         <a href="#">Ramm</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
 
 
       {{-- <div class="container">
@@ -608,9 +599,5 @@
           <p class="float-end"><a href="#">Back to top</a></p>
         </footer>
       </div> --}}
-
-      
-    <script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
 </html>
