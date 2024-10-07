@@ -17,9 +17,9 @@ Route::get('/', function() {
     return view('welcome');
 })->name('welcome');
 
-Route::get('index', function() {
-    return redirect('');
-});
+Route::view('/fronten/house/index', '/fronten/house/index');
 
+
+Route::view('/admins/dashboard/dashboard', '/admins/dashboard/dashboard');
 //Route::get('/student', [StudentController::class, 'index'])
 //   ->name('student.index')->middleware('auth');
