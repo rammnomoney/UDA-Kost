@@ -1,3 +1,13 @@
+/* GOOGLE Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* */
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -10,17 +20,26 @@
   font-family: "Poppins", sans-serif;
 }
 
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
 
-/* GOOGLE Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Global */
+
+
 /* */
 
 .header {
   --background-color: rgba(0, 0, 0, 0.8);
   --heading-color: #ffffff;
   --contrast-color: #ffffff;
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: #ffffff;
+  background-color: #007cb681;
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -30,49 +49,26 @@
   line-height: 1;
 }
 
-.header .logo img {
+/* .header .logo img {
   max-height: 36px;
   margin-right: 8px;
-}
+} */
 
 .header .logo h1 {
   font-size: 32px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: #ffffff;
 }
 
 .header .logo span {
-  color: var(--accent-color);
+  color: #007bb6;
   font-size: 32px;
-}
-
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-  color: var(--contrast-color);
-  font-size: 14px;
-  padding: 8px 30px;
-  margin: 0 0 0 30px;
-  border-radius: 4px;
-  transition: 0.3s;
-  border: 2px solid var(--accent-color);
-}
-
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-  color: var(--default-color);
-  background: var(--accent-color);
 }
 
 @media (max-width: 1200px) {
   .header .logo {
     order: 1;
-  }
-
-  .header .btn-getstarted {
-    order: 2;
-    margin: 0 15px 0 0;
-    padding: 6px 15px;
   }
 
   .header .navmenu {
@@ -119,10 +115,10 @@
 
   .navmenu a,
   .navmenu a:focus {
-    color: #00aced;
+    color: #000;
     padding: 18px 15px;
     font-size: 16px;
-    font-family: #fff;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -146,13 +142,13 @@
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #007bb6;
+    color: #33353d;
   }
 
   .navmenu .dropdown ul {
     margin: 0;
     padding: 10px 0;
-    background: var(--nav-dropdown-background-color);
+    background: #f4f4f4;
     display: block;
     position: absolute;
     visibility: hidden;
@@ -183,7 +179,7 @@
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
-    background-color: #007bb6;
+    background-color: #000000;
   }
 
   .navmenu .dropdown:hover>ul {
@@ -205,8 +201,9 @@
     visibility: visible;
   }
 }
+/* END */
 
-/* Navmenu - Mobile */
+/* Navmenu -- Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
@@ -329,9 +326,9 @@
     display: block;
   }
 }
+/* */
 
-
-/*explanation*/
+/* explanation */
 .explanation {
   padding: 150px 0;
   position: relative;
@@ -364,7 +361,11 @@
   z-index: 3;
 }
 
-.explanation .support {
+.container h3{
+  color: #33353d;
+}
+
+.explanation .support{
     margin-top: 30px;
     font-size: 16px;
     font-weight: 450;
@@ -436,7 +437,7 @@
 }
 
 .services .service-item .icon i {
-  color: #f4f4f4;
+  color: #007bb6;
   font-size: 36px;
   transition: ease-in-out 0.3s;
 }
@@ -448,7 +449,7 @@
 }
 
 .services .service-item h4 a {
-  color: #33353d;
+  color: #007bb6;
   transition: ease-in-out 0.3s;
 }
 
@@ -462,7 +463,7 @@
 .services .service-item:hover h4 a,
 .services .service-item:hover .icon i,
 .services .service-item:hover p {
-  color: #f4f4f4;
+  color: #000;
 }
 
 .services .service-item:hover:before {
@@ -526,90 +527,40 @@
 
 
 /* FAQ */
-.faq .faq-container .faq-item {
-  background-color: #ffffff;
+.accordion{
+  margin: 50px;
+  border-radius: 100px;
+}
+
+.accordion .accordion-item{
+  margin-bottom: 25px;
+  border-radius: 25px;
+}
+
+.accordion-item h2{
+  background-color: #007bb6;
+  border: 20px;
   position: relative;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  border-radius: 5px;
   overflow: hidden;
 }
 
-.faq .faq-container .faq-item:last-child {
-  margin-bottom: 0;
-}
+.accordion .accordion-item h2:hover{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+} 
 
-.faq .faq-container .faq-item h3 {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  margin: 0 30px 0 0;
-  transition: 0.3s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.faq .faq-container .faq-item h3 .num {
-  color: #007bb6;
-  padding-right: 5px;
-}
-
-.faq .faq-container .faq-item h3:hover {
+.accordion-button{
   color: #007bb6;
 }
 
-.faq .faq-container .faq-item .faq-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: 0.3s ease-in-out;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.faq .faq-container .faq-item .faq-content p {
-  margin-bottom: 0;
-  overflow: hidden;
-}
-
-.faq .faq-container .faq-item .faq-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 16px;
-  line-height: 0;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.faq .faq-container .faq-item .faq-toggle:hover {
+.accordion-button:hover{
   color: #007bb6;
 }
+/* end */
 
-.faq .faq-container .faq-active {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
-}
-
-.faq .faq-container .faq-active h3 {
-  color: #000;
-}
-
-.faq .faq-container .faq-active .faq-content {
-  grid-template-rows: 1fr;
-  visibility: visible;
-  opacity: 1;
-  padding-top: 10px;
-}
-
-.faq .faq-container .faq-active .faq-toggle {
-  transform: rotate(90deg);
-  color: #007bb6;
-}
-  /* end */
-
-
+/* Button */
   .btn-secondary {
       background: #f5efff;
       color: #7839f3;
@@ -623,7 +574,8 @@
 
 
 .card{
-  margin-bottom: -60px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .form-label{
