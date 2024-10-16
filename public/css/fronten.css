@@ -113,8 +113,13 @@
     position: relative;
   }
 
+  .navmenu ul li {
+    margin-right: 20px; /* spacing between links */
+  }
+
   .navmenu a,
   .navmenu a:focus {
+    text-decoration: none;
     color: #000;
     padding: 18px 15px;
     font-size: 16px;

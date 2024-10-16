@@ -1,50 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-    <title>Kos-an</title>
+@push('title')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-
-    <!-- Link CSS -->
-    <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/css/fronten.css">
-    <link rel="stylesheet" href="/css/house.css">
-
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-
-    <!-- Script -->
-    <script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="/js/fronten.js"></script>
-    {{-- <script src="/js/house.js"></script> --}}
-
-</head>
-<body>
-    <!-- Header -->
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-    
-        <a href="#" class="logo d-flex align-items-center me-auto me-lg-0">
-          <h1>UdaKost</h1><span>!?</span>
-        </a>
-    
-  @include('layouts/components/navbar')
-
-      </div>
-      </header>
+@section('content')
       <!-- ISI -->
 
-
       <!-- Carosel -->
-      <br><main class="">
+      <br><main id="scrollup">
       <section id="explanation" class="explanation section dark-background">
         <img src="/img/rent1.png" alt="">
             <div class="container">
@@ -116,6 +78,7 @@
   
         </div>
       </section><!-- /Services Section -->
+      
       
       <!-- Daftar Tempat -->
       <section id="home" class="tf-section flat-homes">
@@ -210,8 +173,7 @@
             </div>
 
         </div>
-    </section>
-      {{--  --}}
+    </section>{{--  --}}
       
       <br>
       <br>
@@ -249,63 +211,6 @@
         </div>
     </section>
 
-    <form class="card bg-dark">
-        <div class="container mb-5 mt-5">
-          <h4 class="mb-5 text-light text-center"><strong>FAQs</strong></h4>
-          
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row mb-4">
-                  <div class="col">
-                    <div class="form-outline" data-mdb-input-init>
-                      <input type="text" placeholder="First name" id="form3Example1" class="form-control" />
-                      <label class="form-label" for="form3Example1">First name<span class="text-red">*</span></label>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-outline" data-mdb-input-init >
-                      <input type="text" placeholder="Last name" id="form3Example2" class="form-control" />
-                      <label class="form-label" for="form3Example2">Last name<span class="text-red">*</span></label>
-                    </div>
-                  </div>
-                </div>
-    
-                <!-- Email input -->
-                <div class="form-outline mb-4" data-mdb-input-init>
-                  <input type="email" placeholder="Email address" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Email address<span class="text-red">*</span></label>
-                </div>
-    
-                <!-- Password input -->
-                <div class="form-outline mb-4" data-mdb-input-init>
-                  <input type="number" placeholder="WhatsApp" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">WhatsApp<span class="text-red">*</span></label>
-                </div>
-    
-                <!-- Checkbox -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                  <input
-                         class="form-check-input me-2"
-                         type="checkbox"
-                         value=""
-                         id="form2Example3"
-                         checked
-                         />
-                  <label class="form-check-label text-light" for="form2Example3">
-                    Notifikasi aku
-                  </label>
-                </div>
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-secondary btn-block mb-4" data-mdb-ripple-init>
-                  Submit!
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
-        
-        
         <!-- Profile Nama -->
         <div id="team" class="cm container marketing">
           <div class="row">
@@ -378,11 +283,8 @@
   </div>
 
 </section><!-- /Faq Section -->
+
 </main>
-
-      <!-- Footer -->
-@include('layouts/components/footer')
-
 
 <!-- Inisialisasi Swiper -->
 <script>
@@ -400,6 +302,4 @@
         },
     });
 </script>
-
-</body>
-</html>
+@endsection

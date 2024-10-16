@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-    <title>Kos-an</title>
+@extends('fronten.app')
 
-    <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+@push('title')
 
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
-    <!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-
-    <link rel="stylesheet" href="/css/fronten.css">
-    <link rel="stylesheet" href="/css/detailhouse.css">
-
-</head>
-<body>
-    
-    @include('layouts/components/navbar')
-    
+@section('content')
     <!-- Awal main -->
     <div class="main-content">
     
         <!-- property-single-wrap -->
+        <section id="scrollup">
         <div class="property-single-wrap sticky-container" data-sticky-container="">
             <div class="cl-container">
                 <div class="row">
@@ -1129,7 +1111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4">
+                    {{-- <div class="col-xl-4">
                         <div class="property-single-sidebar po-sticky" style="position: fixed; width: 386px; left: 842px; top: 0px;">
                             <div class="sidebar-item sidebar-request">
                                 <div class="text">
@@ -1140,15 +1122,12 @@
                                 <a href="#" class="tf-button-primary w-full style-bg-white">Contact an agent<i class="icon-arrow-right-add"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
+    </section>
         <!-- /property-single-wrap -->
     
     </div>
-
-    @include('layouts/components/footer')
-
-</body>
-</html>
+    @endsection
