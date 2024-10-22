@@ -22,18 +22,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::view('/admins/auth/login', '/admins/auth/login');
 
 Route::get('/', function() {
     return view('welcome');
 })->name('welcome');
 
 Route::view('/fronten/house/index', '/fronten/house/index');
+Route::view('/fronten/house/show', '/fronten/house/show');
+//form
+Route::view('/fronten/form/index', '/fronten/form/index');
 
 
 Route::view('/admins/dashboard/dashboard', '/admins/dashboard/dashboard');
+
 //Route::get('/house', [HouseController::class, 'index'])
 //   ->name('house')->middleware('auth');
-
 
 // BAGIAN ADMIN
 // Route::get('/', function () {

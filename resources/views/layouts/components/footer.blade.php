@@ -18,7 +18,6 @@
         <div class="col-xs-6 col-md-3">
           <h6>Quick Links</h6>
           <ul class="footer-links">
-            <li><a href="#scrollup">Back to top</a></li>
             <li><a href="#services">Services</a></li>
           </ul>
         </div>

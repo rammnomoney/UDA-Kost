@@ -1,3 +1,8 @@
+@extends('layouts.layout')
+
+@push('title')
+
+@section('content')
 <form class="card bg-dark">
     <div class="container mb-5 mt-5">
       <h4 class="mb-5 text-light text-center"><strong>DATA DIRI</strong></h4>
@@ -54,3 +59,4 @@
         </div>
       </div>
     </form>
+    @endsection

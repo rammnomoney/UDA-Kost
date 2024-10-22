@@ -2,32 +2,46 @@
 
 @push('title')
 
+@push('addon-script-head')
+<!-- Fonts -->
+<link href='https://fonts.googleapis.com' rel="preconnect">
+
+<!-- Link CSS -->
+<link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="/css/fronten.css">
+
+<!--  -->
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+<!-- Script -->
+<script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+@endpush
+
 @section('content')
       <!-- ISI -->
 
       <!-- Carosel -->
-      <br><main id="scrollup">
+      <main id="scrollup">
       <section id="explanation" class="explanation section dark-background">
-        <img src="/img/rent1.png" alt="">
-            <div class="container">
-              <div class="row justify-content-center aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                <div class="col-xl-10">
-                  <div class="text-center">
-                    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <img src="/img/house/Gallery house4.jpg" alt="">
+              <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row justify-content-center">
+                      <div class="container section-title">
                         <h3>TEMPAT KOS TERBAIK</h3>
                       </div>
-                    <h6 class="support">
-                        <i>Temukan</i> Pencarian Kos Siap Huni Di Batam<br> 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab vitae perferendis molestiae quis! Repudiandae iure deserunt quibusdam voluptatibus? Autem fuga quaerat illo voluptatum et modi sit labore aliquid iusto. A.<br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum dolores vel obcaecati temporibus quibusdam aperiam consequatur ea voluptatem suscipit dolor quam doloribus cupiditate praesentium quia voluptates tempore, amet fugit.
-                        <br>
-                    </h6>
-                
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> 
+                        <div class="col-lg-12">
+                          <h2>
+                            <i>Temukan</i> Pencarian Kos Siap Huni Di Batam<br> 
+                          </h2>
+                          <p>ipsum dolor sit amet consectetur adipisicing elit. Ab vitae perferendis molestiae quis! Repudiandae iure deserunt quibusdam voluptatibus? Autem fuga quaerat illo voluptatum et modi. A.</p>
+                        </div>
+
+                      </div>
+                    </div>
+      </section> 
       
 
       <!-- Fitur -->
@@ -94,13 +108,13 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div class="swiper-container slider-homes">
+                    <div class="swiper-container slider-homes justify-content-center">
                         <div class="swiper-wrapper">
                             <!-- Slide 1 -->
                             <div class="swiper-slide">
                                 <div class="box-dream">
                                     <div class="image">
-                                        <img src="/img/applewallpaper2.jpg" alt="">
+                                      <img src="/img/house/Gallery house2.jpg" alt="Wallpaper">
                                     </div>
                                     <div class="content">
                                         <div class="head">
@@ -122,7 +136,7 @@
                             <div class="swiper-slide">
                                 <div class="box-dream">
                                     <div class="image">
-                                        <img src="/img/applewallpaper2.jpg" alt="">
+                                        <img src="/img/house/Gallery house2.jpg" alt="">
                                     </div>
                                     <div class="content">
                                         <div class="head">
@@ -144,7 +158,7 @@
                             <div class="swiper-slide">
                               <div class="box-dream">
                                   <div class="image">
-                                      <img src="/img/applewallpaper2.jpg" alt="">
+                                      <img src="/img/house/Gallery house2.jpg" alt="">
                                   </div>
                                   <div class="content">
                                       <div class="head">
@@ -212,25 +226,25 @@
     </section>
 
         <!-- Profile Nama -->
-        <div id="team" class="cm container marketing">
+        <div id="team" class="team container marketing">
           <div class="row">
-            <div class="col-lg-4">
-              <img src="/img/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-                    <h2>Heading</h2>
-                    <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                  </div><!-- /.col-lg-4 -->
+            <div class="col-lg-6">
+              <img src="/img/profile/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
+                <h2 class="text-dark">Heading</h2>
+                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                  </div><!--  -->
         
-                  <div class="col-lg-4">
-                    <img src="https://yt3.googleusercontent.com/ytc/AIdro_mS1myhgjBjlA68niot87tDxhB1Yl0Q4JXZyrd-YsQBgak=s160-c-k-c0x00ffffff-no-rj" class="bd-placeholder-img rounded-circle" width="140" height="140">
-                    <h2>Heading</h2>
+                  <div class="col-lg-6">
+                    <img src="/img/profile/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
+                    <h2 class="text-dark">Heading</h2>
                     <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-                  </div><!-- /.col-lg-4 -->
+                  </div><!--  -->
         
-                  <div class="col-lg-4">
-                    <img src="/img/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-                    <h2>Heading</h2>
+                  <div class="col-lg-6">
+                    <img src="/img/profile/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
+                    <h2 class="text-dark">Heading</h2>
                     <p>And lastly this, the third column of representative placeholder content.</p>
-                  </div><!-- /.col-lg-4 -->
+                  </div><!--  -->
                 </div>
               </div>
               
@@ -284,22 +298,33 @@
 
 </section><!-- /Faq Section -->
 
+
 </main>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+@endsection
+
+@push('addon-script-footer')
+<script src="/js/fronten.js"></script>
 
 <!-- Inisialisasi Swiper -->
 <script>
-    var swiper = new Swiper('.swiper-container', {
+  var swiper = new Swiper('.swiper-container', {
         slidesPerView: 3,
         spaceBetween: 20,
         loop: true,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+          el: '.swiper-pagination',
+          clickable: true,
         },
-    });
-</script>
-@endsection
+      });
+    </script>
+@endpush

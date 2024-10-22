@@ -1,8 +1,8 @@
-<header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header d-flex align-items-center">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-    <a href="#" class="logo d-flex align-items-center me-auto me-lg-0">
-      <h1>UdaKost</h1><span>!?</span>
+    <a href="#" class="logo d-flex align-items-center">
+      <h1>UDA Kost</h1><span>!?</span>
     </a>
     <nav id="navmenu" class="navmenu">
       <ul>
