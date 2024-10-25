@@ -7,9 +7,9 @@
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#explanation" class="">Home<br></a></li>
-        <li><a href="#about" class="">About</a></li>
         <li><a href="#services" class="">Services</a></li>
-        <li><a href="#home" class="">Rumah</a></li>
+        <li><a href="/fronten/house/index" class="">Rumah</a></li>
+        <li><a href="#about" class="">About</a></li>
         <li><a href="#team" class="">Team</a></li>
         {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>

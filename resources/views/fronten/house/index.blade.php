@@ -1,45 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UDA Kost!? List</title>
+@extends('layouts/layout')
 
-    <link rel="stylesheet" href="detailhouse.css">
-</head>
-<body>
+@push('title')
 
-    <div class="search-bar">
-        <input type="text" placeholder="Pencarian...">
-        <select>
-            <option>UDA Kost!? Type</option>
-        </select>
-        <input type="text" placeholder="Location">
-        <button class="search-button">Search Property</button>
-    </div>
+@push('addon-script-head')
+    <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <div class="property-list">
-        <div class="property-card">
-            <img src="/img/property1.jpg" alt="Oakwood Manor Estates">
-            <div class="property-info">
-                <div class="price">$148,000</div>
-                <h3>Oakwood Manor Estates</h3>
-                <p>25945 Washington Street, ID 1651612</p>
-                <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 5 Beds</p>
+    <link rel="stylesheet" href="/css/detailhouse.css">
+
+    <!--  -->
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+    <script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+@endpush
+
+@section('content')
+<main>
+    <section id="home" class="list-house">
+        <div class="col-12 mt-3">
+            <div class="flex items-center justify-between gap30 flex-wrap pt-30 pb-30">
+                <ul class="breadcrumbs style-1 justify-start">
+                    <li><a href="/">Home</a></li>
+                    <li>/</li>
+                    <li>House 1</li>
+                </ul>
             </div>
         </div>
-
-        <div class="property-card">
-            <img src="/img/property2.jpg" alt="Willowbrook Grey Estate">
-            <div class="property-info">
-                <div class="price">$148,000</div>
-                <h3>Willowbrook Grey Estate</h3>
-                <p>75835 Herta Walks, Indonesia, ID 796326</p>
-                <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 2 Beds</p>
-            </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pencarian...">
+            <select>
+                <option>UDA Kost!? Tipe</option>
+            </select>
+            <input type="text" placeholder="Location">
+            <button class="search-button btn btn-danger">Search Property</button>
         </div>
-
+        
+        <div class="property-banner">
+        <h5 class="property-title">Detail <span class="title">Property</span></h5>
+        <div class="property-list mt-3">
+            <div class="property-card">
+                <img src="/img/house/Gallery house2.jpg" alt="Oakwood Manor Estates">
+                <div class="property-info">
+                    <div class="price">$148,000</div>
+                    <h3><a href="{{ url('../fronten/house/show') }}">Oakwood Manor Estates</a></h3>
+                    <p>25945 Washington Street, ID 1651612</p>
+                    <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 5 Beds</p>
+                </div>
+            </div>
+            
+            <div class="property-card">
+                <img src="/img/house/Gallery house2.jpg" alt="Willowbrook Grey Estate">
+                <div class="property-info">
+                    <div class="price">$148,000</div>
+                    <h3><a href="{{ url('../fronten/house/show') }}">Willowbrook Grey Estate</a></h3>
+                    <p>75835 Herta Walks, Indonesia, ID 796326</p>
+                    <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 2 Beds</p>
+                </div>
+            </div>
+            
+        </div>
     </div>
-
-</body>
-</html>
+</section>
+</main>
+@endsection

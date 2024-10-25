@@ -20,6 +20,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Button */
+  .btn-secondary {
+      background: #f5efff;
+      color: #7839f3;
+  }
+/* */
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -545,7 +552,6 @@
 
 /* Daftar Tempat */
 .tf-section {
-  padding: 60px 0;
   justify-content: center;
   background-color: #f8f8f8;
 }
@@ -568,7 +574,7 @@
 .box-dream {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   padding: 20px;
 }
 
@@ -594,6 +600,11 @@
   font-weight: 700;
   color: #333;
   margin-bottom: 10px;
+}
+
+.box-dream .title a{
+  color: #007bb6;
+text-decoration: none;
 }
 
 .box-dream .price {
@@ -671,17 +682,7 @@
 
 .accordion-button:hover{
   color: #007bb6;
-}
-/* end */
-
-
-/* Button */
-  .btn-secondary {
-      background: #f5efff;
-      color: #7839f3;
-  }
-/* */
-
+}/* end */
 
 /*Footer */
 .site-footer
@@ -716,7 +717,7 @@
 }
 .site-footer a:hover
 {
-  color:#3366cc;
+  color:#000;
   text-decoration:none;
 }
 .footer-links
@@ -734,7 +735,7 @@
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:#000;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -831,11 +832,7 @@
 {
   background-color:#00aced
 }
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
-.social-icons a.dribbble:hover
+.social-icons a.instagram:hover
 {
   background-color:#ea4c89
 }

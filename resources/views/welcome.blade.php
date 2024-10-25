@@ -30,7 +30,7 @@
               <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                     <div class="row justify-content-center">
                       <div class="container section-title">
-                        <h3>TEMPAT KOS TERBAIK</h3>
+                        <h3><span class="text-black">TEMPAT</span> KOS TERBAIK</h3>
                       </div>
                         <div class="col-lg-12">
                           <h2>
@@ -48,8 +48,8 @@
       <section id="services" class="services section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Services</h2>
-          <p>Check Our <span class="description-title">Services</span></p>
+          <h2>Rekomendasi</h2>
+          <p>UDA Kost!? <span class="description-title">Rekomendasikan</span></p>
         </div><!-- End Section Title -->
   
         <div class="sc container">
@@ -100,16 +100,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="heading section-title text-center">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.1s">Homes For You</h2>
-                        <div class="text wow fadeInUp" data-wow-delay="0.2s"><p>Based On Your View <span class="description-title">History</span></p></div>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.1s">Kost Untuk Kamu</h2>
+                        <div class="text wow fadeInUp" data-wow-delay="0.2s"><p>Rekomendasi Kost <span class="description-title">Terbaik!</span></p></div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12">
-                    <div class="swiper-container slider-homes justify-content-center">
-                        <div class="swiper-wrapper">
+                    <div class="swiper-container slider-homes">
+                        <div class="flex items-center swiper-wrapper">
                             <!-- Slide 1 -->
                             <div class="swiper-slide">
                                 <div class="box-dream">
@@ -118,11 +118,11 @@
                                     </div>
                                     <div class="content">
                                         <div class="head">
-                                            <div class="title"><a href="{{ url('../fronten/house/index') }}">Archer House</a></div>
-                                            <div class="price">$815,000</div>
+                                          <div class="price">Rp815,000</div>
+                                          <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 1</a></div>
                                         </div>
                                         <div class="location">
-                                            <p><i class="flaticon-location"></i> 148-37 88th Ave, Jamaica, NY 11435</p>
+                                            <p><i class="flaticon-location"></i> Batam, 1234</p>
                                         </div>
                                         <div class="icon-box">
                                             <div class="item"><i class="flaticon-hotel"></i> 4 Beds</div>
@@ -140,11 +140,11 @@
                                     </div>
                                     <div class="content">
                                         <div class="head">
-                                            <div class="title"><a href="#">Villa One Hyde Park</a></div>
-                                            <div class="price">$1,200,000</div>
+                                          <div class="price">Rp1,200,000</div>
+                                          <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 2</a></div>
                                         </div>
                                         <div class="location">
-                                            <p><i class="flaticon-location"></i> 148-37 88th Ave, Jamaica, NY 11435</p>
+                                            <p><i class="flaticon-location"></i> Batam, 1234</p>
                                         </div>
                                         <div class="icon-box">
                                             <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
@@ -162,11 +162,11 @@
                                   </div>
                                   <div class="content">
                                       <div class="head">
-                                          <div class="title"><a href="#">Villa One Hyde Park</a></div>
-                                          <div class="price">$1,200,000</div>
+                                        <div class="price">Rp1,200,000</div>
+                                        <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 3</a></div>
                                       </div>
                                       <div class="location">
-                                          <p><i class="flaticon-location"></i> 148-37 88th Ave, Jamaica, NY 11435</p>
+                                          <p><i class="flaticon-location"></i> Batam, 1234</p>
                                       </div>
                                       <div class="icon-box">
                                           <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
@@ -230,19 +230,19 @@
           <div class="row">
             <div class="col-lg-6">
               <img src="/img/profile/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-                <h2 class="text-dark">Heading</h2>
+                <h2 class="text-dark">Profile 1</h2>
                 <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
                   </div><!--  -->
         
                   <div class="col-lg-6">
                     <img src="/img/profile/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-                    <h2 class="text-dark">Heading</h2>
+                    <h2 class="text-dark">Profile 2</h2>
                     <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
                   </div><!--  -->
         
                   <div class="col-lg-6">
                     <img src="/img/profile/ceo.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-                    <h2 class="text-dark">Heading</h2>
+                    <h2 class="text-dark">Profile 3</h2>
                     <p>And lastly this, the third column of representative placeholder content.</p>
                   </div><!--  -->
                 </div>
@@ -254,43 +254,43 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Frequently Asked Questions</h2>
-    <p><span>Section Title</span> <span class="description-title">Direda Flowed</span></p>
+    <p><span>Pertanyaan</span> <span class="description-title">Seputar UDA Kost!?</span></p>
   </div><!-- End Section Title -->
 
   <div class="accordion accordion-active" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-          Accordion Item #1
+          UDA Kost!? 1
         </button>
       </h2>
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          <strong>This is the first item's.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         </div>
       </div>
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-          Accordion Item #2
+          UDA Kost!? 2
         </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
         <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          <strong>This is the second item's.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         </div>
       </div>
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-          Accordion Item #3
+          UDA Kost!? 3
         </button>
       </h2>
       <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
         <div class="accordion-body">
-          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          <strong>This is the third item's.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
         </div>
       </div>
     </div>
