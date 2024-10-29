@@ -2,25 +2,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* */
 
-/* Smooth scroll */
 :root {
   scroll-behavior: smooth;
 }
-
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 
 .body .main{
   overflow-x: hidden;
-  font-family: "Poppins", sans-serif;
 }
 
-/* Button */
+/* Style */
   .btn-secondary {
       background: #f5efff;
       color: #7839f3;
@@ -339,8 +337,7 @@
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
-}
-/* */
+}/* */
 
 /* explanation */
 .explanation {
@@ -684,7 +681,26 @@ text-decoration: none;
   color: #007bb6;
 }/* end */
 
-/*Footer */
+#scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  z-index: 1000;
+  cursor: pointer;
+}
+#scroll-top.active {
+  display: flex;
+}
+
+/* Footer */
 .site-footer
 {
   background-color: #007bb6;
@@ -711,14 +727,14 @@ text-decoration: none;
   margin-top:5px;
   letter-spacing:2px
 }
-.site-footer a
+.site-footer p, a, .footer-links a, .copyright-text a
 {
   color:#f4f4f4;
+  text-decoration: none !important;
 }
 .site-footer a:hover
 {
   color:#000;
-  text-decoration:none;
 }
 .footer-links
 {
@@ -728,10 +744,6 @@ text-decoration: none;
 .footer-links li
 {
   display:block
-}
-.footer-links a
-{
-  color:#fff;
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
@@ -793,13 +805,12 @@ text-decoration: none;
 {
   margin-right:15px;
   text-transform:uppercase;
-  color:#96a2b2;
+  color:#818a91;
   font-weight:700;
   font-size:13px
 }
 .social-icons a{
-  background-color:#eceeef;
-  color:#818a91;
+  color: #f4f4f4;
   font-size:16px;
   display:inline-block;
   line-height:44px;
@@ -815,7 +826,6 @@ text-decoration: none;
 .social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
   color:#fff;
-  background-color:#29aafe
 }
 .social-icons.size-sm a
 {

@@ -1,10 +1,11 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 
 @push('title')
 
 @push('addon-script-head')
     <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="/css/fronten.css">
     <link rel="stylesheet" href="/css/detailhouse.css">
 
     <!--  -->
@@ -15,17 +16,21 @@
 @endpush
 
 @section('content')
+<header class="header-top">
+    <div class="overlay">
+        <h3 class="property-title">LIST <span class="title">KOST</span></h3>
+        <div class="menu justify-items-center">
+            <ul class="breadcrumbs style-1">
+                <li><a href="/">Home</a></li>
+                <li>/</li>
+                <li>House 1</li>
+            </ul>
+        </div>
+    </div>
+</header>
+
 <main>
     <section id="home" class="list-house">
-        <div class="col-12 mt-3">
-            <div class="flex items-center justify-between gap30 flex-wrap pt-30 pb-30">
-                <ul class="breadcrumbs style-1 justify-start">
-                    <li><a href="/">Home</a></li>
-                    <li>/</li>
-                    <li>House 1</li>
-                </ul>
-            </div>
-        </div>
         <div class="search-bar">
             <input type="text" placeholder="Pencarian...">
             <select>
@@ -36,7 +41,6 @@
         </div>
         
         <div class="property-banner">
-        <h5 class="property-title">Detail <span class="title">Property</span></h5>
         <div class="property-list mt-3">
             <div class="property-card">
                 <img src="/img/house/Gallery house2.jpg" alt="Oakwood Manor Estates">

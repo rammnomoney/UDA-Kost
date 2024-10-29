@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::view('/admins/auth/register', '/admins/auth/register');
 Route::view('/admins/auth/login', '/admins/auth/login');
 
 Route::get('/', function() {

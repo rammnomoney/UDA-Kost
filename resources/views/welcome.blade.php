@@ -9,6 +9,7 @@
 <!-- Link CSS -->
 <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <link rel="stylesheet" href="/css/fronten.css">
 
 <!--  -->
@@ -23,26 +24,24 @@
 @section('content')
       <!-- ISI -->
 
-      <!-- Carosel -->
       <main id="scrollup">
+      <!-- Carosel -->
       <section id="explanation" class="explanation section dark-background">
         <img src="/img/house/Gallery house4.jpg" alt="">
-              <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                    <div class="row justify-content-center">
-                      <div class="container section-title">
-                        <h3><span class="text-black">TEMPAT</span> KOS TERBAIK</h3>
-                      </div>
-                        <div class="col-lg-12">
-                          <h2>
-                            <i>Temukan</i> Pencarian Kos Siap Huni Di Batam<br> 
-                          </h2>
-                          <p>ipsum dolor sit amet consectetur adipisicing elit. Ab vitae perferendis molestiae quis! Repudiandae iure deserunt quibusdam voluptatibus? Autem fuga quaerat illo voluptatum et modi. A.</p>
-                        </div>
-
-                      </div>
-                    </div>
+              <div class="container">
+                <div class="row justify-content-center" aos-init aos-animate data-aos="fade-up" data-aos-delay="100">
+                  <div class="container section-title">
+                    <h3><span class="text-black">TEMPAT</span> KOS TERBAIK</h3>
+                  </div>
+                  <div class="col-lg-12">
+                    <h2>
+                      <i>Temukan</i> Pencarian Kos Siap Huni Di Batam<br> 
+                    </h2>
+                    <p>ipsum dolor sit amet consectetur adipisicing elit. Ab vitae perferendis molestiae quis! Repudiandae iure deserunt quibusdam voluptatibus? Autem fuga quaerat illo voluptatum et modi. A.</p>
+                  </div>
+                </div>
+              </div>
       </section> 
-      
 
       <!-- Fitur -->
       <section id="services" class="services section">
@@ -308,6 +307,7 @@
 <div id="preloader"></div>
 @endsection
 
+
 @push('addon-script-footer')
 <script src="/js/fronten.js"></script>
 
@@ -326,5 +326,5 @@
           clickable: true,
         },
       });
-    </script>
+</script>
 @endpush

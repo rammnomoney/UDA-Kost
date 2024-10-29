@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@stack('title', 'UDA Kost!?')</title>
     <link rel="icon" href="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-    
+
     @stack('addon-script-head')
 </head>
 <body>

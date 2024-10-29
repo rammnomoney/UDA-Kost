@@ -1,14 +1,13 @@
 <header id="header" class="header d-flex align-items-center">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-    <a href="#" class="logo d-flex align-items-center">
+    <a href="" class="logo d-flex align-items-center">
       <h1>UDA Kost</h1><span>!?</span>
     </a>
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#explanation" class="">Home<br></a></li>
+        <li><a href="/" class="">Home<br></a></li>
         <li><a href="#services" class="">Services</a></li>
-        <li><a href="/fronten/house/index" class="">Rumah</a></li>
+        <li><a href="/fronten/house/index" class="">Kost!?</a></li>
         <li><a href="#about" class="">About</a></li>
         <li><a href="#team" class="">Team</a></li>
         {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>

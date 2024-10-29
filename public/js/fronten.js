@@ -72,7 +72,32 @@ if (preloader) {
 /**
  * Scroll top button
  */
-let scrollTop = document.querySelector('.scroll-top');
+// let scrollTop = document.querySelector('#scroll-top');
+
+  // function toggleScrollTop() {
+  //   if (scrollTop) {
+  //     if (window.scrollY > 100) {
+  //       scrollTop.classList.add('active');
+  //     } else {
+  //       scrollTop.classList.remove('active');
+  //     }
+  //   }
+  // }
+
+  // // Smooth scroll to top
+  // scrollTop.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth'
+  //   });
+  // });
+
+  // // Initialize scroll event
+  // window.addEventListener('load', toggleScrollTop);
+  // document.addEventListener('scroll', toggleScrollTop);
+
+let scrollTop = document.querySelector('#scroll-top');
 
 function toggleScrollTop() {
   if (scrollTop) {
