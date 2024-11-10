@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Login</title>
+    <link rel="icon" href="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
 
     {{-- link bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" rel="stylesheet" />
@@ -13,34 +14,8 @@
 </head>
 
 <body>
-    {{-- <div class="container">
-        <h1>Login</h1>
 
-        {{-- error 
-        @if(Session::has('status'))
-        <div class="alert alert-danger mt-3">
-            {{ Session::get('status')}}
-        </div>
-        @endif
-
-        <form action="/login" method="post">
-            @csrf
-            <div>
-                <label for="email">email</label>
-                <input class="form-control" type="text" name="email" />
-            </div>
-            <div>
-                <label for="password">password</label>
-                <input class="form-control" type="password" name="password" />
-            </div>
-            <button class="btn btn-primary mt-3" type="submit">
-                Login
-            </button>
-            <a href="/register">register</a>
-        </form>
-    </div> --}}
-
-<main id="Main" style="min-height:100vh">
+<main id="Login" style="min-height:100vh">
   <section class="section bg-light min-vh-100 pt-36 pb-36 flex items-center" style="padding-top:180px;padding-bottom:180px">
     <div class="container mx-auto px-4">
       <div class="row justify-content-center">
@@ -54,19 +29,26 @@
               
               <p class="text-center text-gray-600 mb-4">
                 Don't have an account? 
-                <a href="#" class="text-muted font-semibold hover:underline">Sign up</a>
+                <a href="/register" class="text-muted font-semibold hover:underline">Sign up</a>
               </p>
               
-              <form action="/login" method="POST">
+              {{-- error --}} 
+              @if(Session::has('status'))
+              <div class="alert alert-danger mt-3">
+                  {{ Session::get('status')}}
+              </div>
+              @endif
+
+              <form action="{{ route('login.process') }}" method="POST">
                 @csrf
+                <label for="email" class="form-label text-gray-700 font-medium">Email</label>
                 <div class="mb-4">
-                  <label for="email" class="form-label text-gray-700 font-medium">Email</label>
-                  <input class="form-control shadow-sm" type="email" name="email" placeholder="Enter your email..." />
+                  <input class="form-control form-control-user shadow-sm" type="email" name="email" placeholder="Enter your email..." />
                 </div>
   
+                <label for="password" class="form-label text-gray-700 font-medium">Password</label>
                 <div class="mb-4 relative">
-                  <label for="password" class="form-label text-gray-700 font-medium">Password</label>
-                  <input class="form-control shadow-sm" type="password" name="password" placeholder="Enter your password..." />
+                  <input class="form-control form-control-user shadow-sm" type="password" name="password" placeholder="Enter your password..." />
                   {{-- <div class="text-right mb-4">
                     <a href="#" class="text-muted text-blue-600 hover:underline">Forgot Password?</a>
                   </div> --}}

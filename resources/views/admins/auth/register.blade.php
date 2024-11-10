@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Register</title>
+    <link rel="icon" href="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
 
     {{-- link bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" rel="stylesheet" />
@@ -13,34 +14,8 @@
 </head>
 
 <body>
-    {{-- <div class="container">
-        <h1>register</h1>
-        <form action="#" method="post">
-            @csrf
-            <div>
-                <label for="nama">nama</label>
-                <input class="form-control" type="text" name="nama" />
-            </div>
-            <div>
-                <label for="email">email</label>
-                <input class="form-control" type="text" name="email" />
-            </div>
-            <div>
-                <label for="alamat">alamat</label>
-                <textarea class="form-control" name="alamat" id="" cols="30" rows="10"></textarea>
-            </div>
-            <div>
-                <label for="password">password</label>
-                <input class="form-control" type="password" name="password" />
-            </div>
-            <button class="btn btn-primary mt-3" type="submit">
-                register
-            </button>
-            <a href="/login">login</a>
-        </form>
-    </div> --}}
 
-    <main id="Main" style="min-height:100vh">
+    <main id="Register" style="min-height:100vh">
         <section class="section bg-light min-vh-100 pt-36 pb-36 flex items-center" style="padding-top:180px;padding-bottom:180px">
           <div class="container mx-auto px-4">
             <div class="row justify-content-center">
@@ -54,24 +29,29 @@
                     
                     <p class="text-center text-gray-600 mb-4">
                         Have an account? 
-                      <a href="#" class="text-muted font-semibold hover:underline">Sign In</a>
+                      <a href="/login" class="text-muted font-semibold hover:underline">Sign In</a>
                     </p>
                     
-                    <form action="/register" method="POST">
+                    <form action="{{ route('register.process') }}" method="POST">
                       @csrf
+                      <label for="nama" class="form-label text-gray-700 font-medium">Nama</label>
                       <div class="mb-4">
-                        <label for="email" class="form-label text-gray-700 font-medium">Email</label>
-                        <input class="form-control shadow-sm" type="email" name="email" placeholder="Enter your email..." />
+                        <input class="form-control form-control-user shadow-sm" type="text" name="nama" placeholder="Your nama..." />
+                      </div>
+
+                      <label for="email" class="form-label text-gray-700 font-medium">Email</label>
+                      <div class="mb-4">
+                        <input class="form-control form-control-user shadow-sm" type="email" name="email" placeholder="Enter your email..." />
                       </div>
         
+                      <label for="alamat" class="form-label text-gray-700 font-medium">Alamat</label>
                       <div class="mb-4 relative">
-                        <label for="alamat" class="form-label text-gray-700 font-medium">Alamat</label>
-                        <textarea class="form-control" name="alamat" cols="30" rows="10" placeholder="Alamat..."></textarea>
+                        <textarea class="form-control form-control-user" name="alamat" cols="30" rows="10" placeholder="Alamat..."></textarea>
                     </div>
 
+                    <label for="password" class="form-label text-gray-700 font-medium">Password</label>
                       <div class="mb-4 relative">
-                        <label for="password" class="form-label text-gray-700 font-medium">Password</label>
-                        <input class="form-control shadow-sm" type="password" name="password" placeholder="Enter your password..." />
+                        <input class="form-control form-control-user shadow-sm" type="password" name="password" placeholder="Enter your password..." />
                         {{-- <div class="text-right mb-4">
                           <a href="#" class="text-muted text-blue-600 hover:underline">Forgot Password?</a>
                         </div> --}}
@@ -97,6 +77,7 @@
           </div>
         </section>
       </main>
+
 </body>
 
 </html>

@@ -906,6 +906,10 @@
   .property-single-wrap .wrap-gallery-image {
     margin-bottom: 60px;
   }
+  .carousel{
+    width: 100%;
+  }
+  
   .property-single-wrap .head-title {
     display: -webkit-box;
     display: -moz-box;

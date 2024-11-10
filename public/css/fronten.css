@@ -12,18 +12,15 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
-
-.body .main{
+section{
   overflow-x: hidden;
 }
 
 /* Style */
-  .btn-secondary {
-      background: #f5efff;
-      color: #7839f3;
-  }
-/* */
+  .btn-primary {
+      color: #f5efff;
+      background: #007bb6;
+  }/* */
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -121,7 +118,6 @@
     color: #f4f4f4;
     padding: 18px 15px;
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -241,7 +237,6 @@
   .navmenu a:focus {
     color: #f4f4f4;
     padding: 10px 20px;
-    font-family: "Poppins", sans-serif;
     font-size: 17px;
     font-weight: 500;
     display: flex;
@@ -547,22 +542,29 @@
 } */
 /* End */
 
-/* Daftar Tempat */
+/* Daftar kost */
 .tf-section {
   justify-content: center;
   background-color: #f8f8f8;
 }
-
-.swiper-container {
+.tf-section .kos-container .swiper-container{
   display: flex;
-  justify-content: center;
-  width: 80%;
+}
+.swiper-wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.swiper-container .swiper-wrapper {
+  display: flex;
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 50px;
+  margin: 0px 50px 0px 50px;
 }
-
 .swiper-slide {
-  background: #fff;
+  background: #ffffff;
+  display: flex;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -575,19 +577,17 @@
   padding: 20px;
 }
 
+.box-dream .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
 .image img{
   position: relative;
   overflow: hidden;
   background-position: center;
   background-size: cover;
 }
-
-.box-dream .image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
 .box-dream .content {
   padding: 15px;
   text-align: center;
@@ -595,13 +595,13 @@
 
 .box-dream .head {
   font-weight: 700;
-  color: #333;
   margin-bottom: 10px;
 }
 
 .box-dream .title a{
+  font-size: 18px;
   color: #007bb6;
-text-decoration: none;
+  text-decoration: none;
 }
 
 .box-dream .price {
@@ -612,7 +612,7 @@ text-decoration: none;
 .box-dream .location p,
 .box-dream .icon-box .item {
   font-size: 0.9rem;
-  color: #666;
+  color: #333;
 }
 
 .icon-box {
@@ -631,7 +631,7 @@ text-decoration: none;
   color: #ff5a60;
   padding: 28px;
   box-shadow: 0px 0 50px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #fff, transparent 80%;
   border-radius: 50%;
 }/* End */
 
@@ -639,14 +639,7 @@ text-decoration: none;
 /* About */
 .about h3{
   color: #000;
-}
-
-/* */
-.team{
-  margin-top: 100px;
-  display: flex;
-}/*  */
-
+}/* */
 
 /* FAQ */
 .accordion{
@@ -681,6 +674,7 @@ text-decoration: none;
   color: #007bb6;
 }/* end */
 
+/* Scroll to top */
 #scroll-top {
   position: fixed;
   bottom: 20px;

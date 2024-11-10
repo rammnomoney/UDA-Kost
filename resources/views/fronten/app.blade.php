@@ -31,7 +31,6 @@
     
     <script src="/js/fronten.js"></script>
     {{-- <script src="/js/house.js"></script> --}}
-@stack('addon-script-head')
 </head>
 
 <body>
@@ -44,6 +43,16 @@
 <!-- Footer -->
 @include('layouts/components/footer')
 
-@stack('addon-script-footer')
+<script>
+    // Kondisi untuk mengganti teks menjadi "BOOKING"
+    const isBooked = true; // Ganti sesuai kondisi Anda
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const rentButton = document.getElementById("rentButton");
+        if (isBooked) {
+            rentButton.textContent = "BOOKING";
+        }
+    });
+</script>
 </body>
 </html>

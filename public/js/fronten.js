@@ -97,7 +97,7 @@ if (preloader) {
   // window.addEventListener('load', toggleScrollTop);
   // document.addEventListener('scroll', toggleScrollTop);
 
-let scrollTop = document.querySelector('#scroll-top');
+let scrollTop = document.querySelector('.scroll-top');
 
 function toggleScrollTop() {
   if (scrollTop) {
