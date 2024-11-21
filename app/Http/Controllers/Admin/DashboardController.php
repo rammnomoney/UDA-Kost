@@ -7,21 +7,42 @@ namespace App\Http\Controllers;
 // use App\Models\Penyewa;
 //use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Redirect;
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Hash;
 // use Illuminate\Support\Facades\Session;
 
 
-class DashboardController extends Controller
-{
+// class DashboardController extends Controller
+// {
 
-    function index()
-    {
+//     /**
+//      * Create a new controller instance.
+//      *
+//      * @return void
+//      */
+//     public function __construct()
+//     {
+//         $this->middleware('auth');
+//     }
 
-        if (Auth::check()) 
-            return Redirect::route('welcome');
+//     /**
+//      * Show the application dashboard.
+//      *
+//      * @return \Illuminate\Contracts\Support\Renderable
+//      */
+//     public function index()
+//     {
+//         return view('admins.dashboard.dashboard', compact('users'));
+//     }
+//     function logout()
+//     {
+//         Auth::logout();
+//         return redirect('/login');
+//     }
+        // if (Auth::check()) 
+        //     return Redirect::route('/');
 
-        return Redirect::route('login');
         // $title = 'halaman dashboard';
         // $belumLunas = DB::table('kontraks')
         //     ->where('status', 'belum lunas')
@@ -37,5 +58,4 @@ class DashboardController extends Controller
         // // $emailPemilik = $req->session()->get('data_user')->email;
         // return view('dashboard/dashboard', compact('kamar', 'penyewa', 'kos', 'belumLunas', 'sudahLunas', 'title', 'pemilik'));
         // return view('dashboard/dashboard', compact('kamar', 'penyewa', 'kos', 'belumLunas', 'sudahLunas', 'title', 'pemilik'));
-    }
-}
+//}

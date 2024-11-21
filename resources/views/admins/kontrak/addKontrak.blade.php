@@ -22,8 +22,7 @@
                     <select
                         name="penyewa_id"
                         id="penyewa_id"
-                        class="form-control @error('penyewa_id') is-invalid @enderror"
-                    >
+                        class="form-control @error('penyewa_id') is-invalid @enderror">
                         @foreach ($penyewa as $p)
                         <option value="{{$p->id}}">{{$p->nama}}</option>
                         @endforeach

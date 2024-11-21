@@ -12,13 +12,15 @@ class KosController extends Controller
 {
     public function index()
     {
-        Session::forget('cariPenyewa'); // hapus sesi side bar aktif
-        $title = 'Halaman List Kos';
-        $pemilik = Session::get('data_user');
-        if ($pemilik) {
-            $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
-            return view('kos/listKos', compact('kos', 'title'));
-        }
+        // Session::forget('cariPenyewa'); // hapus sesi side bar aktif
+        // $title = 'Halaman List Kos';
+        // $pemilik = Session::get('data_user');
+        // if ($pemilik) {
+        //     $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+        //     return view('kos/listKos', compact('kos', 'title'));
+        // }
+        $koss = Kos::all();
+        return view('index', compact('koss'));
     }
 
     public function create()

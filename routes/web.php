@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
-// use App\Http\Controllers\DashboardController;
+//use App\Http\Controllers\AuthController;
+//use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KosController;
+use App\Http\Controllers\HomeController;
 // use App\Http\Controllers\LaporanController;
 // use App\Http\Controllers\PemilikController;
 // use App\Http\Controllers\PenyewaController;
-// use App\Http\Controllers\KosController;
 // use App\Http\Controllers\KamarController;
 // use App\Http\Controllers\KontrakController;
 // use App\Http\Controllers\UploadImageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,14 +23,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function() {
-    return redirect('/login');
-});
 // Route::view('/admins/auth/register', '/admins/auth/register');
 // Route::view('/admins/auth/login', '/admins/auth/login');
 
-// Route::view('index', 'index');
-// Route::view('/fronten/house/show', '/fronten/house/show');
 // form //
 //Route::view('/fronten/form/index', '/fronten/form/index');
 //Route::view('/admins/dashboard/dashboard', '/admins/dashboard/dashboard');
@@ -37,16 +33,21 @@ Route::get('/', function() {
 //Route::get('/house', [HouseController::class, 'index'])
 //   ->name('house')->middleware('auth');
 
-Route::middleware("auth")->group(function() {
-	Route::get('/', [DashboardController::class, 'index']);
-	
-	Route::get('/register', [AuthController::class, 'index'])->name('register');
-	Route::post('/register', [AuthController::class, 'store'])->name('register.process');	
-	Route::get('/login', [AuthController::class, 'login'])->name('login');
-	Route::post('/login', [AuthController::class, 'login_autentik'])->name('login.process');
+Route::view('index', 'index');
+Route::view('/fronten/house/show', 'fronten.house.show');
 
-	Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-});
+	Auth::routes();
+
+	Route::get('/', function () {
+		return view('welcome'); 
+	})->name('welcome');
+
+	Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
+	
+	Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
+		//Route::get('admin', [DashboardController::class, 'index'])->name('admins.dashboard.dashboard');
+	});
+	Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // BAGIAN ADMIN
 // Penyewa
@@ -78,7 +79,7 @@ Route::middleware("auth")->group(function() {
 	
 	// kos
 	
-	// Route::get('/kos', [KosController::class, 'index']);
+	Route::get('/kos', [KosController::class, 'index'])->name('kos.index');
 	// Route::get('/add-kos', [KosController::class, 'create']);
 	// Route::post('/add-kos', [KosController::class, 'store']);
 	// Route::get('/edit-kos/{id}', [KosController::class, 'edit']);
@@ -131,10 +132,9 @@ Route::middleware("auth")->group(function() {
 	// Route::post('/register', [AuthController::class, 'store']);
 	
 	// });
-	
-	Route::middleware("guest")->group(function() {
-		Route::get('/register', [AuthController::class, 'index'])->name('register');
-		Route::post('/register', [AuthController::class, 'store'])->name('register.process');	
-		Route::get('/login', [AuthController::class, 'login'])->name('login');
-		Route::post('/login', [AuthController::class, 'login_autentik'])->name('login.process');
-	});
+	// Route::middleware('guest')->group(function() {
+	// 	Route::get('/register', [AuthController::class, 'index'])->name('register');
+	// 	Route::post('/register', [AuthController::class, 'store'])->name('register.process');	
+	// 	Route::get('/login', [AuthController::class, 'login'])->name('login');
+	// 	Route::post('/login', [AuthController::class, 'login_autentik'])->name('login.process');
+	// });

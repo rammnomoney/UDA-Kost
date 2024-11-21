@@ -44,18 +44,18 @@
             <div class="property-list">
                 <div class="property-card">
                     <div class="image">
-                        <img src="/img/house/Gallery house2.jpg" alt="Oakwood Manor Estates">
+                        <img src="{{ Storage::url($kos->image) }}" alt="Oakwood Manor Estates" />
                     </div>
                     <div class="property-info">
                         <div class="head">
-                            <div class="price">Rp148,000</div>
-                            <a href="{{ url('../fronten/house/show') }}">Oakwood Manor Estates</a>
+                            <div class="price">{{ number_format($kos->price) }}</div>
+                            <a href="{{ url('../fronten/house/show') }}">{{ $kos->name }}</a>
                         </div>
-                        <p>25945 Washington Street, ID 1651612</p>
+                        <p>{{ $kos->alamat }}</p>
                         <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 5 Beds</p>
                     </div>
                 </div>
-                <div class="property-card">
+                {{-- <div class="property-card">
                     <div class="image">
                         <img src="/img/house/Gallery house2.jpg" alt="Willowbrook Grey Estate">
                     </div>
@@ -67,9 +67,9 @@
                         <p>75835 Herta Walks, Indonesia, ID 796326</p>
                         <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 2 Beds</p>
                     </div>
-                </div>
+                </div> --}}
+            
             </div>
-                
         </div>
     </section>
 </main>

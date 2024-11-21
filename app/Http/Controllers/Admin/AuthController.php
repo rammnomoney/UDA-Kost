@@ -6,18 +6,15 @@ use App\Models\Pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+//use Session;
 //use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    // public function __construct()
-    // {
-    //     Auth::shouldUse('pemilik');
-    // }
-
+    
     public function index(){
         $title = 'register';
-        return view('admins/auth/register', compact('title'));
+        return view('admins.auth.register', compact('title'));
     }
 
     public function store(Request $request){
@@ -59,32 +56,26 @@ class AuthController extends Controller
 
 
     public function login(){
-        return view('admins/auth/login');
+        return view('admins.auth.login');
     }
 
     public function login_autentik(Request $request){
-		$validateData = $request->validate([
-            'email' => 'required|exists:pemiliks,email',
-            'password' => 'required',
-        ], [
-            'email.required' => 'Kolom Email tidak boleh kosong !',
-            'email.exists' => 'Email atau Password salah !',
-            'password.required' => 'Kolom password tidak boleh kosong !',
-        ]);
+		$credentials = $request->only('email', 'password');
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+    if (Auth::attempt($credentials)) {
+        // Ambil user yang terautentikasi
+        $user = Auth::user();
 
-            return redirect('welcome')->with([
-                'notifikasi' => 'Login berhasil !',
-                'type' => 'success'
-            ]);
-
+        // Periksa peran user
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
         } else {
-            return redirect()->back()->withErrors([
-                'notifikasi' => 'Login gagal, E-Mail atau Password salah!',
-                'type' => 'error'
-            ])->withInput($request->except('password'));
+            return redirect()->route('/login');
         }
+    } else {
+        return back()->withErrors(['message' => 'Invalid credentials']);
+    }
+
     }
 
     public function logout(){

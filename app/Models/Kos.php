@@ -11,8 +11,10 @@ class Kos extends Model
 
     protected $table = 'koss';
 
-    public function pemilik()
-    {
-        return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');
-    }
+    protected $fillable = ['image', 'price', 'nama', 'alamat'];
+
+    // public function pemilik()
+    // {
+    //     return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');
+    // }
 }

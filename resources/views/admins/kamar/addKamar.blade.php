@@ -16,11 +16,7 @@
     <body>
         <div class="container mt-3">
             <h2>Add Kamar</h2>
-            <form
-                action="/add-kamar/{{ $kos->id }}"
-                method="post"
-                enctype="multipart/form-data"
-            >
+            <form action="/add-kamar/{{ $kos->id }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div>
                     <label for="nama">nama</label>
@@ -82,4 +78,31 @@
             </form>
         </div>
     </body>
+
+    <script>
+        function tambahFasilitas() {
+            // Buat elemen input baru untuk fasilitas
+            const fasilitasContainer = document.getElementById('fasilitas-container');
+            const inputGroup = document.createElement('div');
+            inputGroup.classList.add('input-group', 'mb-2');
+    
+            const inputField = document.createElement('input');
+            inputField.type = 'text';
+            inputField.name = 'fasilitas[]';
+            inputField.placeholder = 'Masukkan fasilitas';
+            inputField.classList.add('form-control');
+    
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.classList.add('btn', 'btn-danger');
+            removeButton.textContent = 'Hapus';
+            removeButton.onclick = function() {
+                fasilitasContainer.removeChild(inputGroup);
+            };
+    
+            inputGroup.appendChild(inputField);
+            inputGroup.appendChild(removeButton);
+            fasilitasContainer.appendChild(inputGroup);
+        }
+    </script>
 </html>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pemilik;
-use App\Models\Penyewa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
