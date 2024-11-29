@@ -11,26 +11,25 @@
         <h3 class="property-title">DETAIL <span class="title">KOST</span></h3>
         <div class="menu justify-items-center">
             <ul class="breadcrumbs style-1">
-                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('welcome') }}">Home</a></li>
                 <li>/</li>
                 <li>House 1</li>
             </ul>
         </div>
     </div>
 </header>
-
+<br>
     <!-- property-single-wrap -->
 <section id="scrollup">
     <div class="property-single-wrap sticky-container" data-sticky-container="">
         <div class="cl-container">
             <div class="row">
-                
                     <!-- Kolom Kiri: Carousel Gambar Utama -->
                     <div class="col-lg-8">
                         <div class="wrap-gallery-image">
                             <!-- Carousel Gambar Utama -->
                             <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" style="border-radius: 20px 0px 0px 20px">
                                     <div class="carousel-item active">
                                         <div class="position-relative">
                                             <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
@@ -42,56 +41,54 @@
                                             <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 2">
                                         </div>
                                     </div>
-                                    <div class="list-tags position-absolute top-0 start-0">
+                                    <div class="list-tags position-absolute g-2 top-0 start-0">
                                         <button id="rentButton" class="btn btn-warning tags-item for-sell">FOR RENT</button>
                                         <button class="btn btn-secondary tags-item featured">FEATURED</button>
                                     </div>
                                 </div>
                 
-                                <!-- Tombol Next dan Previous -->
-                                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                             </div>
                         </div>
                     </div>
                 
-                    <!-- Kolom Kanan: Thumbnail Gallery -->
-                    <div class="col-lg-4">
-                        <div class="row g-2">
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 1">
-                            </div>
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 2">
-                            </div>
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3">
-                            </div>
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 4">
+                <div class="col-lg-4">
+                    <div class="row g-2">
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 1">
                         </div>
-                       
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 1">
-                            </div>
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 2">
-                            </div>
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3">
-                            </div>
-                            <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 4">
-                            </div>
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 2" style="border-radius: 0px 20px 0px 0px">
+                        </div>
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3">
+                        </div>
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 4">
+                        </div>
+                    
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 5">
+                        </div>
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 6">
+                        </div>
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 7">
+                        </div>
+                        <div class="col-6">
+                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 8" style="border-radius: 0px 0px 20px 0px">
+                        </div>
                     </div>
                 </div>
-            </div>    
+            </div>  
 
                 {{-- <div class="col-lg-8">
                     <div class="wrap-gallery-image position-relative mt-1">
@@ -143,21 +140,20 @@
                             </a>
                 </div> --}}
             
-
-                <div class="col-xl-8">
+            <div class="row">
+                <div class="col-xl-10">
                     <div class="content-wrap">
                         <div class="head-title wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                             <div>
                                 <h3>UDA Kost!? 1</h3>
                                 <div class="location">
-                                    <div class="icon">
+                                    {{-- <div class="icon">
                                         <i class="flaticon-location"></i>
-                                    </div>
+                                    </div> --}}
                                     <div class="text-content">148-37 88th Ave, Jamaica, NY 11435</div>
                                 </div>
                             </div>
                             <div>
-                                <div class="square">$ 1,098 /sq ft</div>
                                 <div class="price">$989,000</div>
                             </div>
                         </div>
@@ -470,6 +466,23 @@
                             
                     </div>
                 </div>
+            </div>
+                {{-- <div class="col-lg-4">
+                    <div class="sidebar-right" style="color: cornflowerblue;">
+                        <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                            <div class="price-call-box"> 
+                                <div class="price-box"> 
+                                    <label>Mulai</label> 
+                                    <br>
+                                    <span> <strong>Rp 900.000</strong> / Bulan </span> 
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+            <div class="col-md-4">
+                <button class="btn btn-success" style="position: fixed; bottom: 20px; right: 20px;">WhatsApp</button>
             </div>
         </div>
     </div>

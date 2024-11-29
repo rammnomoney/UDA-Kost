@@ -41,6 +41,7 @@
         </div>
             
         <div class="property-banner">
+            @foreach ($koss as $kos)
             <div class="property-list">
                 <div class="property-card">
                     <div class="image">
@@ -49,7 +50,7 @@
                     <div class="property-info">
                         <div class="head">
                             <div class="price">{{ number_format($kos->price) }}</div>
-                            <a href="{{ url('../fronten/house/show') }}">{{ $kos->name }}</a>
+                            <a href="{{ url('/fronten/house/show') }}">{{ $kos->nama }}</a>
                         </div>
                         <p>{{ $kos->alamat }}</p>
                         <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 5 Beds</p>
@@ -68,8 +69,8 @@
                         <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 2 Beds</p>
                     </div>
                 </div> --}}
-            
             </div>
+            @endforeach
         </div>
     </section>
 </main>
