@@ -15,10 +15,6 @@
 <!--  -->
 <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-
-<!-- Script -->
-<script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-{{-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --}}
 @endpush
 
 @section('content')
@@ -104,102 +100,102 @@
 
           <div class="d-flex justify-content-end">
             <div class="button-group">
-              <button class="btn btn-primary me-md-2" type="button"><a href="{{ url('index') }}">Lihat Semua</a></button>
+              <button class="btn btn-primary me-md-2" type="button"><a href="{{ url('daftar-kos') }}">Lihat Semua</a></button>
             </div>
           </div>
         </div>
 
-        <div class="container-xl-12">
-          <div class="swiper-container slider-homes">
-            <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <div class="box-dream">
-                                <div class="image">
-                                  <img src="/img/house/Gallery house2.jpg" alt="Wallpaper">
-                                </div>
-                                <div class="content">
-                                    <div class="head">
-                                      <div class="price">Rp815,000</div>
-                                      <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 1</a></div>
-                                    </div>
-                                    <div class="location">
-                                        <p><i class="flaticon-location"></i> Batam, 1234</p>
-                                    </div>
-                                    <div class="icon-box">
-                                        <div class="item"><i class="flaticon-hotel"></i> 4 Beds</div>
-                                        <div class="item"><i class="flaticon-bath-tub"></i> 3 Baths</div>
-                                        <div class="item"><i class="flaticon-minus-front"></i> 2660 Sqft</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide">
-                            <div class="box-dream">
-                                <div class="image">
-                                    <img src="/img/house/Gallery house2.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <div class="head">
-                                      <div class="price">Rp1,200,000</div>
-                                      <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 2</a></div>
-                                    </div>
-                                    <div class="location">
-                                        <p><i class="flaticon-location"></i> Batam, 1234</p>
-                                    </div>
-                                    <div class="icon-box">
-                                        <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
-                                        <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
-                                        <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Tambahkan slide lainnya di sini -->
-                        <div class="swiper-slide">
-                          <div class="box-dream">
-                              <div class="image">
-                                  <img src="/img/house/Gallery house2.jpg" alt="">
-                              </div>
-                              <div class="content">
-                                  <div class="head">
-                                    <div class="price">Rp1,200,000</div>
-                                    <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 3</a></div>
-                                  </div>
-                                  <div class="location">
-                                      <p><i class="flaticon-location"></i> Batam, 1234</p>
-                                  </div>
-                                  <div class="icon-box">
-                                      <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
-                                      <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
-                                      <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
-                                  </div>
-                              </div>
+      <div class="container-xl-12">
+        <div class="swiper-container slider-homes">
+          <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                  <div class="box-dream">
+                      <div class="image">
+                        <img src="/img/house/Gallery house2.jpg" alt="Wallpaper">
+                      </div>
+                      <div class="content">
+                          <div class="head">
+                            <div class="price">Rp815,000</div>
+                            <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 1</a></div>
+                          </div>
+                          <div class="location">
+                              <p><i class="flaticon-location"></i> Batam, 1234</p>
+                          </div>
+                          <div class="icon-box">
+                              <div class="item"><i class="flaticon-hotel"></i> 4 Beds</div>
+                              <div class="item"><i class="flaticon-bath-tub"></i> 3 Baths</div>
+                              <div class="item"><i class="flaticon-minus-front"></i> 2660 Sqft</div>
                           </div>
                       </div>
-
-                      <div class="swiper-slide">
-                        <div class="box-dream">
-                            <div class="image">
-                                <img src="/img/house/Gallery house2.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="head">
-                                  <div class="price">Rp1,200,000</div>
-                                  <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 4</a></div>
-                                </div>
-                                <div class="location">
-                                    <p><i class="flaticon-location"></i> Batam, 1234</p>
-                                </div>
-                                <div class="icon-box">
-                                    <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
-                                    <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
-                                    <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
-                                </div>
-                            </div>
+                  </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                  <div class="box-dream">
+                      <div class="image">
+                          <img src="/img/house/Gallery house2.jpg" alt="">
+                      </div>
+                      <div class="content">
+                          <div class="head">
+                            <div class="price">Rp1,200,000</div>
+                            <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 2</a></div>
+                          </div>
+                          <div class="location">
+                              <p><i class="flaticon-location"></i> Batam, 1234</p>
+                          </div>
+                          <div class="icon-box">
+                              <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
+                              <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
+                              <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Tambahkan slide lainnya di sini -->
+              <div class="swiper-slide">
+                <div class="box-dream">
+                    <div class="image">
+                        <img src="/img/house/Gallery house2.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="head">
+                          <div class="price">Rp1,200,000</div>
+                          <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 3</a></div>
+                        </div>
+                        <div class="location">
+                            <p><i class="flaticon-location"></i> Batam, 1234</p>
+                        </div>
+                        <div class="icon-box">
+                            <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
+                            <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
+                            <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="box-dream">
+                  <div class="image">
+                      <img src="/img/house/Gallery house2.jpg" alt="">
+                  </div>
+                  <div class="content">
+                      <div class="head">
+                        <div class="price">Rp1,200,000</div>
+                        <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 4</a></div>
+                      </div>
+                      <div class="location">
+                          <p><i class="flaticon-location"></i> Batam, 1234</p>
+                      </div>
+                      <div class="icon-box">
+                          <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
+                          <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
+                          <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
+                      </div>
+                  </div>
+              </div>
+            </div>
 
                 {{-- <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
@@ -246,67 +242,70 @@
     </div>
   </section>
 
-<br>
-<!-- Faq Section -->
-<section id="faq" class="faq section">
-  <!-- Section Title -->
-  <div class="mb-4 container section-title">
-    <h2>Frequently Asked Questions</h2>
-    <p><span>Seputar</span> <span class="description-title">UDA Kost!?</span></p>
-  </div><!-- End Section Title -->
+  <br>
+  <!-- Faq Section -->
+  <section id="faq" class="faq section">
+    <!-- Section Title -->
+    <div class="mb-4 container section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p><span>Seputar</span> <span class="description-title">UDA Kost!?</span></p>
+    </div><!-- End Section Title -->
 
-  <div class="accordion accordion-active" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-          UDA Kost!? 1
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-        <div class="accordion-body">
-          <strong>This is the first item's.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+    <div class="accordion accordion-active" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            UDA Kost!? 1
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+            <strong>This is the first item's.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            UDA Kost!? 2
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            <strong>This is the second item's.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+            UDA Kost!? 3
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+            <strong>This is the third item's.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
         </div>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-          UDA Kost!? 2
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-        <div class="accordion-body">
-          <strong>This is the second item's.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-          UDA Kost!? 3
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-        <div class="accordion-body">
-          <strong>This is the third item's.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-  </div>
 
-</section><!-- /Faq Section -->
+  </section><!-- /Faq Section -->
 
 </main>
 
-<!-- Scroll Top -->
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Preloader -->
-<div id="preloader"></div>
+  <!-- Preloader -->
+  <div id="preloader"></div>
 @endsection
 
 
 @push('addon-script-footer')
+<!-- Script -->
+<script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+{{-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --}}
 <script src="/js/fronten.js"></script>
 
 <!-- Inisialisasi Swiper -->

@@ -12,10 +12,10 @@
                 <img src="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" alt="Udakost Logo" width="150px" class="w-36">
               </div>
               
-              <p class="text-center text-gray-600 mb-4">
+              {{-- <p class="text-center text-gray-600 mb-4">
                 Don't have an account? 
                 <a href="/register" class="text-muted font-semibold hover:underline">Sign up</a>
-              </p>
+              </p> --}}
 
               <form method="POST" action="{{ route('login') }}">
                 @csrf

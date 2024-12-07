@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('pemiliks', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('name');
+            $table->string('nama');
             $table->string('email')->unique();
             $table->string('alamat');
             $table->string('password');
-            //$table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
     }

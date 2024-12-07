@@ -13,36 +13,14 @@
 <body>
     <div class="container mt-4">
         <h2>Add Kos</h2>
-        <form action="{{ route('add-kos') }}" method="post">
+        <form method="post" action="/add-kos" enctype="multipart/form-data">
             @csrf
             <div>
-                <label for="image">Gambar</label>
-                <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
-                    id="image" value="{{ old('image') }}" />
+                <label for="nama">Nama Kos</label>
+                <input class="form-control @error('nama') is-invalid @enderror" type="text" name="nama"
+                    id="nama" value="{{ old('nama') }}" />
                 <!-- notif error -->
-                @error('image')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
-            <div>
-                <label for="price">Harga</label>
-                <input class="form-control @error('price') is-invalid @enderror" type="text" name="price" id="price"
-                    value="{{ old('price') }}" />
-                <!-- notif error -->
-                @error('alamat')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
-            <div>
-                <label for="name">Nama Kos</label>
-                <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name"
-                value="{{ old('name') }}" />
-                <!-- notif error -->
-                @error('name')
+                @error('nama')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
@@ -51,7 +29,7 @@
             <div>
                 <label for="alamat">Alamat</label>
                 <input class="form-control @error('alamat') is-invalid @enderror" type="text" name="alamat" id="alamat"
-                    value="{{ old('alamat') }}" />
+                value="{{ old('alamat') }}" />
                 <!-- notif error -->
                 @error('alamat')
                 <div class="invalid-feedback">
@@ -59,19 +37,20 @@
                 </div>
                 @enderror
             </div>
-            {{-- <div>
-                <label for="type">Jenis Kost</label>
-                <input class="form-control @error('type') is-invalid @enderror" type="text" name="type"
-                    id="type" value="{{ old('type') }}" />
+            <div>
+                <label for="price">Harga</label>
+                <input class="form-control @error('price') is-invalid @enderror" type="number" name="price" id="price"
+                value="{{ old('price') }}" />
                 <!-- notif error -->
-                @error('no_telp')
+                @error('price')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
-            </div> --}}
-            <div hidden="yes">
-                <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik->id }}" />
+            </div>
+            <div>
+                <label for="image">Gambar</label>
+                <input class="form-control" type="file" name="gambar" />
             </div>
             <button class="btn btn-primary btn-lg mt-3">save</button>
         </form>

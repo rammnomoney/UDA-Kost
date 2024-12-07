@@ -1,4 +1,4 @@
-@extends('layout.main') @section('container')
+@extends('admins.layout.main') @section('container')
 <div class="container-fluid">
     <div class="row">
         <div class="mt-4 p-0">
@@ -83,24 +83,20 @@
                         <!-- <a href="#" class="btn btn-warning">Detail</a> -->
                         <a
                             href="/edit-kamar/{{ $k->id }}"
-                            class="btn btn-success"
-                        >
-                            <i class="bi bi-pencil-fill"></i
-                        ></a>
+                            class="btn btn-success">
+                            <i class="bi bi-pencil-fill"></i></a>
                         <a
                             href="/delete-kamar/{{ $k->id }}"
                             onclick="return confirm('Hapus data {{ $k->nama }} ?')"
-                            class="btn btn-danger"
-                        >
-                            <i class="bi bi-trash-fill"></i
-                        ></a>
+                            class="btn btn-danger">
+                            <i class="bi bi-trash-fill"></i></a>
                     </td>
                 </tr>
             </tbody>
             @endforeach
         </table>
         <div>
-            {{ $kamar->links() }}
+            {{-- {{ $kamar->links() }} --}}
         </div>
     </div>
 </div>

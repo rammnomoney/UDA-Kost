@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Kamar;
 use App\Models\Kos;
 use Illuminate\Http\Request;
@@ -14,22 +15,21 @@ class KamarController extends Controller
     {
         $title = 'Halaman List Kamar';
         $kos = Kos::findOrFail($id);
-        $kamar = Kamar::with('kos')
-            ->where('kos_id', $id)->paginate(6);
+        $kamar = Kamar::with('kos');
+            // ->where('kos_id', $id)->paginate(5);
 
         if (!$kamar) {
             Session::flash('search', 'gagal');
             Session::flash('pesan', 'Data tidak ditemukan');
         }
 
-        return view('kamar/listKamar', compact('kamar', 'kos', 'title'))
-            ->with('id', $id);
+        return view('admins.kamar.listKamar', compact('kamar', 'kos', 'title'))->with('id', $id);
     }
 
     public function create($id)
     {
         $kos = Kos::select('id', 'nama')->where('id', $id)->first();
-        return view('kamar/addKamar', ['kos' => $kos], ['id' => $id]);
+        return view('admins.kamar.addKamar', ['kos' => $kos], ['id' => $id]);
     }
     public function store(Request $request, $id)
     {
@@ -79,7 +79,7 @@ class KamarController extends Controller
     {
         $kamar = Kamar::with('kos')->findOrFail($id);
         $kos = Kos::paginate(6);
-        return view('kamar/editKamar', ['kamar' => $kamar], ['kos' => $kos]);
+        return view('admins.kamar.editKamar', ['kamar' => $kamar], ['kos' => $kos]);
     }
 
     public function update(Request $request, $id)
@@ -148,6 +148,6 @@ class KamarController extends Controller
             return $this->index($kos->id);
         }
 
-        return view('kamar/listKamar', compact('kamar', 'kos', 'cariKamar', 'title'))->with('pesan', 'Data tidak ditemukan');
+        return view('admins.kamar.listKamar', compact('kamar', 'kos', 'cariKamar', 'title'))->with('pesan', 'Data tidak ditemukan');
     }
 }

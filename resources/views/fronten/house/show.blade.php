@@ -24,72 +24,86 @@
     <div class="property-single-wrap sticky-container" data-sticky-container="">
         <div class="cl-container">
             <div class="row">
-                    <!-- Kolom Kiri: Carousel Gambar Utama -->
-                    <div class="col-lg-8">
-                        <div class="wrap-gallery-image">
-                            <!-- Carousel Gambar Utama -->
-                            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner" style="border-radius: 20px 0px 0px 20px">
-                                    <div class="carousel-item active">
-                                        <div class="position-relative">
-                                            <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
-                                        </div>
-                                    </div>
-                                    <!-- Slide 2 -->
-                                    <div class="carousel-item">
-                                        <div class="position-relative">
-                                            <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 2">
-                                        </div>
-                                    </div>
-                                    <div class="list-tags position-absolute g-2 top-0 start-0">
-                                        <button id="rentButton" class="btn btn-warning tags-item for-sell">FOR RENT</button>
-                                        <button class="btn btn-secondary tags-item featured">FEATURED</button>
+                <!-- Kolom Kiri: Carousel Gambar Utama -->
+                <div class="col-lg-8">
+                    <div class="wrap-gallery-image">
+                        <!-- Carousel Gambar Utama -->
+                        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" style="border-radius: 20px 0px 0px 20px">
+                                <div class="carousel-item active">
+                                    <div class="position-relative">
+                                        <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
                                     </div>
                                 </div>
-                
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
+                                <!-- Slide 2 -->
+                                <div class="carousel-item">
+                                    <div class="position-relative">
+                                        <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 2">
+                                    </div>
+                                </div>
+                                <div class="list-tags position-absolute g-2 top-0 start-0">
+                                    <button id="rentButton" class="btn btn-warning tags-item for-sell">FOR RENT</button>
+                                    <button class="btn btn-secondary tags-item featured">FEATURED</button>
+                                </div>
                             </div>
+            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                     </div>
-                
+                </div>
+            
                 <div class="col-lg-4">
                     <div class="row g-2">
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 1">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 2" style="border-radius: 0px 20px 0px 0px">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 2" style="border-radius: 0px 20px 0px 0px" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 4">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                     
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 5">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 6">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 7">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                         <div class="col-6">
-                        <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 8" style="border-radius: 0px 0px 20px 0px">
+                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 8" style="border-radius: 0px 0px 20px 0px" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
                         </div>
                     </div>
                 </div>
             </div>  
 
+                <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="/img/house/Gallery house2.jpg" id="modalImage" class="img-fluid" alt="Full Image">
+                            </div>
+                            <div class="modal-footer mx-2">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {{-- <div class="col-lg-8">
                     <div class="wrap-gallery-image position-relative mt-1">
                         <!-- Label -->
@@ -145,16 +159,16 @@
                     <div class="content-wrap">
                         <div class="head-title wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                             <div>
-                                <h3>UDA Kost!? 1</h3>
+                                <div class="title"><h3>UDA Kost!? 1</h3></div>
                                 <div class="location">
-                                    {{-- <div class="icon">
-                                        <i class="flaticon-location"></i>
-                                    </div> --}}
                                     <div class="text-content">148-37 88th Ave, Jamaica, NY 11435</div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="price">$989,000</div>
+                            <div class="price-box">
+                                <div>
+                                    <div class="price">Rp 1,500,000</div>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalSimpan"> Kosong</button>
+                                </div>
                             </div>
                         </div>
                         <div class="box-items">
@@ -195,7 +209,7 @@
                                 <div class="text-content">1 Garage</div>
                             </div>
                         </div>
-                        <div class="desc">
+                        <div class="desc container shadow-sm">
                             <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Description</h4>
                             <p class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                                 Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters. Charming living area features fireplace and fabulous art deco details. Formal dining room.
@@ -204,10 +218,10 @@
                                 Remodeled kitchen with granite countertops, white cabinetry and stainless appliances. Lovely master bedroom has updated bath, beautiful view of the pool. Guest bedrooms have walk-in, cedar closets. Delightful backyard; majestic oaks surround the free form pool and expansive patio, wet bar and grill.
                             </p>
                         </div>
-                        <div class="address">
+                        <div class="address container shadow-sm">
                             <div class="flex items-center justify-between gap30 flex-wrap wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                                 <h4 class="mb-0">Address</h4>
-                                <a href="#" class="tf-button-green"><i class="flaticon-location"></i>Open On Google Maps</a>
+                                {{-- <a href="#" class="tf-button-green"><i class="flaticon-location"></i>Open On Google Maps</a> --}}
                             </div>
                             <div class="list-item">
                                 <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
@@ -236,16 +250,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="attachments">
+                        <div class="attachments container shadow-sm">
                             <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Property Attachments</h4>
-                            <div class="wrap-file-item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                            <div>
                                 <a href="#" class="file-item">
                                     <div class="icon">
                                         <img src="images/image-box/file-pdf.svg" alt="">
                                     </div>
                                     <div>
-                                        <div class="name">Ultra-Demo-PDF File</div>
-                                        <div class="size">140.56 kb</div>
+                                        <div class="name">PDF File 1</div>
                                     </div>
                                 </a>
                                 <a href="#" class="file-item">
@@ -253,13 +266,12 @@
                                         <img src="images/image-box/file-pdf.svg" alt="">
                                     </div>
                                     <div>
-                                        <div class="name">Ultra-Demo-PDF File</div>
-                                        <div class="size">140.56 kb</div>
+                                        <div class="name">PDF File 2</div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="details">
+                        <div class="details container shadow-sm">
                             <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Details</h4>
                             <div class="list-item">
                                 <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
@@ -305,7 +317,7 @@
                             </div>
                         </div>
                         
-                        <div class="features">
+                        <div class="features container shadow-sm">
                             <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Facts &amp; Features</h4>
                             <p class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Lorem ipsum dolor sit amet, homero debitis temporibus in mei, at sit voluptua antiopam hendrerit. Lorem epicuri eu per. Mediocrem torquatos deseruisse te eum commodo.</p>
                             <ul>
@@ -482,7 +494,7 @@
                 </div> --}}
 
             <div class="col-md-4">
-                <button class="btn btn-success" style="position: fixed; bottom: 20px; right: 20px;">WhatsApp</button>
+                <a href="https://wa.me/" target="_blank"><button class="btn btn-success" style="border-radius:50%; position: fixed; height: 80px; bottom: 20px; right: 20px;"><i class="bi bi-whatsapp"></i> Pesan</button></a>
             </div>
         </div>
     </div>

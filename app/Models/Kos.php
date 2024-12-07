@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Kos extends Model
 {
     use HasFactory;
-
+    
     protected $table = 'koss';
-
-    protected $fillable = ['image', 'price', 'nama', 'alamat'];
+    //protected $fillable = ['nama', 'alamat', 'price', 'image'];
+    //protected $guarded = ['id'];
 
     // public function pemilik()
     // {

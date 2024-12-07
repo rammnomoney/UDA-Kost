@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Kamar;
 use App\Models\Kontrak;
 use App\Models\Kos;
@@ -18,9 +19,15 @@ class KontrakController extends Controller
     {
         $title = 'Halaman Kontrak';
         $pemilik = Session::get('data_user'); // sesion user login
-        $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+
+        // if ($pemilik) {
+        // $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+        // } else {
+        //     return redirect()->back()->with('error', 'Data pemilik tidak ditemukan.');
+        // }
+        $kos = Kos::paginate(5);
         $kontrak = Kontrak::with('penyewa', 'kamar')->get();
-        return view(view: 'kontrak/pilihKos', data: compact('kontrak', 'kos', 'title'));
+        return view(view: 'admins.kontrak.pilihKos', data: compact('kontrak', 'kos', 'title'));
     }
     public function index($id)
     {
@@ -28,9 +35,8 @@ class KontrakController extends Controller
         $kontrak = Kontrak::with('penyewa', 'kamar')
             ->whereHas('kamar', function ($query) use ($id) {
                 $query->where('kos_id', $id);
-            })
-            ->paginate(6);
-        return view('kontrak/listKontrak', compact('kontrak', 'id', 'title'));
+            })->paginate(5);
+        return view('admins.kontrak.listKontrak', compact('kontrak', 'id', 'title'));
     }
 
     public function create($id)
@@ -46,7 +52,7 @@ class KontrakController extends Controller
                 $query->select('kamar_id')->from('kontraks');
             })
             ->get();
-        return view('kontrak/addKontrak', compact('penyewa', 'kamar', 'kos'));
+        return view('admins.kontrak.addKontrak', compact('penyewa', 'kamar', 'kos'));
     }
     public function store(Request $request, $id)
     {
@@ -98,7 +104,7 @@ class KontrakController extends Controller
         $kamar = Kamar::all()
             ->where('kos_id', $kontrak->kamar->kos_id)
             ->where('status', 'belum disewa');
-        return view('kontrak/editKontrak', compact('kontrak', 'penyewa', 'kamar'));
+        return view('admins.kontrak.editKontrak', compact('kontrak', 'penyewa', 'kamar'));
     }
 
     public function update(Request $request, $id)
@@ -138,7 +144,7 @@ class KontrakController extends Controller
 
         $tanggal = date('Y-m-d');
 
-        return view('kontrak/statusKontrak', compact('kontrak', 'kode', 'tanggal'));
+        return view('admins.kontrak.statusKontrak', compact('kontrak', 'kode', 'tanggal'));
     }
 
     public function konfirmasi(Request $request, $id)
@@ -162,13 +168,13 @@ class KontrakController extends Controller
     public function print($id)
     {
         $kontrak = Kontrak::findOrFail($id);
-        return view('kontrak/print', compact('kontrak'));
+        return view('admins.kontrak.print', compact('kontrak'));
     }
 
     public function tagih($id)
     {
         $kontrak = Kontrak::findOrFail($id);
-        return view('kontrak/tagih', compact('kontrak'));
+        return view('admins.kontrak.tagih', compact('kontrak'));
     }
     public function wa(Request $request, $id)
     {
@@ -234,6 +240,6 @@ class KontrakController extends Controller
         } else {
             return $this->index($id);
         }
-        return view('kontrak/listKontrak', compact('kontrak', 'id', 'title'));
+        return view('admins.kontrak.listKontrak', compact('kontrak', 'id', 'title'));
     }
 }

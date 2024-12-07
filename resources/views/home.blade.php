@@ -40,7 +40,7 @@
                 </div>
                 <div class="m-auto">
                     <p class="p-text fw-bold"></p>
-                    {{-- <p class="p-text fw-bold">{{ $penyewa }}</p> --}}
+                    <p class="p-text fw-bold">{{ $penyewa }}</p>
                     <p class="fw-semi">PENYEWA</p>
                 </div>
             </a>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="m-auto">
                     <p class="p-text fw-bold"></p>
-                    {{-- <p class="p-text fw-bold">{{ $sudahLunas }}</p> --}}
+                    <p class="p-text fw-bold">{{ $sudahLunas }}</p>
                     <p class="fw-semi">SUDAH LUNAS</p>
                 </div>
             </a>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="m-auto">
                     <p class="p-text fw-bold"></p>
-                    {{-- <p class="p-text fw-bold">{{ $belumLunas }}</p> --}}
+                    <p class="p-text fw-bold">{{ $belumLunas }}</p>
                     <p class="fw-semi">BELUM LUNAS</p>
                 </div>
             </a>
@@ -69,20 +69,20 @@
             <h3 class="mt-4 fw-bold">Info Pemilik</h3>
             <table class="table">
                 <tbody>
-                    {{-- @if(isset($pemilik)) --}}
+                    @if(isset($pemilik))
                     <tr>
                         <td>Nama Kos</td>
-                        {{-- <td>{{ $pemilik->nama }}</td> --}}
+                        <td>{{ $pemilik->nama }}</td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        {{-- <td>{{ $pemilik->email }}</td> --}}
+                        <td>{{ $pemilik->email }}</td>
                     </tr>
                     <tr>
                         <td>Alamat</td>
-                        {{-- <td>{{ $pemilik->alamat }}</td> --}}
+                        <td>{{ $pemilik->alamat }}</td>
                     </tr>
-                    {{-- @endif --}}
+                    @endif
                 </tbody>
             </table>
         </div>

@@ -32,44 +32,72 @@
 <main>
     <section id="home" class="list-house">
         <div class="search-bar">
-            <input type="text" placeholder="Pencarian...">
             <select>
-                <option>UDA Kost!? Tipe</option>
+                <option selected disabled>UDA Kost!? Tipe</option>
             </select>
-            <input type="text" placeholder="Location">
+            <input type="text" placeholder="Pencarian...">
             <button class="search-button btn btn-danger">Search Property</button>
         </div>
             
         <div class="property-banner">
             @foreach ($koss as $kos)
-            <div class="property-list">
-                <div class="property-card">
-                    <div class="image">
-                        <img src="{{ Storage::url($kos->image) }}" alt="Oakwood Manor Estates" />
-                    </div>
-                    <div class="property-info">
-                        <div class="head">
-                            <div class="price">{{ number_format($kos->price) }}</div>
-                            <a href="{{ url('/fronten/house/show') }}">{{ $kos->nama }}</a>
+                <div class="property-list">
+                    <div class="property-card">
+                        <div class="image">
+                            <img src="{{ $kos->gambar ? Storage::url($kos->gambar) : asset('images/') }}" />
                         </div>
-                        <p>{{ $kos->alamat }}</p>
-                        <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 5 Beds</p>
+                        <div class="property-info">
+                            <div class="head">
+                                <div class="price">Rp {{ number_format($kos->price) }}</div>
+                                <a href="{{ url('kamar') }}">{{ $kos->nama }}</a>
+                            </div>
+                            <div class="location">
+                                <p>{{ $kos->alamat }}</p>
+                            </div>
+                            <div class="icon-box">
+                                <div class="item"><i class="flaticon-location"></i> Appartment</div> 
+                                <div class="item"><i class="flaticon-square"></i> 2468 Sq</div> 
+                                <div class="item"><i class="flaticon-bed"></i> 2 Beds</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                {{-- <div class="property-card">
+                {{--<div class="property-card">
                     <div class="image">
-                        <img src="/img/house/Gallery house2.jpg" alt="Willowbrook Grey Estate">
+                        <img src="/img/house/Gallery house2.jpg" alt="House">
+                        <div class="container"> 
+                            <div class="row info-kos"> 
+                                <p><span class="bg-info"> Ada Kosong </span></p> 
+                            </div> 
+                        </div> 
                     </div>
+
+                         <div class="on-img-content col-md-12"> 
+                                <div class="col-xs-6 col-md-6 left-content"> 
+                                    <div class="price-box"> 
+                                        <label>Mulai</label> 
+                                        <span> 
+                                            <strong> Rp 1.500.000 </strong> / Bulan </span> 
+                                    </div> 
+                                </div>
+                            </div> 
+                        </div>
                     <div class="property-info">
                         <div class="head">
                             <div class="price">Rp148,000</div>
-                            <a href="{{ url('../fronten/house/show') }}">Willowbrook Grey Estate</a>
+                            <a href="{{ url('/kamar') }}">UDA Kost!? 1</a>
                         </div>
-                        <p>75835 Herta Walks, Indonesia, ID 796326</p>
-                        <p><i class="flaticon-location"></i> Appartment &nbsp; <i class="flaticon-square"></i> 2468 Sq &nbsp; <i class="flaticon-bed"></i> 2 Beds</p>
+                        <div class="location">
+                            <p>Batam, 1234</p>
+                        </div>
+                        <div class="icon-box">
+                            <div class="item"><i class="flaticon-location"></i> Appartment</div> 
+                            <div class="item"><i class="flaticon-square"></i> 2468 Sq</div> 
+                            <div class="item"><i class="flaticon-bed"></i> 2 Beds</div>
+                        </div>
                     </div>
-                </div> --}}
-            </div>
+                </div>--}}
+                
+                </div>
             @endforeach
         </div>
     </section>

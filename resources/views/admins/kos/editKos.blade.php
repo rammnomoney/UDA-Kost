@@ -13,22 +13,24 @@
 <body>
     <div class="container mt-4">
         <h2>Edit Kos</h2>
-        <form action="/update-kos/{{ $kos->id }}" method="post">
+        <form method="post" action="/update-kos/{{ $kos->id }}" enctype="multipart/form-data">
             @csrf
+            {{-- @method('PUT') --}}
             <div>
-                <label for="nama">nama</label>
+                <label for="name">Nama Kos</label>
                 <input class="form-control" type="text" name="nama" id="nama" value="{{ $kos->nama }}" />
             </div>
             <div>
-                <label for="alamat">alamat</label>
+                <label for="alamat">Alamat</label>
                 <input class="form-control" type="text" name="alamat" id="alamat" value="{{ $kos->alamat }}" />
             </div>
             <div>
-                <label for="no_telp">nomor HP </label>
-                <input class="form-control" type="text" name="no_telp" id="no_telp" value="{{ $kos->no_telp  }}" />
+                <label for="price">Harga</label>
+                <input class="form-control" type="number" name="price" id="price" value="{{ $kos->price }}" />
             </div>
-            <div hidden="yes">
-                <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik->id }}" />
+            <div>
+                <label for="image">Gambar</label>
+                <input class="form-control" type="file" name="image" id="image" />
             </div>
             <button class="btn btn-primary btn-lg mt-3">save</button>
         </form>

@@ -1,4 +1,4 @@
-@extends('layout.main') @section('container')
+@extends('admins.layout.main') @section('container')
 <div class="container-fluid">
     <div class="mt-2">
         <h2>Laporan</h2>

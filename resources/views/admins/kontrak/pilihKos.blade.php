@@ -1,4 +1,4 @@
-@extends('layout.main') @section('container')
+@extends('admins.layout.main') @section('container')
 <div class="container-fluid mt-4 p-0">
     <div class="">
         <h2>Daftar Kos</h2>

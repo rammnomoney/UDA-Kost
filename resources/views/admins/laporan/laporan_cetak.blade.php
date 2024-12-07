@@ -48,8 +48,7 @@
                     <td>{{ $k->tgl_bayar }}</td>
                     <td>Rp {{ $k->kamar->harga }}</td>
                     <td
-                        style="{{ $k->status === 'sudah lunas' ? 'color:green' : 'color:red'}}"
-                    >
+                        style="{{ $k->status === 'sudah lunas' ? 'color:green' : 'color:red'}}">
                         {{ $k->status }}
                     </td>
                 </tr>

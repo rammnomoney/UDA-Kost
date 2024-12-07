@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('kamars', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('nama');
-            $table->text('fasilitas');
+            $table->string('alamat');
             $table->string('harga');
+            $table->text('deskripsi');
+            //$table->text('fasilitas');
             $table->string('status');
             $table->string('gambar');
             $table->timestamps();

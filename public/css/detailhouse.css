@@ -79,9 +79,9 @@ ul.breadcrumbs .style-1 li {
 padding: 20px;
 }
 
+/*  */
 .search-bar {
   display: flex;
-  justify-content: space-between;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -113,44 +113,62 @@ padding: 20px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   overflow: hidden;
   gap: 20px;
-  padding: 25px;
+  padding: 24px;
 }
 
 .property-card {
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .property-card .image img {
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  height: auto;
+  padding: 20px;
+  border-radius: 25px;
 }
-  .property-info {
-    text-align: center;
-    font-size: 18px;
-    padding: 15px;
-  }
-.property-info .head{
+.info-kos{
+margin: 0px 0px 15px 160px;  
+}
+.property-info {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.head{
   font-weight: 700;
 }
-.property-info, .head a{
+.head a{
   text-align: center;
-  padding: 15px; color: #007bb6;
+  color: #007bb6;
 }
 .property-info .price {
   text-align: center;
   font-size: 1.5rem;
   color: #ff5a60;
-  margin-bottom: 2px;
 }
-.property-info p {
+.property-info .location, 
+.icon-box .item{
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+.location{
+  margin-top: 10px;
+}
+.icon-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+/* .property-info p {
   display: flex;
   justify-content: space-around;
   font-size: 14px;
   color: #333;
   margin: 15px 0px 20px 0;
-}
+} */
 /* */

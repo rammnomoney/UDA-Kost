@@ -1,4 +1,4 @@
-@extends('layout.main') @section('container')
+@extends('admins.layout.main') @section('container')
 <div class="container-fluid">
     <div class="row">
         <div class="mt-4 p-0">
@@ -39,13 +39,15 @@
             </div>
             @endif
         </div>
+        
         <table id="myTable" class="table mt-1 table-bordered">
             <thead class="table-primary">
                 <tr class="">
-                    <td class="table-nomor">no.</td>
-                    <td>Nama</td>
+                    <td class="table-nomor">No.</td>
+                    <td>Nama Kos</td>
                     <td>Alamat</td>
-                    <td>Nomor HP</td>
+                    <td>Harga</td>
+                    <td>Gambar</td>
                     <td>Kamar / Action</td>
                 </tr>
             </thead>
@@ -55,7 +57,14 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $k->nama }}</td>
                     <td>{{ $k->alamat }}</td>
-                    <td>{{ $k->no_telp }}</td>
+                    <td>{{ $k->price }}</td>
+                    <td>
+                        @if ($k->gambar == null)
+                        <p>-</p>
+                        @else
+                        <img src="{{ url('img/' . $k->gambar) }}" width="150px" />
+                        @endif
+                    </td>
                     <td style="width: 100px; white-space: nowrap">
                         <a href="/kamar/{{ $k->id }}" class="btn btn-warning">
                             <i class="bi bi-info-circle-fill"></i></a>

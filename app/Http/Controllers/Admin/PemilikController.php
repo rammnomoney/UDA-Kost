@@ -1,26 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\View;
-
 
 class PemilikController extends Controller
 {
     public function index()
     {
         $pemilik = Pemilik::all();
-        return view('pemilik/listPemilik', compact('pemilik'));
+        return view('admins.pemilik.listPemilik', compact('pemilik'));
     }
 
     public function create()
     {
-        return view('pemilik/addPemilik');
+        return view('admins.pemilik.addPemilik');
     }
     public function store(Request $request)
     {
@@ -62,7 +60,7 @@ class PemilikController extends Controller
     public function edit($id)
     {
         $pemilik = Pemilik::findOrFail($id);
-        return view('pemilik/editPemilik', ['pemilik' => $pemilik]);
+        return view('admins.pemilik.editPemilik', ['pemilik' => $pemilik]);
     }
 
     public function update(Request $request, $id)
@@ -112,6 +110,6 @@ class PemilikController extends Controller
             ->paginate(5);
 
 
-        return view('pemilik/listpemilik', compact('pemilik', 'cari'));
+        return view('admins.pemilik.listpemilik', compact('pemilik', 'cari'));
     }
 }

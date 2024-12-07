@@ -181,6 +181,10 @@
   
   /* General
   -------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
   body,
   button,
   input,
@@ -413,7 +417,7 @@
   h5, .h5,
   h6, .h6 {
     font-family: "Poppins", sans-serif;
-    color: var(--Secondary);
+    /* color: var(--Secondary); */
     margin: 0;
     font-weight: 600;
     text-rendering: optimizeLegibility;
@@ -814,9 +818,14 @@
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   } */
-
+.title{
+  color: #007bb6;
+}
+.price{
+  color: #ff5a60;
+}
   /* Header
-  -------------------------------------------------------------- 
+  -------------------------------------------------------------- */ 
   .header-top {
     background-color: rgba(0, 0, 0, 0.5);
     background-image: url('/img/house/Gallery house1.jpg');
@@ -828,9 +837,7 @@
     align-items: center;
     justify-content: center;
   }
-  .header-top .title{
-    color: #007bb6;
-  }
+  
   .overlay{
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -847,28 +854,37 @@
     display: flex;
     justify-content: center;
   }
+  
   ul.breadcrumbs {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 5px;
   }
-  ul.breadcrumbs li{
+  .breadcrumbs a {
+    color: #ffffff;
+  }
+  .breadcrumbs a:hover {
+    color: #007bb6;
+  }
+  
+  ul.breadcrumbs li {
+    text-decoration: none !important;
+    list-style-type: none !important;
+    text-align: center;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: var(--White)!important;
+    color: #ffffff;
   }
-  ul.breadcrumbs.style-1 li {
+  ul.breadcrumbs .style-1 li {
     font-weight: 400;
     font-size: 15px;
+    align-items: center;
     line-height: 28px;
-  }*/
+    list-style-type: none !important;
+  }
+  .list-house{
+  padding: 20px;
+  }
   
   /* cl-container
   -------------------------------------------------------------- */
@@ -895,7 +911,25 @@
   .content-wrap.w1800 {
     width: 1828px;
   }
-  
+  .content-wrap .head-title .title{
+    color: #007bb6;
+  }
+  .price-box{
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px; /* Membuat sudut rounded */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow lembut */
+  }
+  .content-wrap .head-title .price{
+    margin: 0px 80px 0px 0px;
+    padding: 25px 0px;
+    color: #ff5a60 !important; 
+  }
+  .price-box button {
+    text-align: center;
+    width: 35vh;
+    padding: 10px 0px; /* Tambahkan padding pada tombol */
+}
   .text-content {
     font-weight: 400;
     font-size: 16px;
