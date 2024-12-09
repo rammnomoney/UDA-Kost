@@ -21,14 +21,24 @@
             <li><a href="#services">Services</a></li>
           </ul>
         </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Hubungi Kami</h6>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/">WhatsApp</a></li>
+            <li><a href="#">#</a></li>
+            <li><a href="#">#</a></li>
+          </ul>
+        </div>
+
       </div>
+      <br>
       <hr>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2025 All Rights Reserved by 
-       <a href="#">Ramm</a>.
+          <p class="copyright-text">Copyright &copy; 2025 All Rights Reserved by <a href="#">Ramm</a>.
           </p>
         </div>
 

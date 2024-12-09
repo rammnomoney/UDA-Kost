@@ -37,8 +37,8 @@ class HomeController extends Controller
             ->where('status', 'sudah lunas')
             ->count();
         $kos = Kos::all()->count();
-        //$kos = Kos::with('pemilik')->first();
-        //$kamar = Kamar::with('kos')->count();
+        //$kos = Kos::with('kamar')->first();
+        $kamar = Kamar::all()->count();
         $penyewa = Penyewa::all()->count();
         $pemilik = Session::get('data_user');
         // $emailPemilik = $req->session()->get('data_user')->email;

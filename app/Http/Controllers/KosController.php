@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kos;
-//use App\Models\Penyewa;
+use App\Models\kamar;
 use Illuminate\Http\Request;
 
 class KosController extends Controller
 {
     //
-    public function index(Request $request)
+    public function index()
     {
         $koss = Kos::all();
         return view('index', compact('koss'));
@@ -17,7 +17,7 @@ class KosController extends Controller
 
     public function show()
     {
-        return view('fronten.house.show');
+        //return view('fronten/house/show');
     }
 
     // public function store(BookingRequest $request)

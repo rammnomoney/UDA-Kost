@@ -2,17 +2,16 @@
 <div class="container-fluid">
     <div class="row">
         <div class="mt-4 p-0">
-            <h2>Data Kamar {{ $kos->nama }}</h2>
+            <h2>Data Kamar</h2>
             <!-- menu atas  -->
             <div class="d-flex justify-content-between">
                 <div class="">
-                    <a href="/add-kamar/{{ $kos->id }}" class="btn btn-primary"
-                        >Tambah</a
-                    >
+                    <a href="/add-kamar/" class="btn btn-primary">Tambah
+                    </a>
                 </div>
                 <div class="d-flex">
                     <form
-                        action="/cari-kamar/{{ $kos->id }}"
+                        action="/cari-kamar/"
                         method="post"
                         class="d-flex me-1"
                     >
@@ -54,8 +53,11 @@
                 <tr>
                     <td class="table-nomor">no.</td>
                     <td>Nama</td>
-                    <td>Fasilitas</td>
-                    <td>Harga</td>
+                    <td>Alamat</td>
+                    <td>Price</td>
+                    <td>List</td>
+                    <td>Deskripsi</td>
+                    <td>Fitur</td>
                     <td>Status</td>
                     <td>Gambar</td>
                     <td>Action</td>
@@ -66,8 +68,11 @@
                 <tr class="table-striped">
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $k->nama }}</td>
-                    <td>{{ $k->fasilitas }}</td>
-                    <td>{{ $k->harga }}</td>
+                    <td>{{ $k->alamat }}</td>
+                    <td>{{ $k->price }}</td>
+                    <td>{{ $k->list }}</td>
+                    <td>{{ $k->deskripsi }}</td>
+                    <td>{{ $k->fitur }}</td>
                     <td>{{ $k->status }}</td>
                     <td>
                         @if ($k->gambar == null)
@@ -96,7 +101,7 @@
             @endforeach
         </table>
         <div>
-            {{-- {{ $kamar->links() }} --}}
+            {{ $kamar->links() }}
         </div>
     </div>
 </div>

@@ -19,11 +19,11 @@
 <header class="header-top">
     <div class="overlay">
         <h3 class="property-title">LIST <span class="title">KOST</span></h3>
-        <div class="menu justify-items-center">
-            <ul class="breadcrumbs style-1">
+        <div class="menu">
+            <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
                 <li>/</li>
-                <li>House 1</li>
+                <li>Kost !?</li>
             </ul>
         </div>
     </div>
@@ -31,12 +31,12 @@
 
 <main>
     <section id="home" class="list-house">
-        <div class="search-bar">
+        <div class="search-bar" style="justify-content:center;">
             <select>
                 <option selected disabled>UDA Kost!? Tipe</option>
             </select>
             <input type="text" placeholder="Pencarian...">
-            <button class="search-button btn btn-danger">Search Property</button>
+            <button class="search-button btn btn-danger">Cari Kos...</button>
         </div>
             
         <div class="property-banner">
@@ -44,23 +44,23 @@
                 <div class="property-list">
                     <div class="property-card">
                         <div class="image">
-                            <img src="{{ $kos->gambar ? Storage::url($kos->gambar) : asset('images/') }}" />
+                            <img src="{{ $kos->gambar ? Storage::url($kos->gambar) : asset('public/gambar') }}" />
                         </div>
                         <div class="property-info">
                             <div class="head">
                                 <div class="price">Rp {{ number_format($kos->price) }}</div>
-                                <a href="{{ url('kamar') }}">{{ $kos->nama }}</a>
+                                <a href=" kamar-kos/{id} ">{{ $kos->nama }}</a>
                             </div>
                             <div class="location">
                                 <p>{{ $kos->alamat }}</p>
                             </div>
                             <div class="icon-box">
-                                <div class="item"><i class="flaticon-location"></i> Appartment</div> 
-                                <div class="item"><i class="flaticon-square"></i> 2468 Sq</div> 
-                                <div class="item"><i class="flaticon-bed"></i> 2 Beds</div>
+                                <div class="item"><i class="flaticon-location"></i> 1 Beds</div> 
+                                <div class="item"><i class="flaticon-square"></i> 1 Kamar Mandi</div> 
+                                <div class="item"><i class="flaticon-bed"></i> AC, Wifi</div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 {{--<div class="property-card">
                     <div class="image">
                         <img src="/img/house/Gallery house2.jpg" alt="House">
@@ -70,29 +70,18 @@
                             </div> 
                         </div> 
                     </div>
-
-                         <div class="on-img-content col-md-12"> 
-                                <div class="col-xs-6 col-md-6 left-content"> 
-                                    <div class="price-box"> 
-                                        <label>Mulai</label> 
-                                        <span> 
-                                            <strong> Rp 1.500.000 </strong> / Bulan </span> 
-                                    </div> 
-                                </div>
-                            </div> 
-                        </div>
                     <div class="property-info">
                         <div class="head">
-                            <div class="price">Rp148,000</div>
+                            <div class="price">Rp 815,000</div>
                             <a href="{{ url('/kamar') }}">UDA Kost!? 1</a>
                         </div>
                         <div class="location">
                             <p>Batam, 1234</p>
                         </div>
                         <div class="icon-box">
-                            <div class="item"><i class="flaticon-location"></i> Appartment</div> 
-                            <div class="item"><i class="flaticon-square"></i> 2468 Sq</div> 
-                            <div class="item"><i class="flaticon-bed"></i> 2 Beds</div>
+                            <div class="item"><i class="flaticon-location"></i> 1 Beds</div> 
+                            <div class="item"><i class="flaticon-square"></i> 1 Kamar Mandi</div> 
+                            <div class="item"><i class="flaticon-bed"></i> AC, Wifi</div>
                         </div>
                     </div>
                 </div>--}}

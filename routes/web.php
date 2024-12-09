@@ -29,8 +29,11 @@ Route::get('/', function () {
 	return view('welcome'); 
 })->name('welcome');
 
-	Route::get('daftar-kos', [App\Http\Controllers\KosController::class,'index']);
-	Route::get('kamar', [App\Http\Controllers\KosController::class,'show']);
+	Route::get('daftar-kos', [App\Http\Controllers\KosController::class, 'index']);
+	
+	Route::get('kamar-kos', [App\Http\Controllers\KamarController::class, 'index'])->name('home-kos');
+	Route::get('kamar-kos/{id}', [App\Http\Controllers\KamarController::class, 'show'])->name('ke-kamar');
+
 
 	Auth::routes();
 
@@ -83,8 +86,8 @@ Route::middleware('auth')->group(function () {
 	// kamar
 	
 	Route::get('/kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'index']);
-	Route::get('/add-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'create']);
-	Route::post('/add-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'store']);
+	Route::get('/add-kamar', [App\Http\Controllers\Admin\KamarController::class, 'create']);
+	Route::post('/add-kamar', [App\Http\Controllers\Admin\KamarController::class, 'store']);
 	Route::get('/edit-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'edit']);
 	Route::post('/update-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'update']);
 	Route::get('/delete-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'destroy']);

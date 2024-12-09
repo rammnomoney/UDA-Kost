@@ -334,6 +334,18 @@ section{
   }
 }/* */
 
+/*--------------------------------------------------------------
+# Elemen
+--------------------------------------------------------------*/
+.iklan{
+  display: block;
+  margin: auto;
+  width: 40%;
+  height: 40%;
+  border-radius: 25px;
+}
+/* */
+
 /* explanation */
 .explanation {
   width: 100%;
@@ -344,6 +356,7 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0px 0px 40px 40px;
 }
 
 .explanation img {

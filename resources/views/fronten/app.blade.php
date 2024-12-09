@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="/css/house.css">
 
     <!--  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 
@@ -42,6 +44,8 @@
 <!-- Footer -->
 @include('layouts/components/footer')
 
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
 <script>
     // Kondisi untuk mengganti teks menjadi "BOOKING"
     const isBooked = true; // Ganti sesuai kondisi Anda
@@ -49,7 +53,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const rentButton = document.getElementById("rentButton");
         if (isBooked) {
-            rentButton.textContent = "BOOKING";
+            rentButton.textContent = "SEWA";
         }
     });
 </script>

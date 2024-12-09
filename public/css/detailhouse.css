@@ -45,36 +45,33 @@ COMPONENT
 }
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Pusatkan secara horizontal */
 }
 
 ul.breadcrumbs {
   display: flex;
-  gap: 5px;
-}
-.breadcrumbs a {
-  color: #ffffff;
-}
-.breadcrumbs a:hover {
-  color: #007bb6;
+  align-items: center; /* Pastikan item rata tengah */
+  margin: 0; /* Hilangkan margin default ul */
+  padding: 0; /* Hilangkan padding default ul */
+  gap: 5px; /* Jarak antar elemen */
+  list-style-type: none; /* Hilangkan tanda bullet */
 }
 
-ul.breadcrumbs li {
-  text-decoration: none !important;
-  list-style-type: none !important;
-  text-align: center;
+.breadcrumbs li {
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
   color: #ffffff;
 }
-ul.breadcrumbs .style-1 li {
-  font-weight: 400;
-  font-size: 15px;
-  align-items: center;
-  line-height: 28px;
-  list-style-type: none !important;
+
+.breadcrumbs a {
+  color: #ffffff; /* Warna link default */
+  text-decoration: none; /* Hilangkan garis bawah */
 }
+
+.breadcrumbs a:hover {
+  color: #007bb6; /* Warna saat hover */
+}
+
 .list-house{
 padding: 20px;
 }

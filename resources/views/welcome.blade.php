@@ -116,16 +116,16 @@
                       </div>
                       <div class="content">
                           <div class="head">
-                            <div class="price">Rp815,000</div>
-                            <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 1</a></div>
+                            <div class="price">Rp 815,000</div>
+                            <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 1</a></div>
                           </div>
                           <div class="location">
                               <p><i class="flaticon-location"></i> Batam, 1234</p>
                           </div>
                           <div class="icon-box">
-                              <div class="item"><i class="flaticon-hotel"></i> 4 Beds</div>
-                              <div class="item"><i class="flaticon-bath-tub"></i> 3 Baths</div>
-                              <div class="item"><i class="flaticon-minus-front"></i> 2660 Sqft</div>
+                              <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
+                              <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
+                              <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
                           </div>
                       </div>
                   </div>
@@ -138,16 +138,16 @@
                       </div>
                       <div class="content">
                           <div class="head">
-                            <div class="price">Rp1,200,000</div>
-                            <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 2</a></div>
+                            <div class="price">Rp 1,200,000</div>
+                            <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 2</a></div>
                           </div>
                           <div class="location">
                               <p><i class="flaticon-location"></i> Batam, 1234</p>
                           </div>
                           <div class="icon-box">
-                              <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
-                              <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
-                              <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
+                              <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
+                              <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
+                              <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
                           </div>
                       </div>
                   </div>
@@ -160,16 +160,16 @@
                     </div>
                     <div class="content">
                         <div class="head">
-                          <div class="price">Rp1,200,000</div>
-                          <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 3</a></div>
+                          <div class="price">Rp 1,200,000</div>
+                          <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 3</a></div>
                         </div>
                         <div class="location">
                             <p><i class="flaticon-location"></i> Batam, 1234</p>
                         </div>
                         <div class="icon-box">
-                            <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
-                            <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
-                            <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
+                            <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
+                            <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
+                            <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
                         </div>
                     </div>
                 </div>
@@ -182,16 +182,16 @@
                   </div>
                   <div class="content">
                       <div class="head">
-                        <div class="price">Rp1,200,000</div>
-                        <div class="title"><a href="{{ url('../fronten/house/show') }}">UDA Kost!? 4</a></div>
+                        <div class="price">Rp 1,200,000</div>
+                        <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 4</a></div>
                       </div>
                       <div class="location">
                           <p><i class="flaticon-location"></i> Batam, 1234</p>
                       </div>
                       <div class="icon-box">
-                          <div class="item"><i class="flaticon-hotel"></i> 5 Beds</div>
-                          <div class="item"><i class="flaticon-bath-tub"></i> 4 Baths</div>
-                          <div class="item"><i class="flaticon-minus-front"></i> 3200 Sqft</div>
+                          <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
+                          <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
+                          <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
                       </div>
                   </div>
               </div>
@@ -260,7 +260,7 @@
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
           <div class="accordion-body">
-            <strong>This is the first item's.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <strong>This is the first item's.</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro earum in, perspiciatis accusamus provident mollitia culpa unde nam vitae ea ut eligendi eveniet sequi obcaecati doloribus vel quis ipsam reprehenderit.
           </div>
         </div>
       </div>
@@ -294,6 +294,9 @@
 
 </main>
 
+<div class="container">
+  <img class="iklan" src="img/Udakost/Instagram Profile Picture.png" alt="Promosi">
+</div>
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

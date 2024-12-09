@@ -13,6 +13,6 @@ class Kamar extends Model
 
     public function kos()
     {
-        return $this->belongsTo(Kos::class, 'kos_id', 'id');
+        return $this->belongsTo(Kos::class);
     }
 }

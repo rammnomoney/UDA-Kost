@@ -30,7 +30,7 @@
                 </div>
                 <div class="m-auto">
                     <p class="p-text fw-bold"></p>
-                    {{-- <p class="p-text fw-bold">{{ $kamar }}</p> --}}
+                    <p class="text fw-bold">{{ $kamar ?? 'Kamar tidak tersedia' }}</p>
                     <p class="fw-semi">TOTAL KAMAR</p>
                 </div>
             </a>
