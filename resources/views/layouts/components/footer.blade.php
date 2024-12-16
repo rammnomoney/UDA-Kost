@@ -25,7 +25,7 @@
         <div class="col-xs-6 col-md-3">
           <h6>Hubungi Kami</h6>
           <ul class="footer-links">
-            <li><a href="https://wa.me/">WhatsApp</a></li>
+            <li><a href="https://wa.me/6281363788777">WhatsApp</a></li>
             <li><a href="#">#</a></li>
             <li><a href="#">#</a></li>
           </ul>

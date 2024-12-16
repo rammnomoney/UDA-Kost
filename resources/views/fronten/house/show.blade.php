@@ -1,4 +1,4 @@
-@extends('fronten.app')
+@extends('fronten.page')
 
 @push('title')
 
@@ -23,6 +23,7 @@
 <section id="scrollup">
     <div class="property-single-wrap sticky-container" data-sticky-container="">
         <div class="cl-container">
+
             @foreach ($kamar as $k)
             <div class="row">
                 <!-- Kolom Kiri: Carousel Gambar Utama -->
@@ -33,13 +34,13 @@
                             <div class="carousel-inner" style="border-radius: 20px 0px 0px 20px">
                                 <div class="carousel-item active">
                                     <div class="position-relative">
-                                        <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
+                                        <img src="/aset/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
                                     </div>
                                 </div>
                                 <!-- Slide 2 -->
                                 <div class="carousel-item">
                                     <div class="position-relative">
-                                        <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 2">
+                                        <img src="/aset/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 2">
                                     </div>
                                 </div>
                                 <div class="list-tags position-absolute g-2 top-0 start-0">
@@ -62,21 +63,21 @@
             
                 <div class="col-lg-4">
                     <div class="row g-2">
-                        <a class="col-6" href="/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 1">
+                        <a class="col-6" href="/aset/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="{{ $k->gambar ? asset('storage/gambar/' . $k->gambar) : asset('images/') }}" class="img-fluid" alt="Thumbnail 1">
                         </a>
                         
-                        <a class="col-6" href="/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 2" style="border-radius: 0px 20px 0px 0px">
-                        </a>
+                        <a class="col-6" href="/aset/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="{{ $k->gambar ? asset('storage/gambar/' . $k->gambar) : asset('images/') }}" class="img-fluid" alt="Thumbnail 2" style="border-radius: 0px 20px 0px 0px">
+                        </a> 
 
-                        <a class="col-6" href="/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3">
+                        {{-- <a class="col-6" href="/aset/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="{{ $k->gambar ? asset('storage/gambar/' . $k->gambar) : asset('images/') }}" class="img-fluid" alt="Thumbnail 3">
                         </a>
                         
-                        <a class="col-6" href="/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 4">
-                        </a>
+                        <a class="col-6" href="/aset/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="{{ $k->gambar ? asset('storage/gambar/' . $k->gambar) : asset('images/') }}" class="img-fluid" alt="Thumbnail 4">
+                        </a> --}}
                        
                         {{-- <div class="col-6">
                             <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
@@ -101,11 +102,12 @@
                 </div>
             </div>  
 
+                {{-- Preview foto --}}
                 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <img src="{{ Storage::url($k->gambar) }}" id="modalImage" class="img-fluid" alt="Full Image">
+                                <img src="{{ $k->gambar }}" id="modalImage" class="img-fluid" alt="Full Image">
                             </div>
                             <div class="modal-footer mx-2">
                                 <div class="d-grid gap-2 col-6 mx-auto">
@@ -115,56 +117,8 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-lg-8">
-                    <div class="wrap-gallery-image position-relative mt-1">
-                        <!-- Label -->
-                        <div class="list-tags type-1 position-absolute" style="top: 10px; left: 10px; z-index: 10;">
-                            <button class="btn btn-warning"><a href="#" class="tags-item for-sell">FOR RENT</a></button>
-                            <button class="btn btn-warning"><a href="#" class="tags-item featured">FEATURED</a></button>
-                        </div>
-                        
-                        <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
-                
-                            <!-- Carousel Inner -->
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 2">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 3">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 5">
-                                </div>
-                            </div>
-                
-                            <!-- Carousel Controls -->
-                            <a class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                
-                    </div>
-                </div>
-                <!-- More Photos Button -->
-                <div class="col-lg-4">
-                            <a href="/img/house/Gallery house2.jpg" class="more-photos position-absolute" style="bottom: 10px; right: 10px; z-index: 10;">
-                                <i class="flaticon-gallery"></i>
-                                <p>42 Photos</p>
-                            </a>
-                </div> --}}
             
+                {{-- Deskripsi --}}
                 <div class="row">
                     <div class="col-xl-10">
                         <div class="content-wrap">
@@ -177,8 +131,8 @@
                                 </div>
                                 <div class="price-box">
                                     <div>
-                                        <div class="price">Rp {{ number_format($k->price) }}</div>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalSimpan"> {{ $k->status }}</button>
+                                        <div class="price">Rp {{ number_format($k->price) }}<p> /Bulan</p></div>
+                                        <button class="btn btn-primary"> {{ $k->status }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +155,7 @@
                                     </div>
                                     <div class="text-content"></div>
                                 </div>
-                                <div class="item wow fadeInUp animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                {{-- <div class="item wow fadeInUp animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="icon">
                                         <i class="flaticon-minus-front"></i>
                                     </div>
@@ -224,7 +178,7 @@
                                         <i class="flaticon-garage"></i>
                                     </div>
                                     <div class="text-content"></div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="desc container shadow-sm">
                                 <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Deskripsi</h4>
@@ -275,7 +229,7 @@
                                             <img src="#" alt="">
                                         </div>
                                         <div>
-                                            <div class="name">PDF File 1</div>
+                                            <div class="name">UDAKost!?.PDF 1</div>
                                         </div>
                                     </a>
                                     <a href="/aset/udakost-preview.pdf" class="file-item">
@@ -283,7 +237,7 @@
                                             <img src="#" alt="">
                                         </div>
                                         <div>
-                                            <div class="name">PDF File 2</div>
+                                            <div class="name">UDAKost!?.PDF 2</div>
                                         </div>
                                     </a>
                                 </div>
@@ -367,7 +321,7 @@
                                             </div> --}}
                                         </div>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <h5 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Lorem ipsum</h5>
                                         <div class="wrap-check-ellipse wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                                             <div class="check-ellipse-item">
@@ -483,7 +437,7 @@
                                                 <p>Lorem ipsum</p>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                                 
@@ -506,7 +460,7 @@
                 </div> --}}
 
             <div class="call-button">
-                <a href="https://wa.me/ ?text=Halo%20UDA Kost,%20saya%20ingin%20sewa%20kamar" target="_blank">
+                <a href="https://wa.me/6281363788777/?text=Halo%20UDA Kost,%20saya%20ingin%20sewa%20kamar%20nomor" target="_blank">
                     <button class="btn btn-success btn-sm shadow-lg" style="border-radius:50%; position: fixed; height: 70px; bottom: 20px; right: 20px;"><i class="bi bi-whatsapp"></i> Pesan</button>
                 </a>
             </div>

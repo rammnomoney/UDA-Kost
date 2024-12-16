@@ -8,13 +8,14 @@
 
 <!-- Link CSS -->
 <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-{{-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> --}}
 
-<link rel="stylesheet" href="/css/fronten.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 <!--  -->
 <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet" href="/css/fronten.css">
 @endpush
 
 @section('content')
@@ -23,7 +24,7 @@
 <main id="scrollup">
   <!-- Carosel -->
   <section id="explanation" class="explanation section dark-background">
-    <img src="/img/house/Gallery house4.jpg" alt="">
+    <img src="aset/img/house/Gallery house4.jpg" alt="">
           <div class="container" data-aos="fade-up">
             <div class="row justify-content-center">
               <div class="container section-title">
@@ -49,7 +50,6 @@
 
     <div class="sc container">
       <div class="row gy-4">
-
         <div class="content col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
           <div class="service-item position-relative">
             <div class="icon"><i class="bi bi-activity icon"></i></div>
@@ -89,30 +89,28 @@
       
   <!-- Daftar Tempat -->
   <section id="home" class="tf-section">
-    <div class="kos-container">
-        <div class="row">
-            <div class="col-12">
-              <div class="heading section-title text-center">
-                  <h2 class="wow fadeInUp" data-wow-delay="0.1s">Kost Untuk Kamu</h2>
-                  <div class="text wow fadeInUp" data-wow-delay="0.2s"><p>Rekomendasi Kost <span class="description-title">Terbaik!</span></p></div>
-              </div>
-            </div>
-
-          <div class="d-flex justify-content-end">
-            <div class="button-group">
-              <button class="btn btn-primary me-md-2" type="button"><a href="{{ url('daftar-kos') }}">Lihat Semua</a></button>
-            </div>
-          </div>
+      <div class="container">
+        <div class="heading section-title text-center">
+            <h2 class="wow fadeInUp" data-wow-delay="0.1s">Pilihan Kost Untuk Kamu</h2>
+            <div class="text wow fadeInUp" data-wow-delay="0.2s"><p>Rekomendasi Kost <span class="description-title">Terbaik!</span></p></div>
         </div>
 
-      <div class="container-xl-12">
-        <div class="swiper-container slider-homes">
-          <div class="swiper-wrapper">
+        <div class="d-flex flex justify-content-end">
+          <div class="button-group">
+            {{-- <a class="swiper-button-next" role="button" data-slide="next"></a>
+            <a class="swiper-button-prev" role="button" data-slide="prev"></a> --}}
+            <button class="btn btn-primary me-3" type="button"><a href="{{ url('daftar-kos') }}">Lihat Semua</a></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container align-items-center">
+          <swiper-container pagination="true" pagination-clickable="true" slides-per-view="1" centered-slides="true" navigation="true" space-between="25" autoplay-delay="3800" autoplay-disable-on-interaction="false">
               <!-- Slide 1 -->
-              <div class="swiper-slide">
+              <swiper-slide>
                   <div class="box-dream">
                       <div class="image">
-                        <img src="/img/house/Gallery house2.jpg" alt="Wallpaper">
+                        <img src="aset/img/house/Gallery house2.jpg" alt="Wallpaper">
                       </div>
                       <div class="content">
                           <div class="head">
@@ -129,12 +127,12 @@
                           </div>
                       </div>
                   </div>
-              </div>
+              </swiper-slide>
               <!-- Slide 2 -->
-              <div class="swiper-slide">
+              <swiper-slide>
                   <div class="box-dream">
                       <div class="image">
-                          <img src="/img/house/Gallery house2.jpg" alt="">
+                          <img src="aset/img/house/Gallery house2.jpg" alt="">
                       </div>
                       <div class="content">
                           <div class="head">
@@ -150,13 +148,13 @@
                               <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
                           </div>
                       </div>
-                  </div>
-              </div>
+                    </div>
+              </swiper-slide>
               <!-- Tambahkan slide lainnya di sini -->
-              <div class="swiper-slide">
+              <swiper-slide>
                 <div class="box-dream">
                     <div class="image">
-                        <img src="/img/house/Gallery house2.jpg" alt="">
+                        <img src="aset/img/house/Gallery house2.jpg" alt="">
                     </div>
                     <div class="content">
                         <div class="head">
@@ -171,14 +169,14 @@
                             <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
                             <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
                         </div>
+                      </div>
                     </div>
-                </div>
-            </div>
+                  </swiper-slide>
 
-            <div class="swiper-slide">
+            <swiper-slide>
               <div class="box-dream">
                   <div class="image">
-                      <img src="/img/house/Gallery house2.jpg" alt="">
+                      <img src="aset/img/house/Gallery house2.jpg" alt="">
                   </div>
                   <div class="content">
                       <div class="head">
@@ -195,25 +193,64 @@
                       </div>
                   </div>
               </div>
-            </div>
+            </swiper-slide>
 
-                {{-- <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div> --}}
-          </div>
+            <swiper-slide>
+              <div class="box-dream">
+                  <div class="image">
+                      <img src="aset/img/house/Gallery house2.jpg" alt="">
+                  </div>
+                  <div class="content">
+                      <div class="head">
+                        <div class="price">Rp 1,200,000</div>
+                        <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 4</a></div>
+                      </div>
+                      <div class="location">
+                          <p><i class="flaticon-location"></i> Batam, 1234</p>
+                      </div>
+                      <div class="icon-box">
+                          <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
+                          <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
+                          <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
+                      </div>
+                  </div>
+              </div>
+            </swiper-slide>
+
+            <swiper-slide>
+              <div class="box-dream">
+                  <div class="image">
+                      <img src="aset/img/house/Gallery house2.jpg" alt="">
+                  </div>
+                  <div class="content">
+                      <div class="head">
+                        <div class="price">Rp 1,200,000</div>
+                        <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 4</a></div>
+                      </div>
+                      <div class="location">
+                          <p><i class="flaticon-location"></i> Batam, 1234</p>
+                      </div>
+                      <div class="icon-box">
+                          <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
+                          <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
+                          <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
+                      </div>
+                  </div>
+              </div>
+            </swiper-slide>
+           
+          </swiper-container>
         </div>
-      </div>
-    </div>
   </section>{{--  --}}
       
   <br>
   <br>
       
-  <section id="about" class="about section">
+  <section id="about" class="about section mt-5">
     <div class="container aos-init aos-animate">
         <div class="row gy-4 align-items-center">
             <div class="col-lg-6 order-1 order-lg-2">
-                <img src="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" class="img-fluid" alt="Uda Kost Logo">
+                <img src="aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" class="img-fluid" alt="Uda Kost Logo">
             </div>
             <div class="col-lg-6 order-2 order-lg-1 content">
                 <h3 class="display-6">Voluptatem dignissimos provident</h3>
@@ -244,7 +281,7 @@
 
   <br>
   <!-- Faq Section -->
-  <section id="faq" class="faq section">
+  <section id="faq" class="faq section gap-4">
     <!-- Section Title -->
     <div class="mb-4 container section-title">
       <h2>Frequently Asked Questions</h2>
@@ -288,30 +325,97 @@
           </div>
         </div>
       </div>
-    </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+            UDA Kost!? 4
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+          <div class="accordion-body">
+            <strong>This is the four item's.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
 
+    </div>
   </section><!-- /Faq Section -->
 
 </main>
 
-<div class="container">
-  <img class="iklan" src="img/Udakost/Instagram Profile Picture.png" alt="Promosi">
+<div class="container mt-4">
+  <img class="iklan" src="aset/img/Udakost/Instagram Profile Picture.png" alt="Promosi">
 </div>
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+<div id="preloader"></div>
 @endsection
 
 
 @push('addon-script-footer')
 <!-- Script -->
 <script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-{{-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --}}
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
 <script src="/js/fronten.js"></script>
 
 <!-- Inisialisasi Swiper -->
+<script>
+const swiperEl = document.querySelector('swiper-container')
+  Object.assign(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+  // slidesPerView: 2, // Jumlah slide yang terlihat
+  // spaceBetween: 20, // Jarak antar slide
+  // loop: false      // Nonaktifkan looping
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
+  // pagination: {
+  //   el: '.swiper-pagination',
+  //   clickable: true,
+  // },
+  // breakpoints: { // Responsif untuk perangkat kecil
+  //   320: {
+  //     slidesPerView: 1,
+  //     spaceBetween: 10,
+  //   },
+  //   768: {
+  //     slidesPerView: 2,
+  //     spaceBetween: 15,
+  //   },
+  //   1024: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 20,
+  //   },
+  // },
+});
+swiperEl.initialize();
+</script>
+
 {{-- <script>
   var swiper = new Swiper('.swiper-container', {
         slidesPerView: 4,

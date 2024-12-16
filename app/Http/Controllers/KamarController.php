@@ -26,6 +26,6 @@ class KamarController extends Controller
 
         //$gambar = $kamar->gambar;
     
-        return redirect('fronten/house/show', compact('kamar'));
+        return view('fronten/house/show', compact('kamar'));
     }
 }

@@ -32,7 +32,7 @@ Route::get('/', function () {
 	Route::get('daftar-kos', [App\Http\Controllers\KosController::class, 'index']);
 	
 	Route::get('kamar-kos', [App\Http\Controllers\KamarController::class, 'index'])->name('home-kos');
-	Route::get('kamar-kos/{id}', [App\Http\Controllers\KamarController::class, 'show'])->name('ke-kamar');
+	Route::get('kamar-kos/{id}', [App\Http\Controllers\KamarController::class, 'show'])->name('ke.kamar');
 
 
 	Auth::routes();

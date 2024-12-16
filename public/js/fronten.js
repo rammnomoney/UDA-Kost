@@ -2,13 +2,13 @@
   "use strict";
 
   /* Header */
-  const header = document.querySelector("header");
-  const mobileMenu = document.querySelector("#mobile-menu");
+  // const header = document.querySelector("header");
+  // const mobileMenu = document.querySelector("#mobile-menu");
   
-  mobileMenu.addEventListener("click", () => {
-    header.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-  });
+  // mobileMenu.addEventListener("click", () => {
+  //   header.classList.toggle("active");
+  //   mobileMenu.classList.toggle("active");
+  // });
   
 /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -164,4 +164,5 @@ document.querySelectorAll('.faq .faq-item h3').forEach((header) => {
     faqItem.classList.toggle('faq-active');
   });
 });
+
 })();

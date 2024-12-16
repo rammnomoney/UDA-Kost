@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Kamar;
-use App\Models\Kos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -49,7 +48,7 @@ class KamarController extends Controller
                 'deskripsi' => 'required|max:255',
                 'fitur' => 'required',
                 'status' => 'required',
-                'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
+                'gambar' => 'required|image|mimes:jpeg,png,jpg|max:10240',
             ], [
                 'nama.required' => 'Nama Wajib Diisi',
                 'nama.max' => 'Nama Maksimal 30 Karakter',
@@ -66,7 +65,6 @@ class KamarController extends Controller
             $kamar->alamat = $request->alamat;
             $kamar->price = $request->price;
             $kamar->list = json_encode($request->list);
-            //$kamar->list = $request->list;
             $kamar->deskripsi = $request->deskripsi;
             $kamar->fitur = $request->fitur;
             $kamar->status = $request->status;

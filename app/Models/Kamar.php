@@ -11,8 +11,8 @@ class Kamar extends Model
 
     protected $table = 'kamars';
 
-    public function kos()
-    {
-        return $this->belongsTo(Kos::class);
-    }
+    // public function kos()
+    // {
+    //     return $this->belongsTo(Kos::class);
+    // }
 }

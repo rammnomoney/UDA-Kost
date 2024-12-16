@@ -2,12 +2,18 @@
 <html lang="en">
 
 <head>
+    <style>
+        body {
+            overflow-y: scroll;
+        }
+    </style>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <title>Kos | Tambah Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+        <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
+        <title>Kos | Tambah Data</title>
 </head>
 
 <body>
@@ -21,40 +27,64 @@
                     id="nama" value="{{ old('nama') }}" />
                 <!-- notif error -->
                 @error('nama')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
                 @enderror
             </div>
             <div>
                 <label for="alamat">Alamat</label>
-                <input class="form-control @error('alamat') is-invalid @enderror" type="text" name="alamat" id="alamat"
-                value="{{ old('alamat') }}" />
+                <input class="form-control @error('alamat') is-invalid @enderror" type="text" name="alamat"
+                    id="alamat" value="{{ old('alamat') }}" />
                 <!-- notif error -->
                 @error('alamat')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
                 @enderror
             </div>
             <div>
                 <label for="price">Harga</label>
-                <input class="form-control @error('price') is-invalid @enderror" type="number" name="price" id="price"
-                value="{{ old('price') }}" />
+                <input class="form-control @error('price') is-invalid @enderror" type="text" name="price" placeholder="Price"
+                    id="price" value="{{ old('price') }}" />
                 <!-- notif error -->
                 @error('price')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
                 @enderror
             </div>
             <div>
                 <label for="image">Gambar</label>
                 <input class="form-control" type="file" name="gambar" />
             </div>
-            <button class="btn btn-primary btn-lg mt-3">save</button>
+            <button class="btn btn-primary btn-lg mt-3">Add</button>
         </form>
     </div>
+
 </body>
+
+{{-- <script>
+    var harga = document.getElementById('price');
+    harga.addEventListener('keyup', function(e) {
+        harga.value = formatRupiah(this.value, ' ');
+    });
+
+    function formatRupiah(angka, prefix) {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split = number_string.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? ' ' + rupiah : '');
+    }
+</script> --}}
 
 </html>

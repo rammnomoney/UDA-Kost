@@ -2,11 +2,18 @@
 <html lang="en">
 
 <head>
+    <style>
+        body {
+            overflow-y: scroll;
+        }
+    </style>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
     <title>Kamar | Edit {{ $kamar->nama }}</title>
 </head>
 
@@ -40,20 +47,22 @@
                 <input class="form-control" type="text" name="fitur" id="fitur" value="{{ $kamar->fitur }}" />
             </div>
             <div>
-                <label for="status">status</label>
+                <label for="status">Status</label>
                 <select name="status" id="status" class="form-control">
                     <option value="tersedia">Tersedia</option>
                     <option value="tidak tersedia">Tidak Tersedia</option>
                 </select>
             </div>
             <div>
-                <label for="gambar">gambar</label>
+                <label for="gambar">Gambar</label>
+                <div>
+                    <img src="{{ url('img/' . $kamar->gambar) }}"
+                    value="{{ $kamar->gambar }}" style="max-width: 200px; margin-bottom: 10px;" />
+                </div>
                 <input class="form-control" type="file" name="gambar" id="gambar" />
-                <img class="mt-3" src="{{ url('img/' . $kamar->gambar) }}" width="150px"
-                    value="{{ $kamar->gambar }}" />
             </div>
             
-            <button class="btn btn-primary btn-lg mt-3">save</button>
+            <button class="btn btn-primary btn-lg mt-3">Update</button>
         </form>
     </div>
 </body>

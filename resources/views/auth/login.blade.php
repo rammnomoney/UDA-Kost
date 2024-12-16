@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-  <section class="section bg-light min-vh-100 pt-36 pb-36 flex items-center" style="padding-top:180px;padding-bottom:180px">
+  <section class="section bg-light min-vh-100 pt-36 pb-36 flex items-center" style="padding-top:125px;padding-bottom:100px">
     <div class="container mx-auto px-4">
       <div class="row justify-content-center">
         <div class="col-lg-5">
-          <div class="card card-rounded border-0 shadow">
 
+          <div class="card card-rounded border-0 shadow">
             <div class="card-body p-5">
               <div class="d-flex justify-content-center mb-4">
-                <img src="/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" alt="Udakost Logo" width="150px" class="w-36">
+                <img src="aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" alt="Udakost Logo" width="150px" class="w-36">
               </div>
               
               {{-- <p class="text-center text-gray-600 mb-4">

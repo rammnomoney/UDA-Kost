@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Models\Kos;
 //use App\Models\Pemilik;
@@ -29,7 +28,7 @@ class KosController extends Controller
             'nama' => 'required|string|max:30',
             'alamat' => 'required|max:255',
             'price' => 'required|numeric|min:0',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:10240',
         ], [
             'nama.required' => 'Nama Wajib Diisi',
             'nama.max' => 'Nama Maksimal 30 Karakter',
@@ -37,10 +36,18 @@ class KosController extends Controller
             'price.required' => 'Harga Wajib Diisi',
         ]);
         
+        //$price = str_replace('.', '', $request->input('price'));
+
+        // Kos::create([
+        //     'price' => $price,
+        //     // atribut lainnya
+        // ]);
+    
         $kos = new Kos;
         $kos->nama = $request->nama;
         $kos->alamat = $request->alamat;
         $kos->price = $request->price;
+        
         $namaFile = null;
 
         if ($request->hasFile('gambar')) {
@@ -49,15 +56,9 @@ class KosController extends Controller
                 $extension = $gambar->getClientOriginalExtension();
                 $namaFile = $request->nama .  '_' . time() . '.' . $extension; // buat nama unique
                 $gambar->storeAs('public/gambar', $namaFile);
+                $kos->gambar = $namaFile;
             }
         }
-
-        // if ($request->hasFile('image')) {
-        //     $image = $request->file('image');
-        //     $extension = $image->getClientOriginalExtension();
-        //     $namaFile = $request->nama .  '_' . time() . '.' . $extension; // buat nama unique
-        //     $image->storeAs('gambar/', $namaFile, 'public');
-        // }
 
         // $kos = Kos::create([
         //     'nama' => $request->nama,
@@ -65,7 +66,6 @@ class KosController extends Controller
         //     'price' => $request->price,
         //     'image' => $request->$namaFile,
         // ]);
-        $kos->gambar = $namaFile;
 
         $kos->save();
 
@@ -77,9 +77,10 @@ class KosController extends Controller
         return redirect('/kos');
     }
 
-    public function edit($id)
+    public function edit(Kos $kos, $id)
     {
         $kos = Kos::findOrFail($id);
+
         return view('admins.kos.editKos', compact('kos'));
     }
 
@@ -98,15 +99,16 @@ class KosController extends Controller
         // }
 
         if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar');
-            if ($gambar) {
-                $extension = $gambar->getClientOriginalExtension();
-                $namaFile = $request->nama .  '_' . time() . '.' . $extension; // buat nama unique
-                $gambar->storeAs('public/gambar', $namaFile);
+            if ($kos->gambar && Storage::disk('public')->exists('gambar/' . $kos->gambar)) {
+                Storage::disk('public')->delete('gambar/' . $kos->gambar);
             }
-        }
+            $gambar = $request->file('gambar');
+            $extension = $gambar->getClientOriginalExtension();
+            $namaFile = $request->nama . '_' . time() . '.' . $extension;
+            $gambar->storeAs('public/gambar', $namaFile);
 
-        $kos->gambar = $namaFile;
+            $kos->gambar = $namaFile;
+        }
 
         $kos->save();
 

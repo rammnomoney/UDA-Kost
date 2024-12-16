@@ -13,8 +13,8 @@ class Kos extends Model
     //protected $fillable = ['nama', 'alamat', 'price', 'image'];
     //protected $guarded = ['id'];
 
-    // public function pemilik()
-    // {
-    //     return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');
-    // }
+    public function pemilik()
+    {
+        return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');
+    }
 }

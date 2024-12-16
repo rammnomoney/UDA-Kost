@@ -20,9 +20,14 @@
         </div>
     </div>
 </div> --}}
-<div class="container-fluid">
-    <div class="content mt-4">
+<div class="content">
+    @include('admins.layout.navbar') 
+<!-- Navbar End -->
+
+<div class="container-home">
+    <div class="mt-4">
         <h2>Dashboard</h2>
+    </div>
         <div class="d-flex justify-content-between">
             <a href="/kos" class="btn-dashboard btn btn-primary d-flex justify-content-left align-items-center">
                 <div class="background-icon">
@@ -30,8 +35,8 @@
                 </div>
                 <div class="m-auto">
                     <p class="p-text fw-bold"></p>
-                    <p class="text fw-bold">{{ $kamar ?? 'Kamar tidak tersedia' }}</p>
-                    <p class="fw-semi">TOTAL KAMAR</p>
+                    <p class="p-text fw-bold">{{ $kos }}</p>
+                    <p class="fw-semi">TOTAL KOS</p>
                 </div>
             </a>
             <a href="/penyewa" class="btn-dashboard btn btn-success d-flex justify-content-left align-items-center">
