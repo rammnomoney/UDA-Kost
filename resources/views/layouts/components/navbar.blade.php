@@ -7,9 +7,8 @@
       <ul>
         <li><a href="/" class="">Home<br></a></li>
         <li><a href="#services" class="">Services</a></li>
-        <li><a href="daftar-kos" class="">Kost!?</a></li>
+        <li><a href="{{ route('list.kos') }}" class="">Kost!?</a></li>
         <li><a href="#about" class="">About</a></li>
-        <li><a href="#team" class="">Team</a></li>
         {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Dropdown 1</a></li>

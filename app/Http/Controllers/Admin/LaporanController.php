@@ -16,19 +16,19 @@ class LaporanController extends Controller
     {
         $title = 'Halaman Laporan';
         $pemilik = Session::get('data_user'); // sesion user login
-        $kos = Kos::paginate(5);
-        // $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+        //$kos = Kos::paginate(6);
+        $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
         $kontrak = Kontrak::with('penyewa', 'kamar')->get();
-        return view('admins.laporan.laporan', compact('kontrak', 'kos', 'title'));
+        return view('admins.laporan.laporan', compact('kontrak', 'title', 'kos'));
     }
 
     public function laporan_pdf(Request $request)
     {
-        // $title = 'Halaman Laporan';
+        $title = 'Halaman Laporan';
         $kos = Kos::all();
         $kontrak = session('filteredKontrak');
 
-        $html = View('laporan/laporan_cetak', compact('kontrak', 'title', 'kos'))->render();
+        $html = View('admins.laporan.laporan_cetak', compact('kontrak', 'title', 'kos'))->render();
 
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
@@ -39,7 +39,7 @@ class LaporanController extends Controller
 
     public function cari(Request $request)
     {
-        // $title = 'Halaman Laporan';
+        $title = 'Halaman Laporan';
         $cari = $request->cari;
         $bulan = $request->bulan;
         $tahun = $request->tahun;

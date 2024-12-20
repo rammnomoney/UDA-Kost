@@ -14,6 +14,7 @@
 <!--  -->
 <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <link rel="stylesheet" href="/css/fronten.css">
 @endpush
@@ -24,18 +25,25 @@
 <main id="scrollup">
   <!-- Carosel -->
   <section id="explanation" class="explanation section dark-background">
-    <img src="aset/img/house/Gallery house4.jpg" alt="">
-          <div class="container" data-aos="fade-up">
+    <img src="aset/img/house/Gallery house1.jpg" alt="Gambar 1">
+          <div class="container " data-aos="fade-up">
             <div class="row justify-content-center">
               <div class="container section-title">
-                <h3><span class="text-black">TEMPAT</span> KOS TERBAIK</h3>
+                <h3><span class="text-black"></span>UDA KOST</h3>
               </div>
-              <div class="col-lg-12">
-                <h2>
-                  <i>Temukan</i> Pencarian Kos Siap Huni Di Batam<br> 
-                </h2>
-                <p>ipsum dolor sit amet consectetur adipisicing elit. Ab vitae perferendis molestiae quis! Repudiandae iure deserunt quibusdam voluptatibus? Autem fuga quaerat illo voluptatum et modi. A.</p>
+              <div class="col-md-12 col-xs-12 explanation-title">
+                <p><h2><i>Temukan</i> Pencarian Kos Siap Huni Di Batam</h2></p>
               </div>
+                <div class="col-md-6 col-xs-12">
+                  <p>Kos yang dibuat berdasarkan pengalaman tinggal di Kos pindah beberapa tempat kos
+                    Berharap bisa memberikan kos yang nyaman dan efisien untuk para perantau
+                  </p>
+                  <br>
+                  <p>Konon katanya ini kos pintar dan ownernya pengalaman nge-kost 7 tahun</p>
+                </div> 
+                <br>
+                {{-- <div class="col-md-6">
+                </div> --}}
             </div>
           </div>
   </section> 
@@ -49,38 +57,38 @@
     </div><!-- End Section Title -->
 
     <div class="sc container">
-      <div class="row gy-4">
-        <div class="content col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
+        <div class="col-md-4 col-xs-12 d-flex" data-aos="fade-up" data-aos-delay="100">
           <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-activity icon"></i></div>
-            <h4><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            <div class="icon"><i class="bi bi-house-check-fill"></i></div>
+            <h2><a href="#" class="stretched-link">FULL FURNISH</a></h2>
+            <p>Tinggal bawa badan semua sudah lengkap (Kasur, Lemari, AC, Meja kerja, Wifi, Dapur, Toilet luar, Smart door & Lamp)</p>
           </div>
         </div><!-- End Service Item -->
 
-        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-4 col-xs-12 d-flex" data-aos="fade-up" data-aos-delay="200">
           <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-            <h4><a href="#" class="stretched-link">Sed ut perspici</a></h4>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <div class="icon"><i class='bx bxs-bookmarks'></i></div>
+            <h2><a href="#" class="stretched-link">NYAMAN</a></h2>
+            <p>Semua aset yang disiapkan menggunakan kualitas bukan kaleng - kaleng</p>
           </div>
         </div><!-- End Service Item -->
 
-        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-4 col-xs-12 d-flex" data-aos="fade-up" data-aos-delay="300">
           <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-            <h4><a href="#" class="stretched-link">Magni Dolores</a></h4>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <div class="icon"><i class='bx bxs-file-find bx-rotate-90' ></i></div>
+            <h2><a href="#" class="stretched-link">WORTH IT</a></h2>
+            <p>Daerah yang lengkap untuk tinggal (Apotek, Pasar, Tempat Makan, Laundry, Bengkel)</p>
           </div>
         </div><!-- End Service Item -->
 
-        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+        {{-- <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
           <div class="service-item position-relative">
             <div class="icon"><i class="bi bi-broadcast icon"></i></div>
             <h4><a href="#" class="stretched-link">Nemo Enim</a></h4>
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
           </div>
-        </div><!-- End Service Item -->
+        </div><!-- End Service Item --> --}}
 
       </div>
     </div>
@@ -99,7 +107,7 @@
           <div class="button-group">
             {{-- <a class="swiper-button-next" role="button" data-slide="next"></a>
             <a class="swiper-button-prev" role="button" data-slide="prev"></a> --}}
-            <button class="btn btn-primary me-3" type="button"><a href="{{ url('daftar-kos') }}">Lihat Semua</a></button>
+            <button class="btn btn-primary me-3" type="button"><a href="{{ route('list.kos') }}">Lihat Semua</a></button>
           </div>
         </div>
       </div>
@@ -114,8 +122,8 @@
                       </div>
                       <div class="content">
                           <div class="head">
-                            <div class="price">Rp 815,000</div>
-                            <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 1</a></div>
+                            <div class="price">Rp815.000</div>
+                            <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 1</a></div>
                           </div>
                           <div class="location">
                               <p><i class="flaticon-location"></i> Batam, 1234</p>
@@ -136,8 +144,8 @@
                       </div>
                       <div class="content">
                           <div class="head">
-                            <div class="price">Rp 1,200,000</div>
-                            <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 2</a></div>
+                            <div class="price">Rp1.200.000</div>
+                            <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 2</a></div>
                           </div>
                           <div class="location">
                               <p><i class="flaticon-location"></i> Batam, 1234</p>
@@ -158,8 +166,8 @@
                     </div>
                     <div class="content">
                         <div class="head">
-                          <div class="price">Rp 1,200,000</div>
-                          <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 3</a></div>
+                          <div class="price">Rp1.200.000</div>
+                          <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 3</a></div>
                         </div>
                         <div class="location">
                             <p><i class="flaticon-location"></i> Batam, 1234</p>
@@ -180,8 +188,8 @@
                   </div>
                   <div class="content">
                       <div class="head">
-                        <div class="price">Rp 1,200,000</div>
-                        <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 4</a></div>
+                        <div class="price">Rp1.200.000</div>
+                        <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 4</a></div>
                       </div>
                       <div class="location">
                           <p><i class="flaticon-location"></i> Batam, 1234</p>
@@ -202,8 +210,8 @@
                   </div>
                   <div class="content">
                       <div class="head">
-                        <div class="price">Rp 1,200,000</div>
-                        <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 4</a></div>
+                        <div class="price">Rp1.200.000</div>
+                        <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 4</a></div>
                       </div>
                       <div class="location">
                           <p><i class="flaticon-location"></i> Batam, 1234</p>
@@ -224,8 +232,8 @@
                   </div>
                   <div class="content">
                       <div class="head">
-                        <div class="price">Rp 1,200,000</div>
-                        <div class="title"><a href="{{ url('daftar-kos') }}">UDA Kost!? 4</a></div>
+                        <div class="price">Rp1.200.000</div>
+                        <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 4</a></div>
                       </div>
                       <div class="location">
                           <p><i class="flaticon-location"></i> Batam, 1234</p>
@@ -253,7 +261,7 @@
                 <img src="aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" class="img-fluid" alt="Uda Kost Logo">
             </div>
             <div class="col-lg-6 order-2 order-lg-1 content">
-                <h3 class="display-6">Voluptatem dignissimos provident</h3>
+                <h3 class="display-6">Selamat Datang di UDA Kost!?</h3>
                 <p class="fst-italic mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -279,7 +287,11 @@
     </div>
   </section>
 
+  {{-- <div class="container mt-4 mb-4">
+    <img class="iklan" src="aset/img/Udakost/Instagram Profile Picture.png" alt="Promosi">
+  </div> --}}
   <br>
+  
   <!-- Faq Section -->
   <section id="faq" class="faq section gap-4">
     <!-- Section Title -->
@@ -342,10 +354,6 @@
   </section><!-- /Faq Section -->
 
 </main>
-
-<div class="container mt-4">
-  <img class="iklan" src="aset/img/Udakost/Instagram Profile Picture.png" alt="Promosi">
-</div>
 
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

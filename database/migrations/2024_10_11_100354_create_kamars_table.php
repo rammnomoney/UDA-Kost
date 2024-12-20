@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('kamars', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama', 50);
             $table->text('alamat');
-            $table->decimal('price', 10, 2);
+            $table->char('kodepos', 5);
+            $table->decimal('price', 15, 2);
             $table->json('list');
             $table->text('deskripsi');
+            $table->string('judulfitur');
             $table->string('fitur');
             $table->string('status');
-            $table->string('gambar');
+            $table->json('gambar')->nullable();
             $table->timestamps();
         });
     }

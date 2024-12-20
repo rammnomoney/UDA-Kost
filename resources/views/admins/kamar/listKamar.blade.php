@@ -49,9 +49,11 @@
                             <td class="table-nomor">no.</td>
                             <td>Nama</td>
                             <td>Alamat</td>
+                            <td>Kode Pos</td>
                             <td>Price</td>
                             <td>List</td>
                             <td>Deskripsi</td>
+                            <td>Judul Fitur</td>
                             <td>Fitur</td>
                             <td>Status</td>
                             <td>Gambar</td>
@@ -64,17 +66,30 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $k->nama }}</td>
                                 <td>{{ $k->alamat }}</td>
+                                <td>{{ $k->kodepos }}</td>
                                 <td>{{ $k->price }}</td>
-                                <td>{{ $k->list }}</td>
+                                <td>
+                                    {{-- @foreach (json_decode($k->list)) --}}
+                                    {{ $k->list }}
+                                </td>
                                 <td>{{ $k->deskripsi }}</td>
+                                <td>{{ $k->judulfitur }}</td>
                                 <td>{{ $k->fitur }}</td>
                                 <td>{{ $k->status }}</td>
                                 <td>
-                                    @if ($k->gambar == null)
-                                        <p>-</p>
+                                        {{-- @if ($k->gambar == null)
+                                            <p>-</p>
+                                        @else
+                                            <img src="{{ url('storage/gambar/' . $k->gambar) }}" width="150px" />
+                                        @endif --}}
+
+                                @if ($k->gambar == null || json_decode($k->gambar) == [])
+                                    <p>-</p>
                                     @else
-                                        <img src="{{ url('img/' . $k->gambar) }}" width="150px" />
-                                    @endif
+                                        @foreach (json_decode($k->gambar) as $gambar)
+                                            <img src="{{ asset('storage/gambar/' . $k->gambar) }}" alt="Gambar {{ $k->nama }}" width="150px" />
+                                        @endforeach
+                                @endif 
                                 </td>
                                 <td style="width: 100px; white-space: nowrap">
                                     <!-- <a href="#" class="btn btn-warning">Detail</a> -->

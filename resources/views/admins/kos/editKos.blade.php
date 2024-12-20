@@ -34,6 +34,38 @@
                 <label for="price">Harga</label>
                 <input class="form-control" type="text" name="price" id="price" value="{{ $kos->price }}" />
             </div>
+            <div>
+                <label for="list">List Kos</label>
+                <div class="group">
+                    <input 
+                        class="form-control"
+                        type="text" 
+                        name="list1" 
+                        id="list1" 
+                        value="{{ $kos->list1 }}" 
+                        placeholder="Enter List 1"
+                    />
+                   
+                    <input 
+                        class="form-control"
+                        type="text" 
+                        name="list2" 
+                        id="list2" 
+                        value="{{ $kos->list2 }}" 
+                        placeholder="Enter List 2"
+                    />
+
+                    <input 
+                        class="form-control"
+                        type="text" 
+                        name="list3" 
+                        id="list3" 
+                        value="{{ $kos->list3 }}" 
+                        placeholder="Enter List 3"
+                    />
+                </div>
+            </div>
+
             {{-- <div class="form-group">
                 <label for="gambar">Gambar</label>
                 @if ($kos->gambar)
@@ -44,12 +76,12 @@
                 <input type="file" name="gambar" id="gambar" class="form-control">
             </div> --}}
             <div>
-                <label for="image">Gambar</label>
+                <label for="gambar">Gambar</label>
                 <div>
-                    <img src="{{ url('img/' . $kos->gambar) }}" alt="Gambar Kos" style="max-width: 200px; margin-bottom: 10px;" />
+                    <img src="{{ asset('storage/gambar/' . $kos->gambar) }}" alt="Gambar Kos" style="max-width: 200px; margin-bottom: 10px;" />
                     {{-- <img src="{{ $kos->gambar ? asset('storage/gambar/' . $kos->gambar) : asset('images/') }}" alt="Gambar Kos" style="max-width: 200px; margin-bottom: 10px;"> --}}
                 </div>
-                <input class="form-control" type="file" name="image" id="image" />
+                <input class="form-control" type="file" name="gambar" id="gambar" />
             </div>
             <button class="btn btn-primary btn-lg mt-3">Update</button>
         </form>

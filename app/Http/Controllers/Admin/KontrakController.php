@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Penyewa;
+use App\Models\Kos;
 use App\Models\Kamar;
 use App\Models\Kontrak;
-use App\Models\Kos;
-use App\Models\Penyewa;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,14 +20,14 @@ class KontrakController extends Controller
         $title = 'Halaman Kontrak';
         $pemilik = Session::get('data_user'); // sesion user login
 
-        // if ($pemilik) {
-        // $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
-        // } else {
-        //     return redirect()->back()->with('error', 'Data pemilik tidak ditemukan.');
-        // }
-        $kos = Kos::paginate(5);
-        $kontrak = Kontrak::with('penyewa', 'kamar')->get();
-        return view(view: 'admins.kontrak.pilihKos', data: compact('kontrak', 'kos', 'title'));
+        if ($pemilik) {
+        $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+        } else {
+            return redirect()->back()->with('error', 'Data pemilik tidak ditemukan.');
+        }
+        //$kos = Kos::paginate(5);
+        $kontrak = Kontrak::with('kamar')->get();
+        return view('admins.kontrak.pilihKos', compact('kontrak', 'kos', 'title'));
     }
     public function index($id)
     {
@@ -35,7 +35,7 @@ class KontrakController extends Controller
         $kontrak = Kontrak::with('penyewa', 'kamar')
             ->whereHas('kamar', function ($query) use ($id) {
                 $query->where('kos_id', $id);
-            })->paginate(5);
+            })->paginate(6);
         return view('admins.kontrak.listKontrak', compact('kontrak', 'id', 'title'));
     }
 
@@ -99,7 +99,7 @@ class KontrakController extends Controller
 
     public function edit($id)
     {
-        $kontrak = Kontrak::with('penyewa', 'kamar')->findOrFail($id);
+        $kontrak = Kontrak::with('kamar')->findOrFail($id);
         $penyewa = Penyewa::all();
         $kamar = Kamar::all()
             ->where('kos_id', $kontrak->kamar->kos_id)
@@ -141,6 +141,7 @@ class KontrakController extends Controller
         $inisialPenyewa = substr($kontrak->penyewa->nama, 0, 2);
         $inisialKamar = substr($kontrak->kamar->nama, -2);
         $kode = $inisialPenyewa . $inisialKamar . date('d');
+        $kode = $inisialKamar . date('d');
 
         $tanggal = date('Y-m-d');
 
@@ -228,7 +229,8 @@ class KontrakController extends Controller
                         ->from('kamars')
                         ->where('kos_id', $id);
                 })
-                ->where(function ($query) use ($cari) {
+                ->where(function ($query) use ($cari) 
+                {
                     $query->whereHas('penyewa', function ($query) use ($cari) {
                         $query->where('nama', 'like', '%' . $cari . '%');
                     })

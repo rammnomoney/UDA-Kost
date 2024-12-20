@@ -48,6 +48,9 @@
                             <td>Nama Kos</td>
                             <td>Alamat</td>
                             <td>Harga</td>
+                            <td>List 1</td>
+                            <td>List 2</td>
+                            <td>List 3</td>
                             <td>Gambar</td>
                             <td>Kamar / Action</td>
                         </tr>
@@ -59,11 +62,14 @@
                                 <td>{{ $k->nama }}</td>
                                 <td>{{ $k->alamat }}</td>
                                 <td>{{ $k->price }}</td>
+                                <td>{{ $k->list1 }}</td>
+                                <td>{{ $k->list2 }}</td>
+                                <td>{{ $k->list3 }}</td>
                                 <td>
                                     @if ($k->gambar == null)
                                         <p>-</p>
                                     @else
-                                        <img src="{{ url('img/' . $k->gambar) }}" width="150px" />
+                                        <img src="{{ url('storage/gambar/' . $k->gambar) }}" width="150px" />
                                     @endif
                                 </td>
                                 <td style="width: 100px; white-space: nowrap">

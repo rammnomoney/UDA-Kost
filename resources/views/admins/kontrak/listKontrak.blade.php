@@ -1,5 +1,7 @@
 @extends('admins.layout.main') @section('container')
-<div class="container-fluid mt-4">
+<div class="content">
+    @include('admins.layout.navbar')
+<div class="container-home">
     <div class="row">
         <div class="p-0">
             <h2>Data Kontrak</h2>
@@ -84,5 +86,6 @@
         </table>
         {{ $kontrak->links() }}
     </div>
+</div>
 </div>
 @endsection

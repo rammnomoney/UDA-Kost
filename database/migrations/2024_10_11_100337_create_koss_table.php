@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('koss', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama', 50);
             $table->text('alamat');
-            $table->decimal('price', 10, 2);
+            $table->decimal('price', 15, 2);
+            $table->string('list1', 15);
+            $table->string('list2', 15);
+            $table->string('list3', 15);
             $table->string('gambar')->nullable();
             $table->timestamps();
         });

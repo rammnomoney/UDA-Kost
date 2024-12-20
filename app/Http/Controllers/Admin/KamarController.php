@@ -15,7 +15,7 @@ class KamarController extends Controller
     {
         //$title = 'Halaman List Kamar';
         //$kos = Kos::findOrFail($id);
-        $kamar = Kamar::paginate(5);
+        $kamar = Kamar::paginate(6);
 
         // if (!$kamar) {
         //     Session::flash('search', 'gagal');
@@ -27,14 +27,7 @@ class KamarController extends Controller
 
     public function create()
     {
-        // $kos = Kos::select('nama')->where($id)->first();
-        // return view('admins.kamar.addKamar', ['kos' => $kos], ['id' => $id]);
-        //$kos = Kos::select('nama')->where('id', $id)->first(); // Menentukan kolom id
         return view('admins.kamar.addKamar');
-        // , [
-        //     'kos' => $kos,
-        //     'id' => $id
-        // ]
     }
 
     public function store(Request $request)
@@ -43,12 +36,12 @@ class KamarController extends Controller
                 'nama' => 'required|string|max:30',
                 'alamat' => 'required|max:255',
                 'price' => 'required|numeric|min:0',
-                'list' => 'nullable|array',
-                //'list' => 'required',
+                'list' => 'required|array',
+                'list.*' => 'string',
                 'deskripsi' => 'required|max:255',
-                'fitur' => 'required',
                 'status' => 'required',
-                'gambar' => 'required|image|mimes:jpeg,png,jpg|max:10240',
+                'gambar' => 'required|array|max:10',
+                'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
             ], [
                 'nama.required' => 'Nama Wajib Diisi',
                 'nama.max' => 'Nama Maksimal 30 Karakter',
@@ -56,25 +49,43 @@ class KamarController extends Controller
                 'price.required' => 'Harga Wajib Diisi',
                 'list.required' => 'List Wajib Diisi',
                 'deskripsi.required' => 'Deskripsi Wajib Diisi',
-                'fitur.required' => 'Fitur Wajib Diisi',
                 'status.required' => 'Status Wajib Diisi',
             ]);
             
             $kamar = new kamar;
             $kamar->nama = $request->nama;
             $kamar->alamat = $request->alamat;
+            $kamar->kodepos = $request->kodepos;
             $kamar->price = $request->price;
             $kamar->list = json_encode($request->list);
             $kamar->deskripsi = $request->deskripsi;
+            $kamar->judulfitur = $request->judulfitur;
             $kamar->fitur = $request->fitur;
             $kamar->status = $request->status;
 
+            // Input gambar 1
+        // if ($request->hasFile('gambar')) {
+        //     $gambar = $request->file('gambar');
+
+        //     $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
+        //     $gambar->storeAs('public/gambar', $namaFile);
+        //     $kamar->gambar = $namaFile;
+        // }
+
+        // Input gambar 2
         if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar');
-            $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
-            $gambar->storeAs('public/gambar', $namaFile);
-            $kamar->gambar = $namaFile;
+            $gambarFiles = $request->file('gambar');
+            $gambarPaths = [];
+        
+            foreach ($gambarFiles as $gambar) {
+                $namaFile = $request->nama . '_' . time() . '_' . $gambar->getClientOriginalName();
+                $gambar->storeAs('public/gambar', $namaFile);
+                $gambarPaths[] = $namaFile;
+            }
+        
+            $kamar->gambar = json_encode($gambarPaths); // Save as JSON
         }
+        
 
         $kamar->save();
 
@@ -84,55 +95,6 @@ class KamarController extends Controller
         }
 
         return redirect('/kos');
-        // $request->validate([
-        //     'nama' => 'required|string|max:30',
-        //     'alamat' => 'required|max:255',
-        //     'price' => 'required|numeric|min:0',
-        //     'list' => 'required',
-        //     'deskripsi' => 'required|max:255',
-        //     'fitur' => 'required',
-        //     'status' => 'required',
-        //     'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
-        // ], [
-        //     'nama.required' => 'Nama Wajib Diisi',
-        //     'nama.max' => 'Nama Maksimal 30 Karakter',
-        //     'alamat.required' => 'Alamat Wajib Diisi',
-        //     'price.required' => 'Harga Wajib Diisi',
-        //     'list.required' => 'List Wajib Diisi',
-        //     'deskripsi.required' => 'Deskripsi Wajib Diisi',
-        //     'fitur.required' => 'Fitur Wajib Diisi',
-        //     'status.required' => 'Status Wajib Diisi',
-        // ]);
-
-        // $kamar = new kamar;
-        // $kamar->nama = $request->nama;
-        // $kamar->alamat = $request->alamat;
-        // $kamar->price = $request->price;
-        // $kamar->list = $request->list;
-        // $kamar->deskripsi = $request->deskripsi;
-        // $kamar->fitur = $request->fitur;
-        // $kamar->status = $request->status;
-        // //$kamar->id = $id;
-        // $namaFile = null;
-
-        // // tambah gambar
-        // if ($request->hasFile('gambar')) {
-        //     $gambar = $request->file('gambar');
-        //     if ($gambar) {
-        //         $extension = $gambar->getClientOriginalExtension();
-        //         $namaFile = $request->nama .  '_' . time() . '.' . $extension; // buat nama unique
-        //         $gambar->storeAs('public/gambar', $namaFile);
-        //     }
-        // }
-        // $kamar->gambar = $namaFile;
-        // $kamar->save();
-
-        // if ($kamar) {
-        //     Session::flash('insert', 'suskes');
-        //     Session::flash('pesan', 'Data Berhasil Ditambahkan');
-        // }
-
-        // return redirect('/kamar/' . $id);
     }
 
     public function edit($id)
@@ -143,37 +105,107 @@ class KamarController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'list' => 'required|array',
+            'list.*' => 'string',
+            'gambar' => 'required|array|max:10',
+            'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
+        ]);
+
         $kamar = Kamar::findOrFail($id);
+
         $kamar->nama = $request->nama;
         $kamar->alamat = $request->alamat;
+        $kamar->kodepos = $request->kodepos;
         $kamar->price = $request->price;
         $kamar->list = $request->list;
         $kamar->deskripsi = $request->deskripsi;
+        $kamar->judulfitur = $request->judulfitur;
         $kamar->fitur = $request->fitur;
         $kamar->status = $request->status;
-        //$kamar->id = $request->id;
-        $namaFile = null;
 
-        // tambah gambar
+
+        // Update jenis 2 ke 2
         if ($request->hasFile('gambar')) {
-            if ($kamar->gambar && Storage::disk('public')->exists('gambar/' . $kamar->gambar)) {
-                Storage::disk('public')->delete('gambar/' . $kamar->gambar);
+            // Delete old images
+            if ($kamar->gambar) {
+                foreach (json_decode($kamar->gambar) as $oldImage) {
+                    if (Storage::exists('public/gambar/' . $oldImage)) {
+                        Storage::delete('public/gambar/' . $oldImage);
+                    }
+                }
             }
-            $gambar = $request->file('gambar');
-            $extension = $gambar->getClientOriginalExtension();
-            $namaFile = $request->nama . '_' . time() . '.' . $extension;
-            $gambar->storeAs('public/gambar', $namaFile);
-
-            $kamar->gambar = $namaFile;
+        
+            // Save new images
+            $gambarFiles = $request->file('gambar');
+            $gambarPaths = [];
+        
+            foreach ($gambarFiles as $gambar) {
+                $namaFile = $request->nama . '_' . time() . '_' . $gambar->getClientOriginalName();
+                $gambar->storeAs('public/gambar', $namaFile);
+                $gambarPaths[] = $namaFile;
+            }
+        
+            $kamar->gambar = json_encode($gambarPaths); // Save new filenames
         }
+     
+        // Update jenis 2 ke 1
+        // if ($request->hasFile('gambar')) {
+        //     foreach ($request->file('gambar') as $file) {
+        //         $gambarName = time() . '-' . $file->getClientOriginalName();
+        //         $file->move(public_path('gambar/'), $gambarName);
+    
+        //         // Save new file names in the database
+        //         // Example: Assuming you store filenames in a JSON or related table
+        //         $existingFiles = $kamar->gambar ? json_decode($kamar->gambar, true) : [];
+        //         $existingFiles[] = $gambarName;
+        //         $kamar->gambar = json_encode($existingFiles); // Save back to the model
+        //     }
+        // }
+    
+        // // Step 2: Handle file deletion (optional)
+        // if ($request->has('remove_files')) {
+        //     $filesToRemove = $request->input('remove_files'); // Array of file names to delete
+        //     $existingFiles = $kamar->gambar ? json_decode($kamar->gambar, true) : [];
+    
+        //     foreach ($filesToRemove as $fileName) {
+        //         // Remove from filesystem
+        //         if (file_exists(public_path('gambar/' . $fileName))) {
+        //             unlink(public_path('gambar/' . $fileName));
+        //         }
+    
+        //         // Remove from the existing file array
+        //         if (($key = array_search($fileName, $existingFiles)) !== false) {
+        //             unset($existingFiles[$key]);
+        //         }
+        //     }
+    
+        //     // Update the record with the updated file list
+        //     $kamar->gambar = json_encode(array_values($existingFiles));
+        // }
+
+
+        
+        //tambah gambar biasa
+        //$namaFile = null;
+        // if ($request->hasFile('gambar')) {
+        //     if ($kamar->gambar && Storage::disk('public')->exists('gambar/' . $kamar->gambar)) {
+        //         Storage::disk('public')->delete('gambar/' . $kamar->gambar);
+        //     }
+        //     $gambar = $request->file('gambar');
+        //     $extension = $gambar->getClientOriginalExtension();
+        //     $namaFile = $request->nama . '_' . time() . '.' . $extension;
+        //     $gambar->storeAs('public/gambar', $namaFile);
+
+        //     $kamar->gambar = $namaFile;
+        // }
 
         // if ($request->hasFile('gambar')) {
-        //     $gambar = $request->file('gambar');
-        //     if ($gambar) {
-        //         $extension = $gambar->getClientOriginalExtension();
-        //         $namaFile = $request->nama .  '_' . time() . '.' . $extension; // buat nama unique
-        //         $gambar->storeAs('public/gambar', $namaFile);
-        //     }
+        //         foreach ($request->file('gambar') as $file) {
+        //             $namaFile = time() . '-' . $file->getClientOriginalName();
+        //             $file->move(public_path('gambar/'), $namaFile);
+        //             // Store file names in a related table or an array field if needed
+        //         }
         // }
 
         $kamar->save();

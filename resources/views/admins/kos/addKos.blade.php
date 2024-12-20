@@ -55,7 +55,47 @@
                 @enderror
             </div>
             <div>
-                <label for="image">Gambar</label>
+                <label for="list">List Kos</label>
+                <div class="group">
+                    <input 
+                        class="form-control @error('list1') is-invalid @enderror" 
+                        type="text" 
+                        name="list1" 
+                        id="list1" 
+                        value="{{ old('list1') }}" 
+                        placeholder="Enter List 1"
+                    />
+                    @error('list1')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
+                    <input 
+                        class="form-control @error('list2') is-invalid @enderror" 
+                        type="text" 
+                        name="list2" 
+                        id="list2" 
+                        value="{{ old('list2') }}" 
+                        placeholder="Enter List 2"
+                    />
+                    @error('list2')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
+                    <input 
+                        class="form-control @error('list3') is-invalid @enderror" 
+                        type="text" 
+                        name="list3" 
+                        id="list3" 
+                        value="{{ old('list3') }}" 
+                        placeholder="Enter List 3"
+                    />
+                    @error('list3')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+            <div>
+                <label for="gambar">Gambar</label>
                 <input class="form-control" type="file" name="gambar" />
             </div>
             <button class="btn btn-primary btn-lg mt-3">Add</button>

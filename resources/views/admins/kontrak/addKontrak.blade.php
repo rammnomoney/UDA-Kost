@@ -31,6 +31,21 @@
                     </div>
                 @enderror
             </div>
+            {{-- <div>
+                <label for="kos_id">Kos</label>
+                <select name="kos_id" id="kos_id"
+                    class="form-control @error('kos_id') is-invalid @enderror">
+                    @foreach ($kos as $p)
+                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                    @endforeach
+                </select>
+                <!-- notif error -->
+                @error('kos_id')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div> --}}
             <div>
                 <label for="kamar_id">kamar</label>
                 <select name="kamar_id" id="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror">

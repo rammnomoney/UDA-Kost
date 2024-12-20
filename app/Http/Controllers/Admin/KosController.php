@@ -13,7 +13,7 @@ class KosController extends Controller
 {
     public function index()
     {
-        $kos = Kos::paginate(5);
+        $kos = Kos::paginate(6);
         return view('admins.kos.listKos', compact('kos'));
     }
 
@@ -28,14 +28,19 @@ class KosController extends Controller
             'nama' => 'required|string|max:30',
             'alamat' => 'required|max:255',
             'price' => 'required|numeric|min:0',
+            'list1' => 'required|string|min:1',
+            'list2' => 'required|string|min:1',
+            'list3' => 'required|string|min:1',
             'gambar' => 'required|image|mimes:jpeg,png,jpg|max:10240',
         ], [
             'nama.required' => 'Nama Wajib Diisi',
             'nama.max' => 'Nama Maksimal 30 Karakter',
             'alamat.required' => 'Alamat Wajib Diisi',
+            'list.required' => 'List Wajib Diisi',
             'price.required' => 'Harga Wajib Diisi',
         ]);
         
+        // Input harga .  titik
         //$price = str_replace('.', '', $request->input('price'));
 
         // Kos::create([
@@ -46,6 +51,9 @@ class KosController extends Controller
         $kos = new Kos;
         $kos->nama = $request->nama;
         $kos->alamat = $request->alamat;
+        $kos->list1 = $request->list1;
+        $kos->list2 = $request->list2;
+        $kos->list3 = $request->list3;
         $kos->price = $request->price;
         
         $namaFile = null;
@@ -59,13 +67,6 @@ class KosController extends Controller
                 $kos->gambar = $namaFile;
             }
         }
-
-        // $kos = Kos::create([
-        //     'nama' => $request->nama,
-        //     'alamat' => $request->alamat,
-        //     'price' => $request->price,
-        //     'image' => $request->$namaFile,
-        // ]);
 
         $kos->save();
 
@@ -86,27 +87,31 @@ class KosController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
+        ]);
+
         $kos = Kos::findOrFail($id);
         $kos->nama = $request->nama;
         $kos->alamat = $request->alamat;
+        $kos->list1 = $request->list1;
+        $kos->list2 = $request->list2;
+        $kos->list3 = $request->list3;
         $kos->price = $request->price;
         
-        $namaFile = null;
-
-        // if ($request->hasFile('image')) {
-        //     $imagePath = $request->file('image')->store('images', 'public');
-        //     $kos->image = $imagePath;
-        // }
-
         if ($request->hasFile('gambar')) {
-            if ($kos->gambar && Storage::disk('public')->exists('gambar/' . $kos->gambar)) {
-                Storage::disk('public')->delete('gambar/' . $kos->gambar);
+            // if ($kos->gambar && Storage::disk('public')->exists('gambar/' . $kos->gambar)) {
+            //     Storage::disk('public')->delete('gambar/' . $kos->gambar);
+            // }
+            if ($kos->gambar && Storage::exists('public/gambar/' . $kos->gambar)) {
+                Storage::delete('public/gambar/' . $kos->gambar);
             }
-            $gambar = $request->file('gambar');
-            $extension = $gambar->getClientOriginalExtension();
-            $namaFile = $request->nama . '_' . time() . '.' . $extension;
-            $gambar->storeAs('public/gambar', $namaFile);
 
+            $gambar = $request->file('gambar');
+            $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
+            // $extension = $gambar->getClientOriginalExtension();
+            // $namaFile = $request->nama . '_' . time() . '.' . $extension;
+            $gambar->storeAs('public/gambar', $namaFile);
             $kos->gambar = $namaFile;
         }
 

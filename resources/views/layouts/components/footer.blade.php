@@ -10,24 +10,21 @@
           <h6>Categories</h6>
           <ul class="footer-links">
             <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Quick Links</h6>
           <ul class="footer-links">
-            <li><a href="#services">Services</a></li>
+            <li><a href="/">Home</a></li>
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
-          <h6>Hubungi Kami</h6>
+          <h6>Contact</h6>
           <ul class="footer-links">
+            <li><a href="test@gmail.com">Email</a></li>
             <li><a href="https://wa.me/6281363788777">WhatsApp</a></li>
-            <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
           </ul>
         </div>
 

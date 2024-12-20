@@ -33,15 +33,24 @@
                 @enderror
             </div>
             <div>
-                <label for="alamat">Alamat</label>
-                <input class="form-control @error('alamat') is-invalid @enderror" type="text" name="alamat"
-                    id="alamat" value="{{ old('alamat') }}" />
-                <!-- notif error -->
-                @error('alamat')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                <div class="row">
+                    <div class="col">
+                        <label for="alamat">Alamat</label>
+                        <input class="form-control @error('alamat') is-invalid @enderror" type="text" name="alamat"
+                            id="alamat" value="{{ old('alamat') }}" />
+                        <!-- notif error -->
+                        @error('alamat')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                @enderror
+                    <div class="col">
+                        <label for="kodepos">Kode Pos</label>
+                        <input class="form-control" type="number" name="kodepos"
+                            id="kodepos" value="{{ old('kodepos') }}" />
+                    </div>
+                  </div>
             </div>
             <div>
                 <label for="price">Harga</label>
@@ -58,7 +67,7 @@
                 <label for="list">List</label>
                 <div id="list-container">
                     <div class="list-group">
-                        <input type="text" name="list[]" class="form-control mb-2" placeholder="Masukkan list 1" />
+                        <input class="form-control mb-2" type="text" name="list[]" placeholder="Masukkan list" />
                     </div>
                 </div>
                 <button type="button" id="add-list" class="btn btn-primary mt-2">Tambah List</button>
@@ -76,15 +85,30 @@
                 @enderror
             </div>
             <div>
-                <label for="fitur">Fitur</label>
-                <input class="form-control @error('fitur') is-invalid @enderror" type="text" name="fitur"
-                    value="{{ old('fitur') }}">
-                <!-- notif error -->
-                @error('fitur')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                <div class="row">
+                    <div class="col">
+                        <label for="judulfitur">Judul Fitur</label>
+                        <input class="form-control @error('judulfitur') is-invalid @enderror" type="text" name="judulfitur"
+                            id="judulfitur" value="{{ old('judulfitur') }}" />
+                        <!-- notif error -->
+                        @error('judulfitur')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                @enderror
+                    <div class="col">
+                        <label for="fitur">Fitur</label>
+                        <input class="form-control @error('fitur') is-invalid @enderror" type="text" name="fitur"
+                            value="{{ old('fitur') }}">
+                        <!-- notif error -->
+                        @error('fitur')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                </div>
             </div>
             <div hidden="yes">
                 <label for="status">Status</label>
@@ -93,14 +117,39 @@
                     <option value="tidak tersedia">Tidak Tersedia</option>
                 </select>
             </div>
+            {{-- <div>
+                <label for="gambar">Gambar</label>
+                <input class="form-control" type="file" name="gambar[]" multiple>
+            </div>  --}}
             <div>
                 <label for="gambar">Gambar</label>
-                <input class="form-control" type="file" name="gambar" />
+                <div id="file-container">
+                    <div class="control-group input-group">
+                        <input class="form-control" type="file" name="gambar[]" required />
+                        <div class="input-group-btn"> 
+                            <button class="btn btn-success add-btn" type="button">
+                                <i class="fldemo glyphicon glyphicon-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clone" style="display: none;">
+                    <div class="control-group input-group" style="margin-top:10px">
+                        <input class="form-control" type="file" name="gambar[]" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-danger remove-btn" type="button">
+                                <i class="fas fa-times"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-primary btn-lg mt-3">Add</button>
+            
+            <button class="btn btn-primary btn-lg mt-3" type="submit">Add</button>
         </form>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 {{-- Tambah input baru --}}
 <script>
@@ -114,6 +163,26 @@
             `;
         container.appendChild(newInput); // Tambahkan input baru ke dalam container
     });
+</script>
+
+<script>
+    $(document).ready(function () {
+    // Add file input field
+    $(".add-btn").click(function () {
+        // Pastikan jumlah file tidak lebih dari 10
+        if ($("input[name='gambar[]']").length < 11) {
+            let lsthmtl = $(".clone").html();
+            $("#file-container").append(lsthmtl); // Menambahkan elemen baru
+        } else {
+            alert("Anda hanya dapat mengunggah maksimal 10 file.");
+        }
+    });
+
+    // Remove file input field
+    $("body").on("click", ".remove-btn", function () {
+        $(this).closest(".input-group").remove();
+    });
+});
 </script>
 
 {{-- Price --}}
@@ -140,7 +209,7 @@
     }
 </script> --}}
 
-<script>
+{{-- <script>
     function tambahFasilitas() {
         // Buat elemen input baru untuk fasilitas
         const fasilitasContainer = document.getElementById('fasilitas-container');
@@ -165,6 +234,6 @@
         inputGroup.appendChild(removeButton);
         fasilitasContainer.appendChild(inputGroup);
     }
-</script>
+</script> --}}
 
 </html>

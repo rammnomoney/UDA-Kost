@@ -9,13 +9,13 @@
         </div>       
            
         <div class="navbar-nav w-100">
-            <a href="{{ ('/home') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>{{ __('Home') }}</a>
+            <a href="{{ url('/home') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>{{ __('Home') }}</a>
             
-            <a href="{{ ('/pemilik') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>{{ __('Admin') }}</a>
-            <a href="{{ ('/kos') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>{{ __('Kos') }}</a>
-            <a href="{{ ('/penyewa') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>{{ __('Penghuni') }}</a>
-            <a href="{{ ('/pilih-kos') }}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>{{ __('Kontrak') }}</a>
-            <a href="{{ ('/laporan') }}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>{{ __('Laporan') }}</a>
+            <a href="{{ url('/pemilik') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>{{ __('Admin') }}</a>
+            <a href="{{ url('/kos') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>{{ __('Kos') }}</a>
+            <a href="{{ url('/penyewa') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>{{ __('Penghuni') }}</a>
+            <a href="{{ url('/pilih-kos') }}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>{{ __('Kontrak') }}</a>
+            <a href="{{ url('/laporan') }}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>{{ __('Laporan') }}</a>
         </div>
     </nav>
 </div>

@@ -1,5 +1,7 @@
 @extends('admins.layout.main') @section('container')
-<div class="container-fluid">
+<div class="content">
+    @include('admins.layout.navbar')
+<div class="container-home">
     <div class="mt-2">
         <h2>Laporan</h2>
         <!-- menu atas  -->
@@ -96,5 +98,6 @@
             <i class="bi bi-printer-fill"></i>
         </a>
     </div>
+</div>
 </div>
 @endsection
