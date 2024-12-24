@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kos;
 use App\Models\Kamar;
 use Illuminate\Http\Request;
 
 class KamarController extends Controller
 {
     //
-    // public function index()
-    // {
-    //     //$kamar = Kamar::all();
-    //     //$kamar = Kamar::findOrFail($id);
-    //     return view('fronten/house/show');
-    // }
+    public function kost()
+    {
+        $koss = Kos::all();
+        
+        return view('index', compact('koss'));
+    }
 
     public function show($id)
     {
+        //$kamar = Kamar::findOrFail($id);
         $kamar = Kamar::all();
         if (!$kamar) {
             abort(404, 'Kamar tidak ditemukan.');

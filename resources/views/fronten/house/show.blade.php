@@ -13,7 +13,7 @@
             <ul class="breadcrumbs style-1">
                 <li><a href="/">Home</a></li>
                 <li>/</li>
-                <li>{{ __('Kamar') }}</li>
+                <li><a href="{{ route('list.kos') }}">{{ __('Kos') }}</a></li>
             </ul>
         </div>
     </div>
@@ -25,10 +25,65 @@
         <div class="container-fluid">
 
     @foreach ($kamar as $tampilkamar)
-        <div class="container gallery-photo">
-            <div class="row">
-              <div class="col-md-12">
-                <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; --swiper-navigation-size: 25px;" 
+    <div class="container gallery-photo">
+        {{-- Carousel --}}
+        <div class="row">
+            <div class="col-md-6">
+                <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="carousel-item active">
+                            <div class="position-relative">
+                                <img src="/aset/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="/aset/img/house/Gallery house3.png" class="d-block w-100" alt="Image 2">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="/aset/img/house/Gallery house8.jpeg" class="d-block w-100" alt="Image 3">
+                            </div>
+                        </div>
+                        <div class="list-tags position-absolute g-2 top-0 start-0">
+                            <button class="text-light btn btn-outline-dark">FEATURED</button>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid thumb" data-bs-target="#mainCarousel"  data-bs-slide-to="0">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/aset/img/house/Gallery house3.png" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="1" style="border-radius: 0px 20px 0px 0px;">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/aset/img/house/Gallery house8.jpeg" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="2">
+                    </div>
+                    <div class="col-md-6 position-relative">
+                    <a href="/aset/img/house/Gallery house5.jpeg" data-fancybox="gallery">
+                        <img src="/aset/img/house/Gallery house5.jpeg" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
+                        <div class="overlay-text">
+                            <p>Tampilkan</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                {{-- <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; --swiper-navigation-size: 25px;" 
                   class="mySwiper" thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
                   @if (!empty($tampilkamar->images) && is_array($tampilkamar->images))
                         @foreach ($tampilkamar->images as $image)
@@ -57,25 +112,48 @@
                         </swiper-slide>
                     @endif
                 </swiper-container>
-              </div>
+              </div> --}}
             
                 {{-- Gallery Foto --}}
+                {{-- <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
+                    <div class="row g-2">
+                         <div class="col-md-3">
+                            <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 8" style="border-radius: 0px 0px 20px 0px" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
+                        </div> 
+                        <div class="col-md-3">
+                            <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 8" style="border-radius: 0px 0px 20px 0px" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
+                        </div> 
+                    </div>
+                </div>  --}}
+
                 {{-- <div class="col-lg-4">
                     <div class="row g-2">
-                        <a href="{{ $tampilkamar->gambar ? asset('storage/gambar/' . $tampilkamar->gambar) : asset('gambar/') }}" data-fancybox="gallery" class="col-6">
-                            <img src="{{ $tampilkamar->gambar ? asset('storage/gambar/' . $tampilkamar->gambar) : asset('gambar/') }}" alt="Thumbnail 1">
+                        <a href="https://lipsum.app/id/62/1600x1200" data-fancybox="gallery" class="col-6">
+                            <img src="https://lipsum.app/id/62/1600x1200" alt="Thumbnail 1">
                         </a>
                         
-                        <!-- Lihat Selengkapnya -->
+                        <!-- Lihat Selengkapnya 
                         <div class="col-6">
-                            <a href="{{ $tampilkamar->gambar ? asset('storage/gambar/' . $tampilkamar->gambar) : asset('gambar/') }}" data-fancybox="gallery">
+                            <a href="https://lipsum.app/id/62/1600x1200" data-fancybox="gallery">
                                 <p class="overlay-text">Lihat Selengkapnya</p>
                             </a>
                             <div style="display:none">
-                                <a data-fancybox="gallery" href="{{ $tampilkamar->gambar ? asset('storage/gambar/' . $tampilkamar->gambar) : asset('gambar/') }}">
+                                {{-- <a data-fancybox="gallery" href="{{ $tampilkamar->gambar ? asset('storage/gambar/' . $tampilkamar->gambar) : asset('gambar/') }}">
                                   <img src="{{ asset('storage/gambar/' . $tampilkamar->gambar) }}" />
-                                </a>
-                                 <a data-fancybox="gallery" href="https://lipsum.app/id/62/1600x1200">
+                                </a> --}}
+                                 {{-- <a data-fancybox="gallery" href="https://lipsum.app/id/62/1600x1200">
                                   <img src="https://lipsum.app/id/62/120x80" />
                                 </a>
                                 <a data-fancybox="gallery" href="https://lipsum.app/id/63/1600x1200">
@@ -87,30 +165,10 @@
                         {{-- <a class="col-6" href="/aset/img/house/Gallery house2.jpg" data-toggle="lightbox" data-gallery="example-gallery">
                             <img src="{{ $k->gambar ? asset('storage/gambar/' . $k->gambar) : asset('images/') }}" class="img-fluid" alt="Thumbnail 4">
                         </a> --}}
-                       
-                        {{-- <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
-                        </div>
-                        <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
-                        </div>
-                    
-                        <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
-                        </div>
-                        <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
-                        </div>
-                        <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
-                        </div>
-                        <div class="col-6">
-                            <img src="/img/house/Gallery house2.jpg" class="img-fluid" alt="Thumbnail 8" style="border-radius: 0px 0px 20px 0px" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="/img/house/Gallery house2.jpg">
-                        </div> 
-                    </div>
-                </div>--}}
-            </div>  
-        </div>
+                        
+                    {{-- </div> 
+                 </div>--}}
+    </div>
                 {{-- Preview foto --}}
                 {{-- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -132,18 +190,18 @@
                     <div class="col-xl-10">
                         <div class="content-wrap detail-kos">
                             <div class="head-title wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                <div>
-                                    <div class="title"><h3>{{ $tampilkamar->nama }}</h3></div>
-                                    <div class="location">
-                                        <div class="text-content">{{ $tampilkamar->alamat }}</div>
-                                    </div>
-                                </div>
-                                <div class="price-box">
                                     <div>
-                                        <div class="price">Rp{{ number_format($tampilkamar->price,0,",",".") }}<p> /Bulan</p></div>
-                                        <button class="btn btn-primary"> {{ $tampilkamar->status }}</button>
+                                        <div class="title"><h3>{{ $tampilkamar->nama }}</h3></div>
+                                        <div class="location">
+                                            <div class="text-content">{{ $tampilkamar->alamat }}</div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="price-box">
+                                        <div>
+                                            <div class="price">Rp{{ number_format($tampilkamar->price,0,",",".") }}<span> /Bulan</span></div>
+                                            <div class="text-content"> {{ $tampilkamar->status }}</div>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="box-items">
                                 @if ($tampilkamar->list)
@@ -158,17 +216,12 @@
                                 {{-- @else
                                     <p class="text-muted">Belum ada list tersedia.</p> --}}
                                 @endif
-                                <div class="item wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                                    <div class="icon">
-                                        <i class="flaticon-hammer"></i>
-                                    </div>
-                                    <div class="text-content"></div>
-                                </div>
                             </div>
                             <div class="desc container shadow-sm">
                                 <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Deskripsi</h4>
                                 <p class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                                     {{ $tampilkamar->deskripsi }}
+                                    
                                     <br>
                                     <br>
                                     

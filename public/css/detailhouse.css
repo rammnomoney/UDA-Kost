@@ -362,13 +362,19 @@ ul.breadcrumbs {
   color: #007bb6; /* Warna saat hover */
 }
 
-.list-house{
-padding: 20px;
-}
-
 /* Search */
-.search-bar {
+.list-house1 {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.list-house1 .container{
   display: flex;
+  box-shadow: 0px 0px 20px 11px rgba(0, 0, 0, 0.09);
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 80%;
+}
+.search-bar {
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -379,27 +385,29 @@ padding: 20px;
   width: 30%;
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
 }
 
 .search-button {
-  background: #fff;
+  text-transform: uppercase;
+  background: #007bb6;
   padding: 10px 20px;
-  outline-style: solid;
-  outline-color: #007bb6;
-  border: 2px;
+  border: none;
   border-radius: 5px;
-  color: #007bb6;
+  color: #fff;
   cursor: pointer;
 }
 .search-button:hover {
-background: #007bb6;
-color: #fff;
-outline-color: #000;
-border: 5px;
+background: #fff;
+outline-style: solid;
+outline-color: #007bb6;
+color: #007bb6;
+border: 1px;
 }
 
 /* List View Kos */
+.list-house2{
+  padding: 20px;
+  }
 .list-view .property-list {
   display: flex;
   flex: 0 0 100%;

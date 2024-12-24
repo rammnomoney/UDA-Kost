@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kontraks', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('kode', 25)->unique()->nullable();
             $table->timestamps();
             $table->date('tgl_mulai');

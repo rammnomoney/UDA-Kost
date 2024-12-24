@@ -1,6 +1,6 @@
 @extends('admins.layout.main') @section('container')
 <div class="container-fluid mt-4 p-0">
-    <div class="">
+    <div>
         <h2>Daftar Kos</h2>
         <table class="table table-bordered">
             <thead class="table-primary">

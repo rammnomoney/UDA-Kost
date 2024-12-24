@@ -2,9 +2,10 @@
 @section('container')
     <div class="content">
         @include('admins.layout.navbar')
-        <div class="container-home">
-            <div class="row">
-                <div class="mt-4 p-0">
+
+        <div class="container-fluid pt-4 px-4">
+            <div class="bg-secondary bg-dark rounded h-100 p-4">
+                <div class="mb-4 p-0">
                     <h2>Data Kamar</h2>
                     <!-- menu atas  -->
                     <div class="d-flex justify-content-between">
@@ -43,10 +44,12 @@
                         </div>
                     @endif
                 </div>
-                <table id="myTable" class="table mt-3 table-bordered">
-                    <thead class="table-primary">
+                
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered">
+                    <thead>
                         <tr>
-                            <td class="table-nomor">no.</td>
+                            <td class="col">No.</td>
                             <td>Nama</td>
                             <td>Alamat</td>
                             <td>Kode Pos</td>
@@ -61,7 +64,7 @@
                         </tr>
                     </thead>
                     @foreach ($kamar as $k)
-                        <tbody class="">
+                        <tbody>
                             <tr class="table-striped">
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $k->nama }}</td>
@@ -94,20 +97,24 @@
                                 <td style="width: 100px; white-space: nowrap">
                                     <!-- <a href="#" class="btn btn-warning">Detail</a> -->
                                     <a href="/edit-kamar/{{ $k->id }}" class="btn btn-success">
-                                        <i class="bi bi-pencil-fill"></i></a>
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
                                     <a href="/delete-kamar/{{ $k->id }}"
                                         onclick="return confirm('Hapus data {{ $k->nama }} ?')"
                                         class="btn btn-danger">
-                                        <i class="bi bi-trash-fill"></i></a>
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>
                     @endforeach
                 </table>
+            </div>
                 <div>
                     {{ $kamar->links() }}
                 </div>
             </div>
+        </div>
         </div>
     </div>
 @endsection

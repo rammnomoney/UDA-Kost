@@ -1,50 +1,52 @@
 @extends('admins.layout.main') @section('container')
     <div class="content">
         @include('admins.layout.navbar')
-        <div class="container-home">
-            <div class="row">
-                <div class="mt-4 p-0">
-                    <h2>Data Kos</h2>
-                    <!-- menu atas  -->
-                    <div class="d-flex justify-content-between">
-                        <div class="p-0">
-                            <a href="/add-kos" class="btn btn-primary">Tambah</a>
-                        </div>
-                        <div class="d-flex">
-                            <form action="/cari-kos" method="get" class="d-flex me-1">
-                                <input type="text" name="cariKos" id="cariKos" class="form-control me-1" />
-                                <button class="btn btn-primary">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- flash message insert -->
-                    @if (Session::has('insert'))
-                        <div class="alert alert-success mt-3">
-                            {{ Session::get('pesan') }}
-                        </div>
-                    @endif
 
+        <div class="container-fluid pt-4 px-4">
+        <div class="bg-secondary bg-dark rounded h-100 p-4">
+            <div class="mb-4 p-0">
+                <h2>Data Kos</h2>
+                <!-- menu atas  -->
+                <div class="d-flex justify-content-between">
+                    <div class="p-0">
+                        <a href="/add-kos" class="btn btn-primary">Tambah</a>
+                    </div>
+                    <div class="d-flex">
+                        <form action="/cari-kos" method="get" class="d-flex me-1">
+                            <input type="text" name="cariKos" id="cariKos" class="form-control me-1" />
+                            <button class="btn btn-primary">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- flash message insert -->
+                    @if (Session::has('insert'))
+                    <div class="alert alert-success mt-3">
+                        {{ Session::get('pesan') }}
+                    </div>
+                    @endif
+                    
                     <!-- flash message update -->
                     @if (Session::has('update'))
-                        <div class="alert alert-success mt-3">
-                            {{ Session::get('pesan') }}
-                        </div>
+                    <div class="alert alert-success mt-3">
+                        {{ Session::get('pesan') }}
+                    </div>
                     @endif
-
+                    
                     <!-- flash message delete -->
                     @if (Session::has('delete'))
-                        <div class="alert alert-danger mt-3">
-                            {{ Session::get('pesan') }}
-                        </div>
+                    <div class="alert alert-danger mt-3">
+                        {{ Session::get('pesan') }}
+                    </div>
                     @endif
-                </div>
+                </div>                
 
-                <table id="myTable" class="table mt-2 table-bordered">
-                    <thead class="table-primary">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered">
+                    <thead>
                         <tr>
-                            <td class="table-nomor">No.</td>
+                            <td class="col">No.</td>
                             <td>Nama Kos</td>
                             <td>Alamat</td>
                             <td>Harga</td>
@@ -56,7 +58,7 @@
                         </tr>
                     </thead>
                     @foreach ($kos as $k)
-                        <tbody class="">
+                        <tbody>
                             <tr class="table-striped">
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $k->nama }}</td>
@@ -86,9 +88,12 @@
                         </tbody>
                     @endforeach
                 </table>
+            </div>
+
                 <div>
                     {{ $kos->links() }}
                 </div>
+            </div>
             </div>
         </div>
     </div>

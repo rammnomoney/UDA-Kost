@@ -20,43 +20,44 @@
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
                 <li>/</li>
-                <li>Kost !?</li>
+                <li>Kost!?</li>
             </ul>
         </div>
     </div>
 </header>
 
-<main>
-    <section id="home" class="list-house">
-        <div class="search-bar" style="justify-content:center;">
+<main id="home">
+    <section class="list-house1">
+        <div class="container search-bar" style="justify-content:center;">
             <select>
                 <option selected disabled>UDA Kost!? Tipe</option>
             </select>
             <input type="text" placeholder="Pencarian...">
             <button class="search-button">Cari Kos...</button>
         </div>
-            
-        <div class="d-flex justify-content-between mb-3">
+    </section>
+    
+    <section class="list-house2">
+        <div class="d-flex justify-content-between mb-3 p-2">
             <h4>Hanya di <i><span class="title">#UDAKost</span></i></h4>
             <div>
                 <button id="gridView" class="btn btn-primary btn-sm">Grid View</button>
                 <button id="listView" class="btn btn-outline-primary btn-sm">List View</button>
             </div>
         </div>
-       
         <div class="row property-banner" id="propertyContainer">
             @foreach ($koss as $kos)
                 <div class="property-list col-lg-4 col-md-6 mb-4">
                     <div class="property-card d-flex flex-column">
                         <div class="image">
-                            <img src="{{ $kos->gambar ? asset('storage/gambar/' . $kos->gambar) : asset('gambar/') }}" />
+                            <img src="{{ $kos->gambar ? asset('storage/gambar/' . $kos->gambar) : asset('/aset/img/Udakost/transparent-udakost/White Vertical-Uda Kost Logo.png') }}" />
                         </div>
                         <div class="property-info">
                             <div class="head">
                                 <div class="price">
-                                    <strong>Rp{{ number_format($kos->price,0,",",".") }}</strong><small><span> /Bulan</span></small>
+                                    Rp{{ number_format($kos->price,0,",",".") }}<small> /Bulan</small>
                                 </div>
-                                <a href=" {{ route('ke.kamar', $kos->id) }}} ">
+                                <a href="{{ route('ke.kamar', $kos->id) }}">
                                      {{ $kos->nama }}
                                 </a>
                             </div>
@@ -70,7 +71,7 @@
                             </div>
                         </div>
                     </div> 
-
+                
                 {{--<div class="property-card">
                     <div class="image">
                         <img src="/aset/img/house/Gallery house2.jpg" alt="House">

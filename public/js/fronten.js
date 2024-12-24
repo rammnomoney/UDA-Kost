@@ -1,6 +1,17 @@
+
+
 (function() {
   "use strict";
-
+  
+  // Loading
+  var spinner = function () {
+    setTimeout(function () {
+        if ($('#spinner').length > 0) {
+            $('#spinner').removeClass('show');
+        }
+    }, 1);
+  };
+  spinner();
   /* Header */
   // const header = document.querySelector("header");
   // const mobileMenu = document.querySelector("#mobile-menu");
@@ -59,6 +70,26 @@ document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
   });
 });
 
+// scroll top
+// let mybutton = document.getElementById("back-to-top");
+
+// // When the user scrolls down 20px from the top of the document, show the button
+// window.onscroll = function() {scrollFunction()};
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//     mybutton.style.display = "block";
+//   } else {
+//     mybutton.style.display = "none";
+//   }
+// }
+
+// // When the user clicks on the button, scroll to the top of the document
+// function topFunction() {
+//   document.body.scrollTop = 0; // For Safari
+//   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+// }
+
 /**
  * Preloader
  */
@@ -69,51 +100,7 @@ if (preloader) {
   });
 }
 
-/**
- * Scroll top button
- */
-// let scrollTop = document.querySelector('#scroll-top');
 
-  // function toggleScrollTop() {
-  //   if (scrollTop) {
-  //     if (window.scrollY > 100) {
-  //       scrollTop.classList.add('active');
-  //     } else {
-  //       scrollTop.classList.remove('active');
-  //     }
-  //   }
-  // }
-
-  // // Smooth scroll to top
-  // scrollTop.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'smooth'
-  //   });
-  // });
-
-  // // Initialize scroll event
-  // window.addEventListener('load', toggleScrollTop);
-  // document.addEventListener('scroll', toggleScrollTop);
-
-let scrollTop = document.querySelector('.scroll-top');
-
-function toggleScrollTop() {
-  if (scrollTop) {
-    window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-  }
-}
-scrollTop.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
-window.addEventListener('load', toggleScrollTop);
-document.addEventListener('scroll', toggleScrollTop);
 
 /**
  * Animation on scroll function and init
@@ -157,15 +144,9 @@ window.addEventListener('load', aosInit);
 //   }
 // });
 
-/* FAQ */
-document.querySelectorAll('.faq .faq-item h3').forEach((header) => {
-  header.addEventListener('click', () => {
-    const faqItem = header.parentElement;
-    faqItem.classList.toggle('faq-active');
-  });
-});
 
 })();
+
 
 // Halaman Show Kos
 // $(document).ready(function() {

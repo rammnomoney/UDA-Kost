@@ -10,11 +10,6 @@
         <link href="favicon.ico" rel="icon">
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-        <!-- MDB -->
-        {{-- <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css"
-            rel="stylesheet"/> --}}
-
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" /> 
 
         <!-- icon bootstrap -->
@@ -25,6 +20,7 @@
 {{-- CSS --}}
 <style>
     :root {
+        --black: #000;
         --primary: #007bb6;
         --secondary: #191C24;
         --light: #6C7293;
@@ -44,6 +40,9 @@
         color: #fff;
     }
     /* Sidebar */
+    .navbar-brand h3 {
+    color: #007bb6;
+    }
     .sidebar {
     position: fixed;
     top: 0;
@@ -51,11 +50,11 @@
     bottom: 0;
     width: 250px !important;
     height: 100vh !important;
-    overflow-y: auto;
     background: var(--secondary);
     transition: 0.5s;
     z-index: 999;
     }
+
 
     .content {
         margin-left: 250px;
@@ -209,45 +208,24 @@
         }
     }
 
-/* -- BEFORE -- */
-            /* @media (max-width: 991.98px) {
-                .sidebar {
-                    width: 100%;
-                }
-            }
-            .sidebar .active {
-                border-radius: 5px;
-                box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%),
-                    0 2px 10px 0 rgb(0 0 0 / 12%);
-            } */
-
-            /* .sidebar-sticky {
-                position: relative;
-                top: 0;
-                height: calc(100vh - 48px);
-                padding-top: 0.5rem;
-                overflow-x: hidden;
-                overflow-y: auto; /* Scrollable contents if viewport is shorter than content. 
-            } */
-/* -- -- */
-
-    .container-home{
-        margin-left: 2%;
-        width: 80%;
+    /* .container-home{
+        width: 100%;
     }
     .container-fluid {
         margin-left: 19%;
         width: 80%;
-    }
+    }*/
+
+    /*  */
     .btn-dashboard {
-        width: 24%;
-        height: 150px;
-        font-weight: 100;
-    }
+        width: 100%;
+        height: 100%;
+        font-weight: 90;
+    } 
     .background-icon {
-        opacity: 0.1;
-        font-size: 120px;
         display: inline-block;
+        opacity: 0.1;
+        font-size: 100px;
         position: absolute;
     }
     .btn-dashboard p {
@@ -275,30 +253,26 @@
     }
 
     /* tabel */
-    tr, td{
-        color: #000
+    .table {
+        background-color: var(--light);
+        border: 10px var(--light);
     }
-    #myTable {
-        border-collapse: collapse;
+    th,
+    td {
+        border: 2px solid rgb(25, 28, 36);
+        padding: 8px 10px;
+    }
+    th[scope='col'] {
+        background-color: var(--light);
+        color: var(--black);
     }
 
+    th[scope='row'] {
+    color: var(--black);
+    }
     #myTable thead td {
-        border: 1px solid #d8e3f4;
-    }
-    #myTable tbody tr td {
-        border: 1px solid #d8e3f4;
-    }
-
-    .table-nomor {
-        width: 5%;
-        white-space: nowrap;
-    }
-    .table-action {
-        width: 100px;
-        white-space: nowrap;
-    }
-    #myTable_wrapper {
-        padding: 0;
+        background-color: var(--light);
+        color: var(--black);
     }
 </style>
 
@@ -319,6 +293,7 @@
             });
         </script>
 
+        {{-- Laporan --}}
         <script>
             function hide() {
                 var x = document.getElementById("hai");
@@ -344,11 +319,6 @@
         </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- MDB -->
-        {{-- <script
-            type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"
-        ></script> --}}
 
     </body>
 </html>
