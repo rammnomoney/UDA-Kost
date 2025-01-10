@@ -16,6 +16,7 @@
     
     <!--  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     {{--  --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet"> --}}
@@ -45,10 +46,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> --}}
 {{-- <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script> --}}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 {{--  --}}
 <script src="{{ asset('js/fronten.js') }}"></script>
-{{-- <script src="/js/house.js"></script> --}}
 
 <script>
     // Kondisi untuk mengganti teks menjadi "BOOKING"
@@ -63,7 +67,7 @@
 </script>
 
 <script>
-    Fancybox.bind('[data-fancybox="gallery"]', {
+    Fancybox.bind('[data-fancybox]', {
       //
     });    
 </script>

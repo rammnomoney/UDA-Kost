@@ -280,17 +280,20 @@
     <body>
         @include('admins.layout.sidebar') 
         
-        
         @yield('container')
 
 
         <script>
-        $(document).ready(function () {
-                $('.sidebar-toggler').click(function (e) {
-                    e.preventDefault(); // Mencegah aksi default dari elemen `<a>`
-                    $('.sidebar, .content').toggleClass("open");
-                });
-            });
+        // $(document).ready(function () {
+        //         $('.sidebar-toggler').click(function (e) {
+        //             e.preventDefault(); // Mencegah aksi default dari elemen `<a>`
+        //             $('.sidebar, .content').toggleClass("open");
+        //         });
+        //     });
+        $('.sidebar-toggler').click(function () {
+        $('.sidebar, .content').toggleClass("open");
+            return false;
+        });
         </script>
 
         {{-- Laporan --}}
@@ -305,20 +308,21 @@
             }
         </script>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
-        <script>
-            $(document).ready(function () {
+            <script>
+                $(document).ready(function () {
                 $("#myTable").DataTable({
                     searching: false,
                     paging: false,
                     info: false,
                 });
             });
-        </script>
+            </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

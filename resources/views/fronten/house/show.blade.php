@@ -6,7 +6,7 @@
     <!-- Awal main -->
     <div class="main-content">
     
-<header class="header-top">
+<header class="header-top" data-aos="zoom-out">
     <div class="overlay">
         <h3 class="property-title">DETAIL <span class="title">KOST</span></h3>
         <div class="menu justify-items-center">
@@ -24,8 +24,8 @@
     <div class="property-single-wrap">
         <div class="container-fluid">
 
-    @foreach ($kamar as $tampilkamar)
-    <div class="container gallery-photo">
+    {{-- @foreach ($kamar as $tampilkamar) --}}
+    <div class="container gallery-photo" data-aos="zoom-in">
         {{-- Carousel --}}
         <div class="row">
             <div class="col-md-6">
@@ -73,16 +73,29 @@
                         <img src="/aset/img/house/Gallery house8.jpeg" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="2">
                     </div>
                     <div class="col-md-6 position-relative">
-                    <a href="/aset/img/house/Gallery house5.jpeg" data-fancybox="gallery">
-                        <img src="/aset/img/house/Gallery house5.jpeg" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
-                        <div class="overlay-text">
-                            <p>Tampilkan</p>
-                        </div>
-                    </a>
+                        <a href="/aset/img/house/Gallery house5.jpeg" data-fancybox="gallery">
+                            <img src="/aset/img/house/Gallery house5.jpeg" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
+                            <div class="overlay-text">
+                                <p>Tampilkan</p>
+                            </div>
+                        </a>
+
+                        <div style="display:none">
+                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house2.jpg">
+                            <img src="/aset/img/house/Gallery house2.jpg" />
+                            </a>
+                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house3.png">
+                            <img src="/aset/img/house/Gallery house3.png" />
+                            </a>
+                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house8.jpeg">
+                            <img src="/aset/img/house/Gallery house8.jpeg" />
+                            </a>
+                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
                 {{-- <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; --swiper-navigation-size: 25px;" 
                   class="mySwiper" thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
                   @if (!empty($tampilkamar->images) && is_array($tampilkamar->images))
@@ -168,7 +181,8 @@
                         
                     {{-- </div> 
                  </div>--}}
-    </div>
+    
+
                 {{-- Preview foto --}}
                 {{-- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -186,26 +200,27 @@
                 </div> --}}
             
                 {{--  Deskripsi  --}}
+                <div class="container p-2">
                 <div class="row">
                     <div class="col-xl-10">
                         <div class="content-wrap detail-kos">
                             <div class="head-title wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                    <div>
-                                        <div class="title"><h3>{{ $tampilkamar->nama }}</h3></div>
+                                    <div data-aos="flip-up" data-aos-delay="100">
+                                        <div class="title"><h3>{{ $kamar->nama }}</h3></div>
                                         <div class="location">
-                                            <div class="text-content">{{ $tampilkamar->alamat }}</div>
+                                            <div class="text-content">{{ $kamar->alamat }}</div>
                                         </div>
                                     </div>
-                                    <div class="price-box">
+                                    <div class="price-box" data-aos="flip-up" data-aos-delay="300">
                                         <div>
-                                            <div class="price">Rp{{ number_format($tampilkamar->price,0,",",".") }}<span> /Bulan</span></div>
-                                            <div class="text-content"> {{ $tampilkamar->status }}</div>
+                                            <div class="price">Rp{{ number_format($kamar->price,0,",",".") }}<span> /Bulan</span></div>
+                                            <div class="text-content"> {{ $kamar->status }}</div>
                                         </div>
                                     </div>
                             </div>
-                            <div class="box-items">
-                                @if ($tampilkamar->list)
-                                    @foreach (json_decode($tampilkamar->list) as $list)
+                            <div class="box-items" data-aos="fade-up">
+                                @if ($kamar->list)
+                                    @foreach (json_decode($kamar->list) as $list)
                                         <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                                             <div class="icon">
                                                 <i class="flaticon-city"></i>
@@ -217,17 +232,17 @@
                                     <p class="text-muted">Belum ada list tersedia.</p> --}}
                                 @endif
                             </div>
-                            <div class="desc container shadow-sm">
+                            <div class="desc container shadow-sm" data-aos="fade-up">
                                 <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Deskripsi</h4>
                                 <p class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                    {{ $tampilkamar->deskripsi }}
+                                    {{ $kamar->deskripsi }}
                                     
                                     <br>
                                     <br>
                                     
                                 </p>
                             </div>
-                            <div class="address container shadow-sm">
+                            <div class="address container shadow-sm" data-aos="fade-up">
                                 <div class="flex items-center justify-between gap30 flex-wrap wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                                     <h4 class="mb-0">Alamat</h4>
                                     {{-- <a href="#" class="tf-button-green"><i class="flaticon-location"></i>Open On Google Maps</a> --}}
@@ -235,16 +250,16 @@
                                 <div class="list-item">
                                     <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                                         <div class="text">Alamat</div>
-                                        <p>{{ $tampilkamar->alamat }}</p>
+                                        <p>{{ $kamar->alamat }}</p>
                                     </div>
                                     <div class="item wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                                         <div class="text">Kode Pos</div>
-                                        <p>{{ $tampilkamar->kodepos }}</p>
+                                        <p>{{ $kamar->kodepos }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="attachments container shadow-sm">
-                                <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Berkas untuk {{ $tampilkamar->nama }}</h4>
+                            <div class="attachments container shadow-sm" data-aos="fade-up">
+                                <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Berkas untuk {{ $kamar->nama }}</h4>
                                 <div>
                                     <a href="/aset/udakost-preview.pdf" class="file-item">
                                         <div class="icon">
@@ -264,32 +279,33 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="features container shadow-sm">
+                            <div class="features container shadow-sm" data-aos="fade-up">
                                 <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Fitur</h4>
                                 <ul>
                                     <li>
-                                        <h5 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">{{ $tampilkamar->judulfitur }}</h5>
+                                        <h5 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">{{ $kamar->judulfitur }}</h5>
                                         <div class="wrap-check-ellipse wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                                             <div class="check-ellipse-item">
                                                 <div class="icon">
                                                     <i class="flaticon-check"></i>
                                                 </div>
-                                                <p>{{ $tampilkamar->fitur }}</p>
+                                                <p>{{ $kamar->fitur }}</p>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                                
+                            
                         </div>
                     </div>
                 </div>
-    @endforeach
+                </div>
+    {{-- @endforeach --}}
         </div>
     </div>
 </section>
 <div class="call-button">
-    <a href="https://wa.me/6281363788777/?text=Halo%20UDA Kost,%20saya%20ingin%20sewa%20kamar%20nomor {{ $tampilkamar->id }}" target="_blank">
+    <a href="https://wa.me/6281363788777/?text=Halo%20UDA Kost,%20saya%20ingin%20sewa%20kamar%20nomor {{ $kamar->id }}" target="_blank">
         <button class="btn btn-success btn-sm shadow-lg" style="border-radius:50%; position: fixed; height: 70px; bottom: 20px; right: 20px;"><i class="bi bi-whatsapp"></i> Pesan</button>
     </a>
 </div>

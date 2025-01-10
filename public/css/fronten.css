@@ -14,6 +14,7 @@
 }
 
 section{
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -63,31 +64,6 @@ Header
   font-size: 32px;
 }
 
-/* @media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
-  }
-
-  .header .navmenu {
-    order: 3;
-  }
-}
-
-.scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
-
-/* Index Page Header
-------------------------------
-.index-page .header {
-  --background-color: rgba(0, 0, 0, 0);
-}
-
-/* Index Page Header on Scroll
-------------------------------
-.index-page.scrolled .header {
-  --background-color: rgba(0, 0, 0, 0.8);
-} */
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -554,7 +530,7 @@ Header
 .services .service-item:hover h2 a,
 .services .service-item:hover .icon i,
 .services .service-item:hover p {
-  color: #000;
+  color: #fff;
 }
 
 .services .service-item:hover:before {
@@ -800,7 +776,7 @@ swiper-slide {
 
 .accordion-button{
   color: #33353d;
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 
 .accordion-button:hover{

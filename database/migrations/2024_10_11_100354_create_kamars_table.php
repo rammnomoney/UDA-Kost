@@ -22,7 +22,11 @@ return new class extends Migration
             $table->string('judulfitur');
             $table->string('fitur');
             $table->string('status');
-            $table->json('gambar')->nullable();
+            $table->string('gambar1')->nullable();
+            $table->string('gambar2')->nullable();
+            $table->string('gambar3')->nullable();
+            $table->string('gambar4')->nullable();
+            $table->string('gambar5')->nullable();
             $table->timestamps();
         });
     }

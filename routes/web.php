@@ -32,9 +32,7 @@ use Illuminate\Support\Facades\Route;
 	Route::get('/', [App\Http\Controllers\KosController::class, 'index'])->name('udakost');
 	Route::get('daftar-kos', [App\Http\Controllers\KamarController::class, 'kost'])->name('list.kos');
 	
-	//Route::get('kamar-kos', [App\Http\Controllers\KamarController::class, 'index'])->name('home-kos');
 	Route::get('/kamar-kos/{id}', [App\Http\Controllers\KamarController::class, 'show'])->name('ke.kamar');
-
 
 	Auth::routes();
 

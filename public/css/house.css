@@ -1333,6 +1333,7 @@ Header
 }
 
 .overlay-text p {
+  text-transform: uppercase;
   font-size: 25px;
   font-weight: 750;
   color: #fff;

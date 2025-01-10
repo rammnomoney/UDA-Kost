@@ -1,8 +1,5 @@
 <nav class="navbar navbar-expand d-flex bg-secondary bg-dark sticky-top px-4 py-0">
-    <a href="/" class="navbar-brand d-flex d-lg-none me-4">
-        <h2 class="text-primary mb-0"></h2>
-    </a>
-    <a href="" class="sidebar-toggler flex-shrink-0">
+    <a href="#" class="sidebar-toggler flex-shrink-0">
         <i class="bi bi-filter-left"></i>
     </a>
         {{-- <form class="d-none d-md-flex ms-4">

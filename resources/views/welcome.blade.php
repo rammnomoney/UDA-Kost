@@ -9,6 +9,7 @@
 <!-- Link CSS -->
 <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 <!--  -->
@@ -21,8 +22,8 @@
 @endpush
 
 @section('content')
-<!-- ISI -->
 
+<!-- ISI -->
 <main id="scrollup">
 
   <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -32,7 +33,7 @@
 
   <section id="explanation" class="explanation section dark-background">
     <img src="aset/img/house/Gallery house1.jpg" alt="Gambar 1">
-          <div class="container " data-aos="fade-up">
+          <div class="container" data-aos="fade-up">
             <div class="row justify-content-center">
               <div class="container mb-4">
                 <h3><span class="text"></span>UDA KOST</h3>
@@ -72,7 +73,7 @@
           </div>
         </div><!-- End Service Item -->
 
-        <div class="col-md-4 col-xs-12 d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-4 col-xs-12 d-flex" data-aos="fade-up" data-aos-delay="400">
           <div class="service-item position-relative">
             <div class="icon"><i class='bx bxs-bookmarks'></i></div>
             <h2><a href="#" class="stretched-link">NYAMAN</a></h2>
@@ -80,7 +81,7 @@
           </div>
         </div><!-- End Service Item -->
 
-        <div class="col-md-4 col-xs-12 d-flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-4 col-xs-12 d-flex" data-aos="fade-up" data-aos-delay="900">
           <div class="service-item position-relative">
             <div class="icon"><i class='bx bxs-file-find bx-rotate-90' ></i></div>
             <h2><a href="#" class="stretched-link">WORTH IT</a></h2>
@@ -103,7 +104,7 @@
       
   <!-- Daftar Tempat -->
   <section id="home" class="tf-section">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="heading section-title text-center">
             <h2 class="wow fadeInUp" data-wow-delay="0.1s">Pilihan Kost Untuk Kamu</h2>
             <div class="text wow fadeInUp" data-wow-delay="0.2s"><p>Rekomendasi Kost <span class="description-title">Terbaik!</span></p></div>
@@ -118,7 +119,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" data-aos="fade-zoom-in">
           <swiper-container style="--swiper-navigation-color: #007bb6; --swiper-pagination-color: #007bb6; pagination="true" pagination-clickable="true" slides-per-view="1" centered-slides="true" navigation="true" space-between="25" autoplay-delay="3800" autoplay-disable-on-interaction="false">
               <!-- Slide 1 -->
               @foreach($koss as $kos)
@@ -263,7 +264,7 @@
   <br>
       
   <section id="about" class="about section mt-5">
-    <div class="container aos-init aos-animate">
+    <div class="container aos-init aos-animate" data-aos="fade-zoom-in" data-aos-easing="ease-in-back">
         <div class="row gy-4 align-items-center">
             <div class="col-lg-6 order-1 order-lg-2">
                 <img src="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" class="img-fluid" alt="Uda Kost Logo">
@@ -303,13 +304,13 @@
   <!-- Faq Section -->
   <section id="faq" class="faq section gap-4">
     <!-- Section Title -->
-    <div class="mb-4 container section-title">
+    <div class="mb-4 container section-title" data-aos="fade-up">
       <h2>Frequently Asked Questions</h2>
       <p><span>Seputar</span> <span class="description-title">UDA Kost!?</span></p>
     </div><!-- End Section Title -->
 
     <div class="accordion accordion-active" id="accordionPanelsStayOpenExample">
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in">
         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
             Urusan Bayar - Membayar
@@ -325,7 +326,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
             Keamanan Kita
@@ -340,7 +341,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingThree">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
             Kebersihan Kost Kita
@@ -355,7 +356,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingFour">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
             Kalau Ada yang rusak
@@ -369,7 +370,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingLima">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseLima" aria-expanded="false" aria-controls="panelsStayOpen-collapseLima">
             Jam Besuk Teman
@@ -384,7 +385,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingEnam">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEnam" aria-expanded="false" aria-controls="panelsStayOpen-collapseEnam">
             Ketenangan
@@ -398,7 +399,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingTujuh">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTujuh" aria-expanded="false" aria-controls="panelsStayOpen-collapseTujuh">
             Listrik dan Air
@@ -412,7 +413,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingDelapan">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseDelapan" aria-expanded="false" aria-controls="panelsStayOpen-collapseDelapan">
             Rokok 
@@ -426,7 +427,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item">
+      <div class="accordion-item" data-aos="zoom-in-up">
         <h2 class="accordion-header" id="panelsStayOpen-headingSembilan">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSembilan" aria-expanded="false" aria-controls="panelsStayOpen-collapseSembilan">
             Fasilitas Bersama 
@@ -458,11 +459,16 @@
 <!-- Script -->
 <script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 <script src="{{ asset('js/fronten.js') }}"></script>
+
+<script>
+  AOS.init();
+</script>
 
 <script>
   let mybutton = document.getElementById("back-to-top");
@@ -537,19 +543,4 @@ const swiperEl = document.querySelector('swiper-container')
 swiperEl.initialize();
 </script>
 
-{{-- <script>
-  var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        loop: false,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
-</script> --}}
 @endpush

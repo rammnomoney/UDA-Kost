@@ -80,19 +80,19 @@
                                 <td>{{ $k->fitur }}</td>
                                 <td>{{ $k->status }}</td>
                                 <td>
-                                        {{-- @if ($k->gambar == null)
+                                        @if ($k->gambar == null)
                                             <p>-</p>
                                         @else
                                             <img src="{{ url('storage/gambar/' . $k->gambar) }}" width="150px" />
-                                        @endif --}}
+                                        @endif
 
-                                @if ($k->gambar == null || json_decode($k->gambar) == [])
+                                {{-- @if ($k->gambar == null || json_decode($k->gambar) == [])
                                     <p>-</p>
                                     @else
                                         @foreach (json_decode($k->gambar) as $gambar)
                                             <img src="{{ asset('storage/gambar/' . $k->gambar) }}" alt="Gambar {{ $k->nama }}" width="150px" />
                                         @endforeach
-                                @endif 
+                                @endif  --}}
                                 </td>
                                 <td style="width: 100px; white-space: nowrap">
                                     <!-- <a href="#" class="btn btn-warning">Detail</a> -->

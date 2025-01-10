@@ -6,6 +6,7 @@
     <link href="{{ asset('bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!--  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     
@@ -13,7 +14,7 @@
 @endpush
 
 @section('content')
-<header class="header-top">
+<header class="header-top" data-aos="zoom-out">
     <div class="overlay">
         <h3 class="property-title">LIST <span class="title">KOST</span></h3>
         <div class="menu">
@@ -28,7 +29,7 @@
 
 <main id="home">
     <section class="list-house1">
-        <div class="container search-bar" style="justify-content:center;">
+        <div class="container search-bar" data-aos="fade-up" style="justify-content:center;">
             <select>
                 <option selected disabled>UDA Kost!? Tipe</option>
             </select>
@@ -38,7 +39,7 @@
     </section>
     
     <section class="list-house2">
-        <div class="d-flex justify-content-between mb-3 p-2">
+        <div class="d-flex justify-content-between mb-3 p-2" data-aos="fade-up">
             <h4>Hanya di <i><span class="title">#UDAKost</span></i></h4>
             <div>
                 <button id="gridView" class="btn btn-primary btn-sm">Grid View</button>
@@ -48,7 +49,7 @@
         <div class="row property-banner" id="propertyContainer">
             @foreach ($koss as $kos)
                 <div class="property-list col-lg-4 col-md-6 mb-4">
-                    <div class="property-card d-flex flex-column">
+                    <div class="property-card d-flex flex-column" data-aos="zoom-in">
                         <div class="image">
                             <img src="{{ $kos->gambar ? asset('storage/gambar/' . $kos->gambar) : asset('/aset/img/Udakost/transparent-udakost/White Vertical-Uda Kost Logo.png') }}" />
                         </div>
@@ -105,7 +106,13 @@
 @endsection
 
 @push('addon-script-footer')
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script src="{{ asset('js/fronten.js') }}"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {

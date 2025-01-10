@@ -12,7 +12,7 @@ class Kamar extends Model
     protected $table = 'kamars';
 
     protected $casts = [
-        'images' => 'array', // Kolom images otomatis dikonversi ke array
+        'images' => 'array',
     ];
     // public function kos()
     // {
