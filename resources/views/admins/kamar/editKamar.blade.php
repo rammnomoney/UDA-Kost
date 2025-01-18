@@ -47,7 +47,7 @@
                 <label for="list">List</label>
                     <div id="list-container">
                         @foreach (json_decode($kamar->list, true) as $list)
-                            <input class="form-control mb-2" type="text" name="list[]" value="{{ $list }}" />
+                            <input class="form-control form-control-sm mt-2" type="text" name="list[]" value="{{ $list }}" />
                         @endforeach
                     </div>
                 <button type="button" id="add-list" class="btn btn-primary mt-2">Tambah List</button>
@@ -75,7 +75,7 @@
                     <option value="tidak tersedia">Tidak Tersedia</option>
                 </select>
             </div>
-            <div>
+            {{-- <div>
                 <label for="gambar">Gambar</label>
                 <!-- Display current image -->
                 <div>
@@ -107,16 +107,20 @@
                         </button>
                     </div>
                 </div>
-            </div>
-{{--             
+            </div> --}}
+            
             <div>
                 <label for="gambar">Gambar</label>
                 <div>
-                    <img src="{{ url('img/' . $kamar->gambar) }}"
-                    value="{{ $kamar->gambar }}" style="max-width: 200px; margin-bottom: 10px;" />
+                    @if ($kamar->gambar)
+                        <img src="{{ asset('public/gambar/' . $kamar->gambar) }}"
+                        value="{{ $kamar->gambar }}" style="max-width: 200px; margin-bottom: 10px;" />
+                    @else
+                        <p>No image available</p>
+                    @endif
                 </div>
-                <input class="form-control" type="file" name="gambar" id="gambar" />
-            </div> --}}
+                <input class="form-control" type="file" name="gambar[]" id="gambar" multiple />
+            </div>
             
             <button class="btn btn-primary btn-lg mt-3" type="submit">Update</button>
         </form>
@@ -129,12 +133,18 @@
     document.getElementById('add-list').addEventListener('click', function() {
         const container = document.getElementById('list-container'); // Cari elemen dengan ID list-container
         const inputCount = container.querySelectorAll('input').length; // Hitung jumlah input yang ada
+        
+        if (inputCount < 10) {
         const newInput = document.createElement('div'); // Buat elemen div baru
         newInput.classList.add('list-group', 'mb-2'); // Tambahkan kelas untuk styling
         newInput.innerHTML = `
-                <input class="form-control" type="text" name="list[]" id="list-${inputCount}" placeholder="Masukkan list" />
+                <input class="form-control form-control-sm mt-2" type="text" name="list[]" placeholder="Masukkan list" />
             `;
         container.appendChild(newInput); // Tambahkan input baru ke dalam container
+    } else {
+            alert('Maksimal 10 list saja!');
+        }
+    
     });
 </script>
 

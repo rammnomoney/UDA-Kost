@@ -23,29 +23,29 @@
         <form action="/update-penyewa/{{ $penyewa->id }}" method="post">
             @csrf
             <div>
-                <label for="nik">nik</label>
+                <label for="nik">NIK</label>
                 <input class="form-control" type="text" name="nik" id="nik" value="{{ $penyewa->nik }}" />
             </div>
             <div>
-                <label for="nama">nama</label>
+                <label for="nama">Nama</label>
                 <input class="form-control" type="text" name="nama" id="nama" value="{{ $penyewa->nama }}" />
             </div>
             <div>
-                <label for="email">email</label>
+                <label for="email">Email</label>
                 <input class="form-control" type="text" name="email" id="email"
                     value="{{ $penyewa->email }}" />
             </div>
             <div>
-                <label for="alamat">alamat</label>
+                <label for="alamat">Alamat</label>
                 <input class="form-control" type="text" name="alamat" id="alamat"
                     value="{{ $penyewa->alamat }}" />
             </div>
             <div>
-                <label for="no_telp">nomor HP </label>
+                <label for="no_telp">Nomor HP </label>
                 <input class="form-control" type="text" name="no_telp" id="no_telp"
                     value="{{ $penyewa->no_telp }}" />
             </div>
-            <button class="btn btn-primary btn-lg mt-3">save</button>
+            <button class="btn btn-primary btn-lg mt-3">SIMPAN</button>
         </form>
     </div>
 </body>

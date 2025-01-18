@@ -13,7 +13,7 @@
             <ul class="breadcrumbs style-1">
                 <li><a href="/">Home</a></li>
                 <li>/</li>
-                <li><a href="{{ route('list.kos') }}">{{ __('Kos') }}</a></li>
+                <li>{{ $kamar->nama }}</li>
             </ul>
         </div>
     </div>
@@ -24,11 +24,80 @@
     <div class="property-single-wrap">
         <div class="container-fluid">
 
-    {{-- @foreach ($kamar as $tampilkamar) --}}
     <div class="container gallery-photo" data-aos="zoom-in">
-        {{-- Carousel --}}
-        <div class="row">
+        <div class="row mx-0">
+            {{-- Carousel --}}
             <div class="col-md-6">
+                    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" style="width:100%; height:100%; object-fit: cover;">
+                        {{-- @foreach ($kamars as $image) --}}
+                        @if (!empty($kamar->gambar) && is_array($kamar->gambar))
+                        <div class="carousel-item active">
+                            <div class="position-relative">
+                                <img src="{{ asset('storage/gambar/' . $kamar->$gambar) }}" class="d-block w-100" alt="Image 1">
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        {{-- <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="{{ url('storage/gambar/' . $kamar->gambar) }}" class="d-block w-100" alt="Image 2">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="{{ url('storage/gambar/' . $kamar->gambar) }}" class="d-block w-100" alt="Image 3">
+                            </div>
+                        </div> --}}
+                        <div class="list-tags position-absolute g-2 top-0 start-0">
+                            <button class="text-light btn btn-outline-dark">FEATURED</button>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            {{-- Gallery carousel --}}
+            <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
+                <div class="row g-2">
+                    @foreach ($kamar->take(3) as $index => $image)
+                        <div class="col-md-6">
+                            <img src="{{ asset('storage/gambar/' . $image->gambar) }}" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="{{ $index }}"
+                                @if($index === 1) style="border-radius: 0px 20px 0px 0px;" @endif>
+                        </div>
+                    @endforeach
+    
+                        <div class="col-md-6 position-relative">
+                            {{-- {{ url('storage/gambar/' . $kamar->last()->gambar) }} --}}
+                            <a href="#" data-fancybox="gallery">
+                                <img src="{{ asset('storage/gambar/' . $kamar->gambar) }}" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
+                                <div class="overlay-text">
+                                    <p>Tampilkan</p>
+                                </div>
+                            </a>
+            
+                            <!-- Hidden images for FancyBox -->
+                            <div style="display: none;">
+                                @foreach ($kamar as $gambarslide)
+                                    <a data-fancybox="gallery" href="{{ asset('storage/gambar/' . $gambarslide) }}">
+                                        <img src="{{ asset('storage/gambar/' . $gambarslide) }}" />
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                        @else
+                            <p class="text-center"><b>No images available</b></p>
+                        @endif 
+                </div>
+            </div>
+
+            {{--  --}}
+        {{-- <div class="col-md-6">
                 <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" style="width:100%; height:100%; object-fit: cover;">
                         <div class="carousel-item active">
@@ -46,7 +115,7 @@
                             <div class="position-relative">
                                 <img src="/aset/img/house/Gallery house8.jpeg" class="d-block w-100" alt="Image 3">
                             </div>
-                        </div>
+                        </div> 
                         <div class="list-tags position-absolute g-2 top-0 start-0">
                             <button class="text-light btn btn-outline-dark">FEATURED</button>
                         </div>
@@ -61,6 +130,7 @@
                     </button>
                 </div>
             </div>
+            {{-- Gallery carousel
             <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
                 <div class="row g-2">
                     <div class="col-md-6">
@@ -90,10 +160,10 @@
                             <a data-fancybox="gallery" href="/aset/img/house/Gallery house8.jpeg">
                             <img src="/aset/img/house/Gallery house8.jpeg" />
                             </a>
-                         </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
                 {{-- <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; --swiper-navigation-size: 25px;" 
@@ -127,6 +197,7 @@
                 </swiper-container>
               </div> --}}
             
+
                 {{-- Gallery Foto --}}
                 {{-- <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
                     <div class="row g-2">
@@ -150,6 +221,22 @@
                         </div> 
                     </div>
                 </div>  --}}
+
+                {{-- Preview foto --}}
+                {{-- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="{{ $k->gambar }}" id="modalImage" class="img-fluid" alt="Full Image">
+                            </div>
+                            <div class="modal-footer mx-2">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
 
                 {{-- <div class="col-lg-4">
                     <div class="row g-2">
@@ -183,122 +270,110 @@
                  </div>--}}
     
 
-                {{-- Preview foto --}}
-                {{-- <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <img src="{{ $k->gambar }}" id="modalImage" class="img-fluid" alt="Full Image">
-                            </div>
-                            <div class="modal-footer mx-2">
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             
                 {{--  Deskripsi  --}}
                 <div class="container p-2">
-                <div class="row">
-                    <div class="col-xl-10">
-                        <div class="content-wrap detail-kos">
-                            <div class="head-title wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                    <div data-aos="flip-up" data-aos-delay="100">
-                                        <div class="title"><h3>{{ $kamar->nama }}</h3></div>
-                                        <div class="location">
-                                            <div class="text-content">{{ $kamar->alamat }}</div>
-                                        </div>
-                                    </div>
-                                    <div class="price-box" data-aos="flip-up" data-aos-delay="300">
-                                        <div>
-                                            <div class="price">Rp{{ number_format($kamar->price,0,",",".") }}<span> /Bulan</span></div>
-                                            <div class="text-content"> {{ $kamar->status }}</div>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="box-items" data-aos="fade-up">
-                                @if ($kamar->list)
-                                    @foreach (json_decode($kamar->list) as $list)
-                                        <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                            <div class="icon">
-                                                <i class="flaticon-city"></i>
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <div class="content-wrap detail-kos">
+                                <div class="head-title wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                                        <div data-aos="flip-up" data-aos-delay="100">
+                                            <div class="title"><h3>{{ $kamar->nama }}</h3></div>
+                                            <div class="location">
+                                                <div class="text-content">{{ $kamar->alamat }}</div>
                                             </div>
-                                            <div class="text-content">{{ $list }}</div>
                                         </div>
-                                    @endforeach
-                                {{-- @else
-                                    <p class="text-muted">Belum ada list tersedia.</p> --}}
-                                @endif
-                            </div>
-                            <div class="desc container shadow-sm" data-aos="fade-up">
-                                <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Deskripsi</h4>
-                                <p class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                    {{ $kamar->deskripsi }}
-                                    
-                                    <br>
-                                    <br>
-                                    
-                                </p>
-                            </div>
-                            <div class="address container shadow-sm" data-aos="fade-up">
-                                <div class="flex items-center justify-between gap30 flex-wrap wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                    <h4 class="mb-0">Alamat</h4>
-                                    {{-- <a href="#" class="tf-button-green"><i class="flaticon-location"></i>Open On Google Maps</a> --}}
+                                        <div class="price-box" data-aos="flip-up" data-aos-delay="300">
+                                            <div>
+                                                <div class="price">Rp{{ number_format($kamar->price,0,",",".") }}<span> /Bulan</span></div>
+                                                <div class="text-content"> {{ $kamar->status }}</div>
+                                            </div>
+                                        </div>
                                 </div>
-                                <div class="list-item">
-                                    <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                        <div class="text">Alamat</div>
-                                        <p>{{ $kamar->alamat }}</p>
-                                    </div>
-                                    <div class="item wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                                        <div class="text">Kode Pos</div>
-                                        <p>{{ $kamar->kodepos }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="attachments container shadow-sm" data-aos="fade-up">
-                                <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Berkas untuk {{ $kamar->nama }}</h4>
-                                <div>
-                                    <a href="/aset/udakost-preview.pdf" class="file-item">
-                                        <div class="icon">
-                                            <img src="#" alt="">
-                                        </div>
-                                        <div>
-                                            <div class="name">UDAKost!?.PDF 1</div>
-                                        </div>
-                                    </a>
-                                    <a href="/aset/udakost-preview.pdf" class="file-item">
-                                        <div class="icon">
-                                            <img src="#" alt="">
-                                        </div>
-                                        <div>
-                                            <div class="name">UDAKost!?.PDF 2</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="features container shadow-sm" data-aos="fade-up">
-                                <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Fitur</h4>
-                                <ul>
-                                    <li>
-                                        <h5 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">{{ $kamar->judulfitur }}</h5>
-                                        <div class="wrap-check-ellipse wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                                            <div class="check-ellipse-item">
+                                <div class="box-items" data-aos="fade-up">
+                                    @if ($kamar->list)
+                                        @foreach (json_decode($kamar->list) as $list)
+                                            <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                                                 <div class="icon">
-                                                    <i class="flaticon-check"></i>
+                                                    <i class="flaticon-city"></i>
                                                 </div>
-                                                <p>{{ $kamar->fitur }}</p>
+                                                <div class="text-content">{{ $list }}</div>
                                             </div>
+                                        @endforeach
+                                    {{-- @else
+                                        <p class="text-muted">Belum ada list tersedia.</p> --}}
+                                    @endif
+                                </div>
+                                <div class="desc container shadow-sm" data-aos="fade-up">
+                                    <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Deskripsi</h4>
+                                    <p class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                                        {{ $kamar->deskripsi }}
+                                        <br>
+                                        <br>                                        
+                                    </p>
+                                </div>
+                                <div class="address container shadow-sm" data-aos="fade-up">
+                                    <div class="flex items-center justify-between gap30 flex-wrap wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                                        <h4 class="mb-0">Alamat</h4>
+                                        {{-- <a href="#" class="tf-button-green"><i class="flaticon-location"></i>Open On Google Maps</a> --}}
+                                    </div>
+                                    <div class="list-item">
+                                        <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                                            <div class="text">Lokasi</div>
+                                            <p>{{ $kamar->alamat }}</p>
                                         </div>
-                                    </li>
-                                </ul>
+                                        <div class="item wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                            <div class="text">Kode Pos</div>
+                                            <p>{{ $kamar->kodepos }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="attachments container shadow-sm" data-aos="fade-up">
+                                    <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Berkas untuk {{ $kamar->nama }}</h4>
+                                    <div>
+                                        <a href="/aset/udakost-preview.pdf" class="file-item">
+                                            <div class="icon">
+                                                <img src="#" alt="">
+                                            </div>
+                                            <div>
+                                                <div class="name">UDAKost.PDF 1</div>
+                                            </div>
+                                        </a>
+                                        <a href="/aset/udakost-preview.pdf" class="file-item">
+                                            <div class="icon">
+                                                <img src="#" alt="">
+                                            </div>
+                                            <div>
+                                                <div class="name">UDAKost.PDF 2</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="features container shadow-sm" data-aos="fade-up">
+                                    <div>
+                                        <h4 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">Fitur</h4>
+                                    </div>    
+                                    <div class="list-item">
+                                        <div class="item wow fadeInUp animated">
+                                            <div class="text">{{ $kamar->judulfitur }}</div>
+                                            <p>{{ $kamar->fitur }}</p>
+                                        </div>
+                                    </div>    
+                                </div>
+                                    {{-- <ul>
+                                        <li>
+                                            <h5 class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">{{ $kamar->judulfitur }}</h5>
+                                            <div class="wrap-check-ellipse wow fadeInUp animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                                <div>
+                                                    <p>{{ $kamar->fitur }}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul> --}}
+                                
                             </div>
-                            
                         </div>
                     </div>
-                </div>
                 </div>
     {{-- @endforeach --}}
         </div>

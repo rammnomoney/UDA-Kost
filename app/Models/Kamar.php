@@ -11,9 +11,9 @@ class Kamar extends Model
 
     protected $table = 'kamars';
 
-    protected $casts = [
-        'images' => 'array',
-    ];
+    // protected $casts = [
+    //     'images' => 'array',
+    // ];
     // public function kos()
     // {
     //     return $this->belongsTo(Kos::class);

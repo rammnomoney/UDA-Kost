@@ -46,10 +46,10 @@
                 <button id="listView" class="btn btn-outline-primary btn-sm">List View</button>
             </div>
         </div>
-        <div class="row property-banner" id="propertyContainer">
+        <div class="row property-banner" id="propertyContainer" data-aos="zoom-in">
             @foreach ($koss as $kos)
                 <div class="property-list col-lg-4 col-md-6 mb-4">
-                    <div class="property-card d-flex flex-column" data-aos="zoom-in">
+                    <div class="property-card d-flex flex-column">
                         <div class="image">
                             <img src="{{ $kos->gambar ? asset('storage/gambar/' . $kos->gambar) : asset('/aset/img/Udakost/transparent-udakost/White Vertical-Uda Kost Logo.png') }}" />
                         </div>

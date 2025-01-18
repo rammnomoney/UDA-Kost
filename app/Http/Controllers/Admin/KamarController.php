@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Kamar;
@@ -40,7 +41,7 @@ class KamarController extends Controller
                 'list.*' => 'string',
                 'deskripsi' => 'required|max:255',
                 'status' => 'required',
-                'gambar' => 'required|array|max:10',
+                'gambar' => 'required|max:10',
                 'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
             ], [
                 'nama.required' => 'Nama Wajib Diisi',
@@ -63,29 +64,34 @@ class KamarController extends Controller
             $kamar->fitur = $request->fitur;
             $kamar->status = $request->status;
 
-            // Input gambar 1
-        // if ($request->hasFile('gambar')) {
-        //     $gambar = $request->file('gambar');
-
-        //     $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
-        //     $gambar->storeAs('public/gambar', $namaFile);
-        //     $kamar->gambar = $namaFile;
-        // }
-
-        // Input gambar 2
-        if ($request->hasFile('gambar')) {
-            $gambarFiles = $request->file('gambar');
-            $gambarPaths = [];
-        
-            foreach ($gambarFiles as $gambar) {
-                $namaFile = $request->nama . '_' . time() . '_' . $gambar->getClientOriginalName();
+            //Input gambar 1
+            if ($request->hasFile('gambar')) {
+                $gambar = $request->file('gambar');
+                $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
                 $gambar->storeAs('public/gambar', $namaFile);
-                $gambarPaths[] = $namaFile;
+                $kamar->gambar = $namaFile;
             }
-        
-            $kamar->gambar = json_encode($gambarPaths); // Save as JSON
-        }
-        
+
+            // if ($request->hasFile('photos')) {
+            //     $files = $request->file('photos');
+            //     foreach($files as $file){
+            //         $filename = $file->getClientOriginalName();
+            //         $extension = $file->getClientOriginalExtension();
+            //         $fileName = str::random(5)."-".date('his')."-".str::random(3).".".$extension;
+            //         $gambar = 'public/gambar'.'/';
+            //         $file->move($gambar, $fileName);
+            //         }
+            //     }
+
+        // if ($request->hasfile('gambar')) {
+        //     foreach ($request->file('gambar') as $file) {
+        //         // Store the file in the "public/uploads" directory
+        //         $path = $file->store('uploads', 'public');
+
+        //         // Save the file path to the database
+        //         Image::create(['file_path' => $path]);
+        //     }
+        // }
 
         $kamar->save();
 
@@ -108,7 +114,7 @@ class KamarController extends Controller
         $request->validate([
             'list' => 'required|array',
             'list.*' => 'string',
-            'gambar' => 'required|array|max:10',
+            'gambar' => 'required|max:10',
             'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
         ]);
 
@@ -126,28 +132,28 @@ class KamarController extends Controller
 
 
         // Update jenis 2 ke 2
-        if ($request->hasFile('gambar')) {
-            // Delete old images
-            if ($kamar->gambar) {
-                foreach (json_decode($kamar->gambar) as $oldImage) {
-                    if (Storage::exists('public/gambar/' . $oldImage)) {
-                        Storage::delete('public/gambar/' . $oldImage);
-                    }
-                }
-            }
+        // if ($request->hasFile('gambar')) {
+        //     // Delete old images
+        //     if ($kamar->gambar) {
+        //         foreach (json_decode($kamar->gambar) as $oldImage) {
+        //             if (Storage::exists('public/gambar/' . $oldImage)) {
+        //                 Storage::delete('public/gambar/' . $oldImage);
+        //             }
+        //         }
+        //     }
         
-            // Save new images
-            $gambarFiles = $request->file('gambar');
-            $gambarPaths = [];
+        //     // Save new images
+        //     $gambarFiles = $request->file('gambar');
+        //     $gambarPaths = [];
         
-            foreach ($gambarFiles as $gambar) {
-                $namaFile = $request->nama . '_' . time() . '_' . $gambar->getClientOriginalName();
-                $gambar->storeAs('public/gambar', $namaFile);
-                $gambarPaths[] = $namaFile;
-            }
+        //     foreach ($gambarFiles as $gambar) {
+        //         $namaFile = $request->nama . '_' . time() . '_' . $gambar->getClientOriginalName();
+        //         $gambar->storeAs('public/gambar', $namaFile);
+        //         $gambarPaths[] = $namaFile;
+        //     }
         
-            $kamar->gambar = json_encode($gambarPaths); // Save new filenames
-        }
+        //     $kamar->gambar = json_encode($gambarPaths); // Save new filenames
+        // }
      
         // Update jenis 2 ke 1
         // if ($request->hasFile('gambar')) {
@@ -184,29 +190,33 @@ class KamarController extends Controller
         //     $kamar->gambar = json_encode(array_values($existingFiles));
         // }
 
-
         
         //tambah gambar biasa
-        //$namaFile = null;
         // if ($request->hasFile('gambar')) {
         //     if ($kamar->gambar && Storage::disk('public')->exists('gambar/' . $kamar->gambar)) {
         //         Storage::disk('public')->delete('gambar/' . $kamar->gambar);
         //     }
+
         //     $gambar = $request->file('gambar');
         //     $extension = $gambar->getClientOriginalExtension();
         //     $namaFile = $request->nama . '_' . time() . '.' . $extension;
-        //     $gambar->storeAs('public/gambar', $namaFile);
+        //     $gambar->storeAs('gambar', $namaFile, 'public');
 
         //     $kamar->gambar = $namaFile;
         // }
 
-        // if ($request->hasFile('gambar')) {
-        //         foreach ($request->file('gambar') as $file) {
-        //             $namaFile = time() . '-' . $file->getClientOriginalName();
-        //             $file->move(public_path('gambar/'), $namaFile);
-        //             // Store file names in a related table or an array field if needed
-        //         }
-        // }
+        // 
+        if ($request->hasFile('gambar')) {
+                foreach ($request->file('gambar') as $file) {
+
+                    $namaFile = $request->nama . '_' . time() . '_' . $file->getClientOriginalName();
+                    $file->storeAs('gambar', $namaFile, 'public');
+                    
+                    // $kamar->gambar()->create([
+                    //     'nama_file' => $namaFile,
+                    // ]);
+                }
+        }
 
         $kamar->save();
 

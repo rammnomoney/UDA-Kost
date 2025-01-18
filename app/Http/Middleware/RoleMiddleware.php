@@ -15,7 +15,7 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!auth()->user()->is_admin){
+        if(!auth()->user()->Users){
             abort(403);
         }
         return $next($request);

@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
         <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-        <title>Penyewa | tambah data</title>
+        <title>Penyewa | Tambah Data</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <form action="add-penyewa" method="post">
             @csrf
             <div>
-                <label for="nik">nik</label>
+                <label for="nik">NIK</label>
                 <input class="form-control @error('nik') is-invalid @enderror" type="text" name="nik"
                     id="nik" value="{{ old('nik') }}" />
                 <!-- notif error -->
@@ -34,7 +34,7 @@
                 @enderror
             </div>
             <div>
-                <label for="nama">nama</label>
+                <label for="nama">Nama</label>
                 <input class="form-control @error('nama') is-invalid @enderror" type="text" name="nama"
                     id="nama" value="{{ old('nama') }}" />
                 <!-- notif error -->
@@ -45,7 +45,7 @@
                 @enderror
             </div>
             <div>
-                <label for="email">email</label>
+                <label for="email">Email</label>
                 <input class="form-control @error('email') is-invalid @enderror" type="text" name="email"
                     id="email" value="{{ old('email') }}" />
                 <!-- notif error -->
@@ -56,7 +56,7 @@
                 @enderror
             </div>
             <div>
-                <label for="alamat">alamat</label>
+                <label for="alamat">Alamat</label>
                 <input class="form-control @error('alamat') is-invalid @enderror" type="text" name="alamat"
                     id="alamat" value="{{ old('alamat') }}" />
                 <!-- notif error -->
@@ -67,7 +67,7 @@
                 @enderror
             </div>
             <div>
-                <label for="no_telp">nomor HP </label>
+                <label for="no_telp">Nomor HP </label>
                 <input class="form-control @error('no_telp') is-invalid @enderror" type="text" name="no_telp"
                     id="no_telp" value="{{ old('no_telp') }}" />
                 <!-- notif error -->
@@ -77,7 +77,7 @@
                     </div>
                 @enderror
             </div>
-            <button class="btn btn-primary btn-lg mt-3">save</button>
+            <button class="btn btn-primary btn-lg mt-3">SIMPAN</button>
         </form>
     </div>
 </body>

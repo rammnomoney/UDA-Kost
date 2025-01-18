@@ -72,7 +72,6 @@
                                 <td>{{ $k->kodepos }}</td>
                                 <td>{{ $k->price }}</td>
                                 <td>
-                                    {{-- @foreach (json_decode($k->list)) --}}
                                     {{ $k->list }}
                                 </td>
                                 <td>{{ $k->deskripsi }}</td>
@@ -81,18 +80,10 @@
                                 <td>{{ $k->status }}</td>
                                 <td>
                                         @if ($k->gambar == null)
-                                            <p>-</p>
+                                                <img src="{{ url('public/gambar/' . $k->gambar) }}" width="150px" />
                                         @else
-                                            <img src="{{ url('storage/gambar/' . $k->gambar) }}" width="150px" />
+                                            <p>-</p>
                                         @endif
-
-                                {{-- @if ($k->gambar == null || json_decode($k->gambar) == [])
-                                    <p>-</p>
-                                    @else
-                                        @foreach (json_decode($k->gambar) as $gambar)
-                                            <img src="{{ asset('storage/gambar/' . $k->gambar) }}" alt="Gambar {{ $k->nama }}" width="150px" />
-                                        @endforeach
-                                @endif  --}}
                                 </td>
                                 <td style="width: 100px; white-space: nowrap">
                                     <!-- <a href="#" class="btn btn-warning">Detail</a> -->

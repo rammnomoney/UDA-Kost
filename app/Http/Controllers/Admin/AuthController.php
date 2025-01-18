@@ -1,4 +1,4 @@
-?php
+<!-- ?php
 
 namespace App\Http\Controllers;
 
@@ -6,6 +6,7 @@ use App\Models\Pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 //use Session;
 //use Illuminate\Support\Facades\Session;
 
@@ -85,4 +86,4 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-}
+} -->

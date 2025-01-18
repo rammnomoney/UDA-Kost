@@ -8,7 +8,7 @@ class UploadImageController extends Controller
 {
     function index(string $imgName) {
 		try {
-			return response()->file(storage_path("app/public/gambar/".$imgName));
+			return response()->file(storage_path("app/public/storage/gambar/".$imgName));
 		} catch (\Throwable $th) {
 			dd($th);
 			abort(404);

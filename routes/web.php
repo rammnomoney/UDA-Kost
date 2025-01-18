@@ -33,23 +33,23 @@ use Illuminate\Support\Facades\Route;
 	Route::get('daftar-kos', [App\Http\Controllers\KamarController::class, 'kost'])->name('list.kos');
 	
 	Route::get('/kamar-kos/{id}', [App\Http\Controllers\KamarController::class, 'show'])->name('ke.kamar');
-
-	Auth::routes();
-
+	
+	
 	//Route::view('index', 'index');
 	//Route::view('show', 'fronten.house.show');
-
-	Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
+	
+	Auth::routes();
 	
 	// Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
 		// Route::get('admin', [DashboardController::class, 'index'])->name('admins.dashboard.dashboard');
 		// });
-	
+		
 		
 	// BAGIAN ADMIN
 	
 	//Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
 Route::middleware('auth')->group(function () {
+
 	Route::get('/home', [HomeController::class, 'index'])->name('home');
 			
  	// Penghuni
@@ -118,12 +118,9 @@ Route::middleware('auth')->group(function () {
 	
 	// image
 	Route::get("/img/{img}", [UploadImageController::class, "index"]);
+
+	Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 });
-	// dashboard    
-	//Route::get('/dashboard', [DashboardController::class, 'index']);
-	// auth
-	// Route::get('/register', [AuthController::class, 'index']);
-	// Route::post('/register', [AuthController::class, 'store']);
 	
 	// });
 	// Route::middleware('guest')->group(function() {

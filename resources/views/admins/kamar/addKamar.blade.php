@@ -19,7 +19,7 @@
 <body>
     <div class="container mt-3">
         <h2>Add Kamar</h2>
-        <form method="post" action="/add-kamar/" enctype="multipart/form-data">
+        <form method="POST" action="/add-kamar/" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="nama">Nama Kamar</label>
@@ -50,7 +50,7 @@
                         <input class="form-control" type="number" name="kodepos"
                             id="kodepos" value="{{ old('kodepos') }}" />
                     </div>
-                  </div>
+                </div>
             </div>
             <div>
                 <label for="price">Harga</label>
@@ -67,7 +67,7 @@
                 <label for="list">List</label>
                 <div id="list-container">
                     <div class="list-group">
-                        <input class="form-control mb-2" type="text" name="list[]" placeholder="Masukkan list" />
+                        <input class="form-control form-control-sm" type="text" name="list[]" placeholder="Masukkan list" />
                     </div>
                 </div>
                 <button type="button" id="add-list" class="btn btn-primary mt-2">Tambah List</button>
@@ -117,11 +117,11 @@
                     <option value="tidak tersedia">Tidak Tersedia</option>
                 </select>
             </div>
-            {{-- <div>
-                <label for="gambar">Gambar</label>
-                <input class="form-control" type="file" name="gambar[]" multiple>
-            </div>  --}}
             <div>
+                <label for="gambar">Gambar</label>
+                <input class="form-control" type="file" name="gambar[]" id="gambar" multiple />
+            </div> 
+            {{-- <div>
                 <label for="gambar">Gambar</label>
                 <div id="file-container">
                     <div class="control-group input-group">
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
             <button class="btn btn-primary btn-lg mt-3" type="submit">Add</button>
         </form>
@@ -156,12 +156,18 @@
     document.getElementById('add-list').addEventListener('click', function() {
         const container = document.getElementById('list-container'); // Cari elemen dengan ID list-container
         const inputCount = container.querySelectorAll('input').length; // Hitung jumlah input yang ada
+        
+        if (inputCount < 10) {
         const newInput = document.createElement('div'); // Buat elemen div baru
         newInput.classList.add('list-group', 'mb-2'); // Tambahkan kelas untuk styling
         newInput.innerHTML = `
-                <input class="form-control" type="text" name="list[]" id="list-${inputCount}" placeholder="Masukkan list" />
+                <input class="form-control form-control-sm mt-2" type="text" name="list[]" placeholder="Masukkan list" />
             `;
         container.appendChild(newInput); // Tambahkan input baru ke dalam container
+    } else {
+            alert('Maksimal 10 list saja!');
+        }
+    
     });
 </script>
 

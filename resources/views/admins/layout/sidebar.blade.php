@@ -11,9 +11,9 @@
         <div class="navbar-nav w-100">
             <a href="{{ url('/home') }}" class="nav-item nav-link"><i class="fa fa-home me-2"></i>{{ __('Home') }}</a>
             
-            <a href="{{ url('/pemilik') }}" class="nav-item nav-link"><i class="fa fa-wrench me-2" aria-hidden="true"></i>{{ __('Admin') }}</a>
             <a href="{{ url('/kos') }}" class="nav-item nav-link"><i class="fa fa-address-book me-2" aria-hidden="true"></i>{{ __('Kos') }}</a>
             <a href="{{ url('/penyewa') }}" class="nav-item nav-link"><i class="fa fa-users me-2" aria-hidden="true"></i>{{ __('Penghuni') }}</a>
+            <a href="{{ url('/pemilik') }}" class="nav-item nav-link"><i class="fa fa-wrench me-2" aria-hidden="true"></i>{{ __('Pemilik') }}</a>
             <a href="{{ url('/pilih-kos') }}" class="nav-item nav-link"><i class="fa fa-table me-2" aria-hidden="true"></i>{{ __('Kontrak') }}</a>
             <a href="{{ url('/laporan') }}" class="nav-item nav-link"><i class="fa fa-file me-2" aria-hidden="true"></i>{{ __('Laporan') }}</a>
         </div>

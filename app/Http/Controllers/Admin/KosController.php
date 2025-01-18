@@ -100,17 +100,13 @@ class KosController extends Controller
         $kos->price = $request->price;
         
         if ($request->hasFile('gambar')) {
-            // if ($kos->gambar && Storage::disk('public')->exists('gambar/' . $kos->gambar)) {
-            //     Storage::disk('public')->delete('gambar/' . $kos->gambar);
-            // }
             if ($kos->gambar && Storage::exists('public/gambar/' . $kos->gambar)) {
                 Storage::delete('public/gambar/' . $kos->gambar);
             }
 
             $gambar = $request->file('gambar');
             $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
-            // $extension = $gambar->getClientOriginalExtension();
-            // $namaFile = $request->nama . '_' . time() . '.' . $extension;
+            
             $gambar->storeAs('public/gambar', $namaFile);
             $kos->gambar = $namaFile;
         }
