@@ -30,24 +30,15 @@
             <div class="col-md-6">
                     <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" style="width:100%; height:100%; object-fit: cover;">
-                        {{-- @foreach ($kamars as $image) --}}
-                        @if (!empty($kamar->gambar) && is_array($kamar->gambar))
-                        <div class="carousel-item active">
+                        {{-- @if (!empty($kamargambars->gambar) && is_array($kamargambars->gambar)) --}}
+                        @if (!empty($kamar->gambar))
+                        @foreach ($kamar as $key => $kamarImg)
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                             <div class="position-relative">
-                                <img src="{{ asset('storage/gambar/' . $kamar->$gambar) }}" class="d-block w-100" alt="Image 1">
+                                <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}" class="d-block w-100" alt="Image {{ $key + 1 }}">
                             </div>
                         </div>
-                        <!-- Slide 2 -->
-                        {{-- <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="{{ url('storage/gambar/' . $kamar->gambar) }}" class="d-block w-100" alt="Image 2">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="{{ url('storage/gambar/' . $kamar->gambar) }}" class="d-block w-100" alt="Image 3">
-                            </div>
-                        </div> --}}
+                        @endforeach
                         <div class="list-tags position-absolute g-2 top-0 start-0">
                             <button class="text-light btn btn-outline-dark">FEATURED</button>
                         </div>
@@ -65,29 +56,27 @@
             {{-- Gallery carousel --}}
             <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
                 <div class="row g-2">
-                    @foreach ($kamar->take(3) as $index => $image)
+                    @foreach ($kamar as $key => $kamarImg)
                         <div class="col-md-6">
-                            <img src="{{ asset('storage/gambar/' . $image->gambar) }}" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="{{ $index }}"
-                                @if($index === 1) style="border-radius: 0px 20px 0px 0px;" @endif>
+                            <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="{{ $key }}" style="border-radius: 0px 20px 0px 0px;">
                         </div>
                     @endforeach
     
                         <div class="col-md-6 position-relative">
                             {{-- {{ url('storage/gambar/' . $kamar->last()->gambar) }} --}}
+                        @foreach ($kamar as $kamarImg)
                             <a href="#" data-fancybox="gallery">
-                                <img src="{{ asset('storage/gambar/' . $kamar->gambar) }}" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
+                                <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
                                 <div class="overlay-text">
                                     <p>Tampilkan</p>
                                 </div>
                             </a>
-            
                             <!-- Hidden images for FancyBox -->
                             <div style="display: none;">
-                                @foreach ($kamar as $gambarslide)
-                                    <a data-fancybox="gallery" href="{{ asset('storage/gambar/' . $gambarslide) }}">
-                                        <img src="{{ asset('storage/gambar/' . $gambarslide) }}" />
-                                    </a>
-                                @endforeach
+                                <a data-fancybox="gallery" href="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}">
+                                    <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}" />
+                                </a>
+                         @endforeach
                             </div>
                         </div>
                         @else

@@ -15,14 +15,14 @@ class KamarController extends Controller
     public function index()
     {
         //$title = 'Halaman List Kamar';
-        //$kos = Kos::findOrFail($id);
-        $kamar = Kamar::paginate(6);
-
+        //$kamar = Kamar::paginate(6);
+        
         // if (!$kamar) {
-        //     Session::flash('search', 'gagal');
-        //     Session::flash('pesan', 'Data tidak ditemukan');
-        // }
-
+            //     Session::flash('search', 'gagal');
+            //     Session::flash('pesan', 'Data tidak ditemukan');
+            // }
+            
+        $kamar = Kamar::get();
         return view('admins.kamar.listKamar', compact('kamar'));
     }
 
@@ -41,8 +41,6 @@ class KamarController extends Controller
                 'list.*' => 'string',
                 'deskripsi' => 'required|max:255',
                 'status' => 'required',
-                'gambar' => 'required|max:10',
-                'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
             ], [
                 'nama.required' => 'Nama Wajib Diisi',
                 'nama.max' => 'Nama Maksimal 30 Karakter',
@@ -65,13 +63,14 @@ class KamarController extends Controller
             $kamar->status = $request->status;
 
             //Input gambar 1
-            if ($request->hasFile('gambar')) {
-                $gambar = $request->file('gambar');
-                $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
-                $gambar->storeAs('public/gambar', $namaFile);
-                $kamar->gambar = $namaFile;
-            }
+            // if ($request->hasFile('gambar')) {
+            //     $gambar = $request->file('gambar');
+            //     $namaFile = $request->nama . '_' . time() . '.' . $gambar->getClientOriginalExtension();
+            //     $gambar->storeAs('public/gambar', $namaFile);
+            //     $kamar->gambar = $namaFile;
+            // }
 
+            //
             // if ($request->hasFile('photos')) {
             //     $files = $request->file('photos');
             //     foreach($files as $file){
@@ -82,16 +81,6 @@ class KamarController extends Controller
             //         $file->move($gambar, $fileName);
             //         }
             //     }
-
-        // if ($request->hasfile('gambar')) {
-        //     foreach ($request->file('gambar') as $file) {
-        //         // Store the file in the "public/uploads" directory
-        //         $path = $file->store('uploads', 'public');
-
-        //         // Save the file path to the database
-        //         Image::create(['file_path' => $path]);
-        //     }
-        // }
 
         $kamar->save();
 
@@ -114,8 +103,6 @@ class KamarController extends Controller
         $request->validate([
             'list' => 'required|array',
             'list.*' => 'string',
-            'gambar' => 'required|max:10',
-            'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:10240',
         ]);
 
         $kamar = Kamar::findOrFail($id);
@@ -130,67 +117,6 @@ class KamarController extends Controller
         $kamar->fitur = $request->fitur;
         $kamar->status = $request->status;
 
-
-        // Update jenis 2 ke 2
-        // if ($request->hasFile('gambar')) {
-        //     // Delete old images
-        //     if ($kamar->gambar) {
-        //         foreach (json_decode($kamar->gambar) as $oldImage) {
-        //             if (Storage::exists('public/gambar/' . $oldImage)) {
-        //                 Storage::delete('public/gambar/' . $oldImage);
-        //             }
-        //         }
-        //     }
-        
-        //     // Save new images
-        //     $gambarFiles = $request->file('gambar');
-        //     $gambarPaths = [];
-        
-        //     foreach ($gambarFiles as $gambar) {
-        //         $namaFile = $request->nama . '_' . time() . '_' . $gambar->getClientOriginalName();
-        //         $gambar->storeAs('public/gambar', $namaFile);
-        //         $gambarPaths[] = $namaFile;
-        //     }
-        
-        //     $kamar->gambar = json_encode($gambarPaths); // Save new filenames
-        // }
-     
-        // Update jenis 2 ke 1
-        // if ($request->hasFile('gambar')) {
-        //     foreach ($request->file('gambar') as $file) {
-        //         $gambarName = time() . '-' . $file->getClientOriginalName();
-        //         $file->move(public_path('gambar/'), $gambarName);
-    
-        //         // Save new file names in the database
-        //         // Example: Assuming you store filenames in a JSON or related table
-        //         $existingFiles = $kamar->gambar ? json_decode($kamar->gambar, true) : [];
-        //         $existingFiles[] = $gambarName;
-        //         $kamar->gambar = json_encode($existingFiles); // Save back to the model
-        //     }
-        // }
-    
-        // // Step 2: Handle file deletion (optional)
-        // if ($request->has('remove_files')) {
-        //     $filesToRemove = $request->input('remove_files'); // Array of file names to delete
-        //     $existingFiles = $kamar->gambar ? json_decode($kamar->gambar, true) : [];
-    
-        //     foreach ($filesToRemove as $fileName) {
-        //         // Remove from filesystem
-        //         if (file_exists(public_path('gambar/' . $fileName))) {
-        //             unlink(public_path('gambar/' . $fileName));
-        //         }
-    
-        //         // Remove from the existing file array
-        //         if (($key = array_search($fileName, $existingFiles)) !== false) {
-        //             unset($existingFiles[$key]);
-        //         }
-        //     }
-    
-        //     // Update the record with the updated file list
-        //     $kamar->gambar = json_encode(array_values($existingFiles));
-        // }
-
-        
         //tambah gambar biasa
         // if ($request->hasFile('gambar')) {
         //     if ($kamar->gambar && Storage::disk('public')->exists('gambar/' . $kamar->gambar)) {
@@ -206,17 +132,14 @@ class KamarController extends Controller
         // }
 
         // 
-        if ($request->hasFile('gambar')) {
-                foreach ($request->file('gambar') as $file) {
+        // if ($request->hasFile('gambar')) {
+        //         foreach ($request->file('gambar') as $file) {
 
-                    $namaFile = $request->nama . '_' . time() . '_' . $file->getClientOriginalName();
-                    $file->storeAs('gambar', $namaFile, 'public');
-                    
-                    // $kamar->gambar()->create([
-                    //     'nama_file' => $namaFile,
-                    // ]);
-                }
-        }
+        //             $namaFile = $request->nama . '_' . time() . '_' . $file->getClientOriginalName();
+        //             $file->storeAs('gambar', $namaFile, 'public');
+                  
+        //         }
+        // }
 
         $kamar->save();
 
@@ -229,22 +152,6 @@ class KamarController extends Controller
     
     public function destroy($id)
     {
-
-        // try {
-        //     $kamar = Kamar::findOrFail($id);
-        //     $kamar->delete();
-
-        //     if ($kamar) {
-        //         Session::flash('delete', 'suskes');
-        //         Session::flash('pesan', 'Data ' . $kamar->nama . ' berhasil dihapus');
-        //     }
-        // } catch (\Illuminate\Database\QueryException $e) {
-        //     $error = $e->errorInfo[1];
-        //     if ($error == 1451) {
-        //         Session::flash('delete', 'gagal');
-        //         Session::flash('pesan', 'Data ' . $kamar->nama . ' tidak bisa dihapus karena masih dalam masa sewa');
-        //     }
-        // }
         try {
             $kamar = Kamar::findOrFail($id);
     
@@ -256,6 +163,7 @@ class KamarController extends Controller
     
             Session::flash('delete', 'sukses');
             Session::flash('pesan', 'Data ' . $kamar->nama . ' berhasil dihapus');
+
         } catch (\Illuminate\Database\QueryException $e) {
             if ($e->errorInfo[1] == 1451) {
                 Session::flash('delete', 'gagal');
@@ -263,23 +171,23 @@ class KamarController extends Controller
             }
         }
     
-        return redirect('/kos');
+        return redirect('/kamar/{id}');
     }
 
-    // public function cari(Request $request, Kos $kos)
-    // {
-    //     $title = 'Halaman List Kamar';
-    //     $cariKamar = $request->cariKamar;
+    public function cari(Request $request, $id)
+    {
+        $title = 'Halaman List Kamar';
+        $cariKamar = $request->cariKamar;
 
-    //     if (isset($cariKamar)) {
-    //         $kamar = Kamar::where('nama', 'like', "%" . $cariKamar . "%")
-    //             ->where('kos_id', $kos->id)
-    //             ->orWhere('status', 'like', "%" . $cariKamar . "%")
-    //             ->paginate(6);
-    //     } else {
-    //         return $this->index($kos->id);
-    //     }
+        if (isset($cariKamar)) {
+            $kamar = Kamar::where('nama', 'like', "%" . $cariKamar . "%")
+                ->where('title', $id)
+                ->orWhere('status', 'like', "%" . $cariKamar . "%")
+                ->paginate(6);
+        } else {
+            return $this->index($id);
+        }
 
-    //     return view('admins.kamar.listKamar', compact('kamar', 'kos', 'cariKamar', 'title'))->with('pesan', 'Data tidak ditemukan');
-    // }
+        return view('admins.kamar.listKamar', compact('kamar', 'cariKamar', 'title'))->with('pesan', 'Data tidak ditemukan');
+    }
 }

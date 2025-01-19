@@ -102,7 +102,7 @@
                     </div>
                 @enderror
             </div>
-            <button class="btn btn-primary btn-lg mt-3">save</button>
+            <button class="btn btn-primary btn-lg mt-3">Save</button>
         </form>
     </div>
 </body>

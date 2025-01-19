@@ -75,41 +75,8 @@
                     <option value="tidak tersedia">Tidak Tersedia</option>
                 </select>
             </div>
+            
             {{-- <div>
-                <label for="gambar">Gambar</label>
-                <!-- Display current image -->
-                <div>
-                    @if ($kamar->gambar)
-                        <img src="{{ asset('storage/gambar/' . $kamar->gambar) }}" 
-                             alt="{{ $kamar->nama }}" 
-                             style="max-width: 200px; margin-bottom: 10px;" />
-                    @else
-                        <p>No image available</p>
-                    @endif
-                </div>
-            
-                <!-- Input for updating the image -->
-                <input class="form-control mb-3" type="file" name="gambar" id="gambar" value="{{ $kamar->gambar }}" />
-            
-                <!-- Button to add more file inputs -->
-                <div class="increment">
-                    <button type="button" class="btn btn-success add-btn">
-                        <i class="fas fa-plus"></i> Add Another Image
-                    </button>
-                </div>
-            
-                <!-- Hidden clone template for new file inputs -->
-                <div class="clone hide">
-                    <div class="input-group" style="margin-top: 10px;">
-                        <input class="form-control" type="file" name="gambar[]" value="{{ $kamar->gambar }}" />
-                        <button type="button" class="btn btn-danger remove-btn">
-                            <i class="fas fa-times"></i> Remove
-                        </button>
-                    </div>
-                </div>
-            </div> --}}
-            
-            <div>
                 <label for="gambar">Gambar</label>
                 <div>
                     @if ($kamar->gambar)
@@ -120,11 +87,12 @@
                     @endif
                 </div>
                 <input class="form-control" type="file" name="gambar[]" id="gambar" multiple />
-            </div>
+            </div> --}}
             
-            <button class="btn btn-primary btn-lg mt-3" type="submit">Update</button>
+            <button class="btn btn-primary btn-md mt-3" type="submit">Update</button>
         </form>
     </div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -149,7 +117,7 @@
 </script>
 
 
-<script>
+{{-- <script>
     $(document).ready(function () {
         // Add file input field
         $(".add-btn").click(function () {
@@ -166,6 +134,6 @@
             $(this).closest(".input-group").remove();
         });
     });
-</script> 
+</script>  --}}
 
 </html>

@@ -11,10 +11,9 @@ class Kos extends Model
     
     protected $table = 'koss';
     //protected $fillable = ['nama', 'alamat', 'price', 'image'];
-    //protected $guarded = ['id'];
 
-    public function pemilik()
+    public function penyewa()
     {
-        return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');
+        return $this->belongsTo(Penyewa::class, 'penyewa_id', 'id');
     }
 }

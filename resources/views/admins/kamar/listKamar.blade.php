@@ -14,7 +14,7 @@
                             </a>
                         </div>
                         <div class="d-flex">
-                            <form action="/cari-kamar/" method="post" class="d-flex me-1">
+                            <form action="cari-kamar/{id}" method="POST" class="d-flex me-1">
                                 @csrf
                                 <input type="text" name="cariKamar" class="form-control me-1" />
                                 <button class="btn btn-primary">
@@ -79,11 +79,7 @@
                                 <td>{{ $k->fitur }}</td>
                                 <td>{{ $k->status }}</td>
                                 <td>
-                                        @if ($k->gambar == null)
-                                                <img src="{{ url('public/gambar/' . $k->gambar) }}" width="150px" />
-                                        @else
-                                            <p>-</p>
-                                        @endif
+                                    <a href="{{ url('kamar/'.$k->id.'/upload') }}" class="btn btn-info">Tambah</a>
                                 </td>
                                 <td style="width: 100px; white-space: nowrap">
                                     <!-- <a href="#" class="btn btn-warning">Detail</a> -->
@@ -101,9 +97,9 @@
                     @endforeach
                 </table>
             </div>
-                <div>
+                {{-- <div>
                     {{ $kamar->links() }}
-                </div>
+                </div> --}}
             </div>
         </div>
         </div>

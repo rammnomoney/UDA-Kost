@@ -15,37 +15,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::view('/admins/auth/register', '/admins/auth/register');
-// Route::view('/admins/auth/login', '/admins/auth/login');
-
-// form //
-//Route::view('/fronten/form/index', '/fronten/form/index');
-//Route::view('/admins/dashboard/dashboard', '/admins/dashboard/dashboard');
-
-//Route::get('/house', [HouseController::class, 'index'])
-//   ->name('house')->middleware('auth');
-
-// Route::get('/', function () {
-// 	return view('welcome'); 
-// })->name('welcome');
 
 	Route::get('/', [App\Http\Controllers\KosController::class, 'index'])->name('udakost');
 	Route::get('daftar-kos', [App\Http\Controllers\KamarController::class, 'kost'])->name('list.kos');
 	
 	Route::get('/kamar-kos/{id}', [App\Http\Controllers\KamarController::class, 'show'])->name('ke.kamar');
 	
-	
-	//Route::view('index', 'index');
-	//Route::view('show', 'fronten.house.show');
-	
 	Auth::routes();
 	
-	// Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
-		// Route::get('admin', [DashboardController::class, 'index'])->name('admins.dashboard.dashboard');
-		// });
-		
-		
-	// BAGIAN ADMIN
+// BAGIAN ADMIN
 	
 	//Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
 Route::middleware('auth')->group(function () {
@@ -72,6 +50,7 @@ Route::middleware('auth')->group(function () {
 	Route::get('/cari-pemilik', [App\Http\Controllers\Admin\PemilikController::class, 'cari']);
 	
 	// kos
+
 	//Route::resource('kos', App\Http\Controllers\Admin\KosController::class);
 
 	Route::get('/kos', [App\Http\Controllers\Admin\KosController::class, 'index']);
@@ -90,7 +69,11 @@ Route::middleware('auth')->group(function () {
 	Route::get('/edit-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'edit']);
 	Route::post('/update-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'update']);
 	Route::get('/delete-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'destroy']);
-	Route::post('/cari-kamar/{kos}', [App\Http\Controllers\Admin\KamarController::class, 'cari']);
+	Route::post('cari-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'cari']);
+	
+	Route::get('/kamar/{kamarId}/upload', [App\Http\Controllers\Admin\KamarGambarController::class, 'index']);
+	Route::post('/kamar/{kamarId}/upload', [App\Http\Controllers\Admin\KamarGambarController::class, 'upload']);
+	Route::get('/kamar-img/{kamarImageId}', [App\Http\Controllers\Admin\KamarGambarController::class, 'destroy']);
 	
 	// kontrak
 	

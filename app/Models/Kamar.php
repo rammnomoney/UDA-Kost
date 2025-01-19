@@ -11,11 +11,20 @@ class Kamar extends Model
 
     protected $table = 'kamars';
 
-    // protected $casts = [
-    //     'images' => 'array',
-    // ];
-    // public function kos()
-    // {
-    //     return $this->belongsTo(Kos::class);
-    // }
+    protected $fillable = [
+        'nama',
+        'alamat',
+        'kodepos',
+        'price',
+        'list',
+        'deskripsi',
+        'judulfitur',
+        'fitur',
+        'status'
+    ];
+
+    public function kamargambar()
+    {
+        return $this->hasOne(KamarGambar::class, 'kamar_id');
+    }
 }

@@ -78,9 +78,8 @@
             </div>
         </div>
     </div>
-    
             <div class="bg-secondary bg-dark rounded h-100 mt-4 p-4">
-                <h3 class="mb-4 fw-bold">Info Pemilik</h3>
+                <h3 class="mb-4 fw-bold">Admin</h3>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -88,20 +87,18 @@
                                 <th scope="col">No.</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Alamat</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @if(isset($pemilik) && $pemilik->count() > 0)
-                            <tr>
-                                {{-- @if($pemilik) --}}
-                                <td>{{ $loop->iteration }}</td>
-                                {{-- <td>{{ $pemilik->id ?? '' }}</td> --}}
-                                <td>{{ $pemilik->nama ?? '' }}</td>
-                                <td>{{ $pemilik->email ?? '' }}</td>
-                                <td>{{ $pemilik->alamat ?? '' }}</td>
-                            </tr>
-                                @else
+                            @if(isset($user) && $user->count() > 0)
+                                <tr>
+                                    {{-- @if($pemilik) --}}
+                                    <td>{{ $loop->iteration }}</td>
+                                    {{-- <td>{{ $pemilik->id ?? '' }}</td> --}}
+                                    <td>{{ $user->nama ?? '' }}</td>
+                                    <td>{{ $user->email ?? '' }}</td>
+                                </tr>
+                            @else
                                 <tr class="text-center"> 
                                     <td colspan="4">No data available</td>
                                 </tr>

@@ -15,9 +15,9 @@ class LaporanController extends Controller
     public function index()
     {
         $title = 'Halaman Laporan';
-        $pemilik = Session::get('data_user'); // sesion user login
-        //$kos = Kos::paginate(6);
-        $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+        $penyewa = Session::get('data_user'); // sesion user login
+        
+        $kos = Kos::where('penyewa_id')->paginate(1);
         $kontrak = Kontrak::with('penyewa', 'kamar')->get();
         return view('admins.laporan.laporan', compact('kontrak', 'title', 'kos'));
     }

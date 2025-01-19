@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Penyewa;
-use App\Models\Kos;
+//use App\Models\Kos;
 use App\Models\Kamar;
 use App\Models\Kontrak;
 use Dompdf\Dompdf;
@@ -18,41 +18,39 @@ class KontrakController extends Controller
     public function lihat()
     {
         $title = 'Halaman Kontrak';
-        $pemilik = Session::get('data_user'); // sesion user login
+        $kamar = Session::get('data_user'); // sesion user login
 
-        if ($pemilik) {
-        $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
-        } else {
-            return redirect()->back()->with('error', 'Data pemilik tidak ditemukan.');
-        }
-        //$kos = Kos::paginate(5);
-        $kontrak = Kontrak::with('kamar')->get();
-        return view('admins.kontrak.pilihKos', compact('kontrak', 'kos', 'title'));
+        // if ($penyewa) {
+        // $kamar = Kamar::where('kamar_id')->paginate(6);
+        // } else {
+        //     return redirect()->back()->with('error', 'Data pemilik tidak ditemukan.');
+        // }
+        $kontrak = Kontrak::with('kamar_id')->get();
+        return view('admins.kontrak.pilihKos', compact('kontrak', 'title'));
     }
     public function index($id)
     {
         $title = 'Halaman Kontrak';
         $kontrak = Kontrak::with('penyewa', 'kamar')
             ->whereHas('kamar', function ($query) use ($id) {
-                $query->where('kos_id', $id);
+                $query->where('kamar_id', $id);
             })->paginate(6);
         return view('admins.kontrak.listKontrak', compact('kontrak', 'id', 'title'));
     }
 
     public function create($id)
     {
-        $kos = $id;
         $penyewa = Penyewa::whereNotIn('id', function ($query) {
             $query->select('penyewa_id')->from('kontraks'); // ambil penyewa yang belum ada di kontrak
         })->get();
 
-        $kamar = Kamar::where('kos_id', $kos)
+        $kamar = Kamar::where($id)
             ->where('status', 'belum disewa')
             ->whereNotIn('id', function ($query) {
                 $query->select('kamar_id')->from('kontraks');
             })
             ->get();
-        return view('admins.kontrak.addKontrak', compact('penyewa', 'kamar', 'kos'));
+        return view('admins.kontrak.addKontrak', compact('penyewa', 'kamar'));
     }
     public function store(Request $request, $id)
     {
@@ -102,7 +100,7 @@ class KontrakController extends Controller
         $kontrak = Kontrak::with('kamar')->findOrFail($id);
         $penyewa = Penyewa::all();
         $kamar = Kamar::all()
-            ->where('kos_id', $kontrak->kamar->kos_id)
+            ->where($kontrak->kamar)
             ->where('status', 'belum disewa');
         return view('admins.kontrak.editKontrak', compact('kontrak', 'penyewa', 'kamar'));
     }
@@ -120,7 +118,7 @@ class KontrakController extends Controller
             Session::flash('update', 'suskes');
             Session::flash('pesan', 'Data ' . $kontrak->nama . ' berhasil Diedit');
         }
-        return redirect('/kontrak/' . $kontrak->kamar->kos_id);
+        return redirect('/kontrak/' . $kontrak->kamar);
     }
     public function destroy($id)
     {
@@ -132,7 +130,7 @@ class KontrakController extends Controller
             Session::flash('pesan', 'Data ' . $kontrak->nama . ' berhasil dihapus');
         }
 
-        return redirect('/kontrak/' . $kontrak->kamar->kos_id);
+        return redirect('/kontrak/' . $kontrak->kamar);
     }
     public function status(Request $request, $id)
     {
@@ -163,7 +161,7 @@ class KontrakController extends Controller
             Session::flash('pesan', 'Data berhasil Diedit');
         }
 
-        return redirect('/kontrak/' . $kontrak->kamar->kos_id);
+        return redirect('/kontrak/' . $kontrak->kamar);
     }
 
     public function print($id)
@@ -227,7 +225,7 @@ class KontrakController extends Controller
                     $query
                         ->select('id')
                         ->from('kamars')
-                        ->where('kos_id', $id);
+                        ->where($id);
                 })
                 ->where(function ($query) use ($cari) 
                 {

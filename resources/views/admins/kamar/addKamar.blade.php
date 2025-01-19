@@ -12,8 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-        <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-        <title>Kamar | Tambah Data</title>
+    <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
+    <title>Kamar | Tambah Data</title>
 </head>
 
 <body>
@@ -145,7 +145,7 @@
                 </div>
             </div> --}}
             
-            <button class="btn btn-primary btn-lg mt-3" type="submit">Add</button>
+            <button class="btn btn-primary btn-md mt-3" type="submit">Add</button>
         </form>
     </div>
 </body>
@@ -171,7 +171,8 @@
     });
 </script>
 
-<script>
+{{--  --}}
+{{-- <script>
     $(document).ready(function () {
     // Add file input field
     $(".add-btn").click(function () {
@@ -189,7 +190,7 @@
         $(this).closest(".input-group").remove();
     });
 });
-</script>
+</script> --}}
 
 {{-- Price --}}
 {{-- <script>
@@ -212,33 +213,6 @@
 
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return prefix == undefined ? rupiah : (rupiah ? '' + rupiah : '');
-    }
-</script> --}}
-
-{{-- <script>
-    function tambahFasilitas() {
-        // Buat elemen input baru untuk fasilitas
-        const fasilitasContainer = document.getElementById('fasilitas-container');
-        const inputGroup = document.createElement('div');
-        inputGroup.classList.add('input-group', 'mb-2');
-
-        const inputField = document.createElement('input');
-        inputField.type = 'text';
-        inputField.name = 'fasilitas[]';
-        inputField.placeholder = 'Masukkan fasilitas';
-        inputField.classList.add('form-control');
-
-        const removeButton = document.createElement('button');
-        removeButton.type = 'button';
-        removeButton.classList.add('btn', 'btn-danger');
-        removeButton.textContent = 'Hapus';
-        removeButton.onclick = function() {
-            fasilitasContainer.removeChild(inputGroup);
-        };
-
-        inputGroup.appendChild(inputField);
-        inputGroup.appendChild(removeButton);
-        fasilitasContainer.appendChild(inputGroup);
     }
 </script> --}}
 
