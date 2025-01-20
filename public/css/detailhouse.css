@@ -13,7 +13,7 @@ body {
 COMPONENT
 ------------------------------ */
 .title{
-  color: #007bb6;
+  color: #006bb6;
 }
 
 /*---------------- 
@@ -252,7 +252,7 @@ Header
     z-index: 99;
     padding: 10px 0;
     margin: 10px 20px;
-    background-color: #007bb6;
+    background-color: #006bb6;
     border: 1px solid color-mix( srgb, (25, 121, 218, 0.714), transparent 90%);
     box-shadow: none;
     transition: all 0.5s ease-in-out;
@@ -291,7 +291,7 @@ Header
   }
 
   .mobile-nav-active .navmenu>ul {
-    background: #007bb6;
+    background: #006bb6;
     display: block;
   }
 }
@@ -359,7 +359,7 @@ ul.breadcrumbs {
 }
 
 .breadcrumbs a:hover {
-  color: #007bb6; /* Warna saat hover */
+  color: #006bb6; /* Warna saat hover */
 }
 
 /* Search */
@@ -389,7 +389,7 @@ ul.breadcrumbs {
 
 .search-button {
   text-transform: uppercase;
-  background: #007bb6;
+  background: #006bb6;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -399,8 +399,8 @@ ul.breadcrumbs {
 .search-button:hover {
 background: #fff;
 outline-style: solid;
-outline-color: #007bb6;
-color: #007bb6;
+outline-color: #006bb6;
+color: #006bb6;
 border: 1px;
 }
 
@@ -484,7 +484,7 @@ border: 1px;
 }
 .head a{
   text-align: center;
-  color: #007bb6;
+  color: #006bb6;
 }
 .property-info .price {
   text-align: center;
@@ -512,7 +512,7 @@ border: 1px;
 ----------------*/
 .site-footer
 {
-  background-color: #007bb6;
+  background-color: #006bb6;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;

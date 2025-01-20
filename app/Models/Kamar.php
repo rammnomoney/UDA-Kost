@@ -27,4 +27,9 @@ class Kamar extends Model
     {
         return $this->belongsTo(Kos::class, 'kos_id', 'id');
     }
+
+    public function kamargambar()
+    {
+        return $this->belongsTo(KamarGambar::class, 'kamargambar_id', 'id');
+    }
 }

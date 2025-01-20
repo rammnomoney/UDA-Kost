@@ -18,13 +18,17 @@ return new class extends Migration
             });
         }
 
-        if (!Schema::hasColumn('kamars', 'kos_id')) {
-            Schema::table('kamars', function (Blueprint $table) {
+        Schema::table('kamars', function (Blueprint $table) {
+            if (!Schema::hasColumn('kamars', 'kos_id')) {
                 $table->unsignedBigInteger('kos_id');
                 $table->foreign('kos_id')->references('id')->on('koss')->onDelete('restrict')->onUpdate('cascade');
-            });
-        }
-
+            }
+            if (!Schema::hasColumn('kamars', 'kamargambar_id')) {
+                $table->unsignedBigInteger('kamargambar_id');
+                $table->foreign('kamargambar_id')->references('id')->on('kamargambars')->onDelete('restrict')->onUpdate('cascade');
+            }
+        });
+    
         Schema::table('kontraks', function (Blueprint $table) {
             if (!Schema::hasColumn('kontraks', 'kamar_id')) {
                 $table->unsignedBigInteger('kamar_id');
@@ -35,6 +39,7 @@ return new class extends Migration
                 $table->foreign('penyewa_id')->references('id')->on('penyewa')->onDelete('restrict')->onUpdate('cascade');
             }
         });
+    
     }
 
     /**
@@ -49,7 +54,8 @@ return new class extends Migration
 
         Schema::table('kamars', function (Blueprint $table) {
             $table->dropForeign(['kos_id']);
-            $table->dropColumn(['kos_id']);
+            $table->dropForeign(['kamargambar_id']);
+            $table->dropColumn(['kos_id', 'kamargambar_id']);
         });
 
         Schema::table('kontraks', function (Blueprint $table) {

@@ -14,10 +14,5 @@ class KamarGambar extends Model
     protected $fillable = [
         'kamar_id',
         'gambar'
-    ];
-    
-    public function kamar()
-    {
-        return $this->belongsTo(Kamar::class, 'id');
-    }
+    ];    
 }

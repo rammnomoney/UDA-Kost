@@ -22,7 +22,7 @@ section{
  Style ---------------------------------- */
   .btn-primary {
       color: #f5efff;
-      background: #007bb6;
+      background: #006bb6;
   }
   h1, h2{
     /* justify-content: center; */
@@ -42,7 +42,7 @@ Header
   --heading-color: #ffffff;
   --contrast-color: #ffffff;
   color: #ffffff;
-  background-color: #007bb6;
+  background-color: #006bb6;
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -270,7 +270,7 @@ Header
     z-index: 99;
     padding: 10px 0;
     margin: 10px 20px;
-    background-color: #007bb6;
+    background-color: #006bb6;
     border: 1px solid color-mix( srgb, (25, 121, 218, 0.714), transparent 90%);
     box-shadow: none;
     transition: all 0.5s ease-in-out;
@@ -309,7 +309,7 @@ Header
   }
 
   .mobile-nav-active .navmenu>ul {
-    background: #007bb6;
+    background: #006bb6;
     display: block;
   }
 }
@@ -393,7 +393,7 @@ Header
 
 .explanation .container h3{
   background: color-mix(in srgb, #E5E3D4, transparent 85%);
-  color: #007bb6;
+  color: #006bb6;
   display: inline-block;
   text-transform: uppercase;
   border-radius: 60px;
@@ -423,7 +423,7 @@ Header
 }
 
 .description-title {
-  color: #007bb6;
+  color: #006bb6;
 }
 
 .section-title h2 {
@@ -432,7 +432,7 @@ Header
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: color-mix(in srgb, #007bb6, transparent 90%);
+  background: color-mix(in srgb, #006bb6, transparent 90%);
   color: #000;
   display: inline-block;
   text-transform: uppercase;
@@ -461,7 +461,7 @@ Header
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: color-mix(in srgb, #007bb6, transparent 90%);
+  background: color-mix(in srgb, #006bb6, transparent 90%);
   color: #000;
   display: inline-block;
   text-transform: uppercase;
@@ -503,7 +503,7 @@ Header
 }
 
 .services .service-item .icon i {
-  color: #007bb6;
+  color: #006bb6;
   font-size: 36px;
   transition: ease-in-out 0.3s;
 }
@@ -516,7 +516,7 @@ Header
 }
 
 .services .service-item h2 a {
-  color: #007bb6;
+  color: #006bb6;
   transition: ease-in-out 0.3s;
 }
 
@@ -534,7 +534,7 @@ Header
 }
 
 .services .service-item:hover:before {
-  background: #007bb6;
+  background: #006bb6;
   inset: 0;
   border-radius: 2px;
 }
@@ -668,7 +668,7 @@ swiper-slide {
 
 .box-dream .title a{
   font-size: 18px;
-  color: #007bb6;
+  color: #006bb6;
   text-decoration: none;
 }
 
@@ -760,7 +760,7 @@ swiper-slide {
 }
 
 .accordion-item h2{
-  background-color: #007bb6;
+  background-color: #006bb6;
   color: #33353d;
   border: 20px;
   position: relative;
@@ -780,7 +780,7 @@ swiper-slide {
 }
 
 .accordion-button:hover{
-  color: #007bb6;
+  color: #006bb6;
 }
 /* end */
 
@@ -793,7 +793,7 @@ swiper-slide {
   width: 40px;
   height: 40px;
   color: #fff;
-  background-color: #007bb6;
+  background-color: #006bb6;
   border-radius: 50%;
   font-size: 24px;
   cursor: pointer;
@@ -805,7 +805,7 @@ swiper-slide {
 ----------------*/
 .site-footer
 {
-  background-color: #007bb6;
+  background-color: #006bb6;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;

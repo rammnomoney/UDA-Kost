@@ -16,9 +16,7 @@
                             <form action="cari-kamar/{{ $kos->id }}" method="POST" class="d-flex me-1">
                                 @csrf
                                 <input type="text" name="cariKamar" class="form-control me-1" />
-                                <button class="btn btn-primary">
-                                    <i class="bi bi-search"></i>
-                                </button>
+                                <button class="btn btn-primary"><i class="bi bi-search"></i></button>
                             </form>
                         </div>
                     </div>

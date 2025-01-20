@@ -1,7 +1,7 @@
 :root {
     --White: #fff;
     --Text: #3D3E3F;
-    --Primary: #007bb6;
+    --Primary: #006bb6;
     --Secondary: #1A1A1A;
     --Third: #EB664E;
     --Fourth: #1F4B43;
@@ -309,7 +309,7 @@ body{
     color: #000;
   }
   .name:hover {
-    color: #007bb6;
+    color: #006bb6;
   }
   hr {
     margin-bottom: 20px;
@@ -823,7 +823,7 @@ body{
     transition: all 0.3s ease;
   } */
 .title{
-  color: #007bb6;
+  color: #006bb6;
 }
 .price{
   color: #ff5a60 !important;
@@ -1065,7 +1065,7 @@ Header
     z-index: 99;
     padding: 10px 0;
     margin: 10px 20px;
-    background-color: #007bb6;
+    background-color: #006bb6;
     border: 1px solid color-mix( srgb, (25, 121, 218, 0.714), transparent 90%);
     box-shadow: none;
     transition: all 0.5s ease-in-out;
@@ -1104,7 +1104,7 @@ Header
   }
 
   .mobile-nav-active .navmenu>ul {
-    background: #007bb6;
+    background: #006bb6;
     display: block;
   }
 }
@@ -1157,7 +1157,7 @@ Header
     color: #ffffff;
   }
   .breadcrumbs a:hover {
-    color: #007bb6;
+    color: #006bb6;
   }
   
   ul.breadcrumbs li {
@@ -1209,7 +1209,7 @@ Header
     width: 1828px;
   }
   .content-wrap .head-title .title{
-    color: #007bb6;
+    color: #006bb6;
   }
 
   .head-title {
@@ -1290,8 +1290,8 @@ Header
   }
   .label-kos-text {
     font-size: 25px;
-    color: #007bb6;
-    border: #007bb6;
+    color: #006bb6;
+    border: #006bb6;
   } */
   /* .--swiper-navigation-prev
   .--swiper-navigation-next {
@@ -1302,7 +1302,7 @@ Header
     opacity: 0;
   } */
   /* .overlay-text {
-    color: #007bb6;
+    color: #006bb6;
     font-weight: bold;
     font-size: 14px;
   }
@@ -1342,7 +1342,7 @@ Header
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 0px 4px 4px #000;
-  text-decoration-color: #007bb6;
+  text-decoration-color: #006bb6;
   /* padding: 10px 20px;
   border-radius: 5px;
   font-size: 1rem;
@@ -1584,7 +1584,7 @@ Header
 ----------------*/
 .site-footer
 {
-  background-color: #007bb6;
+  background-color: #006bb6;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
