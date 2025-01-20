@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
         <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-        <title>Kontrak | tambah data</title>
+        <title>Kontrak | Tambah data</title>
 </head>
 
 <body>
@@ -37,21 +37,6 @@
                     </div>
                 @enderror
             </div>
-            {{-- <div>
-                <label for="kos_id">Kos</label>
-                <select name="kos_id" id="kos_id"
-                    class="form-control @error('kos_id') is-invalid @enderror">
-                    @foreach ($kos as $p)
-                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
-                    @endforeach
-                </select>
-                <!-- notif error -->
-                @error('kos_id')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div> --}}
             <div>
                 <label for="kamar_id">kamar</label>
                 <select name="kamar_id" id="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror">
@@ -88,8 +73,7 @@
                     </div>
                 @enderror
             </div>
-            <div hidden="hidden
-                ">
+            <div hidden>
                 <label for="status">status</label>
                 <select name="status" id="status" class="form-control @error('status') is-invalid @enderror"
                     value="belum lunas">
@@ -102,7 +86,7 @@
                     </div>
                 @enderror
             </div>
-            <button class="btn btn-primary btn-lg mt-3">Save</button>
+            <button class="btn btn-primary btn-lg mt-3">Simpan</button>
         </form>
     </div>
 </body>

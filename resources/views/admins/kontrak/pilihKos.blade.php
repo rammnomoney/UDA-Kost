@@ -1,16 +1,16 @@
 @extends('admins.layout.main') @section('container')
 <div class="container-fluid mt-4 p-0">
     <div>
-        <h2>Daftar Kamar</h2>
+        <h2>Daftar Kos</h2>
         <table class="table table-bordered">
             <thead class="table-primary">
                 <tr>
                     <td>No.</td>
-                    <td>Nama Kamar</td>
+                    <td>Nama Kos</td>
                     <td>Action</td>
                 </tr>
             </thead>
-            @foreach ($kamar as $k)
+            @foreach ($kos as $k)
             <tbody>
                 <tr>
                     <td class="table-nomor">
@@ -26,7 +26,7 @@
             @endforeach
         </table>
         <div>
-            {{ $kamar->links() }}
+            {{ $kos->links() }}
         </div>
     </div>
 </div>

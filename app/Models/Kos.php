@@ -10,10 +10,9 @@ class Kos extends Model
     use HasFactory;
     
     protected $table = 'koss';
-    //protected $fillable = ['nama', 'alamat', 'price', 'image'];
 
-    public function penyewa()
+    public function pemilik()
     {
-        return $this->belongsTo(Penyewa::class, 'penyewa_id', 'id');
+        return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');
     }
 }

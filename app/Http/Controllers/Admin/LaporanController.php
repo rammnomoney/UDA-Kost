@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Kontrak;
 use App\Models\Kos;
 use Dompdf\Dompdf;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class LaporanController extends Controller
 {
@@ -15,9 +15,9 @@ class LaporanController extends Controller
     public function index()
     {
         $title = 'Halaman Laporan';
-        $penyewa = Session::get('data_user'); // sesion user login
+        $pemilik = Session::get('data_user'); // sesion user login
         
-        $kos = Kos::where('penyewa_id')->paginate(1);
+        $kos = Kos::where('penyewa_id', $pemilik->id)->paginate(6);
         $kontrak = Kontrak::with('penyewa', 'kamar')->get();
         return view('admins.laporan.laporan', compact('kontrak', 'title', 'kos'));
     }
@@ -88,4 +88,5 @@ class LaporanController extends Controller
         session(['filteredKontrak' => $kontrak]);
         return view('admins.laporan.laporan', compact('kontrak', 'kos', 'title'));
     }
+    
 }

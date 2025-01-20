@@ -19,7 +19,7 @@
 <body>
     <div class="container mt-3">
         <h2>Add Kamar</h2>
-        <form method="POST" action="/add-kamar/" enctype="multipart/form-data">
+        <form method="POST" action="/add-kamar/{{ $kos->id }}" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="nama">Nama Kamar</label>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div hidden="yes">
+            <div hidden>
                 <label for="status">Status</label>
                 <select name="status" id="status" class="form-control">
                     <option value="tersedia">Tersedia</option>
@@ -121,31 +121,8 @@
                 <label for="gambar">Gambar</label>
                 <input class="form-control" type="file" name="gambar[]" id="gambar" multiple />
             </div> 
-            {{-- <div>
-                <label for="gambar">Gambar</label>
-                <div id="file-container">
-                    <div class="control-group input-group">
-                        <input class="form-control" type="file" name="gambar[]" required />
-                        <div class="input-group-btn"> 
-                            <button class="btn btn-success add-btn" type="button">
-                                <i class="fldemo glyphicon glyphicon-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="clone" style="display: none;">
-                    <div class="control-group input-group" style="margin-top:10px">
-                        <input class="form-control" type="file" name="gambar[]" />
-                        <div class="input-group-btn">
-                            <button class="btn btn-danger remove-btn" type="button">
-                                <i class="fas fa-times"></i> Remove
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             
-            <button class="btn btn-primary btn-md mt-3" type="submit">Add</button>
+            <button class="btn btn-primary btn-md mt-3" type="submit">Tambah</button>
         </form>
     </div>
 </body>

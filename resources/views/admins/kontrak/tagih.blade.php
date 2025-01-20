@@ -8,12 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-    <title>kwitansi</title>
+    <title>KWITANSI</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>tagihan</h1>
+        <h1>Tagihan</h1>
         <form action="/tagih/{{ $kontrak->id }}" method="post">
             @csrf
             <div>
@@ -22,7 +22,7 @@
                     value="{{ $kontrak->penyewa->nama }}" />
             </div>
             <div>
-                <label for="no_telp">nomor wa</label>
+                <label for="no_telp">Nomor WA</label>
                 <input class="form-control @error('nomor') is-invalid @enderror" type="text" name="no_telp"
                     id="no_telp" value="{{ $kontrak->penyewa->no_telp }}" />
                 @error('nomor')
@@ -33,7 +33,7 @@
                 <label for="kamar">Kamar</label>
                 <input class="form-control" type="text" name="kamar" id="kamar"
                     value="{{ $kontrak->kamar->nama }}" />
-                <label for="pesan">pesan</label>
+                <label for="pesan">Pesan</label>
             </div>
             <div>
                 <textarea class="form-control" type="text" name="pesan" id="pesan">
@@ -53,9 +53,7 @@
                     {{ $kontrak->kamar->nama }}
                 </textarea>
                 <div>
-                    <button class="btn btn-primary mt-3" type="submit">
-                        Submit
-                    </button>
+                    <button class="btn btn-primary mt-3" type="submit">Kirim</button>
                 </div>
             </div>
         </form>

@@ -11,7 +11,7 @@
             crossorigin="anonymous"
         />
         <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-        <title>kwitansi</title>
+        <title>KWITANSI</title>
         <style>
             table,
             th,

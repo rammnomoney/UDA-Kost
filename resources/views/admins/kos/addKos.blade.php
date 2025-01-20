@@ -19,7 +19,7 @@
 <body>
     <div class="container mt-4">
         <h2>Add Kos</h2>
-        <form method="post" action="/add-kos" enctype="multipart/form-data">
+        <form method="POST" action="/add-kos" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="nama">Nama Kos</label>
@@ -102,10 +102,12 @@
                 <label for="gambar">Gambar</label>
                 <input class="form-control" type="file" name="gambar" />
             </div>
-            <button class="btn btn-primary btn-lg mt-3">Add</button>
+            <div hidden>
+                <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik->id }}" />
+            </div>
+            <button class="btn btn-primary btn-lg mt-3">Tambah</button>
         </form>
     </div>
-
 </body>
 
 {{-- <script>

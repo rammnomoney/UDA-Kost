@@ -83,6 +83,9 @@
                 </div>
                 <input class="form-control" type="file" name="gambar" id="gambar" />
             </div>
+            <div hidden>
+                <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik->id }}" />
+            </div>
             <button class="btn btn-primary btn-lg mt-3">Update</button>
         </form>
     </div>

@@ -45,7 +45,7 @@
                     <table id="myTable" class="table table-bordered">
                         <thead>
                             <tr>
-                                <td class="col">no.</td>
+                                <td class="col">No.</td>
                                 <td>NIK</td>
                                 <td>Nama</td>
                                 <td>Alamat</td>

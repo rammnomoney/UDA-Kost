@@ -89,7 +89,6 @@
                     @endforeach
                 </table>
             </div>
-
                 <div>
                     {{ $kos->links() }}
                 </div>

@@ -13,5 +13,6 @@ class Pemilik extends Model implements Authenticatable
 
 
     protected $table = 'pemiliks';
+    
     protected $fillable = ['nama', 'email', 'alamat', 'password'];
 }

@@ -23,8 +23,8 @@ class Kamar extends Model
         'status'
     ];
 
-    public function kamargambar()
+    public function kos()
     {
-        return $this->hasOne(KamarGambar::class, 'kamar_id');
+        return $this->belongsTo(Kos::class, 'kos_id', 'id');
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
 use App\Models\Kos;
 use App\Models\Kamar;
 use App\Models\KamarGambar;
@@ -18,27 +17,16 @@ class KamarController extends Controller
         return view('index', compact('koss'));
     }
 
-    public function show(string $id): View
+    public function show(string $id)
     {
         $kamar = Kamar::findOrFail($id);
 
-        $kamarGambar = KamarGambar::where('kamar_id',$id)->get();
+        //$kamarGambar = KamarGambar::where('kamar_id',$id)->get();
 
         if (!$kamar) {
             abort(404, 'Kamar tidak ditemukan.');
         }
         
-        return view('fronten/house/show', compact('kamar', 'kamarGambar'));
-        
-        // if (!$id) {
-        //     return "Parameter ID tidak diberikan.";
-        // }
-        //$kamar = Kamar::findOrFail($id);
-
-        // $kamar = Kamar::where('id', $kamar)->first();
-
-        //$gambar = $kamar->gambar;
-    
-        //return view('fronten/house/show', ['kamar' => $kamar]); //compact('kamars')
+        return view('fronten/house/show', compact('kamar'));
     }
 }

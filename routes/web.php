@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
 	Route::get('/home', [HomeController::class, 'index'])->name('home');
 			
  	// Penghuni
+	
     Route::get('/penyewa', [App\Http\Controllers\Admin\PenyewaController::class, 'index']);
 	Route::get('/add-penyewa', [App\Http\Controllers\Admin\PenyewaController::class, 'create']);
 	Route::post('/add-penyewa', [App\Http\Controllers\Admin\PenyewaController::class, 'store']);
@@ -99,7 +100,7 @@ Route::middleware('auth')->group(function () {
 	Route::get('/laporan_pdf', [App\Http\Controllers\Admin\LaporanController::class, 'laporan_pdf']);
 	Route::get('/cari-laporan', [App\Http\Controllers\Admin\LaporanController::class, 'cari']);
 	
-	// image
+	// img
 	Route::get("/img/{img}", [UploadImageController::class, "index"]);
 
 	Route::get('/logout', [HomeController::class, 'logout'])->name('logout');

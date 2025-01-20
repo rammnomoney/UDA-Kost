@@ -41,7 +41,7 @@ class HomeController extends Controller
         $kamar = Kamar::all()->count();
         $penyewa = Penyewa::all()->count();
         $pemilik = Session::get('data_user');
-        // $emailPemilik = $req->session()->get('data_user')->email;
+        
         return view('home', compact('penyewa', 'kos', 'belumLunas', 'sudahLunas', 'title', 'pemilik'));
     }
 

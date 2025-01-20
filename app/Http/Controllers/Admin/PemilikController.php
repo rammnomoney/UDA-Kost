@@ -22,7 +22,6 @@ class PemilikController extends Controller
     }
     public function store(Request $request)
     {
-
         $request->validate([
             'nama' => 'required|max:30',
             'email' => 'required|max:50|email:dns|unique:pemiliks',
@@ -53,7 +52,6 @@ class PemilikController extends Controller
         }
 
         return redirect('/pemilik');
-        // return redirect('/penyewa')->with('success', 'Data penyewa berhasil ditambahkan.');
 
     }
 
@@ -70,7 +68,6 @@ class PemilikController extends Controller
         $pemilik->email = $request->email;
         $pemilik->alamat = $request->alamat;
         $pemilik->password = password_hash($request->password, PASSWORD_BCRYPT);
-
         $pemilik->save();
 
         if ($pemilik) {
@@ -86,7 +83,7 @@ class PemilikController extends Controller
 
         if ($pemilik) {
             Session::flash('delete', 'suskes');
-            Session::flash('pesan', 'Data ' . $pemilik->nama . ' berhasil dihapus');
+            Session::flash('pesan', 'Data ' . $pemilik->nama . ' Berhasil Dihapus');
         }
 
         return redirect('/pemilik');
@@ -112,4 +109,5 @@ class PemilikController extends Controller
 
         return view('admins.pemilik.listpemilik', compact('pemilik', 'cari'));
     }
+    
 }

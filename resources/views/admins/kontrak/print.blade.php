@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-    <title>kwitansi</title>
+    <title>KWITANSI</title>
 
     <style>
         table,
@@ -55,7 +55,7 @@
 <body>
     <div class="container mt-5" id="konten">
         <div class="header">
-            <h3>PT. Maju Mundur</h3>
+            <h3>UDA Kost</h3>
             <div class="alamat">
                 {{ $kontrak->kamar->kos->nama }} <br />
                 {{ $kontrak->kamar->kos->alamat }} <br />
@@ -103,8 +103,8 @@
         </div>
     </div>
     <div style="text-align: center">
-        <button id="download-png" class="btn btn-warning">download png</button>
-        <a href="/download-pdf/{{$kontrak->id}}" class="btn btn-primary">download pdf</a>
+        <button id="download-png" class="btn btn-warning">Unduh IMG</button>
+        <a href="/download-pdf/{{$kontrak->id}}" class="btn btn-primary">Download PDF</a>
     </div>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script>

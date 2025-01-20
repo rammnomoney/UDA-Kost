@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
         <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-        <title>Penyewa | edit {{ $penyewa->nama }}</title>
+        <title>Penyewa | Edit {{ $penyewa->nama }}</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                 <input class="form-control" type="text" name="no_telp" id="no_telp"
                     value="{{ $penyewa->no_telp }}" />
             </div>
-            <button class="btn btn-primary btn-lg mt-3">SIMPAN</button>
+            <button class="btn btn-primary btn-lg mt-3">Simpan</button>
         </form>
     </div>
 </body>

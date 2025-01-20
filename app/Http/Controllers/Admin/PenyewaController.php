@@ -12,9 +12,8 @@ class PenyewaController extends Controller
 {
     public function index()
     {
-        $title = 'Halaman List Penyewa';
         $penyewa = Penyewa::paginate(6);
-        return view('admins.penyewa.listPenyewa', compact('penyewa', 'title'));
+        return view('admins.penyewa.listPenyewa', compact('penyewa'));
     }
 
     public function create()
@@ -55,8 +54,6 @@ class PenyewaController extends Controller
         }
 
         return redirect('/penyewa');
-        // return redirect('/penyewa')->with('success', 'Data penyewa berhasil ditambahkan.');
-
     }
 
     public function edit($id)
@@ -73,12 +70,11 @@ class PenyewaController extends Controller
          $penyewa->email = $request->email;
          $penyewa->alamat = $request->alamat;
          $penyewa->no_telp = $request->no_telp;
-
          $penyewa->save();
 
          if ($penyewa) {
              Session::flash('update', 'suskes');
-             Session::flash('pesan', 'Data ' . $penyewa->nama . ' berhasil Diedit');
+             Session::flash('pesan', 'Data ' . $penyewa->nama . ' Berhasil Diedit ');
          }
          return redirect('/penyewa');
      }
@@ -91,13 +87,13 @@ class PenyewaController extends Controller
 
              if ($penyewa) {
                  Session::flash('delete', 'suskes');
-                 Session::flash('pesan', 'Data ' . $penyewa->nama . ' berhasil dihapus');
+                 Session::flash('pesan', 'Data ' . $penyewa->nama . ' Berhasil Dihapus');
              }
          } catch (\Illuminate\Database\QueryException $e) {
              $error = $e->errorInfo[1];
              if ($error == 1451) {
                  Session::flash('delete', 'gagal');
-                 Session::flash('pesan', 'Data ' . $penyewa->nama . ' tidak bisa dihapus karena masih dalam masa sewa');
+                 Session::flash('pesan', 'Data ' . $penyewa->nama . ' Tidak bisa dihapus karena masih dalam masa sewa');
              }
          }
 
@@ -107,7 +103,6 @@ class PenyewaController extends Controller
 
     public function cari(Request $request)
     {
-        $title = 'Halaman List Penyewa';
         $cariPenyewa = $request->cariPenyewa;
 
         if (isset($cariPenyewa)) {
@@ -120,6 +115,7 @@ class PenyewaController extends Controller
             $penyewa = Penyewa::paginate(6);
         }
 
-        return view('admins.penyewa.listPenyewa', compact('penyewa', 'cariPenyewa', 'title'));
+        return view('admins.penyewa.listPenyewa', compact('penyewa', 'cariPenyewa'));
     }
+    
 }

@@ -56,7 +56,7 @@
                 <input type="date" class="form-control" name="tgl_selesai" id="tgl_selesai"
                     value="{{ $kontrak->tgl_selesai }}" />
             </div>
-            <button class="btn btn-primary btn-lg mt-3">Save</button>
+            <button class="btn btn-primary btn-lg mt-3">Simpan</button>
         </form>
     </div>
 </body>

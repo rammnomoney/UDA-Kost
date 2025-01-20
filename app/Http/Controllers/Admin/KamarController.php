@@ -2,36 +2,37 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Models\Kos;
 use App\Models\Kamar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 
 class KamarController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        //$title = 'Halaman List Kamar';
-        //$kamar = Kamar::paginate(6);
-        
-        // if (!$kamar) {
-            //     Session::flash('search', 'gagal');
-            //     Session::flash('pesan', 'Data tidak ditemukan');
-            // }
+        $kos = Kos::findOrFail($id);
+        $kamar = Kamar::with('kos')->where('kos_id', $id)->paginate(6);
+
+        if (!$kamar) {
+                Session::flash('search', 'gagal');
+                Session::flash('pesan', 'Data tidak ditemukan');
+        }
             
-        $kamar = Kamar::get();
-        return view('admins.kamar.listKamar', compact('kamar'));
+        return view('admins.kamar.listKamar', compact('kos', 'kamar'));
     }
 
-    public function create()
+    public function create($id)
     {
-        return view('admins.kamar.addKamar');
+        $kos = Kos::select('id', 'nama')->where('id', $id)->first();
+        return view('admins.kamar.addKamar', ['kos' => $kos], ['id' => $id]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
             $request->validate([
                 'nama' => 'required|string|max:30',
@@ -61,6 +62,7 @@ class KamarController extends Controller
             $kamar->judulfitur = $request->judulfitur;
             $kamar->fitur = $request->fitur;
             $kamar->status = $request->status;
+            $kamar->kos_id = $id;
 
             //Input gambar 1
             // if ($request->hasFile('gambar')) {
@@ -69,6 +71,7 @@ class KamarController extends Controller
             //     $gambar->storeAs('public/gambar', $namaFile);
             //     $kamar->gambar = $namaFile;
             // }
+            // $namaFile = null;
 
             //
             // if ($request->hasFile('photos')) {
@@ -89,13 +92,16 @@ class KamarController extends Controller
         Session::flash('pesan', 'Data Berhasil Ditambahkan');
         }
 
-        return redirect('/kos');
+        return redirect('kamar/' . $id);
     }
 
     public function edit($id)
     {
-        $kamar = Kamar::findOrFail($id);
-        return view('admins.kamar.editKamar', compact('kamar'));
+        $kamar = Kamar::with('kos')->findOrFail($id);
+
+        $kos = Kos::paginate(6);
+
+        return view('admins.kamar.editKamar', ['kamar' => $kamar], ['kos' => $kos]);
     }
 
     public function update(Request $request, $id)
@@ -116,6 +122,7 @@ class KamarController extends Controller
         $kamar->judulfitur = $request->judulfitur;
         $kamar->fitur = $request->fitur;
         $kamar->status = $request->status;
+        $kamar->kos_id = $request->kos_id;
 
         //tambah gambar biasa
         // if ($request->hasFile('gambar')) {
@@ -147,7 +154,7 @@ class KamarController extends Controller
             Session::flash('update', 'suskes');
             Session::flash('pesan', 'Data '  . $kamar->nama . ' berhasil Diedit');
         }
-        return redirect('/kos');
+        return redirect('kamar/' . $kamar->kos_id);
     }
     
     public function destroy($id)
@@ -162,32 +169,31 @@ class KamarController extends Controller
             $kamar->delete();
     
             Session::flash('delete', 'sukses');
-            Session::flash('pesan', 'Data ' . $kamar->nama . ' berhasil dihapus');
+            Session::flash('pesan', 'Data ' . $kamar->nama . ' Berhasil Dihapus ');
 
         } catch (\Illuminate\Database\QueryException $e) {
             if ($e->errorInfo[1] == 1451) {
                 Session::flash('delete', 'gagal');
-                Session::flash('pesan', 'Data ' . $kamar->nama . ' tidak bisa dihapus karena masih dalam masa sewa');
+                Session::flash('pesan', 'Data ' . $kamar->nama . ' Tidak bisa dihapus karena masih dalam masa sewa ');
             }
         }
     
-        return redirect('/kamar/{id}');
+        return redirect('kamar/' . $kamar->kos_id);
     }
 
-    public function cari(Request $request, $id)
+    public function cari(Request $request, Kos $kos)
     {
-        $title = 'Halaman List Kamar';
         $cariKamar = $request->cariKamar;
 
         if (isset($cariKamar)) {
             $kamar = Kamar::where('nama', 'like', "%" . $cariKamar . "%")
-                ->where('title', $id)
+                ->where('kos_id', $kos->id)
                 ->orWhere('status', 'like', "%" . $cariKamar . "%")
                 ->paginate(6);
         } else {
-            return $this->index($id);
+            return $this->index($kos->id);
         }
 
-        return view('admins.kamar.listKamar', compact('kamar', 'cariKamar', 'title'))->with('pesan', 'Data tidak ditemukan');
+        return view('admins.kamar.listKamar', compact('kos', 'kamar', 'cariKamar'))->with('pesan', 'Data tidak ditemukan');
     }
 }

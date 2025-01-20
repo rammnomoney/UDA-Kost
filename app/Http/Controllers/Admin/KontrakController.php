@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Penyewa;
-//use App\Models\Kos;
+use App\Models\Kos;
 use App\Models\Kamar;
 use App\Models\Kontrak;
 use Dompdf\Dompdf;
@@ -17,40 +17,36 @@ class KontrakController extends Controller
 {
     public function lihat()
     {
-        $title = 'Halaman Kontrak';
-        $kamar = Session::get('data_user'); // sesion user login
+        $pemilik = Session::get('data_user'); 
+        $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+        $kontrak = Kontrak::with('penyewa', 'kamar')->get();
 
-        // if ($penyewa) {
-        // $kamar = Kamar::where('kamar_id')->paginate(6);
-        // } else {
-        //     return redirect()->back()->with('error', 'Data pemilik tidak ditemukan.');
-        // }
-        $kontrak = Kontrak::with('kamar_id')->get();
-        return view('admins.kontrak.pilihKos', compact('kontrak', 'title'));
+        return view(view: 'admins.kontrak.pilihKos', data: compact('kontrak'));
     }
     public function index($id)
     {
-        $title = 'Halaman Kontrak';
         $kontrak = Kontrak::with('penyewa', 'kamar')
             ->whereHas('kamar', function ($query) use ($id) {
-                $query->where('kamar_id', $id);
+                $query->where('kos_id', $id);
             })->paginate(6);
-        return view('admins.kontrak.listKontrak', compact('kontrak', 'id', 'title'));
+        return view('admins.kontrak.listKontrak', compact('kontrak', 'id'));
     }
 
     public function create($id)
     {
+        $kos = $id;
+
         $penyewa = Penyewa::whereNotIn('id', function ($query) {
             $query->select('penyewa_id')->from('kontraks'); // ambil penyewa yang belum ada di kontrak
         })->get();
 
-        $kamar = Kamar::where($id)
+        $kamar = Kamar::where('kos_id', $id)
             ->where('status', 'belum disewa')
             ->whereNotIn('id', function ($query) {
                 $query->select('kamar_id')->from('kontraks');
             })
             ->get();
-        return view('admins.kontrak.addKontrak', compact('penyewa', 'kamar'));
+        return view('admins.kontrak.addKontrak', compact('penyewa', 'kamar', 'kos'));
     }
     public function store(Request $request, $id)
     {
@@ -78,7 +74,6 @@ class KontrakController extends Controller
         $kontrak->tgl_mulai = $request->tgl_mulai;
         $kontrak->tgl_selesai = $request->tgl_selesai;
         $kontrak->status = $request->status;
-
         $kontrak->save();
 
         // update status kamar
@@ -97,11 +92,10 @@ class KontrakController extends Controller
 
     public function edit($id)
     {
-        $kontrak = Kontrak::with('kamar')->findOrFail($id);
+        $kontrak = Kontrak::with('penyewa', 'kamar')->findOrFail($id);
         $penyewa = Penyewa::all();
-        $kamar = Kamar::all()
-            ->where($kontrak->kamar)
-            ->where('status', 'belum disewa');
+        $kamar = Kamar::all()->where('kos_id', $kontrak->kamar->kos_id)->where('status', 'belum disewa');
+
         return view('admins.kontrak.editKontrak', compact('kontrak', 'penyewa', 'kamar'));
     }
 
@@ -116,9 +110,9 @@ class KontrakController extends Controller
 
         if ($kontrak) {
             Session::flash('update', 'suskes');
-            Session::flash('pesan', 'Data ' . $kontrak->nama . ' berhasil Diedit');
+            Session::flash('pesan', 'Data ' . $kontrak->nama . ' Berhasil Diedit');
         }
-        return redirect('/kontrak/' . $kontrak->kamar);
+        return redirect('/kontrak/' . $kontrak->kamar->kos_id);
     }
     public function destroy($id)
     {
@@ -127,10 +121,10 @@ class KontrakController extends Controller
 
         if ($kontrak) {
             Session::flash('delete', 'suskes');
-            Session::flash('pesan', 'Data ' . $kontrak->nama . ' berhasil dihapus');
+            Session::flash('pesan', 'Data ' . $kontrak->nama . ' Berhasil Dihapus');
         }
 
-        return redirect('/kontrak/' . $kontrak->kamar);
+        return redirect('/kontrak/' . $kontrak->kamar->kos_id);
     }
     public function status(Request $request, $id)
     {
@@ -153,7 +147,6 @@ class KontrakController extends Controller
         $kontrak->tgl_bayar = $request->tgl_bayar;
         $kontrak->metode = $request->metode;
         $kontrak->status = $request->status;
-
         $kontrak->save();
 
         if ($kontrak) {
@@ -161,7 +154,7 @@ class KontrakController extends Controller
             Session::flash('pesan', 'Data berhasil Diedit');
         }
 
-        return redirect('/kontrak/' . $kontrak->kamar);
+        return redirect('/kontrak/' . $kontrak->kamar->kos_id);
     }
 
     public function print($id)
@@ -215,7 +208,6 @@ class KontrakController extends Controller
 
     function cari(Request $request, $id)
     {
-        $title = 'Data Kontrak';
         $cari = $request->cari;
         $id = $request->id;
 
@@ -225,7 +217,7 @@ class KontrakController extends Controller
                     $query
                         ->select('id')
                         ->from('kamars')
-                        ->where($id);
+                        ->where('kos_id', $id);
                 })
                 ->where(function ($query) use ($cari) 
                 {
@@ -235,11 +227,11 @@ class KontrakController extends Controller
                         ->orWhereHas('kamar', function ($query) use ($cari) {
                             $query->where('nama', 'like', '%' . $cari . '%');
                         });
-                })
-                ->get();
+                })->get();
         } else {
             return $this->index($id);
         }
-        return view('admins.kontrak.listKontrak', compact('kontrak', 'id', 'title'));
+        return view('admins.kontrak.listKontrak', compact('kontrak', 'id'));
     }
+    
 }

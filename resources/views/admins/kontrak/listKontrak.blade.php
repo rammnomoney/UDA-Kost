@@ -47,13 +47,13 @@
                     <table id="myTable" class="table table-bordered">
                         <thead>
                             <tr>
-                                <td class="col">no.</td>
-                                <td>penyewa</td>
-                                <td>kamar</td>
-                                <td>tgl mulai</td>
-                                <td>tgl selesai</td>
+                                <td class="col">No.</td>
+                                <td>Penyewa</td>
+                                <td>Kamar</td>
+                                <td>Tanggal Mulai</td>
+                                <td>Tanggal Selesai</td>
                                 <td>Action</td>
-                                <td>status</td>
+                                <td>Status</td>
                             </tr>
                         </thead>
 
@@ -91,7 +91,6 @@
                         @endforeach
                     </table>
                 </div>
-
                 {{ $kontrak->links() }}
             </div>
         </div>

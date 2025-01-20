@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png">
-        <title>Document</title>
+        <title>Dokumen</title>
         
         <style>
             body {
@@ -28,13 +28,13 @@
     </head>
 
     <body>
-        <h2>Laporan kos</h2>
+        <h2>Laporan Kos</h2>
         <table class="table mt-3">
             <thead class="">
                 <tr>
-                    <td>no.</td>
-                    <td>penyewa</td>
-                    <td>kamar</td>
+                    <td>No.</td>
+                    <td>Penyewa</td>
+                    <td>Kamar</td>
                     <td>Tanggal Bayar</td>
                     <td>Harga</td>
                     <td>Status</td>

@@ -6,15 +6,14 @@
         <div class="container-fluid pt-4 px-4">
             <div class="bg-secondary bg-dark rounded h-100 p-4">
                 <div class="mb-4 p-0">
-                    <h2>Data Kamar</h2>
+                    <h2>Data Kamar {{ $kos->nama }}</h2>
                     <!-- menu atas  -->
                     <div class="d-flex justify-content-between">
                         <div class="p-0">
-                            <a href="/add-kamar/" class="btn btn-primary">Tambah
-                            </a>
+                            <a href="/add-kamar/{{ $kos->id }}" class="btn btn-primary">Tambah</a>
                         </div>
                         <div class="d-flex">
-                            <form action="cari-kamar/{id}" method="POST" class="d-flex me-1">
+                            <form action="cari-kamar/{{ $kos->id }}" method="POST" class="d-flex me-1">
                                 @csrf
                                 <input type="text" name="cariKamar" class="form-control me-1" />
                                 <button class="btn btn-primary">
@@ -97,11 +96,10 @@
                     @endforeach
                 </table>
             </div>
-                {{-- <div>
+                <div>
                     {{ $kamar->links() }}
-                </div> --}}
+                </div>
             </div>
-        </div>
         </div>
     </div>
 @endsection

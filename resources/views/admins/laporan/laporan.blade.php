@@ -74,9 +74,9 @@
                         <thead>
                             <tr>
                                 <td class="table-nomor">no.</td>
-                                <td>penyewa</td>
+                                <td>Penyewa</td>
                                 <td>Kos</td>
-                                <td>kamar</td>
+                                <td>Kamar</td>
                                 <td>Tanggal Bayar</td>
                                 <td>Harga</td>
                                 <td>Status</td>
@@ -91,7 +91,6 @@
                                     <td>{{ $k->kamar->nama }}</td>
                                     <td>{{ $k->tgl_bayar }}</td>
                                     <td>Rp {{ $k->kamar->harga }}</td>
-
                                     <td
                                         class="color : {{ $k->status === 'sudah lunas' ? 'success-text' : 'danger-text' }}">
                                         {{ $k->status }}
@@ -102,9 +101,7 @@
                     </table>
                 </div>
                 <div>
-                    <a href="/laporan_pdf" class="btn btn-primary mt-3">
-                        <i class="bi bi-printer-fill"></i>
-                    </a>
+                    <a href="/laporan_pdf" class="btn btn-primary mt-3"><i class="bi bi-printer-fill"></i></a>
                 </div>
             </div>
         </div>

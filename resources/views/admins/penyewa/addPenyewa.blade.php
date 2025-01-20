@@ -77,7 +77,7 @@
                     </div>
                 @enderror
             </div>
-            <button class="btn btn-primary btn-lg mt-3">SIMPAN</button>
+            <button class="btn btn-primary btn-lg mt-3">Simpan</button>
         </form>
     </div>
 </body>

@@ -20,7 +20,7 @@
 <body>
     <div class="container mt-3">
         <h2>Edit Kamar</h2>
-        <form method="post" action="{{ url('/update-kamar', $kamar) }}" enctype="multipart/form-data">
+        <form method="post" action="{{ url('/update-kamar' . $kamar->id) }}" enctype="multipart/form-data">
             @csrf
             {{-- @method('PUT') --}}
             <div>
@@ -75,7 +75,9 @@
                     <option value="tidak tersedia">Tidak Tersedia</option>
                 </select>
             </div>
-            
+            <div hidden>
+                <input type="text" name="kos_id" value="{{ $kamar->kos->id }}" />
+            </div>
             {{-- <div>
                 <label for="gambar">Gambar</label>
                 <div>

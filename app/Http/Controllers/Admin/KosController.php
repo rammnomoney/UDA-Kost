@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Kos;
-//use App\Models\Pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -13,13 +12,21 @@ class KosController extends Controller
 {
     public function index()
     {
-        $kos = Kos::paginate(6);
-        return view('admins.kos.listKos', compact('kos'));
+        Session::forget('cariPenyewa');
+
+        $pemilik = Session::get('data_user');
+
+        if ($pemilik){
+            $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
+
+            return view('admins.kos.listKos', compact('kos'));
+        }
     }
 
     public function create()
     {
-        return view('admins.kos.addKos');
+        $pemilik = Session::get('data_user');
+        return view('admins.kos.addKos', compact('pemilik'));
     }
 
     public function store(Request $request)
@@ -42,11 +49,6 @@ class KosController extends Controller
         
         // Input harga .  titik
         //$price = str_replace('.', '', $request->input('price'));
-
-        // Kos::create([
-        //     'price' => $price,
-        //     // atribut lainnya
-        // ]);
     
         $kos = new Kos;
         $kos->nama = $request->nama;
@@ -55,9 +57,9 @@ class KosController extends Controller
         $kos->list2 = $request->list2;
         $kos->list3 = $request->list3;
         $kos->price = $request->price;
-        
-        $namaFile = null;
-
+        $kos->pemilik_id = $request->pemilik_id;
+        $kos->save();
+                
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
             if ($gambar) {
@@ -67,8 +69,7 @@ class KosController extends Controller
                 $kos->gambar = $namaFile;
             }
         }
-
-        $kos->save();
+        $namaFile = null;
 
         if ($kos) {
             Session::flash('insert', 'suskes');
@@ -80,9 +81,11 @@ class KosController extends Controller
 
     public function edit(Kos $kos, $id)
     {
-        $kos = Kos::findOrFail($id);
+        $pemilik = Session::get('data_user');
 
-        return view('admins.kos.editKos', compact('kos'));
+        $kos = Kos::with('pemilik')->findOrFail($id);
+
+        return view('admins.kos.editKos', compact('kos', 'pemilik'));
     }
 
     public function update(Request $request, $id)
@@ -98,6 +101,7 @@ class KosController extends Controller
         $kos->list2 = $request->list2;
         $kos->list3 = $request->list3;
         $kos->price = $request->price;
+        $kos->pemilik_id = $request->pemilik_id;
         
         if ($request->hasFile('gambar')) {
             if ($kos->gambar && Storage::exists('public/gambar/' . $kos->gambar)) {
@@ -129,32 +133,31 @@ class KosController extends Controller
 
             if ($kos) {
                 Session::flash('delete', 'suskes');
-                Session::flash('pesan', 'Data ' . $kos->nama . ' berhasil dihapus');
+                Session::flash('pesan', 'Data ' . $kos->nama . ' Berhasil Dihapus ');
             }
         } catch (\Illuminate\Database\QueryException $e) {
             $error = $e->errorInfo[1];
             if ($error == 1451) {
                 Session::flash('delete', 'gagal');
-                Session::flash('pesan', 'Data ' . $kos->nama . ' - ');
+                Session::flash('pesan', 'Data ' . $kos->nama . ' Tidak bisa dihapus karena terdapat data kamar di dalamnya ');
             }
         }
 
         return redirect('/kos');
     }
 
-    // public function cari(Request $request)
-    // {
-    //     $title = 'Halaman List Kos';
-    //     $cariKos = $request->cariKos;
+    public function cari(Request $request)
+    {
+        $cariKos = $request->cariKos;
 
-    //     if (isset($request->cariKos)) {
-    //         $kos = Kos::where('nama', 'like', "%" . $cariKos . "%")
-    //             ->orWhere('alamat', 'like', "%" . $cariKos . "%")
-    //             ->paginate(6);
-    //     } else {
-    //         $kos = Kos::paginate(6);
-    //     }
+        if (isset($request->cariKos)) {
+            $kos = Kos::where('nama', 'like', "%" . $cariKos . "%")
+                ->orWhere('alamat', 'like', "%" . $cariKos . "%")
+                ->paginate(6);
+        } else {
+            $kos = Kos::paginate(6);
+        }
 
-    //     return view('admins.kos.listKos', compact('kos', 'title', 'cariKos'));
-    // }
+        return view('admins.kos.listKos', compact('kos', 'cariKos'));
+    }
 }
