@@ -13,22 +13,26 @@ return new class extends Migration
     {
         if (!Schema::hasColumn('koss', 'pemilik_id')) {
             Schema::table('koss', function (Blueprint $table) {
-                $table->unsignedBigInteger('pemilik_id');
-                $table->foreign('pemilik_id')->references('id')->on('pemiliks')->onDelete('restrict')->onUpdate('cascade');
+                $table->unsignedBigInteger('pemilik_id')->nullable();
+                $table->foreign('pemilik_id')->references('id')->on('pemiliks')->onDelete('set null')->onUpdate('cascade');
             });
         }
 
-        Schema::table('kamars', function (Blueprint $table) {
-            if (!Schema::hasColumn('kamars', 'kos_id')) {
+        if (!Schema::hasColumn('kamars', 'kos_id')) {
+            Schema::table('kamars', function (Blueprint $table) {
                 $table->unsignedBigInteger('kos_id');
                 $table->foreign('kos_id')->references('id')->on('koss')->onDelete('restrict')->onUpdate('cascade');
-            }
-            if (!Schema::hasColumn('kamars', 'kamargambar_id')) {
-                $table->unsignedBigInteger('kamargambar_id');
-                $table->foreign('kamargambar_id')->references('id')->on('kamargambars')->onDelete('restrict')->onUpdate('cascade');
-            }
-        });
-    
+            });
+        }
+
+        if (!Schema::hasColumn('kamargambars', 'kamar_id')) {
+            Schema::table('kamargambars', function (Blueprint $table) {
+                $table->unsignedBigInteger('kamar_id');
+                $table->foreign('kamar_id')->references('id')->on('kamars')->onDelete('restrict')->onUpdate('cascade');
+            });
+        }
+
+
         Schema::table('kontraks', function (Blueprint $table) {
             if (!Schema::hasColumn('kontraks', 'kamar_id')) {
                 $table->unsignedBigInteger('kamar_id');
@@ -39,7 +43,6 @@ return new class extends Migration
                 $table->foreign('penyewa_id')->references('id')->on('penyewa')->onDelete('restrict')->onUpdate('cascade');
             }
         });
-    
     }
 
     /**
@@ -54,8 +57,12 @@ return new class extends Migration
 
         Schema::table('kamars', function (Blueprint $table) {
             $table->dropForeign(['kos_id']);
-            $table->dropForeign(['kamargambar_id']);
-            $table->dropColumn(['kos_id', 'kamargambar_id']);
+            $table->dropColumn(['kos_id']);
+        });
+
+        Schema::table('kamargambars', function (Blueprint $table) {
+            $table->dropForeign(['kamar_id']);
+            $table->dropColumn(['kamar_id']);
         });
 
         Schema::table('kontraks', function (Blueprint $table) {
@@ -64,5 +71,4 @@ return new class extends Migration
             $table->dropColumn(['kamar_id', 'penyewa_id']);
         });
     }
-    
 };

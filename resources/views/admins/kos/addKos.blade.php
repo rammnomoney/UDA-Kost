@@ -47,8 +47,8 @@
                                 @enderror
                             </div>
                             <div class="input-group mb-4">
-                                <input class="form-control @error('price') is-invalid @enderror" type="text"
-                                    name="price" placeholder="Price" placeholder="Harga" id="price" value="{{ old('price') }}" />
+                                <input class="form-control @error('price') is-invalid @enderror" type="number"
+                                    name="price" id="price" placeholder="Harga" value="{{ old('price') }}" />
                                 <!-- notif error -->
                                 @error('price')
                                     <div class="invalid-feedback">
@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                             <div class="input-group mb-4">
-                                <input class="form-control" type="file" name="gambar" />
+                                <input class="form-control" type="file" name="gambar" id="gambar" />
                             </div>
                             <div hidden>
                                 <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik->id ?? ''}}" />

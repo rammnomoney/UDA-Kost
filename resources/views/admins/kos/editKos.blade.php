@@ -35,30 +35,36 @@
                                     placeholder="Alamat" value="{{ $kos->alamat }}" />
                             </div>
                             <div class="input-group mb-4">
-                                <input class="form-control" type="text" name="price" id="price"
+                                <input class="form-control" type="number" name="price" id="price"
                                     placeholder="Harga" value="{{ $kos->price }}" />
                             </div>
                             <div class="input-group mb-4">
-                                <div class="group">
-                                    <input class="form-control" type="text" name="list1" id="list1"
-                                        value="{{ $kos->list1 }}" placeholder="Enter List 1" />
-
-                                    <input class="form-control" type="text" name="list2" id="list2"
-                                        value="{{ $kos->list2 }}" placeholder="Enter List 2" />
-
-                                    <input class="form-control" type="text" name="list3" id="list3"
-                                        value="{{ $kos->list3 }}" placeholder="Enter List 3" />
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control" type="text" name="list1" id="list1"
+                                            value="{{ $kos->list1 }}" placeholder="Enter List 1" />
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control" type="text" name="list2" id="list2"
+                                            value="{{ $kos->list2 }}" placeholder="Enter List 2" />
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control" type="text" name="list3" id="list3"
+                                            value="{{ $kos->list3 }}" placeholder="Enter List 3" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="input-group mb-4">
+                            <div class="input-group mb-2">
                                 <div>
                                     <img src="{{ asset('storage/gambar/' . $kos->gambar) }}" alt="Gambar Kos"
                                         style="max-width: 200px; margin-bottom: 10px;" />
                                 </div>
+                            </div>
+                            <div class="input-group mb-4">
                                 <input class="form-control" type="file" name="gambar" id="gambar" />
                             </div>
                             <div hidden>
-                                <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik->id }}" />
+                                <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik->id ?? ''}}" />
                             </div>
                             <button class="btn btn-primary btn-md mt-3">Update</button>
                         </form>

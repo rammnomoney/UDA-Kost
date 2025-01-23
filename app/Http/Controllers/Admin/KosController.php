@@ -12,15 +12,17 @@ class KosController extends Controller
 {
     public function index()
     {
-        $kos = Kos::paginate(6);
-        
+        // $kos = Kos::paginate(6);
+
+        $kos = Kos::where('pemilik_id')->paginate(6);
+
         return view('admins.kos.listKos', compact('kos'));
     }
 
     public function create()
     {
-        $pemilik = Session::get('data_user');
-        return view('admins.kos.addKos', compact('pemilik'));
+        // $pemilik = Session::get('data_user');
+        return view('admins.kos.addKos');
     }
 
     public function store(Request $request)
@@ -43,7 +45,10 @@ class KosController extends Controller
         
         // Input harga .  titik
         //$price = str_replace('.', '', $request->input('price'));
-    
+
+        $imageName = time() . '.' . $request->gambar->getClientOriginalExtension();
+        $request->gambar->move(public_path('storage/gambar'), $imageName);
+
         $kos = new Kos;
         $kos->nama = $request->nama;
         $kos->alamat = $request->alamat;
@@ -51,19 +56,17 @@ class KosController extends Controller
         $kos->list2 = $request->list2;
         $kos->list3 = $request->list3;
         $kos->price = $request->price;
-        $kos->pemilik_id = $request->pemilik_id;
+        $kos->pemilik_id = $pemilik_id ?? null;
+        $kos->gambar = $imageName;
+        
+        // $gambar = $request->file('gambar');
+        // $extension = $gambar->getClientOriginalExtension();
+        // $namaFile = $request->nama .  '_' . time() . '.' . $extension;
+        
+        // $gambar->storeAs('public/gambar', $namaFile);
+        // $kos->gambar = $namaFile;
         $kos->save();
-                
-        if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar');
-            if ($gambar) {
-                $extension = $gambar->getClientOriginalExtension();
-                $namaFile = $request->nama .  '_' . time() . '.' . $extension; // buat nama unique
-                $gambar->storeAs('public/gambar', $namaFile);
-                $kos->gambar = $namaFile;
-            }
-        }
-        $namaFile = null;
+            
 
         if ($kos) {
             Session::flash('insert', 'suskes');
@@ -75,11 +78,9 @@ class KosController extends Controller
 
     public function edit(Kos $kos, $id)
     {
-        $pemilik = Session::get('data_user');
-
         $kos = Kos::with('pemilik')->findOrFail($id);
 
-        return view('admins.kos.editKos', compact('kos', 'pemilik'));
+        return view('admins.kos.editKos', compact('kos'));
     }
 
     public function update(Request $request, $id)
@@ -95,7 +96,7 @@ class KosController extends Controller
         $kos->list2 = $request->list2;
         $kos->list3 = $request->list3;
         $kos->price = $request->price;
-        $kos->pemilik_id = $request->pemilik_id;
+        $kos->pemilik_id = $pemilik_id ?? null;
         
         if ($request->hasFile('gambar')) {
             if ($kos->gambar && Storage::exists('public/gambar/' . $kos->gambar)) {

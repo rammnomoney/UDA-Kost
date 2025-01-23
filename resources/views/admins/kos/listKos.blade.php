@@ -68,10 +68,10 @@
                                     <td>{{ $k->list2 }}</td>
                                     <td>{{ $k->list3 }}</td>
                                     <td>
-                                        @if ($k->gambar == null)
+                                        @if(empty($k->gambar))
                                             <p>-</p>
                                         @else
-                                            <img src="{{ url('storage/gambar/' . $k->gambar) }}" width="150px" />
+                                            <img src="{{ asset('storage/gambar/' . $k->gambar) }}" width="150px" />
                                         @endif
                                     </td>
                                     <td style="width: 100px; white-space: nowrap">

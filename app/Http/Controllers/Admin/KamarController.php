@@ -23,13 +23,15 @@ class KamarController extends Controller
                 Session::flash('pesan', 'Data tidak ditemukan');
         }
             
-        return view('admins.kamar.listKamar', compact('kos', 'kamar'));
+        return view('admins.kamar.listKamar', compact('kos', 'kamar'))->with('id', $id);
     }
 
     public function create($id)
     {
         $kos = Kos::select('id', 'nama')->where('id', $id)->first();
-        return view('admins.kamar.addKamar', ['kos' => $kos], ['id' => $id]);
+
+        return view('admins.kamar.addKamar', ['kos' => $kos, 'id' => $id]);
+        // return view('admins.kamar.addKamar');
     }
 
     public function store(Request $request, $id)
@@ -64,6 +66,8 @@ class KamarController extends Controller
             $kamar->status = $request->status;
             $kamar->kos_id = $id;
 
+            $kamar->save();
+
             //Input gambar 1
             // if ($request->hasFile('gambar')) {
             //     $gambar = $request->file('gambar');
@@ -85,14 +89,12 @@ class KamarController extends Controller
             //         }
             //     }
 
-        $kamar->save();
-
         if ($kamar) {
         Session::flash('insert', 'sukses');
         Session::flash('pesan', 'Data Berhasil Ditambahkan');
         }
 
-        return redirect('kamar/' . $id);
+        return redirect('/kamar/' . $id);
     }
 
     public function edit($id)
@@ -154,7 +156,7 @@ class KamarController extends Controller
             Session::flash('update', 'suskes');
             Session::flash('pesan', 'Data '  . $kamar->nama . ' berhasil Diedit');
         }
-        return redirect('kamar/' . $kamar->kos_id);
+        return redirect('/kamar/' . $kamar->kos_id);
     }
     
     public function destroy($id)
@@ -178,7 +180,7 @@ class KamarController extends Controller
             }
         }
     
-        return redirect('kamar/' . $kamar->kos_id);
+        return redirect('/kamar/' . $kamar->kos_id);
     }
 
     public function cari(Request $request, Kos $kos)

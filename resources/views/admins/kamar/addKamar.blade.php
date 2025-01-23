@@ -20,15 +20,16 @@
             <div class="row align-items-center text-center">
                 <div class="col-md-12">
                     <div class="link-button mb-2">
-                        <a class="float-end" href="/kamar/{id}">Kembali</a>
+                        <a class="float-end" href="/kamar/{{ $id }}">Kembali</a>
                     </div>
                     <div class="card-body">
                         <h2 class="mb-4">Tambah Kamar</h2>
-                        <form method="POST" action="/add-kamar/{{ $kos->id }}" enctype="multipart/form-data">
+                        <form method="POST" action="/add-kamar/{id}" enctype="multipart/form-data">
                             @csrf
                             <div class="input-group mt-5 mb-4">
                                 <input class="form-control @error('nama') is-invalid @enderror" type="text"
-                                    placeholder="Nama Kamar" name="nama" id="nama" value="{{ old('nama') }}" />
+                                    placeholder="Nama Kamar" name="nama" id="nama"
+                                    value="{{ old('nama') }}" />
                                 <!-- notif error -->
                                 @error('nama')
                                     <div class="invalid-feedback">
@@ -40,7 +41,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <input class="form-control @error('alamat') is-invalid @enderror" type="text"
-                                            placeholder="Alamat" name="alamat" id="alamat" value="{{ old('alamat') }}" />
+                                            placeholder="Alamat" name="alamat" id="alamat"
+                                            value="{{ old('alamat') }}" />
                                         <!-- notif error -->
                                         @error('alamat')
                                             <div class="invalid-feedback">
@@ -55,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="input-group mb-4">
-                                <input class="form-control @error('price') is-invalid @enderror" type="text"
+                                <input class="form-control @error('price') is-invalid @enderror" type="number"
                                     placeholder="Harga" name="price" id="price" value="{{ old('price') }}" />
                                 <!-- notif error -->
                                 @error('price')
@@ -65,14 +67,13 @@
                                 @enderror
                             </div>
                             <div class="input-group mb-4">
-                                <label for="list">List</label>
-                                <div id="list-container">
-                                    <div class="list-group">
-                                        <input class="form-control form-control-sm" type="text" name="list[]"
-                                            placeholder="Masukkan list" />
-                                    </div>
+                                <div class="list-group" id="list-container">
+                                    <input class="form-control form-control-sm" type="text" name="list[]"
+                                        placeholder="Masukkan list" />
                                 </div>
-                                <button type="button" id="add-list" class="btn btn-primary mt-2">Tambah List</button>
+                            </div>
+                            <div class="input-group mb-4">
+                                <button type="button" id="add-list" class="btn btn-primary btn-md mt-2">+ List</button>
                             </div>
                             <div class="input-group mb-4">
                                 <textarea class="form-control @error('deskripsi') is-invalid @enderror" type="text" name="deskripsi"
@@ -117,10 +118,9 @@
                                     <option value="tidak tersedia">Tidak Tersedia</option>
                                 </select>
                             </div>
-                            <div class="input-group mb-4">
-                                <label for="gambar">Gambar</label>
+                            {{-- <div class="input-group mb-4">
                                 <input class="form-control" type="file" name="gambar[]" id="gambar" multiple />
-                            </div>
+                            </div> --}}
 
                             <button class="btn btn-primary btn-md mt-3" type="submit">Tambah</button>
                         </form>

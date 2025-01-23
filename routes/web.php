@@ -60,13 +60,13 @@ Route::middleware('auth')->group(function () {
 	Route::get('/edit-kos/{id}', [App\Http\Controllers\Admin\KosController::class, 'edit']);
 	Route::post('/update-kos/{id}', [App\Http\Controllers\Admin\KosController::class, 'update']);
 	Route::get('/delete-kos/{id}', [App\Http\Controllers\Admin\KosController::class, 'destroy']);
-	// Route::get('/cari-kos', [App\Http\Controllers\Admin\KosController::class, 'cari']);
+	Route::get('/cari-kos', [App\Http\Controllers\Admin\KosController::class, 'cari']);
 	
 	// kamar
 	
 	Route::get('/kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'index']);
-	Route::get('/add-kamar', [App\Http\Controllers\Admin\KamarController::class, 'create']);
-	Route::post('/add-kamar', [App\Http\Controllers\Admin\KamarController::class, 'store']);
+	Route::get('/add-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'create']);
+	Route::post('/add-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'store']);
 	Route::get('/edit-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'edit']);
 	Route::post('/update-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'update']);
 	Route::get('/delete-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'destroy']);

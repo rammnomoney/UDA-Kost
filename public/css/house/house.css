@@ -1201,7 +1201,9 @@ body{
   
   /* List View Kos */
   .list-house2{
-    padding: 20px;
+    justify-content: center;
+    padding: 18px 12px;
+    margin: 0;
     }
   .list-view .property-list {
     display: flex;
@@ -1239,7 +1241,8 @@ body{
   }
   /* Card kos */
   .property-banner{
-    background-color: var(--Gray-light);
+    margin-top: 25px;
+    background-color: var(--Default);
     border-radius: 5px;
   }
   
@@ -1277,27 +1280,32 @@ body{
     font-weight: 700;
   }
   .property-head a{
+    margin-bottom: 25px;
+    font-size: 1.2rem;
     text-align: center;
     color: var(--Primary);
   }
   .property-info .price {
+    margin-bottom: 20px;
     text-align: center;
     font-size: 1.5rem;
-    color: #ff5a60;
+    color: var(--Third);
   }
   .property-info .location, 
   .icon-box .item{
-    font-size: 0.9rem;
-    color: var(--Secondary);
     margin-bottom: 10px;
+    font-size: 1.025rem;
+    color: var(--Secondary);
+    font-weight: 500;
   }
-  .location{
+  .location p {
     margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   .icon-box {
     display: flex;
     justify-content: space-around;
-    margin-top: 10px;
   }
 
   /* Deskripsi Kost - Show

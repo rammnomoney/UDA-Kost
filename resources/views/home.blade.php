@@ -26,7 +26,7 @@
 
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary bg-dark rounded h-100 p-4">
-        <div class="mb-4"><h2>Selamat Datang {{ Auth::user()->nama }}!</h2></div>
+        <div class="mb-4"><h2>Selamat Datang {{ Auth::User()->nama }}!</h2></div>
         <div class="row g-4">
             <div class="col-md-3">
                     <a href="/kos" class="btn-dashboard btn btn-primary d-flex justify-content-left align-items-center p-4">

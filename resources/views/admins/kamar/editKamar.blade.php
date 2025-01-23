@@ -20,7 +20,7 @@
             <div class="row align-items-center text-center">
                 <div class="col-md-12">
                     <div class="link-button mb-2">
-                        <a class="float-end" href="/kamar/{id}">Kembali</a>
+                        <a class="float-end" href="/kamar/{{ $id }}">Kembali</a>
                     </div>
                     <div class="card-body">
                         <h2 class="mb-4">Edit Kamar</h2>
@@ -54,7 +54,9 @@
                                             value="{{ $list }}" />
                                     @endforeach
                                 </div>
-                                <button type="button" id="add-list" class="btn btn-primary mt-2">Tambah List</button>
+                            </div>
+                            <div class="input-group mb-4">
+                                <button type="button" id="add-list" class="btn btn-primary mt-2">+ List</button>
                             </div>
                             <div class="input-group mb-4">
                                 <textarea class="form-control" name="deskripsi" placeholder="deskripsi" id="deskripsi">{{ $kamar->deskripsi }}</textarea>

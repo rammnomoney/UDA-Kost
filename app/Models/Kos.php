@@ -10,6 +10,11 @@ class Kos extends Model
     use HasFactory;
     
     protected $table = 'koss';
+    
+    public function kamar()
+    {
+        return $this->hasMany(Kamar::class, 'kos_id', 'id');
+    }
 
     public function pemilik()
     {
