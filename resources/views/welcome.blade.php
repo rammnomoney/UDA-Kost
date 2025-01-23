@@ -491,6 +491,10 @@ function topFunction() {
 }
 </script>
 
+<script>
+  $('#newYear').html(new Date().getFullYear());
+</script>
+
 <!-- Inisialisasi Swiper -->
 <script>
 const swiperEl = document.querySelector('swiper-container')

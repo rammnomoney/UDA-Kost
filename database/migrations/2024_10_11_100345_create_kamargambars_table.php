@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kamargambars', function (Blueprint $table) {
-            $table->id();
-            // $table->foreignId('kamargambar_id');
+            $table->id()->autoIncrement();
             $table->string('gambar');
             $table->timestamps();
         });

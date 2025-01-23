@@ -10,7 +10,7 @@
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' id='fontawesome' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     
-    <link href="/css/detailhouse.css" rel="stylesheet">
+    <link href="{{ asset('css/house/house.css') }}" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -54,7 +54,7 @@
                             <img src="{{ $kos->gambar ? asset('storage/gambar/' . $kos->gambar) : asset('/aset/img/Udakost/transparent-udakost/White Vertical-Uda Kost Logo.png') }}" />
                         </div>
                         <div class="property-info">
-                            <div class="head">
+                            <div class="property-head">
                                 <div class="price">
                                     Rp{{ number_format($kos->price,0,",",".") }}<small> /Bulan</small>
                                 </div>
@@ -106,13 +106,15 @@
 @endsection
 
 @push('addon-script-footer')
+<script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="{{ asset('js/fronten.js') }}"></script>
+
 <script>
   AOS.init();
 </script>
-<script src="{{ asset('bootstrap-5/js/bootstrap.bundle.min.js') }}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-<script src="{{ asset('js/fronten.js') }}"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {

@@ -3,6 +3,17 @@
 /* */
 
 :root {
+  --Default: #f9f9f9;
+  --White: #fff;
+  --Gray-light: #ced4da;
+  --Background: #0f1531;
+  --Text: #3D3E3F;
+  --Primary: #007bb6;
+  --Primary-2: #006bb6;
+  --Secondary: #1A1A1A;
+  --Third: #EB664E;
+  --Border: #EBEBEB;
+
   scroll-behavior: smooth;
 }
 
@@ -19,14 +30,15 @@ section{
 }
 
 /* --------------------
- Style ---------------------------------- */
+ Style 
+---------------------------------- */
   .btn-primary {
       color: #f5efff;
-      background: #006bb6;
+      background: var(--Primary);
   }
   h1, h2{
     /* justify-content: center; */
-    color: #000;
+    color: var(--Text);
   }
   p {
     margin-bottom: 20px;
@@ -35,14 +47,11 @@ section{
 
 
 /*---------------- 
-Header 
+Header menu
 ----------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0.8);
-  --heading-color: #ffffff;
-  --contrast-color: #ffffff;
-  color: #ffffff;
-  background-color: #006bb6;
+  color: var(--White);
+  background-color: var(--Primary);
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -56,11 +65,11 @@ Header
   font-size: 32px;
   margin: 0;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--White);
 }
 
 .header .logo span {
-  color: #f4f4f4;
+  color: var(--Default);
   font-size: 32px;
 }
 
@@ -96,13 +105,13 @@ Header
   }
 
   .navmenu ul li {
-    margin-right: 20px; /* spacing between links */
+    margin-right: 20px;
   }
 
   .navmenu a,
   .navmenu a:focus {
+    color: var(--Default);
     text-decoration: none;
-    color: #f4f4f4;
     padding: 18px 15px;
     font-size: 16px;
     font-weight: 400;
@@ -128,13 +137,13 @@ Header
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #000;
+    color: var(--Gray-light);
   }
 
   .navmenu .dropdown ul {
     margin: 0;
     padding: 10px 0;
-    background: #f4f4f4;
+    background: var(--Default);
     display: block;
     position: absolute;
     visibility: hidden;
@@ -155,7 +164,7 @@ Header
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
-    color: #f4f4f4;
+    color: var(--Default);
   }
 
   .navmenu .dropdown ul a i {
@@ -165,7 +174,7 @@ Header
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
-    background-color: #000000;
+    background-color: var(--Secondary);
   }
 
   .navmenu .dropdown:hover>ul {
@@ -187,12 +196,12 @@ Header
     visibility: visible;
   }
 }
-/* END */
+/* - */
 
-/* Navmenu -- Mobile */
+/* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: #fff;
+    color: var(--White);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -213,7 +222,7 @@ Header
     padding: 20px 0;
     margin: 0;
     border-radius: 6px;
-    background-color: #000000;
+    background-color: var(--Background);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -222,7 +231,7 @@ Header
 
   .navmenu a,
   .navmenu a:focus {
-    color: #f4f4f4;
+    color: var(--Default);
     padding: 10px 20px;
     font-size: 17px;
     font-weight: 500;
@@ -245,7 +254,7 @@ Header
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: white 90%;
+    background-color: var(--White) 90%;
   }
 
   .navmenu a i:hover,
@@ -256,7 +265,7 @@ Header
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    background-color: #000;
+    background-color: var(--Background);
   }
 
   .navmenu .active i,
@@ -270,7 +279,7 @@ Header
     z-index: 99;
     padding: 10px 0;
     margin: 10px 20px;
-    background-color: #006bb6;
+    background-color: var(--Primary);
     border: 1px solid color-mix( srgb, (25, 121, 218, 0.714), transparent 90%);
     box-shadow: none;
     transition: all 0.5s ease-in-out;
@@ -291,7 +300,7 @@ Header
   }
 
   .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
+    color: var(--White);
     position: absolute;
     font-size: 32px;
     top: 15px;
@@ -309,7 +318,7 @@ Header
   }
 
   .mobile-nav-active .navmenu>ul {
-    background: #006bb6;
+    background: var(--Primary);
     display: block;
   }
 }
@@ -324,7 +333,7 @@ Header
 }/* */
 
 /*--------------------------------------------------------------
-# Elemen
+ Fill
 --------------------------------------------------------------*/
 .iklan{
   display: block;
@@ -364,7 +373,6 @@ Header
   clip-path: inset(0);
   align-items: center;
   justify-content: center;
-  /* border-radius: 0px 0px 40px 40px; */
 }
 
 .explanation img {
@@ -379,7 +387,7 @@ Header
 
 .explanation:before {
   content: "";
-  background: color-mix(in srgb, #000 , transparent 80%);
+  background: color-mix(in srgb, var(--Background) , transparent 80%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -393,7 +401,7 @@ Header
 
 .explanation .container h3{
   background: color-mix(in srgb, #E5E3D4, transparent 85%);
-  color: #006bb6;
+  color: var(--Primary);
   display: inline-block;
   text-transform: uppercase;
   border-radius: 60px;
@@ -405,7 +413,7 @@ Header
 }
 
 .explanation p, h2{
-    color: #f4f4f4;
+    color: var(--Default);
     margin: 10px 0 0 0;
     font-size: 25px;
     line-height: 30px;
@@ -423,7 +431,7 @@ Header
 }
 
 .description-title {
-  color: #006bb6;
+  color: var(--Primary);
 }
 
 .section-title h2 {
@@ -432,23 +440,22 @@ Header
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: color-mix(in srgb, #006bb6, transparent 90%);
-  color: #000;
+  background: color-mix(in srgb, var(--Primary), transparent 90%);
+  color: var(--Secondary);
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
 }
 
 .section-title p {
-  color: #000;
+  color: var(--Secondary);
   margin: 10px 0 0 0;
   font-size: 32px;
   font-weight: 700;
 }
 /* */
 
-
-/* Start Service */
+/* Service */
 .service-title {
   text-align: center;
   margin-top: 120px;
@@ -461,15 +468,15 @@ Header
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: color-mix(in srgb, #006bb6, transparent 90%);
-  color: #000;
+  background: color-mix(in srgb, var(--Primary), transparent 90%);
+  color: var(--Secondary);
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
 }
 
 .service-title p {
-  color: #000;
+  color: var(--Secondary);
   margin: 10px 0 0 0;
   font-size: 32px;
   font-weight: 700;
@@ -479,7 +486,7 @@ Header
 }
 
 .services .service-item {
-  background-color: #fff;
+  background-color: var(--White);
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   padding: 50px 30px;
   transition: all 0.3s ease-in-out;
@@ -492,7 +499,7 @@ Header
 .services .service-item:before {
   content: "";
   position: absolute;
-  background: #f4f4f4;
+  background: var(--Default);
   inset: 100% 0 0 0;
   transition: all 0.3s;
   z-index: -1;
@@ -503,7 +510,7 @@ Header
 }
 
 .services .service-item .icon i {
-  color: #006bb6;
+  color: var(--Primary);
   font-size: 36px;
   transition: ease-in-out 0.3s;
 }
@@ -516,7 +523,7 @@ Header
 }
 
 .services .service-item h2 a {
-  color: #006bb6;
+  color: var(--Primary);
   transition: ease-in-out 0.3s;
 }
 
@@ -530,73 +537,21 @@ Header
 .services .service-item:hover h2 a,
 .services .service-item:hover .icon i,
 .services .service-item:hover p {
-  color: #fff;
+  color: var(--Default);
 }
 
 .services .service-item:hover:before {
-  background: #006bb6;
   inset: 0;
   border-radius: 2px;
+  background: var(--Primary);
 }
 /* */
-
-/* .features .container h2{
-  margin-top: auto;
-}
-
-.features {
-  background-color: #ffffff;
-  height: 700px;
-}
-
-.features .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
-  /* gap: 20px; Tambahkan jarak antar elemen
-} */
-
-/* .features .feat {
-  flex: 1 1 22.75%; Pastikan setiap fitur memiliki lebar yang sama
-  margin-top: 50px;
-  padding: 30px 40px;
-  background-color: #fff;
-  box-shadow: 0 0 15px #ccc;
-  max-width: 300px; Batasan maksimal untuk fitur
-}
-
-.features .feat i {
-  color: #387ADF;
-}
-
-.features .feat h3 {
-  font-size: 17px;
-}
-
-.features .feat p {
-  color: #666;
-}
-
-.features .feat:hover,
-.features .feat:nth-of-type(0) {
-  background-color: #a2cf8d;
-}
-
-.features .feat:hover i,
-.features .feat:nth-of-type(3) i,
-.features .feat:hover h3,
-.features .feat:nth-of-type(0) h3,
-.features .feat:hover p,
-.features .feat:nth-of-type(0) p {
-  color: #fff;
-} */
-/* End */
 
 /* Daftar kost */
 .tf-section {
   display: block;
   justify-content: center;
-  background-color: #f8f8f8;
+  background-color: var(--Default);
 }
 /* 
 .swiper-button-prev,
@@ -617,15 +572,13 @@ Header
   opacity: 0;
 } */
 swiper-container {
-  color: #000;
-  /* width: 100%;
-  height: 100%; */
+  color: var(--Secondary);
   margin: 25px 0px 80px 0px;
 }
 swiper-slide {
   flex-direction: row;
   gap: 15px;
-  background: #ffffff;
+  background: var(--White);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   justify-content: center;
@@ -668,19 +621,19 @@ swiper-slide {
 
 .box-dream .title a{
   font-size: 18px;
-  color: #006bb6;
+  color: var(--Primary);
   text-decoration: none;
 }
 
 .box-dream .price {
   font-size: 1.5rem;
-  color: #ff5a60;
+  color: var(--Third);
 }
 
 .box-dream .location p,
 .box-dream .icon-box .item {
   font-size: 0.9rem;
-  color: #333;
+  color: var(--Secondary);
 }
 .icon-box {
   display: flex;
@@ -743,7 +696,7 @@ swiper-slide {
   margin-bottom: 10rem;
 }
 .about h3{
-  color: #000;
+  color: var(--Secondary);
 }
 /* */
 
@@ -756,12 +709,12 @@ swiper-slide {
 .accordion .accordion-item{
   margin-bottom: 25px;
   border-radius: 25px;
-  background-color: #f4f4f4;
+  background-color: var(--Default);
 }
 
 .accordion-item h2{
-  background-color: #006bb6;
-  color: #33353d;
+  background-color: var(--Primary);
+  color: var(--Gray-light);
   border: 20px;
   position: relative;
   padding: 10px;
@@ -771,18 +724,19 @@ swiper-slide {
 
 .accordion .accordion-item h2:hover{
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  color: #ffffff;
+  color: var(--White);
 } 
 
 .accordion-button{
-  color: #33353d;
-  background-color: #fff;
+  font-size: 1.1rem;
+  color: var(--Secondary);
+  background-color: var(--White);
 }
 
 .accordion-button:hover{
-  color: #006bb6;
+  color: var(--Primary-2);
 }
-/* end */
+/* - */
 
 /* Scroll to top */
 #back-to-top {
@@ -792,24 +746,23 @@ swiper-slide {
   right: 40px;
   width: 40px;
   height: 40px;
-  color: #fff;
-  background-color: #006bb6;
+  color: var(--Default);
+  background-color: var(--Primary);
   border-radius: 50%;
   font-size: 24px;
   cursor: pointer;
 }
-
 
 /*----------------
  FOOTER 
 ----------------*/
 .site-footer
 {
-  background-color: #006bb6;
+  background-color: var(--Primary);
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#f4f4f4;
+  color: var(--Default);
   margin-top: 100px;
 }
 .site-footer hr
@@ -831,12 +784,12 @@ swiper-slide {
 }
 .site-footer p, a, .footer-links a, .copyright-text a
 {
-  color:#f4f4f4;
+  color:var(--Default);
   text-decoration: none !important;
 }
 .site-footer a:hover
 {
-  color:#000;
+  color:var(--Gray-light);
 }
 .footer-links
 {
@@ -849,7 +802,7 @@ swiper-slide {
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#000;
+  color:var(--Gray-light);
   text-decoration:none;
 }
 .footer-links.inline li
@@ -868,7 +821,7 @@ swiper-slide {
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
-  background-color:#33353d
+  background-color:var(--Default)
 }
 .copyright-text
 {
@@ -912,7 +865,7 @@ swiper-slide {
   font-size:13px
 }
 .social-icons a{
-  color: #f4f4f4;
+  color: var(--Background);
   font-size:16px;
   display:inline-block;
   line-height:44px;
@@ -927,7 +880,7 @@ swiper-slide {
 }
 .social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
-  color:#fff;
+  color:var(--Background);
 }
 .social-icons.size-sm a
 {

@@ -12,15 +12,9 @@ class KosController extends Controller
 {
     public function index()
     {
-        Session::forget('cariPenyewa');
-
-        $pemilik = Session::get('data_user');
-
-        if ($pemilik){
-            $kos = Kos::where('pemilik_id', $pemilik->id)->paginate(6);
-
-            return view('admins.kos.listKos', compact('kos'));
-        }
+        $kos = Kos::paginate(6);
+        
+        return view('admins.kos.listKos', compact('kos'));
     }
 
     public function create()

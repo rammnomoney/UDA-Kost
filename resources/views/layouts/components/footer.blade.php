@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2025 All Rights Reserved by <a href="https://www.instagram.com/mahhramm">Ramm</a>.
+          <p class="copyright-text">Copyright &copy; <span id="newYear"></span> <a href="https://www.polibatam.ac.id">Polibatam</a>. All Rights Reserved.
           </p>
         </div>
 

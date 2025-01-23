@@ -12,7 +12,6 @@ class KamarGambar extends Model
     protected $table = 'kamargambars';
 
     protected $fillable = [
-        'kamar_id',
         'gambar'
     ];    
 }
