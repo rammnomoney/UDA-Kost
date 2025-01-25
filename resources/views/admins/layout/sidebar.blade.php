@@ -4,7 +4,7 @@
         <div class="bottom mx-5">
             <a href="/" class="navbar-brand mx-4 mb-3">
                 {{-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;"> --}}
-                <h3>UDA Kost!?</h3>
+                <b><h3>UDA Kost!?</h3></b>
             </a>
         </div>       
            

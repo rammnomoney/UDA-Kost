@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kamargambars', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('gambar');
+            $table->foreignId('kamar_id');
             $table->timestamps();
         });
     }

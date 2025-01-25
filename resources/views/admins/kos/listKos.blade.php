@@ -12,7 +12,7 @@
                             <a href="/add-kos" class="btn btn-primary">Tambah</a>
                         </div>
                         <div class="d-flex">
-                            <form action="/cari-kos" method="get" class="d-flex me-1">
+                            <form action="/cari-kos" method="GET" class="d-flex me-1">
                                 <input type="text" name="cariKos" id="cariKos" class="form-control me-1" />
                                 <button class="btn btn-primary">
                                     <i class="bi bi-search"></i>
@@ -46,15 +46,15 @@
                     <table id="myTable" class="table table-bordered">
                         <thead>
                             <tr>
-                                <td class="col">No.</td>
-                                <td>Nama Kos</td>
-                                <td>Alamat</td>
-                                <td>Harga</td>
-                                <td>List 1</td>
-                                <td>List 2</td>
-                                <td>List 3</td>
-                                <td>Gambar</td>
-                                <td>Kamar / Action</td>
+                                <th class="col">No.</th>
+                                <th>Nama Kos</th>
+                                <th>Alamat</th>
+                                <th>Harga</th>
+                                <th>List 1</th>
+                                <th>List 2</th>
+                                <th>List 3</th>
+                                <th>Gambar</th>
+                                <th>Kamar / Action</th>
                             </tr>
                         </thead>
                         @foreach ($kos as $k)

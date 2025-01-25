@@ -46,18 +46,18 @@
                 <table id="myTable" class="table table-bordered">
                     <thead>
                         <tr>
-                            <td class="col">No.</td>
-                            <td>Nama</td>
-                            <td>Alamat</td>
-                            <td>Kode Pos</td>
-                            <td>Price</td>
-                            <td>List</td>
-                            <td>Deskripsi</td>
-                            <td>Judul Fitur</td>
-                            <td>Fitur</td>
-                            <td>Status</td>
-                            <td>Gambar</td>
-                            <td>Action</td>
+                            <th class="col">No.</th>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>Kode Pos</th>
+                            <th>Price</th>
+                            <th>List</th>
+                            <th>Deskripsi</th>
+                            <th>Judul Fitur</th>
+                            <th>Fitur</th>
+                            <th>Status</th>
+                            <th>Gambar</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     @foreach ($kamar as $k)

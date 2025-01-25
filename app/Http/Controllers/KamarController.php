@@ -17,6 +17,20 @@ class KamarController extends Controller
         return view('index', compact('koss'));
     }
 
+    public function carikost(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        if (isset($request->keyword)) {
+            $koss = Kos::where('nama', 'like', '%' . $keyword . '%')
+                ->orWhere('price', 'like', '%' . $keyword . '%'); 
+        } else {
+            $koss = Kos::paginate(6);
+        }    
+
+        return view('index', compact('koss', 'keyword'));
+    }
+
     public function show(string $id)
     {
         $kamar = Kamar::findOrFail($id);

@@ -9,8 +9,8 @@
                     <div class="card card-rounded border-0 shadow">
                         <div class="card-body p-5">
                             <div class="d-flex justify-content-center mb-4">
-                                <img src="aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" alt="Udakost Logo"
-                                    width="150px" class="w-36">
+                                <img src="aset/img/Udakost/transparent-udakost/Uda Kost Logo.png" alt="Udakost Logo"
+                                    width="100%" class="w-36">
                             </div>
 
                             <p class="text-center text-gray-600 mb-4">
@@ -61,11 +61,11 @@
                                 </div>
 
                                 <label for="password"
-                                    class="form-label text-gray-700 font-medium">{{ __('Password') }}</label>
+                                    class="form-label text-gray-700 font-medium">{{ __('Kata sandi') }}</label>
                                 <div class="mb-4 relative">
                                     <input type="password"
                                         class="form-control form-control-user shadow-sm @error('password') is-invalid @enderror"
-                                        name="password" placeholder="{{ __('Password') }}" required
+                                        name="password" placeholder="{{ __('Kata sandi') }}" required
                                         autocomplete="new-password">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -74,10 +74,10 @@
                                     @enderror
                                 </div>
 
-                                <div class="d-grid gap-2 py-4">
+                                <div class="d-grid gap-2 py-2">
                                     <button type="submit"
                                         class="btn btn-primary w-full py-2 rounded-md font-semibold hover:bg-blue-700 focus:outline-none transition">
-                                        {{ __('Register') }}
+                                        {{ __('Daftar') }}
                                     </button>
                                 </div>
 

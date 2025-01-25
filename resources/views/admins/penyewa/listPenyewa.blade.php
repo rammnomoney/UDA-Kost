@@ -45,12 +45,12 @@
                     <table id="myTable" class="table table-bordered">
                         <thead>
                             <tr>
-                                <td class="col">No.</td>
-                                <td>NIK</td>
-                                <td>Nama</td>
-                                <td>Alamat</td>
-                                <td>No. HP</td>
-                                <td>Aksi</td>
+                                <th class="col">No.</th>
+                                <th>NIK</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>No. HP</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

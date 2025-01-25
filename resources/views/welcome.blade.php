@@ -144,132 +144,19 @@
                       </div>
                   </div>
               </swiper-slide>
-              @endforeach
-              <!-- Slide 2 -->
-              {{-- <swiper-slide>
-                  <div class="box-dream">
-                      <div class="image">
-                          <img src="aset/img/house/Gallery house2.jpg" alt="">
-                      </div>
-                      <div class="content">
-                          <div class="head">
-                            <div class="price">Rp1.200.000</div>
-                            <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 2</a></div>
-                          </div>
-                          <div class="location">
-                              <p><i class="flaticon-location"></i> Batam, 1234</p>
-                          </div>
-                          <div class="icon-box">
-                              <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
-                              <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
-                              <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
-                          </div>
-                      </div>
-                    </div>
-              </swiper-slide>
-              <!-- Tambahkan slide lainnya di sini -->
-              <swiper-slide>
-                <div class="box-dream">
-                    <div class="image">
-                        <img src="aset/img/house/Gallery house2.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="head">
-                          <div class="price">Rp1.200.000</div>
-                          <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 3</a></div>
-                        </div>
-                        <div class="location">
-                            <p><i class="flaticon-location"></i> Batam, 1234</p>
-                        </div>
-                        <div class="icon-box">
-                            <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
-                            <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
-                            <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
-                        </div>
-                      </div>
-                    </div>
-                  </swiper-slide>
-
-            <swiper-slide>
-              <div class="box-dream">
-                  <div class="image">
-                      <img src="aset/img/house/Gallery house2.jpg" alt="">
-                  </div>
-                  <div class="content">
-                      <div class="head">
-                        <div class="price">Rp1.200.000</div>
-                        <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 4</a></div>
-                      </div>
-                      <div class="location">
-                          <p><i class="flaticon-location"></i> Batam, 1234</p>
-                      </div>
-                      <div class="icon-box">
-                          <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
-                          <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
-                          <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
-                      </div>
-                  </div>
-              </div>
-            </swiper-slide>
-
-            <swiper-slide>
-              <div class="box-dream">
-                  <div class="image">
-                      <img src="aset/img/house/Gallery house2.jpg" alt="">
-                  </div>
-                  <div class="content">
-                      <div class="head">
-                        <div class="price">Rp1.200.000</div>
-                        <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 4</a></div>
-                      </div>
-                      <div class="location">
-                          <p><i class="flaticon-location"></i> Batam, 1234</p>
-                      </div>
-                      <div class="icon-box">
-                          <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
-                          <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
-                          <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
-                      </div>
-                  </div>
-              </div>
-            </swiper-slide>
-
-            <swiper-slide>
-              <div class="box-dream">
-                  <div class="image">
-                      <img src="aset/img/house/Gallery house2.jpg" alt="">
-                  </div>
-                  <div class="content">
-                      <div class="head">
-                        <div class="price">Rp1.200.000</div>
-                        <div class="title"><a href="{{ route('list.kos') }}">UDA Kost!? 4</a></div>
-                      </div>
-                      <div class="location">
-                          <p><i class="flaticon-location"></i> Batam, 1234</p>
-                      </div>
-                      <div class="icon-box">
-                          <div class="item"><i class="flaticon-hotel"></i> 1 Beds</div>
-                          <div class="item"><i class="flaticon-bath-tub"></i> 1 Kamar Mandi</div>
-                          <div class="item"><i class="flaticon-minus-front"></i> AC, Wifi</div>
-                      </div>
-                  </div>
-              </div>
-            </swiper-slide> --}}
-           
+              @endforeach         
           </swiper-container>
         </div>
-  </section>{{--  --}}
-      
+  </section>{{--  --}}      
   <br>
   <br>
-      
   <section id="about" class="about section mt-5">
-    <div class="container aos-init aos-animate" data-aos="fade-zoom-in" data-aos-easing="ease-in-back">
+    <div class="container aos-init aos-animate">
         <div class="row gy-4 align-items-center">
-            <div class="col-lg-6 order-1 order-lg-2">
-                <img src="/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" class="img-fluid" alt="Uda Kost Logo">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="400">
+                <img src="{{ asset('aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png') }}" class="img-fluid" alt="Uda Kost Logo">
             </div>
-            <div class="col-lg-6 order-2 order-lg-1 content">
+            <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-zoom-in" data-aos-delay="100" data-aos-easing="ease-in-back">
                 <h3 class="display-6">Selamat Datang di UDA Kost!?</h3>
                 <p class="fst-italic mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -1205,6 +1205,12 @@ body{
     padding: 18px 12px;
     margin: 0;
     }
+  .gridview{
+    color: var(--Default);
+  }
+  .listview{
+    color: var(--Primary-2);
+  }
   .list-view .property-list {
     display: flex;
     flex: 0 0 100%;

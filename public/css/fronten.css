@@ -528,8 +528,9 @@ Header menu
 }
 
 .services .service-item p {
+  color: var(--Text);
   line-height: 24px;
-  font-size: 14px;
+  font-size: 17px;
   margin-bottom: 0;
   transition: ease-in-out 0.3s;
 }

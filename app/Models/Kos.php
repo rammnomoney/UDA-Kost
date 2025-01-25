@@ -11,7 +11,7 @@ class Kos extends Model
     
     protected $table = 'koss';
     
-    public function kamar()
+    public function kamars()
     {
         return $this->hasMany(Kamar::class, 'kos_id', 'id');
     }

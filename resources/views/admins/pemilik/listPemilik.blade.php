@@ -47,11 +47,11 @@
                 <table id="myTable" class="table table-bordered">
                     <thead>
                         <tr>
-                            <td class="col">No.</td>
-                            <td>Nama</td>
-                            <td>Email</td>
-                            <td>Alamat</td>
-                            <td>Action</td>
+                            <th class="col">No.</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Alamat</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     @foreach ($pemilik as $p)

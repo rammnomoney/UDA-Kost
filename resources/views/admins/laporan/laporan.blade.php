@@ -73,13 +73,13 @@
                     <table id="myTable" class="table table-bordered">
                         <thead>
                             <tr>
-                                <td class="table-nomor">no.</td>
-                                <td>Penyewa</td>
-                                <td>Kos</td>
-                                <td>Kamar</td>
-                                <td>Tanggal Bayar</td>
-                                <td>Harga</td>
-                                <td>Status</td>
+                                <th class="col">no.</th>
+                                <th>Penyewa</th>
+                                <th>Kos</th>
+                                <th>Kamar</th>
+                                <th>Tanggal Bayar</th>
+                                <th>Harga</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>

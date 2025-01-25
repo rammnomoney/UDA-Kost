@@ -15,7 +15,7 @@
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-0 rounded-0 rounded-bottom m-0" aria-labelledby="navbarDropdown">
                 {{-- <li><a href="#" class="dropdown-item">My Profile</a></li>
                 <li><a href="#" class="dropdown-item">Settings</a></li> --}}
-                <li><a href="/logout" class="dropdown-item">Log Out</a></li>
+                <li><a href="/logout" class="dropdown-item">Keluar</a></li>
             </ul>
         </div>
     </div>

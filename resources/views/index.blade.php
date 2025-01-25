@@ -29,21 +29,30 @@
 
 <main id="home">
     <section class="list-house1">
-        <div class="container search-bar" data-aos="fade-up" style="justify-content:center;">
+        <div class="d-flex container search-bar" data-aos="fade-up" style="justify-content: center; align-items: center;">
             <select>
                 <option selected disabled>UDA Kost!? Tipe</option>
+                {{-- <option value="putra">Putra</option>
+                <option value="putri">Putri</option>
+                <option value="campur">Campur</option> --}}
             </select>
-            <input type="text" placeholder="Pencarian...">
-            <button class="search-button">Cari Kos...</button>
+            <form action="{{ route('cari.kos') }}" method="GET">
+                <input type="text" name="keyword" placeholder="Pencarian...">
+                <button type="submit" class="search-button">Cari Kos</button>
+            </form>
         </div>
     </section>
     
     <section class="list-house2">
-        <div class="d-flex justify-content-between mb-3 p-2" data-aos="fade-up">
+        <div class="d-flex flex justify-content-between mb-3 p-2" data-aos="fade-up">
             <h4>Hanya di <i><span class="title">#UDAKost</span></i></h4>
-            <div>
-                <button id="gridView" class="btn btn-primary btn-sm">Grid View</button>
-                <button id="listView" class="btn btn-outline-primary btn-sm">List View</button>
+            <div class="d-flex grid gap-3 p-2">
+                <div class="g-col-6">
+                    <button id="gridView" class="btn btn-primary btn-md gridview">GRID*</button>
+                </div>
+                <div class="g-col-6">
+                    <button id="listView" class="btn btn-outline-primary btn-md listview">LIST*</button>
+                </div>
             </div>
         </div>
         <div class="row property-banner" id="propertyContainer" data-aos="zoom-in">
@@ -96,8 +105,7 @@
                             <div class="item"><i class="flaticon-bed"></i> AC, Wifi</div>
                         </div>
                     </div>
-                </div>--}}
-                
+                </div>--}}                
                 </div>
             @endforeach
         </div>

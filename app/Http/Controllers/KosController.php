@@ -12,7 +12,7 @@ class KosController extends Controller
     {
         $koss = Kos::select('id', 'nama', 'alamat', 'price', 'list1', 'list2', 'list3', 'gambar')
         ->inRandomOrder()
-        ->take(10) // Batasi jumlah kos
+        ->take(10)
         ->get();
 
         return view('welcome', compact('koss'));

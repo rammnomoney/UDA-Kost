@@ -20,10 +20,17 @@
 </head>
 <body>
     <style>
-        html, body{
+        html, body
+        {
             margin: 0;
             height: 100%;
             overflow: hidden;
+        }
+
+        .btn
+        {
+            font-size: 1.1rem;
+            background-color: #007bb6;
         }
     </style>
     

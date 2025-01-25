@@ -14,7 +14,8 @@ class KamarGambarController extends Controller
     {
         $kamar = Kamar::findorFail($kamarId);
 
-        $kamarGambar = KamarGambar::where('kamar_id',$kamarId)->get();
+        // $kamargambar = KamarGambar::with('kamar')->where('kamar_id', $kamarId)->paginate(6);
+        $kamarGambar = KamarGambar::where('kamar_id', $kamarId)->get();
         return view('admins.kamar-gambar.index', compact('kamar','kamarGambar'));
     }
 

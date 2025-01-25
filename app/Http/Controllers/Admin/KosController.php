@@ -21,7 +21,6 @@ class KosController extends Controller
 
     public function create()
     {
-        // $pemilik = Session::get('data_user');
         return view('admins.kos.addKos');
     }
 
@@ -56,7 +55,7 @@ class KosController extends Controller
         $kos->list2 = $request->list2;
         $kos->list3 = $request->list3;
         $kos->price = $request->price;
-        $kos->pemilik_id = $pemilik_id ?? null;
+        $kos->pemilik_id = $request->pemilik_id;
         $kos->gambar = $imageName;
         
         // $gambar = $request->file('gambar');
@@ -96,7 +95,7 @@ class KosController extends Controller
         $kos->list2 = $request->list2;
         $kos->list3 = $request->list3;
         $kos->price = $request->price;
-        $kos->pemilik_id = $pemilik_id ?? null;
+        $kos->pemilik_id = $request->pemilik_id;
         
         if ($request->hasFile('gambar')) {
             if ($kos->gambar && Storage::exists('public/gambar/' . $kos->gambar)) {

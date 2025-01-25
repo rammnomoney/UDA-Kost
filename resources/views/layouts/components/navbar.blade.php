@@ -1,6 +1,6 @@
 <header id="header" class="header d-flex align-items-center">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-    <a href="" class="logo d-flex align-items-center">
+    <a href="/" class="logo d-flex align-items-center">
       <h1>UDA Kost</h1><span>!?</span>
     </a>
     <nav id="navmenu" class="navmenu">

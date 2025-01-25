@@ -11,9 +11,9 @@ class KamarGambar extends Model
 
     protected $table = 'kamargambars';
 
-    protected $fillable = [
-        'gambar'
-    ];
+    // protected $fillable = [
+    //     'gambar'
+    // ];
     
     public function kamar()
     {

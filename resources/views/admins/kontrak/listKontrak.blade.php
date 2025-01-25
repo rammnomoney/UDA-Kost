@@ -47,13 +47,13 @@
                     <table id="myTable" class="table table-bordered">
                         <thead>
                             <tr>
-                                <td class="col">No.</td>
-                                <td>Penyewa</td>
-                                <td>Kamar</td>
-                                <td>Tanggal Mulai</td>
-                                <td>Tanggal Selesai</td>
-                                <td>Action</td>
-                                <td>Status</td>
+                                <th class="col">No.</th>
+                                <th>Penyewa</th>
+                                <th>Kamar</th>
+                                <th>Tanggal Mulai</th>
+                                <th>Tanggal Selesai</th>
+                                <th>Action</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
 

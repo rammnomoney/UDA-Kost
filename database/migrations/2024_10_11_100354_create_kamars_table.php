@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('judulfitur');
             $table->string('fitur');
             $table->string('status');
-            //$table->string('gambar')->nullable();
+            $table->foreignId('kos_id');
             $table->timestamps();
         });
     }

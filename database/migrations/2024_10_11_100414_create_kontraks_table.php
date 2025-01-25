@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('tgl_bayar')->nullable();
             $table->string('status', 25)->nullable();
             $table->string('metode', 25)->nullable();
+            $table->foreignId('kamar_id');
+            $table->foreignId('penyewa_id');
         });
     }
 
