@@ -73,7 +73,8 @@ Route::middleware('auth')->group(function () {
 	Route::get('/delete-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'destroy']);
 	Route::post('cari-kamar/{id}', [App\Http\Controllers\Admin\KamarController::class, 'cari']);
 	
-	Route::get('/kamar/{kamarId}/upload', [App\Http\Controllers\Admin\KamarGambarController::class, 'index']);
+	Route::get('/kamar/{kamarId}/IMG', [App\Http\Controllers\Admin\KamarGambarController::class, 'index']);
+	Route::get('/kamar/{kamarId}/upload', [App\Http\Controllers\Admin\KamarGambarController::class, 'create']);
 	Route::post('/kamar/{kamarId}/upload', [App\Http\Controllers\Admin\KamarGambarController::class, 'upload']);
 	Route::get('/kamar-img/{kamarImageId}', [App\Http\Controllers\Admin\KamarGambarController::class, 'destroy']);
 	

@@ -30,15 +30,17 @@
 <main id="home">
     <section class="list-house1">
         <div class="d-flex container search-bar" data-aos="fade-up" style="justify-content: center; align-items: center;">
-            <select>
-                <option selected disabled>UDA Kost!? Tipe</option>
-                {{-- <option value="putra">Putra</option>
-                <option value="putri">Putri</option>
-                <option value="campur">Campur</option> --}}
-            </select>
             <form action="{{ route('cari.kos') }}" method="GET">
-                <input type="text" name="keyword" placeholder="Pencarian...">
-                <button type="submit" class="search-button">Cari kos</button>
+                <div>
+                    <select>
+                        <option selected disabled>UDA Kost!? Tipe</option>
+                        {{-- <option value="putra">Putra</option>
+                        <option value="putri">Putri</option>
+                        <option value="campur">Campur</option> --}}
+                    </select>
+                    <input type="text" name="keyword" placeholder="Pencarian...">
+                    <button type="submit" class="search-button">Cari kos</button>
+                </div>
             </form>
         </div>
     </section>

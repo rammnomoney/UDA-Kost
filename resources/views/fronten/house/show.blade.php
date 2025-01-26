@@ -69,7 +69,6 @@
                                         @endforeach
 
                                         <div class="col-md-6 position-relative">
-                                            {{-- {{ url('storage/gambar/' . $kamar->last()->gambar) }} --}}
                                             @foreach ($kamar as $kamarImg)
                                                 <a href="#" data-fancybox="gallery">
                                                     <img src="{{ Storage::url($kamarImg->gambar) }}"
@@ -86,82 +85,82 @@
                                                         <img src="{{ Storage::url($kamarImg->gambar) }}" />
                                                     </a>
                                             @endforeach
+                                                </div>
+                                            </div>
+                                    @else
+                                        <p class="text-center"><b>Tidak ada gambar</b></p>
+                                    @endif
+                                    </div>
+                                </div>
+
+                                {{--  --}}
+                                {{-- <div class="col-md-6">
+                                <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner" style="width:100%; height:100%; object-fit: cover;">
+                                        <div class="carousel-item active">
+                                            <div class="position-relative">
+                                                <img src="/aset/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
+                                            </div>
+                                        </div>
+                                        <!-- Slide 2 -->
+                                        <div class="carousel-item">
+                                            <div class="position-relative">
+                                                <img src="/aset/img/house/Gallery house3.png" class="d-block w-100" alt="Image 2">
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="position-relative">
+                                                <img src="/aset/img/house/Gallery house8.jpeg" class="d-block w-100" alt="Image 3">
+                                            </div>
+                                        </div> 
+                                        <div class="list-tags position-absolute g-2 top-0 start-0">
+                                            <button class="text-light btn btn-outline-dark">FEATURED</button>
                                         </div>
                                     </div>
-                                @else
-                                    <p class="text-center"><b>Tidak ada gambar</b></p>
-                                    @endif
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
                             </div>
+                            {{-- Gallery carousel
+                            <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid thumb" data-bs-target="#mainCarousel"  data-bs-slide-to="0">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="/aset/img/house/Gallery house3.png" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="1" style="border-radius: 0px 20px 0px 0px;">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="/aset/img/house/Gallery house8.jpeg" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="2">
+                                    </div>
+                                    <div class="col-md-6 position-relative">
+                                        <a href="/aset/img/house/Gallery house5.jpeg" data-fancybox="gallery">
+                                            <img src="/aset/img/house/Gallery house5.jpeg" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
+                                            <div class="overlay-text">
+                                                <p>Tampilkan</p>
+                                            </div>
+                                        </a>
 
-                            {{--  --}}
-                            {{-- <div class="col-md-6">
-                <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner" style="width:100%; height:100%; object-fit: cover;">
-                        <div class="carousel-item active">
-                            <div class="position-relative">
-                                <img src="/aset/img/house/Gallery house2.jpg" class="d-block w-100" alt="Image 1">
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="/aset/img/house/Gallery house3.png" class="d-block w-100" alt="Image 2">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="/aset/img/house/Gallery house8.jpeg" class="d-block w-100" alt="Image 3">
-                            </div>
-                        </div> 
-                        <div class="list-tags position-absolute g-2 top-0 start-0">
-                            <button class="text-light btn btn-outline-dark">FEATURED</button>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            {{-- Gallery carousel
-            <div class="col-md-6" style="border-radius: 0px 20px 20px 0px;">
-                <div class="row g-2">
-                    <div class="col-md-6">
-                        <img src="/aset/img/house/Gallery house2.jpg" class="img-fluid thumb" data-bs-target="#mainCarousel"  data-bs-slide-to="0">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="/aset/img/house/Gallery house3.png" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="1" style="border-radius: 0px 20px 0px 0px;">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="/aset/img/house/Gallery house8.jpeg" class="img-fluid thumb" data-bs-target="#mainCarousel" data-bs-slide-to="2">
-                    </div>
-                    <div class="col-md-6 position-relative">
-                        <a href="/aset/img/house/Gallery house5.jpeg" data-fancybox="gallery">
-                            <img src="/aset/img/house/Gallery house5.jpeg" class="img-fluid thumb blur-effect" style="border-radius: 0px 0px 20px 0px;">
-                            <div class="overlay-text">
-                                <p>Tampilkan</p>
-                            </div>
-                        </a>
-
-                        <div style="display:none">
-                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house2.jpg">
-                            <img src="/aset/img/house/Gallery house2.jpg" />
-                            </a>
-                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house3.png">
-                            <img src="/aset/img/house/Gallery house3.png" />
-                            </a>
-                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house8.jpeg">
-                            <img src="/aset/img/house/Gallery house8.jpeg" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+                                        <div style="display:none">
+                                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house2.jpg">
+                                            <img src="/aset/img/house/Gallery house2.jpg" />
+                                            </a>
+                                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house3.png">
+                                            <img src="/aset/img/house/Gallery house3.png" />
+                                            </a>
+                                            <a data-fancybox="gallery" href="/aset/img/house/Gallery house8.jpeg">
+                                            <img src="/aset/img/house/Gallery house8.jpeg" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
                     {{-- <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; --swiper-navigation-size: 25px;" 
@@ -288,7 +287,7 @@
                                             <div>
                                                 <div class="price">Rp{{ number_format($kamar->price, 0, ',', '.') }}<span>
                                                         /Bulan</span></div>
-                                                <div class="text-content"> {{ $kamar->status }}</div>
+                                                <div class="text-content"><b>{{ $kamar->status }}</b></div>
                                             </div>
                                         </div>
                                     </div>

@@ -32,7 +32,7 @@
   </div>
 
   <section id="explanation" class="explanation section dark-background">
-    <img src="aset/img/house/Gallery house1.jpg" alt="Gambar 1">
+    <img src="\aset\img\house\Gallery House10.jpg" alt="Gambar 1">
           <div class="container" data-aos="fade-up">
             <div class="row justify-content-center">
               <div class="container mb-4">

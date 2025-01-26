@@ -13,17 +13,16 @@ class KosController extends Controller
 {
     public function index()
     {
-        $pemilik = Pemilik::get(['id','nama']);
-        
-        $kos = Kos::where('pemilik_id')->paginate(6);
+        $kos = Kos::with('pemilik')->where('pemilik_id')->paginate(6);
 
-        return view('admins.kos.listKos', compact('kos'));
+        return view('admins.kos.listKos', compact('kos'))->with('pemilik_id');
     }
 
     public function create()
     {
-        $pemilik = Pemilik::get(['id','nama']);
-        return view('admins.kos.addKos', compact('pemilik'));
+        // $pemilik = Pemilik::get(['id','nama']);
+        $pemilik = Pemilik::select('id', 'nama')->where('id')->first();
+        return view('admins.kos.addKos', ['pemilik' => $pemilik, 'id']);
     }
 
     public function store(Request $request)
@@ -80,9 +79,8 @@ class KosController extends Controller
     public function edit(Kos $kos, $id)
     {
         $kos = Kos::with('pemilik_id')->findOrFail($id);
-        $pemilik = Pemilik::get(['id','nama']);
 
-        return view('admins.kos.editKos', compact('koss'));
+        return view('admins.kos.editKos', compact('kos'));
     }
 
     public function update(Request $request, $id)

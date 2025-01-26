@@ -25,7 +25,7 @@
                         <a class="float-end" href="/kamar/{{ $id }}">Kembali</a>
                     </div>
                     <div class="card-body">
-                        <h2 class="mb-4">Tambah Gambar Kamar</h2>
+                        <h2 class="mb-4">Tambah Gambar {{ $kamar->nama }}</h2>
                         <hr>
                         @if ($errors->any())
                             <ul class="alert alert-warning">
@@ -39,8 +39,7 @@
                             <div class="alert alert-success">{{ session('status') }}</div>
                         @endif
 
-                        <form action="{{ url('kamar/' . $kamar->id . '/upload') }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ url('kamar/' . $kamar->id . '/upload') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                                 <h5 class="mb-4">Nomor: {{ $kamar->nama }}</h5>
                             <label>Gambar (Maksimal: 10 Gambar)</label>
@@ -49,45 +48,6 @@
                             </div>
                             <button class="btn btn-primary btn-md mt-4" type="submit">Tambah</button>
                         </form>
-                        <br>
-                        <div class="container mb-5 py-4">
-                            <h5>Gambar yang sudah ada:</h5>
-
-                            <div class="table-responsive">
-                                <table id="myTable" class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th class="col">No.</th>
-                                            <th>Gambar</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    @foreach ($kamarGambar as $k)
-                                    <tbody>
-                                        <tr class="table-striped">
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>
-                                                <img src="{{ asset($k->gambar) }}" class="img-thumbnail" style="width: 250px; height: 250px; border-radius: 20px;" alt="IMG" />
-                                            </td>
-                                            <td>
-                                                <a href="{{ url('/kamar-img/' . $k->id) }}" class="btn btn-danger btn-md float-end"><i class="bi bi-trash-fill"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    @endforeach
-                                </table>
-                            </div>
-                            {{-- <div class="row">
-                                @foreach ($kamarGambar as $kamarImg)
-                                    <div class="col-md-3 mt-4">
-                                        <img src="{{ asset($kamarImg->gambar) }}" class="img-thumbnail"
-                                            style="width: 250px; height: 250px; border-radius: 20px;" alt="IMG" />
-                                        <a href="{{ url('/kamar-img/' . $kamarImg->id) }}"
-                                            class="btn btn-danger btn-md float-end"><i class="bi bi-trash-fill"></i></a>
-                                    </div>
-                                @endforeach
-                            </div> --}}
-                        </div>
                     </div>
                 </div>
             </div>
