@@ -5,7 +5,7 @@
     --Dark: #000;
     --Primary: #417bbf;
     --Secondary: #191C24;
-    --Text: #f9f9f9;
+    --Text: #f4f4f4;
 }
 
 body {
@@ -33,14 +33,14 @@ p {
     padding: 0;
     box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
     color: var(--Default);
-}
-h2 {
+} */
+/* h2 {
     text-align: center;
     font-size: 25px;
     text-transform: capitalize;
-}
+} */
 
 .form-control{
     display: block;
@@ -61,6 +61,9 @@ h2 {
     font-family: sans-serif;
     background-color: var(--Primary);
 }
+.title-admins h2, h3, h4{
+    color: var(--Text) !important;
+}
 /*  */
 
 /*--------------- 
@@ -68,7 +71,10 @@ Table
 ---------------*/
 /* Sidebar */
 .navbar-brand h3 {
-color: var(--Primary);
+text-align: center;
+font-size: 1.8rem;
+color: var(--Primary) !important;
+font-weight: bold;
 }
 .sidebar {
 position: fixed;
@@ -251,7 +257,8 @@ z-index: 999;
 .background-icon {
     display: inline-block;
     opacity: 0.1;
-    font-size: 100px;
+    font-weight: bold;
+    font-size: 5.6rem;
     position: absolute;
 }
 .btn-dashboard p {
@@ -283,7 +290,7 @@ z-index: 999;
     background-color: var(--Dark);
 }
 tr:hover{
-    background-color: var(--White);
+    background-color: var(--Primary);
 }
 #myTable thead td {
     background-color: var(--secondary);

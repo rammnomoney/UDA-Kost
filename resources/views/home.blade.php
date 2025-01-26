@@ -26,7 +26,7 @@
 
 <div class="container-fluid pt-4 px-4">
     <div class="bg-secondary bg-dark rounded h-100 p-4">
-        <div class="mb-4"><h2>Selamat Datang {{ Auth::User()->nama }}!</h2></div>
+        <div class="title-admins py-4"><h2>Selamat Datang {{ Auth::User()->nama }}!</h2></div>
         <div class="row g-4">
             <div class="col-md-3">
                     <a href="/kos" class="btn-dashboard btn btn-primary d-flex justify-content-left align-items-center p-4">
@@ -79,7 +79,7 @@
         </div>
     </div>
             <div class="bg-secondary bg-dark rounded h-100 mt-4 p-4">
-                <h3 class="mb-4 fw-bold">Admin</h3>
+                <div class="title-admins py-4"><h3>Admin</h3></div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>

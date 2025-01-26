@@ -8,7 +8,6 @@ use App\Models\Kamar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 
 class KamarController extends Controller
@@ -16,6 +15,7 @@ class KamarController extends Controller
     public function index($id)
     {
         $kos = Kos::findOrFail($id);
+
         $kamar = Kamar::with('kos')->where('kos_id', $id)->paginate(6);
 
         if (!$kamar) {
@@ -28,10 +28,12 @@ class KamarController extends Controller
 
     public function create($id)
     {
+        // $koss = Kos::get(['id','nama']);
+        // return view('admins.kamar.addKamar', compact('koss'));
+        
         $kos = Kos::select('id', 'nama')->where('id', $id)->first();
 
         return view('admins.kamar.addKamar', ['kos' => $kos, 'id' => $id]);
-        // return view('admins.kamar.addKamar');
     }
 
     public function store(Request $request, $id)
@@ -94,15 +96,19 @@ class KamarController extends Controller
         Session::flash('pesan', 'Data Berhasil Ditambahkan');
         }
 
-        return redirect('/kamar/' . $id);
+        return redirect('/kamar/{{ $id }}');
+        // return redirect()->back()->with('insert', 'Berhasil!');
     }
 
     public function edit($id)
     {
+        // $koss = Kos::get(['id','nama']);
+
+        // return view('admins.kamar.editKamar', compact('koss'));
+        
         $kamar = Kamar::with('kos')->findOrFail($id);
-
+        
         $kos = Kos::paginate(6);
-
         return view('admins.kamar.editKamar', ['kamar' => $kamar], ['kos' => $kos]);
     }
 
@@ -156,7 +162,9 @@ class KamarController extends Controller
             Session::flash('update', 'suskes');
             Session::flash('pesan', 'Data '  . $kamar->nama . ' berhasil Diedit');
         }
-        return redirect('/kamar/' . $kamar->kos_id);
+
+        return redirect('/kamar/{{ $id }}');
+        // return redirect()->back()->with('update', 'Diperbarui');
     }
     
     public function destroy($id)
@@ -180,7 +188,8 @@ class KamarController extends Controller
             }
         }
     
-        return redirect('/kamar/' . $kamar->kos_id);
+        return redirect('/kamar/{{ $id }}');
+        // return redirect()->back()->with('delete', 'Dihapus!');
     }
 
     public function cari(Request $request, Kos $kos)

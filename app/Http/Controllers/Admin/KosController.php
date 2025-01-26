@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Kos;
+use App\Models\Pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class KosController extends Controller
 {
     public function index()
     {
-        // $kos = Kos::paginate(6);
-
+        $pemilik = Pemilik::get(['id','nama']);
+        
         $kos = Kos::where('pemilik_id')->paginate(6);
 
         return view('admins.kos.listKos', compact('kos'));
@@ -21,7 +22,8 @@ class KosController extends Controller
 
     public function create()
     {
-        return view('admins.kos.addKos');
+        $pemilik = Pemilik::get(['id','nama']);
+        return view('admins.kos.addKos', compact('pemilik'));
     }
 
     public function store(Request $request)
@@ -68,7 +70,7 @@ class KosController extends Controller
             
 
         if ($kos) {
-            Session::flash('insert', 'suskes');
+            Session::flash('insert', 'sukses');
             Session::flash('pesan', 'Data Berhasil Ditambahkan');
         }
 
@@ -77,9 +79,10 @@ class KosController extends Controller
 
     public function edit(Kos $kos, $id)
     {
-        $kos = Kos::with('pemilik')->findOrFail($id);
+        $kos = Kos::with('pemilik_id')->findOrFail($id);
+        $pemilik = Pemilik::get(['id','nama']);
 
-        return view('admins.kos.editKos', compact('kos'));
+        return view('admins.kos.editKos', compact('koss'));
     }
 
     public function update(Request $request, $id)

@@ -11,7 +11,7 @@
                     <h3 class="property-title">DETAIL <span class="title">KOST</span></h3>
                     <div class="menu justify-items-center">
                         <ul class="breadcrumbs style-1">
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/">BERANDA</a></li>
                             <li>/</li>
                             <li>{{ $kamar->nama }}</li>
                         </ul>
@@ -35,7 +35,7 @@
                                                 @foreach ($kamar as $key => $kamarImg)
                                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                                         <div class="position-relative">
-                                                            <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}"
+                                                            <img src="{{ Storage::url($kamarImg->gambar) }}"
                                                                 class="d-block w-100" alt="Image {{ $key + 1 }}">
                                                         </div>
                                                     </div>
@@ -61,7 +61,7 @@
                                     <div class="row g-2">
                                         @foreach ($kamar as $key => $kamarImg)
                                             <div class="col-md-6">
-                                                <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}"
+                                                <img src="{{ Storage::url($kamarImg->gambar) }}"
                                                     class="img-fluid thumb" data-bs-target="#mainCarousel"
                                                     data-bs-slide-to="{{ $key }}"
                                                     style="border-radius: 0px 20px 0px 0px;">
@@ -72,7 +72,7 @@
                                             {{-- {{ url('storage/gambar/' . $kamar->last()->gambar) }} --}}
                                             @foreach ($kamar as $kamarImg)
                                                 <a href="#" data-fancybox="gallery">
-                                                    <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}"
+                                                    <img src="{{ Storage::url($kamarImg->gambar) }}"
                                                         class="img-fluid thumb blur-effect"
                                                         style="border-radius: 0px 0px 20px 0px;">
                                                     <div class="overlay-text">
@@ -82,14 +82,14 @@
                                                 <!-- Hidden images for FancyBox -->
                                                 <div style="display: none;">
                                                     <a data-fancybox="gallery"
-                                                        href="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}">
-                                                        <img src="{{ asset('kamarImg/gambar/' . $kamarImg->gambar) }}" />
+                                                        href="{{ Storage::url($kamarImg->gambar) }}">
+                                                        <img src="{{ Storage::url($kamarImg->gambar) }}" />
                                                     </a>
                                             @endforeach
                                         </div>
                                     </div>
                                 @else
-                                    <p class="text-center"><b>No images available</b></p>
+                                    <p class="text-center"><b>Tidak ada gambar</b></p>
                                     @endif
                                 </div>
                             </div>

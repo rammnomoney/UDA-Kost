@@ -43,7 +43,7 @@ class PemilikController extends Controller
         $pemilik->nama = $request->nama;
         $pemilik->email = $request->email;
         $pemilik->alamat = $request->alamat;
-        $pemilik->password = $request->password;
+        $pemilik->password = password_hash($request->password, PASSWORD_BCRYPT);
         $pemilik->save();
 
         if ($pemilik) {

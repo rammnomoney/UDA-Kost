@@ -24,7 +24,7 @@
                     </div>
                     <div class="card-body">
                         <h2 class="mb-4">Edit Kamar</h2>
-                        <form method="post" action="{{ url('/update-kamar' . $kamar->id) }}"
+                        <form method="post" action="{{ url('/update-kamar' . $id) }}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="input-group mt-5 mb-4">

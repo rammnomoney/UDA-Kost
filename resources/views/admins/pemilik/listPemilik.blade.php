@@ -5,7 +5,9 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-secondary bg-dark rounded h-100 p-4">
             <div class="mb-4 p-0">
-                <h2>Data Pemilik</h2>
+                <div class="title-admins py-4">
+                    <h2>Data Pemilik</h2>
+                </div>
                 <!-- menu atas -->
                 <div class="d-flex justify-content-between">
                     <div class="p-0">

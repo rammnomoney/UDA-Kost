@@ -24,7 +24,7 @@
                     </div>
                     <div class="card-body">
                         <h2 class="mb-4">Tambah Kamar</h2>
-                        <form method="POST" action="/add-kamar/{id}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/add-kamar' . $id) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="input-group mt-5 mb-4">
                                 <input class="form-control @error('nama') is-invalid @enderror" type="text"

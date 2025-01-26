@@ -11,17 +11,18 @@ class Kamar extends Model
 
     protected $table = 'kamars';
 
-    // protected $fillable = [
-    //     'nama',
-    //     'alamat',
-    //     'kodepos',
-    //     'price',
-    //     'list',
-    //     'deskripsi',
-    //     'judulfitur',
-    //     'fitur',
-    //     'status'
-    // ];
+    protected $fillable = [
+        'nama',
+        'alamat',
+        'kodepos',
+        'price',
+        'list',
+        'deskripsi',
+        'judulfitur',
+        'fitur',
+        'status',
+        'kos_id'
+    ];
 
     public function kos()
     {

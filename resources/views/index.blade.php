@@ -19,9 +19,9 @@
         <h3 class="property-title">LIST <span class="title">KOST</span></h3>
         <div class="menu">
             <ul class="breadcrumbs">
-                <li><a href="/">Home</a></li>
+                <li><a href="/">BERANDA</a></li>
                 <li>/</li>
-                <li>Kost!?</li>
+                <li>KOST!?</li>
             </ul>
         </div>
     </div>
@@ -38,7 +38,7 @@
             </select>
             <form action="{{ route('cari.kos') }}" method="GET">
                 <input type="text" name="keyword" placeholder="Pencarian...">
-                <button type="submit" class="search-button">Cari Kos</button>
+                <button type="submit" class="search-button">Cari kos</button>
             </form>
         </div>
     </section>
