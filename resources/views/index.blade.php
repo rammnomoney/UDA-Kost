@@ -34,12 +34,12 @@
                 <div>
                     <select>
                         <option selected disabled>UDA Kost!? Tipe</option>
-                        {{-- <option value="putra">Putra</option>
+                        <option value="putra">Putra</option>
                         <option value="putri">Putri</option>
-                        <option value="campur">Campur</option> --}}
+                        <option value="gabung">Campur</option>
                     </select>
-                    <input type="text" name="keyword" placeholder="Pencarian...">
-                    <button type="submit" class="search-button">Cari kos</button>
+                    <input type="text" name="keyword" placeholder="Pencarian..." value="{{ request('keyword') }}" />
+                    <button type="submit" class="search-button"> <i class="bi bi-search"></i> Cari kos</button>
                 </div>
             </form>
         </div>

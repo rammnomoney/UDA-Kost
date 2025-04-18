@@ -18,7 +18,7 @@
                                 <a href="/login" class="text-muted font-semibold hover:underline">Sign In</a>
                             </p>
 
-                            <form method="POST" action="{{ route('register') }}">
+                            {{-- <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <label for="name"
                                     class="form-label text-gray-700 font-medium">{{ __('Nama') }}</label>
@@ -86,8 +86,8 @@
                         <hr class="flex-grow-1 border-gray-250">
                         <span class="px-3 text-gray-500 text-sm">Or sign in with</span>
                         <hr class="flex-grow-1 border-gray-250">
-                      </div> --}}
-                            </form>
+                      </div> 
+                            </form> --}}
                         </div>
                     </div>
                 </div>

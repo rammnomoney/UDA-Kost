@@ -302,7 +302,7 @@ tr:hover{
 }
 .table-responsive tr td{
     background-color: var(--White); 
-    color: var(--gray);
+    color: var(--Dark);
 }
 tr {
     color: var(--White);

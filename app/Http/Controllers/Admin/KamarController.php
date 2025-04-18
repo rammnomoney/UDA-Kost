@@ -96,15 +96,15 @@ class KamarController extends Controller
         Session::flash('pesan', 'Data Berhasil Ditambahkan');
         }
 
-        return redirect('/kamar/{{ $id }}');
+        return redirect('kamar/' . $id);
         // return redirect()->back()->with('insert', 'Berhasil!');
     }
 
     public function edit($id)
     {
         // $koss = Kos::get(['id','nama']);
+        // return view('admins.kamar.editKamar', compact('kamar','kos'));
 
-        // return view('admins.kamar.editKamar', compact('koss'));
         
         $kamar = Kamar::with('kos')->findOrFail($id);
         
@@ -163,7 +163,7 @@ class KamarController extends Controller
             Session::flash('pesan', 'Data '  . $kamar->nama . ' berhasil Diedit');
         }
 
-        return redirect('/kamar/{{ $id }}');
+        return redirect('kamar/' . $id);
         // return redirect()->back()->with('update', 'Diperbarui');
     }
     
@@ -188,21 +188,25 @@ class KamarController extends Controller
             }
         }
     
-        return redirect('/kamar/{{ $id }}');
+        return redirect('kamar/' . $id);
         // return redirect()->back()->with('delete', 'Dihapus!');
     }
 
-    public function cari(Request $request, Kos $kos)
+    public function cari(Request $request, $id)
     {
+        $kos = Kos::findOrFail($id);
+
         $cariKamar = $request->cariKamar;
 
-        if (isset($cariKamar)) {
-            $kamar = Kamar::where('nama', 'like', "%" . $cariKamar . "%")
-                ->where('kos_id', $kos->id)
-                ->orWhere('status', 'like', "%" . $cariKamar . "%")
+        if ($cariKamar) {
+            $kamar = Kamar::where('kos_id', $kos->id)
+                ->where(function ($query) use ($cariKamar) {
+                    $query->where('nama', 'like', "%{$cariKamar}%")
+                          ->orWhere('status', 'like', "%{$cariKamar}%");
+                })
                 ->paginate(6);
         } else {
-            return $this->index($kos->id);
+            $kamar = Kamar::where('kos_id', $kos->id)->paginate(6);
         }
 
         return view('admins.kamar.listKamar', compact('kos', 'kamar', 'cariKamar'))->with('pesan', 'Data tidak ditemukan');

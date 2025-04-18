@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('list2', 15);
             $table->string('list3', 15);
             $table->string('gambar')->nullable();
-            $table->foreignId('pemilik_id');
+            $table->foreignId('pemilik');
             $table->timestamps();
         });
     }

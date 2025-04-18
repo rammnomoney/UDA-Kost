@@ -78,7 +78,7 @@ class KosController extends Controller
 
     public function edit(Kos $kos, $id)
     {
-        $kos = Kos::with('pemilik_id')->findOrFail($id);
+        $kos = Kos::with('pemilik')->findOrFail($id);
 
         return view('admins.kos.editKos', compact('kos'));
     }

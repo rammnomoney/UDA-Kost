@@ -14,7 +14,7 @@
                             <a href="/add-kontrak/{{ $id }}" class="btn btn-primary">Tambah</a>
                         </div>
                         <div class="d-flex">
-                            <form action="{{ url('/cari-kontrak/' . $id . '/cari') }}" method="get" class="d-flex me-1">
+                            <form action="{{ url('cari-kontrak/' . $id . '/cari') }}" method="get" class="d-flex me-1">
                                 <input type="text" name="cariKontrak" class="form-control me-1" />
                                 <button class="btn btn-primary">
                                     <i class="bi bi-search"></i>

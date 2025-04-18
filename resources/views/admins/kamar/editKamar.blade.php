@@ -20,11 +20,11 @@
             <div class="row align-items-center text-center">
                 <div class="col-md-12">
                     <div class="link-button mb-2">
-                        <a class="float-end" href="/kamar/{{ $id }}">Kembali</a>
+                        <a class="float-end" href="{{ route('admin.kos.index') }}">Kembali</a>
                     </div>
                     <div class="card-body">
                         <h2 class="mb-4">Edit Kamar</h2>
-                        <form method="post" action="{{ url('/update-kamar' . $id) }}"
+                        <form method="post" action="{{ route('admin.kamar.update' , $kamar->id) }}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="input-group mt-5 mb-4">
@@ -96,7 +96,7 @@
                 <input class="form-control" type="file" name="gambar[]" id="gambar" multiple />
             </div> --}}
 
-                            <button class="btn btn-primary btn-md mt-3" type="submit">Update</button>
+                            <button class="btn btn-primary btn-md mt-3">Update</button>
                         </form>
                     </div>
                 </div>

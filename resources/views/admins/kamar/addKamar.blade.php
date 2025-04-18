@@ -20,11 +20,11 @@
             <div class="row align-items-center text-center">
                 <div class="col-md-12">
                     <div class="link-button mb-2">
-                        <a class="float-end" href="/kamar/{{ $id }}">Kembali</a>
+                        <a class="float-end" href="{{ route('admin.kamar.index' , $id) }}">Kembali</a>
                     </div>
                     <div class="card-body">
                         <h2 class="mb-4">Tambah Kamar</h2>
-                        <form method="POST" action="{{ url('/add-kamar' . $id) }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.kamar.store' , $id) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="input-group mt-5 mb-4">
                                 <input class="form-control @error('nama') is-invalid @enderror" type="text"
@@ -122,7 +122,7 @@
                                 <input class="form-control" type="file" name="gambar[]" id="gambar" multiple />
                             </div> --}}
 
-                            <button class="btn btn-primary btn-md mt-3" type="submit">Tambah</button>
+                            <button type="submit" class="btn btn-primary btn-md mt-3">Tambah</button>
                         </form>
                     </div>
                 </div>

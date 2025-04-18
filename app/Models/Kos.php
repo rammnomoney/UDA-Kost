@@ -23,6 +23,6 @@ class Kos extends Model
 
     public function pemilik()
     {
-        return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');
+        return $this->belongsTo(Pemilik::class);
     }
 }

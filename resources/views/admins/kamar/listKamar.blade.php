@@ -12,11 +12,10 @@
                     <!-- menu atas  -->
                     <div class="d-flex justify-content-between">
                         <div class="p-0">
-                            <a href="/add-kamar/{{ $id }}" class="btn btn-primary">Tambah</a>
+                            <a href="{{ route('admin.kamar.create' , $kos->id) }}" class="btn btn-primary">Tambah</a>
                         </div>
                         <div class="d-flex">
-                            <form action="cari-kamar/{{ $id }}" method="POST" class="d-flex me-1">
-                                @csrf
+                            <form action="{{ route('admin.kamar.cari' , $kos->id) }}" method="GET" class="d-flex me-1">
                                 <input type="text" name="cariKamar" class="form-control me-1" />
                                 <button class="btn btn-primary"><i class="bi bi-search"></i></button>
                             </form>
@@ -82,10 +81,10 @@
                                 </td>
                                 <td style="width: 100px; white-space: nowrap">
                                     <!-- <a href="#" class="btn btn-warning">Detail</a> -->
-                                    <a href="/edit-kamar/{{ $k->id }}" class="btn btn-success">
+                                    <a href="{{ route('admin.kamar.edit' , $k->id) }}" class="btn btn-success">
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
-                                    <a href="/delete-kamar/{{ $k->id }}"
+                                    <a href="{{ route('admin.kamar.destroy' , $k->id) }}"
                                         onclick="return confirm('Hapus data {{ $k->nama }} ?')"
                                         class="btn btn-danger">
                                         <i class="bi bi-trash-fill"></i>

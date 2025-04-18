@@ -88,7 +88,7 @@
                                 <input class="form-control" type="file" name="gambar" id="gambar" />
                             </div>
                             <div hidden>
-                                <input type="text" name="pemilik_id" id="pemilik_id" value="{{ $pemilik }}" />
+                                <input type="text" name="pemilik" id="pemilik" value="{{ $pemilik }}" />
                             </div>
                             <button class="btn btn-primary btn-md mt-3">Tambah</button>
                         </form>
