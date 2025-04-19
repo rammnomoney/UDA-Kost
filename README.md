@@ -67,3 +67,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 ## Kos-an ORY DWIPUTRA
+uda kost!?
+<p align="left"><a href="#" target="_blank"><img src="public/aset/img/Udakost/transparent-udakost/Vertical-Uda Kost Logo.png" width="400" alt="UDA Kost Logo"></a></p>
